@@ -21,9 +21,11 @@ const page = () => {
   return (
     <main className="min-h-screen hyperdrive">
       <Nav />
-      <div className="py-5 container">
+      <div className="py-5 container flex justify-between">
+        <h1 className="uppercase text-end">Hyperdrive </h1>
         <h1 className="uppercase text-end">
-          Hyperdrive Build <Highlight>Station</Highlight>_
+          Build
+          <Highlight>Station</Highlight>_
         </h1>
       </div>
       <Carousel />
