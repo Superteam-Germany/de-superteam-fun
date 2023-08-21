@@ -1,7 +1,7 @@
 import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Archivo } from "next/font/google";
+import { Archivo, Unbounded } from "next/font/google";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
@@ -11,6 +11,12 @@ const satoshi = localFont({
 const archivo = Archivo({
   display: "swap",
   variable: "--font-secondary",
+  subsets: ["latin"],
+});
+
+const fontHyperdrive = Unbounded({
+  display: "swap",
+  variable: "--font-hyperdrive",
   subsets: ["latin"],
 });
 
@@ -26,7 +32,8 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={`${satoshi.variable} ${archivo.variable}`}>
+      <body
+        className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable}`}>
         {children}
       </body>
     </html>

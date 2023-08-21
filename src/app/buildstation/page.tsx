@@ -1,28 +1,30 @@
-import Carousel from "@/components/Carousel";
-import Hero from "@/components/Hero";
-import Image from "next/image";
-import Nav from "@/components/Nav";
-import Link from "next/link";
-import React from "react";
-import Spacer from "@/components/ui/Spacer";
-import AboutUs from "@/components/AboutUs";
-import TextBanner from "@/components/TextBanner";
-import { Highlight } from "@/components/ui/Highlight";
 import BsManifesto from "@/components/BSMainfesto";
-import Partners from "@/components/Partners";
-import TitleParagraph from "@/components/TitleParagraph";
-import WhatIs from "@/components/WhatIs";
-import Instructions from "@/components/Instructions";
+import Carousel from "@/components/Carousel";
 import Email from "@/components/Email";
-import SignUp from "@/components/SignUp";
 import FAQ from "@/components/FAQ";
+import Instructions from "@/components/Instructions";
+import Nav from "@/components/Nav";
+import SignUp from "@/components/SignUp";
+import TextBanner from "@/components/TextBanner";
+import WhatIs from "@/components/WhatIs";
+import { Highlight } from "@/components/ui/Highlight";
+import Spacer from "@/components/ui/Spacer";
+import Image from "next/image";
+import Link from "next/link";
 
 const page = () => {
   return (
     <main className="min-h-screen hyperdrive">
       <Nav />
-      <div className="py-5 container flex justify-between">
-        <h1 className="uppercase text-end">Hyperdrive </h1>
+      <div className="py-5 container text-end ">
+        <h1
+          className="uppercase text- font-hyperdrive font-medium"
+          style={{
+            fontSize:
+              "clamp(var(--font-size-h1-mobile), 4.8vw, calc(var(--font-size-h1) - 0.55rem))",
+          }}>
+          Hyperdrive{" "}
+        </h1>
         <h1 className="uppercase text-end">
           Build
           <Highlight>Station</Highlight>_

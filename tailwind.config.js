@@ -27,6 +27,7 @@ module.exports = {
       fontFamily: {
         primary: ["var(--font-primary)", "sans-serif"],
         secondary: ["var(--font-secondary)", "sans-serif"],
+        hyperdrive: ["var(--font-hyperdrive)", "sans-serif"],
       },
       fontSize: {
         h1: "clamp(var(--font-size-h1-mobile), 5vw ,var(--font-size-h1))",

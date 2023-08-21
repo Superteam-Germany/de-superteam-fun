@@ -77,6 +77,20 @@
     --border: 0 0% 14.9%;
     --input: 0 0% 14.9%;
     --ring: 0 0% 83.1%;
+
+    /* Desktop font sizes */
+    --font-size-h1: 5.5rem;
+    --font-size-h2: 5.125rem;
+    --font-size-h3: 2.125rem;
+    --font-size-quote: 2.625rem;
+    --font-size-body: 1.25rem;
+
+    /* Mobile font sizes */
+    --font-size-h1-mobile: 2rem;
+    --font-size-h2-mobile: 2.625rem;
+    --font-size-h3-mobile: 2.125rem;
+    --font-size-quote-mobile: 1.625rem;
+    --font-size-body-mobile: 1rem;
   }
 }
 
