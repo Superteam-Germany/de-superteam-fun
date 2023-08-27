@@ -4,10 +4,17 @@ import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
 
 interface Props {
-  images: { imgUrl: string; link: string }[];
+  // images: string[];
 }
 
-const Carousel: FC<Props> = ({ images }) => {
+const images = [
+  "/images/gallery/gallery-1.jpg",
+  "/images/gallery/gallery-3.jpg",
+  "/images/gallery/gallery-4.jpg",
+  "/images/gallery/gallery-2.jpg",
+];
+
+const HeroCarousel: FC<Props> = () => {
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
 
   const scrollPrev = useCallback(() => {
@@ -21,39 +28,18 @@ const Carousel: FC<Props> = ({ images }) => {
   return (
     <div className="overflow-hidden">
       <div className="" ref={emblaRef}>
-        <div className="flex h-[40vh] sm:h-[35vh]">
+        <div className="flex h-[40vh] sm:h-[60vh]">
           {images &&
-            images.map(({ imgUrl, link }) => (
+            images.map((image, key) => (
               <div
-                key={imgUrl.slice(-10)}
-                className="mx-2  relative bg-white/5 overflow-hidden flex-grow-0 shrink-0 basis-[80%] md:basis-[40%] ">
+                key={key}
+                className="mx-2  relative bg-white/5 flex-grow-0 shrink-0 basis-[80%] ">
                 <Image
-                  src={imgUrl}
+                  src={image}
                   fill
                   style={{ objectFit: "cover", objectPosition: "center" }}
-                  alt=""
+                  alt={`superteam ${key}`}
                 />
-                <div className="w-full px-8 py-4 bg-black/5 flex gap-4 absolute bottom-0 backdrop-blur-md">
-                  <a
-                    href=""
-                    className="opacity-60 hover:opacity-80 transition-opacity">
-                    <div className="h-6 w-6 scale-75 sm:scale-100 relative">
-                      <Image src="/images/x-icon.svg" fill alt="X logo" />
-                    </div>
-                  </a>
-
-                  <a
-                    href=""
-                    className="opacity-60 hover:opacity-80 transition-opacity">
-                    <div className="h-6 w-8 relative scale-75 sm:scale-100">
-                      <Image
-                        src="/images/discord-icon.svg"
-                        fill
-                        alt="Discord logo"
-                      />
-                    </div>
-                  </a>
-                </div>
               </div>
             ))}
         </div>
@@ -86,4 +72,4 @@ const Carousel: FC<Props> = ({ images }) => {
   );
 };
 
-export default Carousel;
+export default HeroCarousel;

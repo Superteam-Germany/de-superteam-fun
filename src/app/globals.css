@@ -37,9 +37,10 @@
     /* Desktop font sizes */
     --font-size-h1: 6.375rem;
     --font-size-h2: 5.125rem;
+    --font-size-h2-5: 3.875rem;
     --font-size-h3: 2.125rem;
     --font-size-quote: 2.625rem;
-    --font-size-body: 1.25rem;
+    --font-size-body: 1.15rem;
 
     /* Mobile font sizes */
     --font-size-h1-mobile: 2rem;
@@ -50,7 +51,7 @@
   }
 
   .hyperdrive {
-    --background: 0 0% 3.9%;
+    --background: 0 0% 8%;
     --foreground: 0 0% 98%;
 
     --card: 0 0% 3.9%;
@@ -98,8 +99,12 @@
   * {
     @apply border-border;
   }
+
+  html {
+    @apply scroll-smooth overflow-x-hidden;
+  }
   body {
-    @apply bg-background text-primary-foreground font-sans sm:text-body text-body-mobile;
+    @apply bg-background text-primary-foreground overflow-x-hidden relative font-sans sm:text-body text-body-mobile;
   }
 
   h1 {
@@ -121,7 +126,17 @@
   b {
     @apply font-semibold;
   }
+
+  a {
+    @apply underline underline-offset-2 hover:opacity-80;
+  }
 }
 
 @layer components {
+}
+
+@layer utilities {
+  .cols-2 {
+    @apply container py-24 flex flex-col gap-6 justify-center sm:flex-row sm:justify-between items-center;
+  }
 }

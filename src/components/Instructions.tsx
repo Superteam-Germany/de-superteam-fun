@@ -1,9 +1,17 @@
+"use client";
 import React from "react";
 import { Highlight } from "./ui/Highlight";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 const Instructions = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["-90%", "40%"]);
   return (
-    <div className=" w-full">
+    <div className=" w-full relative overflow-hidden">
+      <motion.div
+        style={{ y }}
+        className="bg-[url('/images/line-wave-2.png')] w-full absolute h-full  bg-no-repeat bg-left-bottom -z-50 md:bg-cover bg-fixed bg-50%"></motion.div>
+
       <section className="container min-h-80 py-24 grid grid-cols-1 lg:grid-cols-2 gap-x-8 justify-center sm:flex-row sm:justify-between items-center">
         <h2 className="uppercase text-h2 self-start">
           Berlin

@@ -2,6 +2,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
+import Spacer from "@/components/ui/Spacer";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
@@ -33,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable}`}>
+        className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable} `}>
         {children}
       </body>
     </html>

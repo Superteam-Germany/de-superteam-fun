@@ -19,6 +19,9 @@ module.exports = {
         "2xl": "1400px",
       },
     },
+    backgroundSize: {
+      "50%": "50%",
+    },
     extend: {
       backgroundImage: {
         "gradient-primary":
@@ -31,8 +34,11 @@ module.exports = {
       },
       fontSize: {
         h1: "clamp(var(--font-size-h1-mobile), 5vw ,var(--font-size-h1))",
-        h2: "clamp(var(--font-size-h2-mobile), 6vw, var(--font-size-h2))",
+        h2: "clamp(var(--font-size-h2-mobile), 5.5vw, var(--font-size-h2))",
+        "h2.5":
+          "clamp(var(--font-size-h2-mobile), 5.5vw, var(--font-size-h2-5))",
         h3: "clamp(var(--font-size-h3-mobile), 3vw, var(--font-size-h3))",
+        h4: "clamp(calc(var(--font-size-body-mobile)+1rem), 4vw, calc(var(--font-size-body)+1rem))",
         banner: "clamp(1rem, 4vw, 3.25rem)",
         body: "clamp(var(--font-size-body-mobile), 2vw, var(--font-size-body))",
         "h1-mobile": "var(--font-size-h1-mobile)",

@@ -1,36 +1,104 @@
+"use client";
 import React from "react";
+import AccordionWrapper from "./Accordion";
+import Link from "next/link";
 
 const FAQ = () => {
   return (
-    <section className="container py-24 space-y-6">
-      <h2 className="text-center">FAQ</h2>
-      <ul className="flex-col flex gap-4">
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-        <li className="rounded-lg w-full bg-white/5 px-8 py-4">
-          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Provident
-          molestiae?
-        </li>
-      </ul>
-    </section>
+    <div className="">
+      <section className="container pt-24 space-y-24">
+        <h2 className="text-center">FAQ</h2>
+        <AccordionWrapper
+          items={[
+            // 10 item questions and answers
+            {
+              title: <span>Who can participate?</span>,
+              content: (
+                <p>
+                  The Station is open to everyone interested in Solana. May you
+                  be a developer, biz-dev, artist, marketer or jpeg flippooor.
+                  Whether you&apos;re just starting out, or a seasoned pro,
+                  there&apos;s a place for you here.
+                </p>
+              ),
+            },
+            {
+              title: (
+                <span>
+                  Do I need to register to participate in Build Station?
+                </span>
+              ),
+              content: (
+                <p>
+                  Yes - please register <a href="">here</a>.
+                </p>
+              ),
+            },
+            {
+              title: <span>Where is the Build Station taking place?</span>,
+              content: (
+                <p>
+                  In the heart of Berlin at the W3 Hub.{" "}
+                  <a
+                    href="https://goo.gl/maps/KETGWHMpBVUsdvvb8"
+                    target="_blank">
+                    Möckernstrasse 120
+                  </a>
+                  .
+                </p>
+              ),
+            },
+            {
+              title: <span>Are only German teams allowed to participate?</span>,
+              content: <p>No, we welcome everyone.</p>,
+            },
+            {
+              title: (
+                <span>How will the winners of Build Station be selected?</span>
+              ),
+              content: (
+                <p>
+                  See <Link href="#prizes">prizes section</Link> above.
+                </p>
+              ),
+            },
+            {
+              title: <span>Can I bring my dog?</span>,
+              content: <p>Yes, but only if we can pet it.</p>,
+            },
+            {
+              title: <span>Is it possible to get mentorship virtually?</span>,
+              content: (
+                <p>
+                  Build Station channels are open to all on our Discord, and you
+                  can always reach out to us for more specific help.
+                </p>
+              ),
+            },
+            {
+              title: <span>How much does it cost to participate?</span>,
+              content: <p>Attendance is free.</p>,
+            },
+            {
+              title: <span>What is the Build Station’s Code of Conduct?</span>,
+              content: <p>Be nice.</p>,
+            },
+            {
+              title: <span>Did we miss something?</span>,
+              content: (
+                <p>
+                  DM{" "}
+                  <a href="https://t.me/oyacaro" target="_blank">
+                    @oyacaro
+                  </a>{" "}
+                  on Telegram.
+                </p>
+              ),
+            },
+          ]}
+        />
+      </section>
+    </div>
   );
 };
 

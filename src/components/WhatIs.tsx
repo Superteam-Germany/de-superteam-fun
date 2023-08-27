@@ -5,11 +5,14 @@ const WhatIs = () => {
   return (
     <div className=" w-full">
       <section className="container min-h-80 py-24 grid grid-cols-1 lg:grid-cols-2 gap-x-8 justify-center sm:flex-row sm:justify-between items-center">
-        <h2 className="uppercase text-h2 self-start">
+        <h2 className="uppercase text-h2 self-start mb-16 ">
           What is the
-          <br /> <Highlight>Build Station</Highlight>?
+          <br />{" "}
+          <span>
+            <Highlight>BuildStation</Highlight>?
+          </span>
         </h2>
-        <div className="max-w-[40rem]">
+        <div className="max-w-[40rem] mx-auto px-2 sm:px-0">
           <h3 className="leading-none mb-4 lg:mb-10 ">
             ​Heres what you can expect during the event:
           </h3>

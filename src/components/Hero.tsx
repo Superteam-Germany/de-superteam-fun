@@ -1,7 +1,7 @@
 import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import Carousel from "./Carousel";
+import HeroCarousel from "./HeroCarousel";
 import { Highlight } from "./ui/Highlight";
 
 const Hero = () => {
@@ -14,7 +14,7 @@ const Hero = () => {
       </div>
       {/* <div className=" w-full"> */}
       <Suspense>
-        <Carousel />
+        <HeroCarousel />
       </Suspense>
       {/* </div> */}
       <div className="relative container">
