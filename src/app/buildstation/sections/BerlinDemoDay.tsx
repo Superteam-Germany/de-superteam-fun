@@ -23,15 +23,8 @@ const BerlinDemoDay = () => {
           </div>
           <div>
             <ul className="list-disc list-inside space-y-2 px-6">
-              <li>Local irl Demo Day</li>
-              <li>
-                Get hands-on experience by working on your project, meeting new
-                people, finding team members, or joining an existing team.
-              </li>
-              <li>
-                Receive support and advice from Solana experts, and showcase
-                your work at a demo day on the last day of the event.
-              </li>
+              <li>Local, in real life Demo Day on the 15th of October.</li>
+              <li>Hyperdrive submissions are eligible to present.</li>
             </ul>
           </div>
           <div className="py-2 px-6 bg-white/5 rounded-lg flex items-center">
@@ -40,26 +33,26 @@ const BerlinDemoDay = () => {
           <div>
             <ul className="list-decimal space-y-2 list-inside px-6">
               <li>
-                Apply for the Solana Hyperdrive Hackathon{" "}
+                Apply for Solana Hyperdrive{" "}
                 <a className="" href="">
                   here
                 </a>
-                . Make sure to mark “Germany” in the Grizzlython application
-                form to be eligible for Berlin Demo Day prizes.
+                . Make sure to mark “Germany” in the Hyperdrive application form
+                to be eligible for Berlin Demo Day prizes. . Make sure to mark
+                “Germany” in the Grizzlython application form to be eligible for
+                Berlin Demo Day prizes.
               </li>
-              ​
               <li>
                 Fill out Berlin Demo Day form (we will make the form public
                 closer to the Demo Day date).
               </li>
-              ​
               <li>
-                ​Showtime! Join us in real life at the Berlin Build Station and
+                Showtime! Join us in real life at the Berlin Build Station and
                 pitch your hackathon submission on stage!
               </li>
             </ul>
             <a href="" className="underline underline-offset-4">
-              <span className="block my-6 ml-6 text-body">Find out more</span>
+              <span className="block my-6 ml-6 text-body">Register now</span>
             </a>
           </div>
         </div>
