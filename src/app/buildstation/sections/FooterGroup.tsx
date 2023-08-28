@@ -5,6 +5,7 @@ import Link from "next/link";
 import FAQ from "./FAQ";
 import Spacer from "@/components/ui/Spacer";
 import { motion, useScroll, useTransform } from "framer-motion";
+import FadeInDiv from "@/components/ui/FadeInDiv";
 
 type Props = {};
 
@@ -55,17 +56,19 @@ const FooterGroup = (props: Props) => {
               <Link href="">Privacy Policy</Link>
             </div>
           </div>
-          <div className="relative flex justify-center">
-            <div className="absolute top-28">
-              <Image
-                src="/images/st-logo.svg"
-                height={640}
-                width={640}
-                className="-rotate-45"
-                alt="Superteam logo"
-              />
+          <FadeInDiv>
+            <div className="relative flex justify-center">
+              <div className="absolute top-28">
+                <Image
+                  src="/images/st-logo.svg"
+                  height={640}
+                  width={640}
+                  className="-rotate-45"
+                  alt="Superteam logo"
+                />
+              </div>
             </div>
-          </div>
+          </FadeInDiv>
         </section>
       </div>
     </div>

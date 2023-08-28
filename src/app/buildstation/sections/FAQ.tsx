@@ -2,12 +2,15 @@
 import React from "react";
 import AccordionWrapper from "../../../components/Accordion";
 import Link from "next/link";
+import FadeInDiv from "@/components/ui/FadeInDiv";
 
 const FAQ = () => {
   return (
     <div className="">
       <section className="container pt-24 space-y-24">
-        <h2 className="text-center">FAQ</h2>
+        <FadeInDiv>
+          <h2 className="text-center">FAQ</h2>
+        </FadeInDiv>
         <AccordionWrapper
           items={[
             // 10 item questions and answers
