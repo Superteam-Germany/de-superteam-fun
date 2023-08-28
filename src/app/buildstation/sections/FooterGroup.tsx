@@ -12,7 +12,7 @@ const FooterGroup = (props: Props) => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["-200%", "0%"]);
   return (
-    <div className="relative w-full">
+    <div className="relative w-full overflow-hidden">
       <motion.div
         style={{ backgroundPosition: "50% 90%", backgroundSize: "cover", y }}
         // style={{ y }}

@@ -35,7 +35,6 @@ export default function Home() {
       <TitleParagraph />
       <Projects />
       <Spacer />
-
       <Gallery />
     </main>
   );

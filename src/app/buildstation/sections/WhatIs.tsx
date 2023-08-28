@@ -1,9 +1,16 @@
+"use client";
 import React from "react";
 import { Highlight } from "../../../components/ui/Highlight";
+import { motion } from "framer-motion";
 
 const WhatIs = () => {
   return (
-    <div className=" w-full">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+      viewport={{ once: true }}
+      className=" w-full">
       <section className="container min-h-80 py-24 sm:py-36 grid grid-cols-1 lg:grid-cols-2 gap-x-12 justify-center sm:flex-row sm:justify-between items-center">
         <div className="lg:mb-0 mb-12 flex justify-between h-full flex-col">
           <h2 className="uppercase text-h2 self-start ">
@@ -77,7 +84,7 @@ const WhatIs = () => {
           </a>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -2,47 +2,61 @@
 import React from "react";
 import { Highlight } from "../../../components/ui/Highlight";
 import { motion, useScroll, useTransform } from "framer-motion";
-import { Button } from "@/components/ui/button";
 
 const BerlinDemoDay = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["10%", "40%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-50%", "100%"]);
+  const x = useTransform(scrollYProgress, [1, 0], ["-50%", "10%"]);
+
   return (
-    <div className=" w-full relative overflow-hidden">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 1, delay: 0.2 }}
+      viewport={{ once: true }}
+      className=" w-full relative overflow-hidden">
       <motion.div
-        style={{ y }}
-        className="bg-[url('/images/line-wave-2.svg')] hidden lg:block w-full absolute h-[200vh] bg-no-repeat bg-left-top -z-50 bg-fixed "></motion.div>
+        style={{
+          backgroundPosition: "-10% 90%",
+          backgroundSize: "contain",
+          y,
+          x,
+        }}
+        className="bg-[url('/images/line-wave-2.svg')] hidden lg:block w-full opacity-50 absolute h-[100vh] bg-no-repeat bg-left-top -z-50  bg-fixed"></motion.div>
 
       <section className="container min-h-80 space-y-6 lg:space-y-0 py-24 sm:py-36 grid grid-cols-1 lg:grid-cols-2 gap-x-8 justify-center sm:flex-row sm:justify-between items-center">
-        <div className="flex flex-col h-full gap-4">
+        <div className="flex flex-col h-full justify-between gap-4">
           <h2 className="uppercase  text-h2 self-start">
             Berlin
             <br /> <Highlight>Demo day</Highlight>
           </h2>
-          <a
-            href="https://lu.ma/buildstation"
-            className="hover:opacity-100"
-            target="_blank">
-            <Button className="mr-auto md:mt-6" variant="default" size="lg">
-              Register here
-            </Button>
-          </a>
+
+          <div>
+            <h2 className="uppercase text-h3 lg:text-h2.5 self-start">
+              More than
+              <br />
+              <Highlight>$30k </Highlight>
+              in prizes
+            </h2>
+          </div>
         </div>
-        <div className="lg:max-w-[40rem] space-y-6">
-          <div className="py-2 px-6 bg-white/5 rounded-lg flex items-center">
-            <h3 className="uppercase text-h3">Present your project</h3>
+        <div className="lg:max-w-[40rem] space-y-4">
+          <div className="py-4 px-6 bg-white/5 rounded-lg flex items-center">
+            <h3 className="uppercase text-xl leading-none">
+              Present your project
+            </h3>
           </div>
           <div>
-            <ul className="list-disc list-inside space-y-2 px-6">
+            <ul className="list-disc list-inside space-y-2 px-4">
               <li>Local, in real life Demo Day on the 15th of October.</li>
               <li>Hyperdrive submissions are eligible to present.</li>
             </ul>
           </div>
-          <div className="py-2 px-6 bg-white/5 rounded-lg flex items-center">
-            <h3 className="uppercase text-h3">Step-by-step</h3>
+          <div className="px-6 py-4 bg-white/5 rounded-lg flex items-center">
+            <h3 className="uppercase text-xl leading-none">Step-by-step</h3>
           </div>
           <div>
-            <ul className="list-decimal space-y-2 list-inside px-6">
+            <ul className="list-decimal space-y-2 list-inside px-4">
               <li>
                 Apply for Solana Hyperdrive{" "}
                 <a className="" href="">
@@ -63,7 +77,7 @@ const BerlinDemoDay = () => {
           </div>
         </div>
       </section>
-    </div>
+    </motion.div>
   );
 };
 

@@ -1,0 +1,66 @@
+[
+  {
+    "sponsor": "Backpack",
+    "title": "xNFT",
+    "prize": "1 Mad Lad",
+    "logo": "/images/sponsors/backpack-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Greenfield Capital",
+    "prize": "Over $1,000",
+    "title": "Greenfield Pick",
+    "logo": "/images/sponsors/greenfield-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Staking Facilities",
+    "prize": "$3,000 + Merch",
+    "title": "Public Good",
+    "logo": "/images/sponsors/staking-facilities-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Spling Laps",
+    "prize": "$1,500",
+    "title": "Social Apps",
+    "logo": "/images/sponsors/spling-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Kamino Finance",
+    "prize": "$1,000",
+    "title": "Kamino SDK Integration",
+    "logo": "/images/sponsors/kamino-logo.svg",
+    "requirements": ""
+  },
+
+  {
+    "sponsor": "Neodyme",
+    "prize": "$1,000",
+    "title": "Neodyme Pick",
+    "logo": "/images/sponsors/neodyme-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Ultimate",
+    "prize": "$1,000",
+    "title": "UX / UI",
+    "logo": "/images/sponsors/ultimate-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "Civic",
+    "prize": "$2,000",
+    "title": "Integrated with Civic",
+    "logo": "/images/sponsors/civic-logo.svg",
+    "requirements": ""
+  },
+  {
+    "sponsor": "FYEO",
+    "prize": "$5,000 Voucher",
+    "title": "FYEO Pick",
+    "logo": "/images/sponsors/fyeo-logo.webp",
+    "requirements": ""
+  }
+]

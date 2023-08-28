@@ -89,7 +89,7 @@
     /* Mobile font sizes */
     --font-size-h1-mobile: 2rem;
     --font-size-h2-mobile: 2.625rem;
-    --font-size-h3-mobile: 2.125rem;
+    --font-size-h3-mobile: 2rem;
     --font-size-quote-mobile: 1.625rem;
     --font-size-body-mobile: 1rem;
   }
@@ -124,7 +124,7 @@
   }
 
   p {
-    @apply text-body font-primary font-light;
+    @apply text-body font-primary font-normal;
   }
 
   b {
