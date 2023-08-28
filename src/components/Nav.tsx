@@ -9,13 +9,13 @@ import { AnimatePresence, motion } from "framer-motion";
 
 const menuItems = [
   {
-    name: "Build Station",
-    link: "/buildstation",
+    name: "Events",
+    link: "#events",
     type: "link",
   },
   {
-    name: "Events",
-    link: "#events",
+    name: "Build Station",
+    link: "/buildstation",
     type: "link",
   },
   { name: "Follow Us", link: "/", type: "button" },
@@ -54,10 +54,8 @@ const Nav = () => {
                       className={path === item.link ? "opacity-60" : ""}>
                       <Link
                         href={item.link}
-                        className="no-underline font-secondary">
-                        <span className="block text-lg font-normal">
-                          {item.name}
-                        </span>
+                        className="no-underline font-primary font-medium">
+                        <span className="block">{item.name}</span>
                       </Link>
                     </li>
                   );
@@ -70,7 +68,7 @@ const Nav = () => {
                       className={path === item.link ? "opacity-60" : ""}>
                       <Button
                         variant="outline"
-                        className="font-secondary"
+                        className="font-primary font-medium"
                         size="lg">
                         {item.name}
                       </Button>
@@ -90,10 +88,8 @@ const Nav = () => {
                 <li key={i} className={path === item.link ? "opacity-60" : ""}>
                   <Link
                     href={item.link}
-                    className="no-underline font-secondary">
-                    <span className="block text-lg font-normal">
-                      {item.name}
-                    </span>
+                    className="no-underline font-primary font-medium">
+                    <span className="block">{item.name}</span>
                   </Link>
                 </li>
               );
@@ -104,7 +100,7 @@ const Nav = () => {
                 <li key={i} className={path === item.link ? "opacity-60" : ""}>
                   <Button
                     variant="outline"
-                    className="font-secondary"
+                    className="font-primary font-medium"
                     size="lg">
                     {item.name}
                   </Button>
