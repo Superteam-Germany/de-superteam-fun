@@ -4,11 +4,11 @@ import React, { FC } from "react";
 import Image from "next/image";
 
 const cardVariants = cva(
-  "rounded-2xl bg-white/5 h-[450px] flex-col flex justify-between backdrop-blur-xl text-ellipsis shadow-xl overflow-hidden",
+  "rounded-2xl bg-white/5 h-[450px] flex-col w-full flex justify-between backdrop-blur-xl text-ellipsis shadow-xl overflow-hidden",
   {
     variants: {
       variant: {
-        default: "w-[340px]",
+        default: "max-w-[340px]",
         horizontal: "flex",
       },
     },
@@ -25,6 +25,7 @@ interface Props extends VariantProps<typeof cardVariants> {
   title?: string;
   linkContent: string;
   imgSrc?: string;
+  logo?: string;
   href: string;
 }
 
@@ -35,15 +36,29 @@ const Card: FC<Props> = ({
   variant,
   linkContent,
   imgSrc,
+  logo,
   href,
 }) => {
   return (
     <div className={cn(cardVariants({ variant, className }))}>
+      {logo && (
+        <div className="h-48 bg-gradient-primary w-full flex justify-between items-center shrink-0 relative">
+          <Image
+            src={logo}
+            alt="Placeholder image"
+            className="max-w-fit mx-auto max-h-16 "
+            height={1}
+            width={150}
+            style={{ objectFit: "cover", objectPosition: "left bottom" }}
+          />
+        </div>
+      )}
       {imgSrc && (
         <div className="h-48 w-full shrink-0 relative">
           <Image
             src={imgSrc}
             alt="Placeholder image"
+            className="max-w-full"
             fill
             style={{ objectFit: "cover", objectPosition: "left bottom" }}
           />
@@ -51,7 +66,7 @@ const Card: FC<Props> = ({
       )}
       <div className="px-6 pb-6 flex grow flex-col justify-between">
         <div>
-          {title && <h4 className="mt-4 mb-2 font-semibold">{title}</h4>}
+          {title && <h4 className="mt-4 w-full mb-2 font-semibold">{title}</h4>}
           {content && (
             <p className=" line-clamp-6 sm:line-clamp-[4]">{content}</p>
           )}
@@ -61,7 +76,7 @@ const Card: FC<Props> = ({
             href={href}
             className={`${
               title && "text-right"
-            } border-b-[1px] border-white w-max ml-auto font-secondary font-medium hover:opacity-80  group transition-opacity group`}>
+            } border-b-[1px] no-underline border-white w-max ml-auto font-secondary font-medium hover:opacity-80  group transition-opacity group`}>
             <span>{linkContent}</span>
             <span className="ml-2 group-hover:translate-x-1 inline-block transition-all ease-out">
               &rarr;

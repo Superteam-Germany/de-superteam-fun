@@ -72,7 +72,7 @@ const page = () => {
         <Spacer />
       </FadeInDiv>
       <FadeInDiv>
-        <SignUp />
+        <SignUp variant="berlin" />
         <Spacer />
       </FadeInDiv>
       <FadeInDiv>
@@ -80,7 +80,7 @@ const page = () => {
       </FadeInDiv>
       <FadeInDiv>
         <Spacer />
-        <SignUp variant="berlin" />
+        <SignUp />
         <Spacer />
       </FadeInDiv>
       <FooterGroup />

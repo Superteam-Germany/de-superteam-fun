@@ -4,12 +4,12 @@ import { Highlight } from "../../../components/ui/Highlight";
 
 const GetInvolved = () => {
   return (
-    <section>
-      <div className="container my-6 gap-6 md:flex justify-center sm:flex-row-reverse sm:justify-between items-center">
-        <h2 className="uppercase text-h2 py-16">
+    <section className="py-24">
+      <div className="container my-6 gap-6 mb-12 md:flex justify-center sm:flex-row-reverse  sm:justify-between items-start">
+        <h2 className="uppercase text-h2 mb-12">
           How can I <br /> get<Highlight>involved</Highlight>?
         </h2>
-        <div className="max-w-[40rem] lg:py-36">
+        <div className="max-w-[40rem]">
           <p className="font-light">
             Different users at different experience levels will either want to
             learn about the ecosystem or browse bounties. The bounties are
@@ -20,7 +20,7 @@ const GetInvolved = () => {
           </a>
         </div>
       </div>
-      <div className="flex gap-6 flex-col sm:mt-0 mt-16 sm:flex-row container justify-between">
+      <div className="grid sm:grid-cols-2 gap-6 container justify-between">
         <CtaCard
           title="Learn"
           content="Get the ressources to start your journey in the Solana ecosystem."

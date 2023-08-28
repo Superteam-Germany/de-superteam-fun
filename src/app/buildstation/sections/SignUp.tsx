@@ -8,7 +8,7 @@ interface Props {
 
 const SignUp: FC<Props> = ({ variant = "default" }) => {
   return (
-    <div className="relative ">
+    <div className="relative px-2 xl:px-0">
       {variant === "berlin" ? (
         <div
           style={{ backgroundPosition: "100% 100%" }}

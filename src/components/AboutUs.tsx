@@ -6,7 +6,7 @@ const AboutUs = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <motion.div
         style={{ y, scaleX: -1 }}
         className="bg-[url('/images/wave.png')] w-full absolute h-full -z-50 bg-fixed bg-cover "></motion.div>

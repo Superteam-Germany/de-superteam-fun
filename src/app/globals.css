@@ -32,7 +32,7 @@
     --input: 0 0% 89.8%;
     --ring: 0 0% 3.9%;
 
-    --radius: 0.5rem;
+    --radius: 0.625rem;
 
     /* Desktop font sizes */
     --font-size-h1: 6.375rem;
@@ -133,6 +133,10 @@
 
   a {
     @apply underline underline-offset-2 hover:opacity-80;
+  }
+
+  input {
+    @apply placeholder:px-2 rounded-[var(--radius)];
   }
 }
 

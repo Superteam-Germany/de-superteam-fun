@@ -10,7 +10,7 @@ import { AnimatePresence, motion } from "framer-motion";
 const menuItems = [
   {
     name: "Events",
-    link: "#events",
+    link: "/#events",
     type: "link",
   },
   {
@@ -18,7 +18,7 @@ const menuItems = [
     link: "/buildstation",
     type: "link",
   },
-  { name: "Follow Us", link: "/", type: "button" },
+  { name: "Join Now", link: "/", type: "button" },
 ];
 
 const Nav = () => {
@@ -28,13 +28,19 @@ const Nav = () => {
 
   return (
     <>
-      <div className="container mx-auto py-5 flex justify-between xl:px-0 relative">
-        <Image
-          src="/images/stLogoWithIcon.svg"
-          height={50}
-          width={160}
-          alt="Superteam logo"
-        />
+      <div className="container items-center mx-auto py-5 flex justify-between xl:px-0 relative">
+        <Link href="/" className="hover:opacity-100">
+          <Image
+            src={
+              path === "/buildstation"
+                ? "/images/stLogoWithIcon.svg"
+                : "/images/st-logo.svg"
+            }
+            height={35}
+            width={path === "/buildstation" ? 160 : 35}
+            alt="Superteam logo"
+          />
+        </Link>
 
         <button onClick={() => setIsOpen(!isOpen)}>
           <Bars3Icon className="h-6 w-6 text-foreground sm:hidden" />
@@ -51,10 +57,14 @@ const Nav = () => {
                   return (
                     <li
                       key={i}
-                      className={path === item.link ? "opacity-60" : ""}>
+                      className={
+                        path === item.link ? "underline underline-offset-4" : ""
+                      }>
                       <Link
                         href={item.link}
-                        className="no-underline font-primary font-medium">
+                        className={`${
+                          path === item.link ? "hover:opacity-100" : ""
+                        } no-underline font-secondary font-normal text-base`}>
                         <span className="block">{item.name}</span>
                       </Link>
                     </li>
@@ -65,10 +75,12 @@ const Nav = () => {
                   return (
                     <li
                       key={i}
-                      className={path === item.link ? "opacity-60" : ""}>
+                      className={
+                        path === item.link ? "underline underline-offset-4" : ""
+                      }>
                       <Button
                         variant="outline"
-                        className="font-primary font-medium"
+                        className="font-secondary font-normal text-base"
                         size="lg">
                         {item.name}
                       </Button>
@@ -85,10 +97,16 @@ const Nav = () => {
           {menuItems.map((item, i) => {
             if (item.type === "link") {
               return (
-                <li key={i} className={path === item.link ? "opacity-60" : ""}>
+                <li
+                  key={i}
+                  className={
+                    path === item.link ? "underline underline-offset-4 " : ""
+                  }>
                   <Link
                     href={item.link}
-                    className="no-underline font-primary font-medium">
+                    className={`${
+                      path === item.link ? "hover:opacity-100" : ""
+                    } no-underline font-secondary font-normal text-base`}>
                     <span className="block">{item.name}</span>
                   </Link>
                 </li>
@@ -97,10 +115,14 @@ const Nav = () => {
 
             if (item.type === "button") {
               return (
-                <li key={i} className={path === item.link ? "opacity-60" : ""}>
+                <li
+                  key={i}
+                  className={
+                    path === item.link ? "underline underline-offset-4 " : ""
+                  }>
                   <Button
                     variant="outline"
-                    className="font-primary font-medium"
+                    className="font-secondary font-normal text-base"
                     size="lg">
                     {item.name}
                   </Button>

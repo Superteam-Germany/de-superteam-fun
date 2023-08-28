@@ -11,7 +11,7 @@ const axios = Axios.create({
 
 export async function GET(request: Request) {
   const baseId = process.env.AIRTABLE_BASE_ID;
-  const tableId = process.env.AIRTABLE_TABLE_ID;
+  const tableId = process.env.AIRTABLE_EVENTS_TABLE_ID;
   try {
     const events = await axios.get(
       `https://api.airtable.com/v0/${baseId}/${tableId}`

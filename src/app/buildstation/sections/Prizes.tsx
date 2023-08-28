@@ -4,13 +4,13 @@ import Image from "next/image";
 import { Highlight } from "../../../components/ui/Highlight";
 import PrizeList from "../../../misc/prizes.json";
 
+import FadeInDiv from "@/components/ui/FadeInDiv";
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "../../../components/ui/accordion";
-import FadeInDiv from "@/components/ui/FadeInDiv";
 
 type Props = {};
 
@@ -20,8 +20,10 @@ const Prizes = (props: Props) => {
       <div
         style={{
           scale: "-1",
+          backgroundPosition: "right top",
+          backgroundSize: "cover",
         }}
-        className="bg-[url('/images/line-wave-4.svg')] bg-bottom bg-no-repeat top-0 bottom-0 -z-50 w-full bg-contain absolute h-full bg-fixed"></div>
+        className="bg-[url('/images/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
       <section id="prizes" className="relative container py-12 md:pt-24">
         <div className="py-12">
           <h2 className="uppercase text-h2.5">

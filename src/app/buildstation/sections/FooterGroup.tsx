@@ -52,8 +52,8 @@ const FooterGroup = (props: Props) => {
               alt="Superteam logo"
             />
             <div className="space-x-6">
-              <Link href="">Terms & Conditions</Link>
-              <Link href="">Privacy Policy</Link>
+              {/* <Link href="">Terms & Conditions</Link> */}
+              <Link href="/policy">Privacy Policy</Link>
             </div>
           </div>
           <FadeInDiv>
