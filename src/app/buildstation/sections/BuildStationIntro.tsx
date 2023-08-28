@@ -7,12 +7,12 @@ import { Highlight } from "@/components/ui/Highlight";
 const BuildStationIntro = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
-  const x = useTransform(scrollYProgress, [0, 1], ["5%", "80%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["0%", "80%"]);
   return (
     <div className="relative overflow-hidden">
       <motion.div
         style={{ y, x }}
-        className="bg-[url('/images/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-[50vh] bg-no-repeat bg-right-bottom -z-50 bg-fixed bg-cover"></motion.div>
+        className="bg-[url('/images/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-full bg-no-repeat bg-right-bottom -z-50 bg-fixed bg-cover"></motion.div>
       <section className="container min-h-96 py-24 flex flex-col gap-6 z-10 justify-center sm:flex-row sm:justify-between items-center">
         <p className="text-quote-sm  max-w-[50rem] font-normal sm:mt-0">
           ​​Join <Highlight>Superteam Germany</Highlight> for a journey into the
