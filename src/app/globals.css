@@ -93,6 +93,10 @@
     --font-size-quote-mobile: 1.625rem;
     --font-size-body-mobile: 1rem;
   }
+
+  /* a {
+    @apply text-primary underline underline-offset-2 hover:opacity-80;
+  } */
 }
 
 @layer base {

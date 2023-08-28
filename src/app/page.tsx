@@ -9,7 +9,7 @@ import Image from "next/image";
 import Card from "@/components/ui/Card";
 import UpcomingEvents from "@/components/UpcomingEvents";
 import Partners from "@/components/Partners";
-import GetInvolved from "@/components/GetInvolved";
+import GetInvolved from "@/app/buildstation/sections/GetInvolved";
 import Email from "@/components/Email";
 import Projects from "@/components/Projects";
 import Gallery from "@/components/Gallery";

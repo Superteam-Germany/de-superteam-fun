@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import AccordionWrapper from "./Accordion";
+import AccordionWrapper from "../../../components/Accordion";
 import Link from "next/link";
 
 const FAQ = () => {

@@ -2,6 +2,7 @@
 import React, { FC, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import Autoplay from "embla-carousel-autoplay";
 
 interface Props {
   // images: string[];
@@ -15,7 +16,14 @@ const images = [
 ];
 
 const HeroCarousel: FC<Props> = () => {
-  const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: "start" });
+  const [emblaRef, emblaApi] = useEmblaCarousel(
+    {
+      loop: true,
+      align: "start",
+      // duration: 2000,
+    },
+    [Autoplay({ delay: 4000 })]
+  );
 
   const scrollPrev = useCallback(() => {
     if (emblaApi) emblaApi.scrollPrev();

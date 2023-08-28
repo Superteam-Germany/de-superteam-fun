@@ -1,6 +1,6 @@
 import React from "react";
-import CtaCard from "./ui/CtaCard";
-import { Highlight } from "./ui/Highlight";
+import CtaCard from "../../../components/ui/CtaCard";
+import { Highlight } from "../../../components/ui/Highlight";
 
 const GetInvolved = () => {
   return (
