@@ -26,9 +26,12 @@ const SignUp: FC<Props> = ({ variant = "default" }) => {
             Attendance is free but make sure to register here beforehand as the
             venue has limited capacity.
           </p>
-          <Button size="lg" className="">
-            Register Here
-          </Button>
+          <a
+            href="https://lu.ma/buildstation"
+            target="_blank"
+            className="block hover:opacity-100">
+            <Button size="lg">Register Here</Button>
+          </a>
         </div>
       </section>
     </div>
