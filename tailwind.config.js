@@ -26,7 +26,7 @@ module.exports = {
     extend: {
       backgroundImage: {
         "gradient-primary":
-          "linear-gradient(45deg, hsl(var(--primary)), hsl(var(--secondary)))",
+          "linear-gradient(45deg, hsl(var(--primary), 75%) , hsl(var(--secondary)))",
       },
       fontFamily: {
         primary: ["var(--font-primary)", "sans-serif"],
