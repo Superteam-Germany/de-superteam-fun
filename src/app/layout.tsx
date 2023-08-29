@@ -26,6 +26,9 @@ export const metadata: Metadata = {
   title: "Superteam Germany",
   description:
     "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
+  icons: {
+    icon: "/st-flag-logo.png",
+  },
 };
 
 export default function RootLayout({
