@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import Spacer from "@/components/ui/Spacer";
+import Nav from "@/components/Nav";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
