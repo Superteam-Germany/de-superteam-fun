@@ -100,7 +100,7 @@ const Prizes = (props: Props) => {
                   <div className="space-y-2">
                     <div className="flex justify-between items-center">
                       <h4 className="font-semibold text-xl">{prize.title}</h4>
-                      <PlusCircleIcon className="h-7 w-7" fill="#00ff04" />
+                      {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
                     </div>
                     <div className="flex flex-col justify-between">
                       {/* <p>A short description about the track</p> */}
@@ -116,7 +116,7 @@ const Prizes = (props: Props) => {
                         src={prize.logo}
                         className="max-h-12 max-w-fit"
                         height={1}
-                        width={120}
+                        width={130}
                         alt={`${prize.sponsor} logo`}
                       />
                     </div>

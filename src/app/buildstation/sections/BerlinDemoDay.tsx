@@ -42,7 +42,7 @@ const BerlinDemoDay = () => {
           </div>
           <div>
             <ul className="list-disc list-inside space-y-2 px-4">
-              <li>Local, in real life Demo Day on the 15th of October.</li>
+              <li>Local, in real life Demo Day on the 16th of October.</li>
               <li>Hyperdrive submissions are eligible to present.</li>
             </ul>
           </div>

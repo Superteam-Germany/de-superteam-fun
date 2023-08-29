@@ -18,7 +18,7 @@ const menuItems = [
     link: "/buildstation",
     type: "link",
   },
-  { name: "Join Now", link: "/", type: "button" },
+  { name: "Join Now", link: "https://discord.gg/CVwJhHgFfF", type: "button" },
 ];
 
 const Nav = () => {

@@ -16,7 +16,7 @@ const WhatIs = () => {
           </h2>
 
           <div className="">
-            <p className="font-normal">Sep 25 - Oct 13 2023</p>
+            <p className="font-normal">Sep 25 - Oct 16 2023</p>
             <p className="font-normal">Monday to Friday, 10 - 19h</p>
             <p className="font-normal">
               <b>Address</b>:{" "}

@@ -1,4 +1,4 @@
-import AboutUs from "@/app/(main-sections)/AboutUs";
+import AboutUs from "@/components/AboutUs";
 import Hero from "./(main-sections)/Hero";
 import WhatIsSuperteam from "./(main-sections)/WhatIsSupeteam";
 import Nav from "@/components/Nav";

@@ -2,9 +2,9 @@ import Carousel from "../../components/Carousel";
 
 const Gallery = () => {
   const images = [
-    { link: "", imgUrl: "/images/placeholder-2.png", date: "" },
-    { link: "", imgUrl: "/images/placeholder-1.png", date: "" },
-    { link: "", imgUrl: "/images/placeholder-2.png", date: "" },
+    { link: "", imgUrl: "/images/carousel/gallery-3.jpg", date: "" },
+    { link: "", imgUrl: "/images/carousel/gallery-1.jpg", date: "" },
+    { link: "", imgUrl: "/images/carousel/gallery-2.jpg", date: "" },
   ];
   return (
     <section className="">
