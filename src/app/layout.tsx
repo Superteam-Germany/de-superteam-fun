@@ -24,7 +24,7 @@ const fontHyperdrive = Unbounded({
 export const metadata: Metadata = {
   title: "Superteam Germany",
   description:
-    "Uniting the power of innovation, creativity, and collaboration to shaping the Solana Ecosystem in Germany.",
+    "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
 };
 
 export default function RootLayout({
