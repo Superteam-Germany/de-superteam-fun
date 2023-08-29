@@ -5,7 +5,7 @@ import FAQ from "@/app/buildstation/sections/FAQ";
 import Prizes from "@/app/buildstation/sections/Prizes";
 import SignUp from "@/app/buildstation/sections/SignUp";
 import WhatIs from "@/app/buildstation/sections/WhatIs";
-import HeroCarousel from "@/components/HeroCarousel";
+import HeroCarousel from "@/app/(main-sections)/HeroCarousel";
 import Nav from "@/components/Nav";
 import TextBanner from "@/components/TextBanner";
 import { Highlight } from "@/components/ui/Highlight";
@@ -40,13 +40,13 @@ const page = () => {
 
         <div className="relative container">
           <div className="flex gap-8 sm:gap-16 absolute bottom-14">
-            <Link href="">
+            <Link href="https://twitter.com/SuperteamDE" target="_blank">
               <div className="h-6 w-6 scale-75 sm:scale-100 relative">
                 <Image src="/images/x-icon.svg" fill alt="X logo" />
               </div>
             </Link>
 
-            <Link href="">
+            <Link href="https://discord.gg/CVwJhHgFfF" target="_blank">
               <div className="h-6 w-8 relative scale-75 sm:scale-100">
                 <Image src="/images/discord-icon.svg" fill alt="Discord logo" />
               </div>

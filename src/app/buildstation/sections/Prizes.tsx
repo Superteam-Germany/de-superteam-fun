@@ -23,7 +23,7 @@ const Prizes = (props: Props) => {
           backgroundPosition: "right top",
           backgroundSize: "cover",
         }}
-        className="bg-[url('/images/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
+        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
       <section id="prizes" className="relative container py-12 md:pt-24">
         <div className="py-12">
           <h2 className="uppercase text-h2.5">
@@ -70,7 +70,7 @@ const Prizes = (props: Props) => {
           <AccordionItem className="md:w-4/5 md:self-end" value="third">
             <AccordionTrigger>
               <div className="flex justify-between items-center w-full md:px-6 px-2">
-                <h4 className="text-h4">🥉 3rd Place</h4> <span>$2,000</span>{" "}
+                <h4 className="text-h4">🥉 3rd Place</h4> <span>$1,000</span>{" "}
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -84,7 +84,7 @@ const Prizes = (props: Props) => {
             <div className="grid md:grid-cols-2">
               <div className="space-y-4">
                 <h3 className="text-h2.5 leading-none">
-                  Ecosystem Partners Prizes
+                  Ecosystem Partner Prizes
                 </h3>
                 <p>
                   Each Partner awards their prize to the best project building

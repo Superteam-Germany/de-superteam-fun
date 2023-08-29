@@ -2,6 +2,7 @@
 import React from "react";
 import { Highlight } from "../../../components/ui/Highlight";
 import { motion, useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
 
 const BerlinDemoDay = () => {
   const { scrollYProgress } = useScroll();
@@ -17,7 +18,7 @@ const BerlinDemoDay = () => {
           y,
           x,
         }}
-        className="bg-[url('/images/line-wave-2.svg')] hidden lg:block w-full opacity-50 absolute h-[100vh] bg-no-repeat bg-left-top -z-50  bg-fixed"></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-2.svg')] hidden lg:block w-full opacity-50 absolute h-[100vh] bg-no-repeat bg-left-top -z-50  bg-fixed"></motion.div>
 
       <section className="container min-h-80 space-y-6 lg:space-y-0 py-24 sm:py-36 grid grid-cols-1 lg:grid-cols-2 gap-x-8 justify-center sm:flex-row sm:justify-between items-center">
         <div className="flex px-2 xl:px-0 flex-col h-full justify-between gap-4">
@@ -52,9 +53,12 @@ const BerlinDemoDay = () => {
             <ul className="list-decimal space-y-2 list-inside px-4">
               <li>
                 Apply for Solana Hyperdrive{" "}
-                <a className="" href="">
+                <Link
+                  about="_blank"
+                  className=""
+                  href="https://solana.com/hyperdrive">
                   here
-                </a>
+                </Link>
                 . Make sure to mark “Germany” in the Hyperdrive application form
                 to be eligible for Berlin Demo Day prizes.{" "}
               </li>

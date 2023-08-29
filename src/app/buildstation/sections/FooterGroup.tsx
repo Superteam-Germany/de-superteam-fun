@@ -17,7 +17,7 @@ const FooterGroup = (props: Props) => {
       <motion.div
         style={{ backgroundPosition: "50% 90%", backgroundSize: "cover", y }}
         // style={{ y }}
-        className="bg-[url('/images/line-wave-4.svg')] bg-bottom bg-no-repeat -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom bg-no-repeat -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div>
 
       <FAQ />
       <div className="py-48 overflow-hidden">
@@ -28,13 +28,13 @@ const FooterGroup = (props: Props) => {
         </h2>
         <div className="relative container flex justify-center pb-24">
           <div className="flex gap-8 sm:gap-16  bottom-14">
-            <Link href="">
+            <Link href="https://twitter.com/SuperteamDE" target="_blank">
               <div className="h-6 w-6 scale-75 sm:scale-100 relative">
                 <Image src="/images/x-icon.svg" fill alt="X logo" />
               </div>
             </Link>
 
-            <Link href="">
+            <Link href="https://discord.gg/CVwJhHgFfF" target="_blank">
               <div className="h-6 w-8 relative scale-75 sm:scale-100">
                 <Image src="/images/discord-icon.svg" fill alt="Discord logo" />
               </div>

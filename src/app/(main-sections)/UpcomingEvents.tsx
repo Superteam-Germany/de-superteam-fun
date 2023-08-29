@@ -1,11 +1,12 @@
 "use client";
 import React from "react";
-import Card from "./ui/Card";
+import Card from "../../components/ui/Card";
 import Image from "next/image";
-import { Highlight } from "./ui/Highlight";
-import { motion } from "framer-motion";
+import { Highlight } from "../../components/ui/Highlight";
+import { motion, useScroll, useTransform } from "framer-motion";
 import next from "next/types";
 import { EventRecord } from "@/app/types/events";
+import FadeInDiv from "../../components/ui/FadeInDiv";
 
 const getEvents = async (): Promise<{ events: EventRecord[] }> => {
   const events = await fetch("api/events", {
@@ -19,6 +20,9 @@ const getEvents = async (): Promise<{ events: EventRecord[] }> => {
 
 const UpcomingEvents = () => {
   const [events, setEvents] = React.useState<EventRecord[]>([]);
+
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
 
   React.useEffect(() => {
     const fetchEvents = async () => {
@@ -36,10 +40,10 @@ const UpcomingEvents = () => {
   }, []);
 
   return (
-    <div className="relative" id="events">
-      {/* <motion.div
-        style={{}}
-        className="bg-[url('/images/wave-2.png')] w-full absolute h-full -z-50 bg-fixed bg-cover "></motion.div> */}
+    <div className="relative overflow-hidden" id="events">
+      <motion.div
+        style={{ backgroundSize: "cover", y }}
+        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-no-repeat -z-50 w-full absolute h-[100vh] bg-fixed"></motion.div>
       <section className="container  py-24 flex-col-reverse justify-between items-center flex lg:flex-row gap-6">
         <div className="grid sm:grid-cols-2 grow justify-evenly gap-8 items-center">
           {events.map((event: EventRecord) => {
@@ -55,18 +59,20 @@ const UpcomingEvents = () => {
             );
           })}
         </div>
-        <div className="relative flex self-start sm:self-auto justify-center items-center">
-          <Image
-            src="/images/solana-logomark-gradient.svg"
-            className="hidden lg:block"
-            alt="Solana logo"
-            width={500}
-            height={500}
-          />
-          <h2 className="uppercase mb-12 lg:absolute">
-            Upcoming <br /> <Highlight>Events</Highlight>
-          </h2>
-        </div>
+        <FadeInDiv>
+          <div className="relative flex self-start sm:self-auto justify-center items-center">
+            <Image
+              src="/images/solana-logomark-gradient.svg"
+              className="hidden lg:block"
+              alt="Solana logo"
+              width={500}
+              height={500}
+            />
+            <h2 className="uppercase mb-12 lg:absolute">
+              Upcoming <br /> <Highlight>Events</Highlight>
+            </h2>
+          </div>
+        </FadeInDiv>
       </section>
     </div>
   );

@@ -1,8 +1,8 @@
 "use client";
-import React from "react";
-import Card from "./ui/Card";
+import React, { Suspense } from "react";
+import Card from "@/components/ui/Card";
 import { ProjectRecord } from "@/app/types/projects";
-import { Highlight } from "./ui/Highlight";
+import { Highlight } from "@/components/ui/Highlight";
 
 const getProjects = async (): Promise<{ projects: ProjectRecord[] }> => {
   const projects = await fetch("api/projects", {
@@ -21,21 +21,13 @@ const Projects = () => {
   React.useEffect(() => {
     const fetchEvents = async () => {
       const { projects } = await getProjects();
-      console.log(
-        "🚀 ~ file: Projects.tsx:23 ~ fetchEvents ~ projects:",
-        projects
-      );
 
       setProjects(projects);
     };
     fetchEvents();
   }, []);
   return (
-    <div className="relative w-full">
-      <div
-        style={{ backgroundPosition: "50% 90%", backgroundSize: "cover" }}
-        // style={{ y }}
-        className="bg-[url('/images/line-wave-4-primary.svg')] bg-bottom bg-no-repeat -scale-y-100 -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></div>
+    <div className="relative w-full ">
       <section className="container min-h-80 py-24 grid grid-cols-1 lg:grid-cols-2 gap-x-6 justify-center sm:flex-row sm:justify-between items-start">
         <h2 className="uppercase text-h2.5 self-start mb-12">
           Build with our <br /> <Highlight>Community</Highlight>
@@ -54,23 +46,40 @@ const Projects = () => {
       </section>
       <section className=" justify-between pb-24  container gap-4 flex relative h-full overflow-clip">
         <div className="grid grid-cols-1 justify-items-center sm:grid-cols-2 xl:grid-cols-4 gap-4 gap-y-6 grow justify-between">
-          {projects.map(project => {
-            if (!project.fields.display) return;
-            return (
-              <Card
-                key={project.id}
-                title={project.fields.name}
-                content={project.fields.description}
-                linkContent="More information"
-                href={project.fields.link}
-                logo={
-                  project.fields.logo?.length > 0
-                    ? project.fields.logo[0].url
-                    : ""
-                }
-              />
-            );
-          })}
+          <Suspense
+            fallback={
+              <>
+                {[0, 0, 0, 0].map((_, i) => (
+                  <Card
+                    className="animate-pulse"
+                    key={i}
+                    title=""
+                    content=""
+                    linkContent=""
+                    href=""
+                    imgSrc=""
+                  />
+                ))}
+              </>
+            }>
+            {projects.map(project => {
+              if (!project.fields.display) return;
+              return (
+                <Card
+                  key={project.id}
+                  title={project.fields.name}
+                  content={project.fields.description}
+                  linkContent="More information"
+                  href={project.fields.link}
+                  logo={
+                    project.fields.logo?.length > 0
+                      ? project.fields.logo[0].url
+                      : ""
+                  }
+                />
+              );
+            })}
+          </Suspense>
           {/* <Card
         title="Builderz"
         content="Lorem ipsum dolor sit amet consectetur."

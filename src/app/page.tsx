@@ -1,45 +1,54 @@
-import AboutUs from "@/components/AboutUs";
-import Hero from "@/components/Hero";
-import TitleParagraph from "@/components/TitleParagraph";
+import AboutUs from "@/app/(main-sections)/AboutUs";
+import Hero from "./(main-sections)/Hero";
+import WhatIsSuperteam from "./(main-sections)/WhatIsSupeteam";
 import Nav from "@/components/Nav";
 import TextBanner from "@/components/TextBanner";
 import Spacer from "@/components/ui/Spacer";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
 import Card from "@/components/ui/Card";
-import UpcomingEvents from "@/components/UpcomingEvents";
-import Partners from "@/components/Partners";
+import UpcomingEvents from "@/app/(main-sections)/UpcomingEvents";
+import Partners from "./(main-sections)/Partners";
 import GetInvolved from "@/app/buildstation/sections/GetInvolved";
-import Email from "@/components/Email";
-import Projects from "@/components/Projects";
-import Gallery from "@/components/Gallery";
+import Email from "@/app/(main-sections)/Email";
+import Projects from "@/app/(main-sections)/Projects";
+import Gallery from "@/app/(main-sections)/Gallery";
 import FadeInDiv from "@/components/ui/FadeInDiv";
 import Link from "next/link";
+import { Suspense } from "react";
 
 export default function Home() {
   return (
     <main className="min-h-screen">
       <Nav />
       <Spacer />
-      <Hero />
+      <FadeInDiv>
+        <Hero />
+        <Spacer />
+      </FadeInDiv>
+      <FadeInDiv>
+        <AboutUs />
+        <TextBanner />
+      </FadeInDiv>
       <Spacer />
-      <AboutUs />
-      <TextBanner />
-      {/* <TitleParagraph /> */}
+      <Suspense>
+        <WhatIsSuperteam />
+      </Suspense>
       <Spacer />
       <UpcomingEvents />
-      {/* <Spacer /> */}
-      {/* <Partners /> */}
       <Spacer />
+      {/* <Partners /> */}
       <GetInvolved />
       <Spacer />
-      <Email />
-      <Spacer />
       {/* <TitleParagraph /> */}
+
       <Projects />
       <Spacer />
-      <Gallery />
-      <div className="py-48 overflow-hidden">
+      <div className=" overflow-hidden relative">
+        <div
+          style={{ backgroundPosition: "10% 90%", backgroundSize: "cover" }}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')]  bg-bottom bg-no-repeat  -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></div>
+        <Gallery />
         <h2
           className="text-center mb-12 uppercase
     ">
@@ -47,13 +56,13 @@ export default function Home() {
         </h2>
         <div className="relative container flex justify-center pb-24">
           <div className="flex gap-8 sm:gap-16  bottom-14">
-            <Link href="">
+            <Link href="https://twitter.com/SuperteamDE" target="_blank">
               <div className="h-6 w-6 scale-75 sm:scale-100 relative">
                 <Image src="/images/x-icon.svg" fill alt="X logo" />
               </div>
             </Link>
 
-            <Link href="">
+            <Link href="https://discord.gg/CVwJhHgFfF" target="_blank">
               <div className="h-6 w-8 relative scale-75 sm:scale-100">
                 <Image src="/images/discord-icon.svg" fill alt="Discord logo" />
               </div>
@@ -61,7 +70,7 @@ export default function Home() {
           </div>
         </div>
         <Spacer />
-        <section className="mt-24 relative pb-24">
+        <section className="mt-24 relative pb-48">
           <div className="max-w-screen-2xl mx-auto px-4 sm:flex justify-between">
             <Image
               src="/images/stLogoWithIcon.svg"

@@ -33,7 +33,11 @@ const FAQ = () => {
               ),
               content: (
                 <p>
-                  Yes - please register <a href="">here</a>.
+                  Yes - please register{" "}
+                  <a href="https://solana.com/hyperdrive" target="_blank">
+                    here
+                  </a>
+                  .
                 </p>
               ),
             },

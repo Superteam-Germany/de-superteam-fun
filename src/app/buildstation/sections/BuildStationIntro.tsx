@@ -13,14 +13,14 @@ const BuildStationIntro = () => {
     <div className="relative overflow-hidden">
       <motion.div
         style={{ y, x, backgroundSize: "cover" }}
-        className="bg-[url('/images/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-screen bg-no-repeat bg-right-bottom -z-50 bg-fixed "></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-screen bg-no-repeat bg-right-bottom -z-50 bg-fixed "></motion.div>
       <section className="container min-h-96 py-24 flex flex-col gap-6 z-10 justify-center sm:flex-row sm:justify-between items-center">
         <FadeInDiv>
           <p className="text-quote-sm  max-w-[50rem] font-normal sm:mt-0">
             ​​Join <Highlight>Superteam Germany</Highlight> for a journey into
-            the future of Solana at our Build Station in Berlin. This is your
-            opportunity to be a part of shaping the future of Solana, and to get
-            the support you need to build for the{" "}
+            the future of Solana at our Build Station in Berlin.This is your
+            opportunity to shape the future of blockchain, and to get the
+            support you need to build for the{" "}
             <a
               href="https://solana.com/hyperdrive"
               rel="noopener"

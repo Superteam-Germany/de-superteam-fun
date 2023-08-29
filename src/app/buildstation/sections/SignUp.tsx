@@ -12,9 +12,9 @@ const SignUp: FC<Props> = ({ variant = "default" }) => {
       {variant === "berlin" ? (
         <div
           style={{ backgroundPosition: "100% 100%" }}
-          className="bg-[url('/images/berlin-1.png')] w-full brightness-125 absolute h-full -z-50 bg-80% sm:bg-50%  bg-no-repeat mix-blend-lighten "></div>
+          className="bg-[url('/images/backgrounds/berlin-1.png')] w-full brightness-125 absolute h-full -z-50 bg-80% sm:bg-50%  bg-no-repeat mix-blend-lighten "></div>
       ) : (
-        <div className="bg-[url('/images/line-wave-1.png')]  w-full absolute h-full bg-blend-multiply -z-50 bg-left bg-cover"></div>
+        <div className="bg-[url('/images/backgrounds/line-wave-1.png')]  w-full absolute h-full bg-blend-multiply -z-50 bg-left bg-cover"></div>
       )}
 
       <section className="py-24 sm:py-36 flex-col bg lg:flex-row items-center justify-evenly container gap-4">

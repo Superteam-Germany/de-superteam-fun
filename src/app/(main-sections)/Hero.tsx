@@ -2,7 +2,7 @@ import React, { Suspense } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import HeroCarousel from "./HeroCarousel";
-import { Highlight } from "./ui/Highlight";
+import { Highlight } from "@/components/ui/Highlight";
 
 const Hero = () => {
   return (
@@ -13,19 +13,19 @@ const Hero = () => {
         </h1>
       </div>
       {/* <div className=" w-full"> */}
-      <Suspense>
+      <Suspense fallback={<div></div>}>
         <HeroCarousel />
       </Suspense>
       {/* </div> */}
       <div className="relative container">
         <div className="flex gap-6 sm:gap-10 absolute bottom-14">
-          <Link href="">
+          <Link target="_blank" href="https://twitter.com/SuperteamDE">
             <div className="h-6 w-6 scale-75 sm:scale-100 relative">
               <Image src="/images/x-icon.svg" fill alt="X logo" />
             </div>
           </Link>
 
-          <Link href="">
+          <Link target="_blank" href="https://discord.gg/CVwJhHgFfF">
             <div className="h-6 w-8 relative scale-75 sm:scale-100">
               <Image src="/images/discord-icon.svg" fill alt="Discord logo" />
             </div>

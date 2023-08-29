@@ -2,6 +2,7 @@
 import React, { FC, useCallback } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface Props {
   images: { imgUrl: string; link: string }[];
@@ -33,17 +34,19 @@ const Carousel: FC<Props> = ({ images }) => {
                   style={{ objectFit: "cover", objectPosition: "center" }}
                   alt=""
                 />
-                <div className="w-full px-8 py-4 bg-black/5 flex gap-4 absolute bottom-0 backdrop-blur-md">
-                  <a
-                    href=""
+                {/* <div className="w-full px-8 py-4 bg-black/5 flex gap-4 absolute bottom-0 backdrop-blur-md">
+                  <Link
+                    href="https://twitter.com/SuperteamDE"
+                    target="_blank"
                     className="opacity-60 hover:opacity-80 transition-opacity">
                     <div className="h-6 w-6 scale-75 sm:scale-100 relative">
                       <Image src="/images/x-icon.svg" fill alt="X logo" />
                     </div>
-                  </a>
+                  </Link>
 
-                  <a
-                    href=""
+                  <Link
+                    href="https://discord.gg/CVwJhHgFfF"
+                    target="_blank"
                     className="opacity-60 hover:opacity-80 transition-opacity">
                     <div className="h-6 w-8 relative scale-75 sm:scale-100">
                       <Image
@@ -52,8 +55,8 @@ const Carousel: FC<Props> = ({ images }) => {
                         alt="Discord logo"
                       />
                     </div>
-                  </a>
-                </div>
+                  </Link>
+                </div> */}
               </div>
             ))}
         </div>

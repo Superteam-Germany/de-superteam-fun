@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { Button } from "./ui/button";
+import { Button } from "../../components/ui/button";
 import { NextRequest, NextResponse } from "next/server";
 import Axios, { isAxiosError } from "axios";
 
@@ -49,7 +49,7 @@ const Email = () => {
         Stay up <br />
         to date
       </h2>
-      <div className="p-10 rounded-2xl max-w-3xl bg-black/10 backdrop-blur-xl">
+      <div className="p-10 rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl">
         <form action={create} className="flex flex-col gap-8">
           <h3 className="max-w-2/3 leading-tight">
             Be the first to know about the next Superteam Germany events.
