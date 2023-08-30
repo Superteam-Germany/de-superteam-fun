@@ -20,11 +20,18 @@ const GetInvolved = () => {
             <h2 className="uppercase text-h2 mb-12">
               How can I <br /> get<Highlight>involved</Highlight>?
             </h2>
-            <div className="max-w-[40rem]">
+            <div className="max-w-[40rem] space-y-4">
               <p className="font-light">
-                Different users at different experience levels will either want
-                to learn about the ecosystem or browse bounties. The bounties
-                are hosted at earn.superteam.fun and the learning resources TBD.
+                In a pre-crypto world, we had to fit into broiler categories —
+                founder, investor, or employee. Crypto allows us to be
+                free-range and be all 3 at the same time. Our mission is to
+                bring the benefits of the ownership economy to the creative
+                class (rent your time for tokens, not dollars) while creating
+                flexible and remote work opportunities for all members.
+              </p>
+              <p>
+                So what are you waiting for? Start learning, earning and
+                building with us!
               </p>
               <a
                 href="https://discord.gg/CVwJhHgFfF"

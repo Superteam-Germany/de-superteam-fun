@@ -1,3 +1,4 @@
+import FadeInDiv from "@/components/ui/FadeInDiv";
 import Carousel from "../../components/Carousel";
 
 const Gallery = () => {
@@ -8,10 +9,12 @@ const Gallery = () => {
   ];
   return (
     <section className="">
-      <div className="container">
-        <h2 className="uppercase py-24">How we roll</h2>
-      </div>
-      <Carousel images={images} />
+      <FadeInDiv>
+        <div className="container">
+          <h2 className="uppercase py-24">How we roll</h2>
+        </div>
+        <Carousel images={images} />
+      </FadeInDiv>
     </section>
   );
 };

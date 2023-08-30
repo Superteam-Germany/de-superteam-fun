@@ -43,7 +43,7 @@ const Nav = () => {
         </Link>
 
         <button onClick={() => setIsOpen(!isOpen)}>
-          <Bars3Icon className="h-6 w-6 text-foreground sm:hidden" />
+          <Bars3Icon className="h-6 w-6 text-foreground sm:hidden text-white" />
         </button>
         <AnimatePresence>
           {isOpen && (
