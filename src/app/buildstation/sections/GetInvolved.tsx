@@ -47,13 +47,13 @@ const GetInvolved = () => {
         <div className="grid sm:grid-cols-2 gap-6 container justify-between">
           <CtaCard
             title="Learn"
-            content="Get the ressources to start your journey in the Solana ecosystem."
+            content="A manual for joining the Solana ecosystem. By builders for builders. Use these Solana Foundation and community courses to begin your journey into Solana development."
             href="https://solana.com/developers"
             linkContent="Check out our learning resources"
           />
           <CtaCard
             title="Earn"
-            content="Use our platform earn.superteam.fun to get start tasks for us and get rewarded."
+            content="Start Earning Crypto by Contributing to Solana. Explore bounties, grants, and jobs with high growth startups in the Solana ecosystem."
             href="https://earn.superteam.fun"
             linkContent="Start earning today!"
           />

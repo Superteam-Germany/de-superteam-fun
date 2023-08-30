@@ -15,6 +15,7 @@ const CtaCard: FC<Props> = ({ title, content, href, linkContent }) => {
 
       <a
         href={href}
+        target="_blank"
         className={`${title} border-b-[1px] no-underline border-white w-max ml-auto font-secondary font-medium hover:opacity-80  group transition-opacity group`}>
         <span>{linkContent}</span>
         <span className="ml-2 group-hover:translate-x-1 inline-block transition-all ease-out">
