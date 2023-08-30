@@ -102,8 +102,8 @@ const Prizes = (props: Props) => {
                       <h4 className="font-semibold text-xl">{prize.title}</h4>
                       {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
                     </div>
-                    <div className="flex flex-col justify-between">
-                      {/* <p>A short description about the track</p> */}
+                    <div className="flex flex-col justify-between line-clamp-3">
+                      <p>{prize.requirements}</p>
                     </div>
                   </div>
 

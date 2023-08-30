@@ -1,15 +1,22 @@
 [
   {
+    "sponsor": "Bonk",
+    "title": "Bonk",
+    "prize": "6.9 Billion $BONK",
+    "logo": "/images/sponsors/bonk-logo.png",
+    "requirements": "Integrate Bonk into your project."
+  },
+  {
     "sponsor": "Backpack",
     "title": "xNFT",
     "prize": "1 Mad Lad",
     "logo": "/images/sponsors/backpack-logo.svg",
-    "requirements": ""
+    "requirements": "Build an xNFT for the Backpack wallet."
   },
   {
     "sponsor": "Greenfield Capital",
     "prize": "Over $1,000",
-    "title": "Greenfield Pick",
+    "title": "Greenfield",
     "logo": "/images/sponsors/greenfield-logo.svg",
     "requirements": ""
   },
@@ -25,12 +32,12 @@
     "prize": "$1,500",
     "title": "Social Apps",
     "logo": "/images/sponsors/spling-logo.svg",
-    "requirements": ""
+    "requirements": "Build dApps using Spling's SDK."
   },
   {
     "sponsor": "Kamino Finance",
     "prize": "$1,000",
-    "title": "Kamino SDK Integration",
+    "title": "Kamino Finance",
     "logo": "/images/sponsors/kamino-logo.svg",
     "requirements": ""
   },
@@ -38,7 +45,7 @@
   {
     "sponsor": "Neodyme",
     "prize": "$1,000",
-    "title": "Neodyme Pick",
+    "title": "Neodyme",
     "logo": "/images/sponsors/neodyme-logo.svg",
     "requirements": ""
   },
@@ -47,14 +54,14 @@
     "prize": "$1,000",
     "title": "UX / UI",
     "logo": "/images/sponsors/ultimate-logo.svg",
-    "requirements": ""
+    "requirements": "Build innovative DeFi protocols or tooling."
   },
   {
     "sponsor": "Civic",
     "prize": "$2,000",
     "title": "Integrated with Civic",
     "logo": "/images/sponsors/civic-logo.svg",
-    "requirements": ""
+    "requirements": "Integrate Civic's identity protocol within your dApp."
   },
   {
     "sponsor": "FYEO",
