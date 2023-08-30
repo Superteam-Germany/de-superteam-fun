@@ -22,7 +22,7 @@ const UpcomingEvents = () => {
   const [events, setEvents] = React.useState<EventRecord[]>([]);
 
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ["0%", "0%"]);
+  const y = useTransform(scrollYProgress, [0, 1], ["-40%", "0%"]);
 
   React.useEffect(() => {
     const fetchEvents = async () => {
@@ -43,7 +43,7 @@ const UpcomingEvents = () => {
     <div className="relative overflow-hidden" id="events">
       <motion.div
         style={{ backgroundSize: "cover", y }}
-        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-no-repeat -z-50 w-full absolute h-[100vh] bg-fixed"></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"></motion.div>
       <section className="container  py-24 flex-col-reverse justify-between items-center flex lg:flex-row gap-6">
         <div className="grid sm:grid-cols-2 grow justify-evenly gap-8 items-center">
           {events.map((event: EventRecord) => {
