@@ -29,6 +29,29 @@ export const metadata: Metadata = {
   icons: {
     icon: "/st-flag-logo.png",
   },
+  openGraph: {
+    title: "Superteam Germany",
+    description:
+      "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
+    url: "https://de.superteam.fun",
+    siteName: "Superteam Germany",
+    images: [
+      {
+        url: "/st-banner.png",
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Superteam Germany",
+    description:
+      "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
+    images: ["/st-banner.png"],
+  },
 };
 
 export default function RootLayout({
