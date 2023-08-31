@@ -1,11 +1,11 @@
 "use client";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import Link from "next/link";
 import { Button } from "./ui/button";
 import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
+import Link from "next/link";
 
 const menuItems = [
   {
@@ -106,7 +106,7 @@ const Nav = () => {
                     href={item.link}
                     className={`${
                       path === item.link ? "hover:opacity-100" : ""
-                    } no-underline font-secondary font-normal text-base`}>
+                    } no-underline font-secondary tracking-wide font-normal text-base`}>
                     <span className="block">{item.name}</span>
                   </Link>
                 </li>
@@ -120,12 +120,14 @@ const Nav = () => {
                   className={
                     path === item.link ? "underline underline-offset-4 " : ""
                   }>
-                  <Button
-                    variant="outline"
-                    className="font-secondary font-normal text-base"
-                    size="lg">
-                    {item.name}
-                  </Button>
+                  <Link href={item.link} target="_blank" className="">
+                    <Button
+                      variant="outline"
+                      className="font-secondary tracking-wide font-normal text-base"
+                      size="lg">
+                      {item.name}
+                    </Button>
+                  </Link>
                 </li>
               );
             }
