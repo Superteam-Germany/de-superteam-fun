@@ -49,7 +49,7 @@ const Card: FC<Props> = ({
             className="max-w-fit mx-auto max-h-16 "
             height={1}
             width={150}
-            style={{ objectFit: "cover", objectPosition: "left bottom" }}
+            style={{ objectFit: "contain", objectPosition: "center" }}
           />
         </div>
       )}
