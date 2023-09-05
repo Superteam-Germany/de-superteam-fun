@@ -115,6 +115,10 @@ const Prizes = (props: Props) => {
                       <Image
                         src={prize.logo}
                         className="max-h-12 max-w-fit"
+                        style={{
+                          objectFit: "contain",
+                          objectPosition: "left",
+                        }}
                         height={1}
                         width={130}
                         alt={`${prize.sponsor} logo`}
