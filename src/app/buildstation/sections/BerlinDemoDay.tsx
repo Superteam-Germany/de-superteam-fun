@@ -59,7 +59,7 @@ const BerlinDemoDay = () => {
                   href="https://solana.com/hyperdrive">
                   here
                 </Link>
-                . Make sure to mark “Germany” in the Hyperdrive application form
+                . Make sure to mark Germany* in the Hyperdrive application form
                 to be eligible for Berlin Demo Day prizes.{" "}
               </li>
               <li>
@@ -68,8 +68,13 @@ const BerlinDemoDay = () => {
               </li>
               <li>
                 Showtime! Join us in real life at the Berlin Build Station and
-                pitch your hackathon submission on stage!
+                pitch your hackathon submission on stage! <br />
               </li>
+              <p className="text-sm italic">
+                *Teams applying for Hyperdrive from Germany, or teams who are
+                part of Zurich satellite event, are eligible to present and win
+                prizes at our local Demo Day in Berlin.
+              </p>
             </ul>
           </div>
         </div>
