@@ -46,10 +46,12 @@ const Prizes = (props: Props) => {
         <Accordion
           type="single"
           collapsible
-          className="md:space-y-8 space-y-4 py-12 flex flex-col md:px-8 max-w-screen-lg mx-auto">
-          <AccordionItem className="md:w-4/5" value="first">
+          className="md:space-y-8 grid grid-cols-1 md:grid-cols-12 gap space-y-4 py-12 md:px-8 max-w-screen-lg mx-auto">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:col-start-2"
+            value="first">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
                 <h4 className="text-h4">🏆 1st Place</h4> <span>$5,000</span>{" "}
               </div>
             </AccordionTrigger>
@@ -57,9 +59,11 @@ const Prizes = (props: Props) => {
               You&#39;re invited to join Superteam Germany!
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem className="md:w-4/5 md:self-center" value="second">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-center md:col-start-3"
+            value="second">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2 ">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2 ">
                 <h4 className="text-h4">🥈 2nd Place</h4> <span>$3,000</span>{" "}
               </div>
             </AccordionTrigger>
@@ -67,10 +71,27 @@ const Prizes = (props: Props) => {
               You&#39;re invited to join Superteam Germany!
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem className="md:w-4/5 md:self-end" value="third">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-end md:col-start-4"
+            value="third">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
                 <h4 className="text-h4">🥉 3rd Place</h4> <span>$1,000</span>{" "}
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              You&#39;re invited to join Superteam Germany!
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-end md:col-start-5"
+            value="green">
+            <AccordionTrigger
+              className="outline-primary outline-offset-2 brightness-125 outline outline-2"
+              chevronColor="text-primary brightness-125">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
+                <h4 className=" text-primary brightness-125">🌳 Green Track</h4>{" "}
+                <span className="text-primary brightness-125">$1,000</span>{" "}
               </div>
             </AccordionTrigger>
             <AccordionContent>
@@ -94,39 +115,45 @@ const Prizes = (props: Props) => {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 py-12 sm:py-24">
               {PrizeList.map((prize, i) => (
-                <div
+                <a
                   key={i}
-                  className="bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex justify-between flex-col rounded-xl h-64 p-8">
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <h4 className="font-semibold text-xl">{prize.title}</h4>
-                      {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
+                  href={prize.link}
+                  target="_blank"
+                  className="no-underline hover:opacity-100">
+                  <div className="bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex justify-between flex-col rounded-xl h-64 p-8">
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <h4 className="font-semibold text-xl">{prize.title}</h4>
+                        {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
+                      </div>
+                      <div className="flex flex-col justify-between line-clamp-3">
+                        <p className="line-clamp-3">{prize.requirements}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col justify-between line-clamp-3">
-                      <p>{prize.requirements}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex justify-between items-center">
-                    <div>
-                      {/* <span className="text-base block mb-2 text-white">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        {/* <span className="text-base block mb-2 text-white">
                   Sponsored by
                 </span> */}
-                      <Image
-                        src={prize.logo}
-                        className="max-h-12 max-w-fit"
-                        style={{
-                          objectFit: "contain",
-                          objectPosition: "left",
-                        }}
-                        height={1}
-                        width={130}
-                        alt={`${prize.sponsor} logo`}
-                      />
+                        <Image
+                          src={prize.logo}
+                          className="max-h-12 max-w-fit"
+                          style={{
+                            objectFit: "contain",
+                            objectPosition: "left",
+                          }}
+                          height={1}
+                          width={130}
+                          alt={`${prize.sponsor} logo`}
+                        />
+                      </div>
+                      <span className="self-end text-right">
+                        🏆 {prize.prize}
+                      </span>
                     </div>
-                    <span className="self-end">🏆 {prize.prize}</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
