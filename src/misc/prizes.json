@@ -4,42 +4,56 @@
     "title": "Bonk",
     "prize": "6.9 Billion $BONK",
     "logo": "/images/sponsors/bonk-logo.png",
-    "requirements": "Integrate Bonk into your project."
+    "requirements": "Focus on use cases for the Bonk token, and integrate Bonk into your project.",
+    "link": "https://www.bonkcoin.com/"
   },
   {
     "sponsor": "Backpack",
     "title": "xNFT",
     "prize": "1 Mad Lad",
     "logo": "/images/sponsors/backpack-logo.svg",
-    "requirements": "Build an xNFT for the Backpack wallet."
+    "requirements": "Build an xNFT for the Backpack wallet.",
+    "link": "https://backpack.app"
   },
   {
     "sponsor": "Greenfield Capital",
     "prize": "Over $1,000",
     "title": "Greenfield",
     "logo": "/images/sponsors/greenfield-logo.svg",
-    "requirements": ""
+    "requirements": "All Demo Day projects automatically qualify for this track. Additionally to the prize, this track winner will also be mentioned in their magazine, and receive mentoring from the Greenfield team.",
+    "link": "https://greenfield.xyz/"
   },
   {
     "sponsor": "Staking Facilities",
     "prize": "$3,000 + Merch",
     "title": "Public Good",
     "logo": "/images/sponsors/staking-facilities-logo.svg",
-    "requirements": ""
+    "requirements": "Projects focused on Public Good qualify for this track. The prize also includes exclusive merch.",
+    "link": "https://stakingfacilities.com/"
   },
   {
-    "sponsor": "Spling Laps",
+    "sponsor": "EUROe",
+    "prize": "€3000",
+    "title": "EUROe",
+    "logo": "/images/sponsors/euroe-logo.svg",
+    "requirements": "Build applications for European users. Build products with a focus on EUROe, or how we use euros in our day-to-day lives.",
+    "link": "https://www.euroe.com/"
+  },
+  {
+    "sponsor": "Spling Labs",
     "prize": "$1,500",
     "title": "Social Apps",
     "logo": "/images/sponsors/spling-logo.svg",
-    "requirements": "Build dApps using Spling's SDK."
+    "requirements": "Build dApps using Spling's SDK.",
+    "link": "https://www.splinglabs.com/"
   },
   {
     "sponsor": "Kamino Finance",
     "prize": "$1,000",
     "title": "Kamino Finance",
     "logo": "/images/sponsors/kamino-logo.svg",
-    "requirements": ""
+    "requirements": "",
+    "link": "https://kamino.finance"
   },
 
   {
@@ -47,27 +61,71 @@
     "prize": "$1,000",
     "title": "Neodyme",
     "logo": "/images/sponsors/neodyme-logo.svg",
-    "requirements": ""
+    "requirements": "Tackle security problems, or demonstrate commitment to building a notably secure on-chain contract.",
+    "link": "https://neodyme.io/"
   },
   {
     "sponsor": "Ultimate",
     "prize": "$1,000",
     "title": "UX / UI",
     "logo": "/images/sponsors/ultimate-logo.svg",
-    "requirements": "Build innovative DeFi protocols or tooling."
+    "requirements": "Build innovative DeFi protocols or tooling.",
+    "link": "https://ultimate.app"
+  },
+  {
+    "sponsor": "Orca",
+    "prize": "$2000",
+    "title": "Orca",
+    "logo": "/images/sponsors/orca-logo.svg",
+    "requirements": "Build DeFi products on Orca's infrastrcuture and SDKs.",
+    "link": "https://www.orca.so/"
   },
   {
     "sponsor": "Civic",
     "prize": "$2,000",
     "title": "Integrated with Civic",
     "logo": "/images/sponsors/civic-logo.svg",
-    "requirements": "Integrate Civic's identity protocol within your dApp."
+    "requirements": "Integrate Civic's identity protocol within your dApp.",
+    "link": "https://www.civic.com/"
   },
   {
     "sponsor": "FYEO",
     "prize": "$5,000 Voucher",
-    "title": "FYEO",
+    "title": "FYEO Pick",
     "logo": "/images/sponsors/fyeo-logo.webp",
-    "requirements": ""
+    "requirements": "All Demo Day projects automatically qualify for this track.",
+    "link": "https://www.fyeo.io/"
+  },
+  {
+    "sponsor": "Light Protocol",
+    "prize": "$1000",
+    "title": "Light Protocol",
+    "logo": "/images/sponsors/light-protocol-logo.svg",
+    "requirements": "Build ZK powered privacy applications using Light Protocol's SDKs.",
+    "link": "https://lightprotocol.com/"
+  },
+  {
+    "sponsor": "CV VC",
+    "prize": "$1000 + Accelerator",
+    "title": "CV VC",
+    "logo": "/images/sponsors/cv-labs-logo.svg",
+    "requirements": "All Demo Day projects automatically qualify for this track.",
+    "link": "https://www.cvvc.com/"
+  },
+  {
+    "sponsor": "Monstre",
+    "prize": "Non-monetary",
+    "title": "Monstre",
+    "logo": "/images/sponsors/monstre-logo.png",
+    "requirements": "All Demo Day projects automatically qualify for this track.",
+    "link": "https://www.monstre.net/"
+  },
+  {
+    "sponsor": "G2 Esports",
+    "prize": "Non-monetary",
+    "title": "G2 Esports",
+    "logo": "/images/sponsors/g2-logo.svg",
+    "requirements": "All Demo Day projects automatically qualify for this track.",
+    "link": "https://g2esports.com/"
   }
 ]

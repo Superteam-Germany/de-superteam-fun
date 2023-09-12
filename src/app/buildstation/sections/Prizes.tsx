@@ -94,39 +94,43 @@ const Prizes = (props: Props) => {
             </div>
             <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8 py-12 sm:py-24">
               {PrizeList.map((prize, i) => (
-                <div
+                <a
                   key={i}
-                  className="bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex justify-between flex-col rounded-xl h-64 p-8">
-                  <div className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <h4 className="font-semibold text-xl">{prize.title}</h4>
-                      {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
+                  href={prize.link}
+                  target="_blank"
+                  className="no-underline hover:opacity-100">
+                  <div className="bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex justify-between flex-col rounded-xl h-64 p-8">
+                    <div className="space-y-2">
+                      <div className="flex justify-between items-center">
+                        <h4 className="font-semibold text-xl">{prize.title}</h4>
+                        {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
+                      </div>
+                      <div className="flex flex-col justify-between line-clamp-3">
+                        <p className="line-clamp-3">{prize.requirements}</p>
+                      </div>
                     </div>
-                    <div className="flex flex-col justify-between line-clamp-3">
-                      <p>{prize.requirements}</p>
-                    </div>
-                  </div>
 
-                  <div className="flex justify-between items-center">
-                    <div>
-                      {/* <span className="text-base block mb-2 text-white">
+                    <div className="flex justify-between items-center">
+                      <div>
+                        {/* <span className="text-base block mb-2 text-white">
                   Sponsored by
                 </span> */}
-                      <Image
-                        src={prize.logo}
-                        className="max-h-12 max-w-fit"
-                        style={{
-                          objectFit: "contain",
-                          objectPosition: "left",
-                        }}
-                        height={1}
-                        width={130}
-                        alt={`${prize.sponsor} logo`}
-                      />
+                        <Image
+                          src={prize.logo}
+                          className="max-h-12 max-w-fit"
+                          style={{
+                            objectFit: "contain",
+                            objectPosition: "left",
+                          }}
+                          height={1}
+                          width={130}
+                          alt={`${prize.sponsor} logo`}
+                        />
+                      </div>
+                      <span className="self-end">🏆 {prize.prize}</span>
                     </div>
-                    <span className="self-end">🏆 {prize.prize}</span>
                   </div>
-                </div>
+                </a>
               ))}
             </div>
           </div>
