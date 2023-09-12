@@ -46,10 +46,12 @@ const Prizes = (props: Props) => {
         <Accordion
           type="single"
           collapsible
-          className="md:space-y-8 space-y-4 py-12 flex flex-col md:px-8 max-w-screen-lg mx-auto">
-          <AccordionItem className="md:w-4/5" value="first">
+          className="md:space-y-8 grid grid-cols-1 md:grid-cols-12 gap space-y-4 py-12 md:px-8 max-w-screen-lg mx-auto">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:col-start-2"
+            value="first">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
                 <h4 className="text-h4">🏆 1st Place</h4> <span>$5,000</span>{" "}
               </div>
             </AccordionTrigger>
@@ -57,9 +59,11 @@ const Prizes = (props: Props) => {
               You&#39;re invited to join Superteam Germany!
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem className="md:w-4/5 md:self-center" value="second">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-center md:col-start-3"
+            value="second">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2 ">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2 ">
                 <h4 className="text-h4">🥈 2nd Place</h4> <span>$3,000</span>{" "}
               </div>
             </AccordionTrigger>
@@ -67,10 +71,27 @@ const Prizes = (props: Props) => {
               You&#39;re invited to join Superteam Germany!
             </AccordionContent>
           </AccordionItem>
-          <AccordionItem className="md:w-4/5 md:self-end" value="third">
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-end md:col-start-4"
+            value="third">
             <AccordionTrigger>
-              <div className="flex justify-between items-center w-full md:px-6 px-2">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
                 <h4 className="text-h4">🥉 3rd Place</h4> <span>$1,000</span>{" "}
+              </div>
+            </AccordionTrigger>
+            <AccordionContent>
+              You&#39;re invited to join Superteam Germany!
+            </AccordionContent>
+          </AccordionItem>
+          <AccordionItem
+            className="md:w-[550px] col-span-full md:self-end md:col-start-5"
+            value="green">
+            <AccordionTrigger
+              className="outline-primary outline-offset-2 brightness-125 outline outline-2"
+              chevronColor="text-primary brightness-125">
+              <div className="flex justify-between  items-center w-full md:px-6 px-2">
+                <h4 className=" text-primary brightness-125">🌳 Green Track</h4>{" "}
+                <span className="text-primary brightness-125">$1,000</span>{" "}
               </div>
             </AccordionTrigger>
             <AccordionContent>
