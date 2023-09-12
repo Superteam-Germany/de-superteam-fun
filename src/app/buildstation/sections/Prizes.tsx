@@ -127,7 +127,9 @@ const Prizes = (props: Props) => {
                           alt={`${prize.sponsor} logo`}
                         />
                       </div>
-                      <span className="self-end">🏆 {prize.prize}</span>
+                      <span className="self-end text-right">
+                        🏆 {prize.prize}
+                      </span>
                     </div>
                   </div>
                 </a>
