@@ -8,8 +8,8 @@ import FadeInDiv from '@/components/ui/FadeInDiv';
 const getProjects = async (): Promise<{ projects: ProjectRecord[] }> => {
   const projects = await fetch('api/projects', {
     next: {
-      // revalidate every week
-      revalidate: 7 * 24 * 60 * 60,
+      // revalidate every day
+      revalidate: 24 * 60 * 60,
     },
   });
 
