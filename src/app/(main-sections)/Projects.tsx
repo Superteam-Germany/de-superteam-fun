@@ -9,7 +9,7 @@ const getProjects = async (): Promise<{ projects: ProjectRecord[] }> => {
   const projects = await fetch('api/projects', {
     next: {
       // revalidate every day
-      revalidate: 24 * 60 * 60,
+      // revalidate: 60 * 60,
     },
   });
 
