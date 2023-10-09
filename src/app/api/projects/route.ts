@@ -1,5 +1,5 @@
-import { NextResponse } from "next/server";
-import Axios, { isAxiosError } from "axios";
+import { NextResponse } from 'next/server';
+import Axios, { isAxiosError } from 'axios';
 
 const axios = Axios.create({
   headers: {
@@ -19,7 +19,7 @@ export async function GET(request: Request) {
     return NextResponse.json({ projects: projects.data.records });
   } catch (error) {
     if (isAxiosError(error)) {
-      console.log("🚀 ~ file: route.ts:22 ~ GET ~ error:", error.message);
+      console.log('🚀 ~ file: route.ts:22 ~ GET ~ error:', error.message);
       return NextResponse.error();
     }
   }

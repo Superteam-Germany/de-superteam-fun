@@ -77,11 +77,7 @@ const Projects = () => {
                     content={project.fields.description}
                     linkContent='More information'
                     href={project.fields.link}
-                    logo={
-                      project.fields.logo?.length > 0
-                        ? project.fields.logo[0].url
-                        : ''
-                    }
+                    logo={project.fields.logo}
                   />
                 );
               })}

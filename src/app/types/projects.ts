@@ -5,7 +5,7 @@ export type ProjectRecord = {
     name: string;
     description: string;
     link: string;
-    logo: Logo[];
+    logo: string;
     display: boolean;
   };
 };

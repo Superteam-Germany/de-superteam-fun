@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import next from 'next/types';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
+import { twMerge } from 'tailwind-merge';
 
 const getEvents = async (): Promise<{ events: EventRecord[] }> => {
   const events = await fetch('api/events', {
@@ -47,11 +48,16 @@ const UpcomingEvents = () => {
         style={{ backgroundSize: 'cover', y }}
         className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"></motion.div>
       <section className='container  py-24 flex-col-reverse justify-between items-center flex lg:flex-row gap-6'>
-        <div className='grid sm:grid-cols-2 grow justify-evenly gap-8 items-center'>
+        <div
+          className={twMerge(
+            'grid sm:grid-cols-2 grow justify-evenly gap-8 items-center',
+            events.length === 1 ? 'sm:grid-cols-1 justify-center ' : ''
+          )}>
           {events.map((event: EventRecord) => {
             return (
               <Card
                 key={event.id}
+                className='mx-auto'
                 title={event.fields.event_name}
                 content={event.fields.description}
                 linkContent='Subscribe to this event'
