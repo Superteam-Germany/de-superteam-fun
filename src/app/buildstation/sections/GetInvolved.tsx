@@ -44,18 +44,24 @@ const GetInvolved = () => {
             </div>
           </div>
         </FadeInDiv>
-        <div className='grid sm:grid-cols-2 gap-6 container justify-between'>
+        <div className='grid lg:grid-cols-3 gap-6 container  justify-center lg:justify-between'>
           <CtaCard
             title='Learn'
             content='A manual for joining the Solana ecosystem. By builders for builders. Use these Solana Foundation and community courses to begin your journey into Solana development.'
             href='https://solana.com/developers'
-            linkContent='Check out our learning resources'
+            linkContent='Check out the resources'
           />
           <CtaCard
             title='Earn'
             content='Start Earning Crypto by Contributing to Solana. Explore bounties, grants, and jobs with high growth startups in the Solana ecosystem.'
             href='https://earn.superteam.fun'
             linkContent='Start earning today!'
+          />
+          <CtaCard
+            title='Grants'
+            content='Learn more about Superteam Germany grants where anyone with an idea or proof of work is welcome to apply.'
+            href='https://earn.superteam.fun/listings/grants/solana-foundation-germany-grants/'
+            linkContent='Check out the grants'
           />
         </div>
         <Email />

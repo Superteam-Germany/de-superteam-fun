@@ -19,10 +19,7 @@ import Banner from '../../components/Banner';
 const page = () => {
   return (
     <main className='min-h-screen hyperdrive'>
-      <Banner
-        link='https://buildstation.softr.app/'
-        text='Find the full schedule of workshops and events here.'
-      />
+      <Banner text='Stay tuned for next buildstation' />
       <Nav />
       <FadeInDiv>
         <div className='py-5 container text-end flex justify-end'>
