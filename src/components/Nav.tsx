@@ -13,11 +13,11 @@ const menuItems = [
     link: '/#events',
     type: 'link',
   },
-  {
-    name: 'Build Station',
-    link: '/buildstation',
-    type: 'link',
-  },
+  // {
+  //   name: 'Build Station',
+  //   link: '/buildstation',
+  //   type: 'link',
+  // },
   { name: 'Join Now', link: 'https://discord.gg/CVwJhHgFfF', type: 'button' },
 ];
 

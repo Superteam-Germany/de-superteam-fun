@@ -8,6 +8,7 @@ import next from 'next/types';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
+import WhatIs from '../_buildstation/sections/WhatIs';
 
 const getEvents = async (): Promise<{ events: EventRecord[] }> => {
   const events = await fetch('api/events', {

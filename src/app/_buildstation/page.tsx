@@ -1,10 +1,10 @@
 'use client';
-import BerlinDemoDay from '@/app/buildstation/sections/BerlinDemoDay';
-import BuildStationIntro from '@/app/buildstation/sections/BuildStationIntro';
-import FAQ from '@/app/buildstation/sections/FAQ';
-import Prizes from '@/app/buildstation/sections/Prizes';
-import SignUp from '@/app/buildstation/sections/SignUp';
-import WhatIs from '@/app/buildstation/sections/WhatIs';
+import BerlinDemoDay from '@/app/_buildstation/sections/BerlinDemoDay';
+import BuildStationIntro from '@/app/_buildstation/sections/BuildStationIntro';
+import FAQ from '@/app/_buildstation/sections/FAQ';
+import Prizes from '@/app/_buildstation/sections/Prizes';
+import SignUp from '@/app/_buildstation/sections/SignUp';
+import WhatIs from '@/app/_buildstation/sections/WhatIs';
 import HeroCarousel from '@/app/(main-sections)/HeroCarousel';
 import Nav from '@/components/Nav';
 import TextBanner from '@/components/TextBanner';

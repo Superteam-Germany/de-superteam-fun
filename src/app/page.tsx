@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Card from '@/components/ui/Card';
 import UpcomingEvents from '@/app/(main-sections)/UpcomingEvents';
 import Partners from './(main-sections)/Partners';
-import GetInvolved from '@/app/buildstation/sections/GetInvolved';
+import GetInvolved from '@/app/_buildstation/sections/GetInvolved';
 import Email from '@/app/(main-sections)/Email';
 import Projects from '@/app/(main-sections)/Projects';
 import Gallery from '@/app/(main-sections)/Gallery';
