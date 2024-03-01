@@ -16,7 +16,7 @@ const WhatIs = () => {
           </h2>
 
           <div className=''>
-            <p className='font-normal'>Sep 25 - Oct 16 2023</p>
+            <p className='font-normal'>Mar 19 - Apr 9 2024</p>
             <p className='font-normal'>Monday to Friday, 10 - 19h</p>
             <p className='font-normal'>
               <b>Address</b>:{' '}
@@ -30,14 +30,14 @@ const WhatIs = () => {
           <p>
             Build Station is a three week long co-working space where all Solana
             builders, community members and enthusiasts get together. The event
-            is designed to help teams and projects build for the Solana
-            Hyperdrive hackathon.
+            is designed to help teams and projects build for the Solana upcoming
+            hackathon.
           </p>
           <p>
             The Station is open to everyone interested in Solana. You&#39; ll
             find here developers, biz-devs, artists, marketers and many others.
           </p>
-          <p>
+          {/* <p>
             <a
               href='https://lu.ma/buildstation'
               className='underline underline-offset-4 mr-2'>
@@ -50,7 +50,7 @@ const WhatIs = () => {
               schedule
             </a>
             .
-          </p>
+          </p> */}
         </div>
       </section>
     </div>

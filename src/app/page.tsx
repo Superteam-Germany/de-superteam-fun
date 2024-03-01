@@ -9,7 +9,7 @@ import Image from 'next/image';
 import Card from '@/components/ui/Card';
 import UpcomingEvents from '@/app/(main-sections)/UpcomingEvents';
 import Partners from './(main-sections)/Partners';
-import GetInvolved from '@/app/_buildstation/sections/GetInvolved';
+import GetInvolved from '@/app/buildstation/sections/GetInvolved';
 import Email from '@/app/(main-sections)/Email';
 import Projects from '@/app/(main-sections)/Projects';
 import Gallery from '@/app/(main-sections)/Gallery';
@@ -68,6 +68,17 @@ export default function Home() {
             <Link href='https://discord.gg/CVwJhHgFfF' target='_blank'>
               <div className='h-6 w-8 relative scale-75 sm:scale-100'>
                 <Image src='/images/discord-icon.svg' fill alt='Discord logo' />
+              </div>
+            </Link>
+
+            <Link href='https://t.me/solana_germany' target='_blank'>
+              <div className='h-6 w-6 relative'>
+                <Image
+                  src='/images/telegram.png'
+                  objectFit='fill'
+                  fill
+                  alt='Telegram logo'
+                />
               </div>
             </Link>
           </div>

@@ -1,10 +1,10 @@
 'use client';
-import BerlinDemoDay from '@/app/_buildstation/sections/BerlinDemoDay';
-import BuildStationIntro from '@/app/_buildstation/sections/BuildStationIntro';
-import FAQ from '@/app/_buildstation/sections/FAQ';
-import Prizes from '@/app/_buildstation/sections/Prizes';
-import SignUp from '@/app/_buildstation/sections/SignUp';
-import WhatIs from '@/app/_buildstation/sections/WhatIs';
+import BerlinDemoDay from '@/app/buildstation/sections/BerlinDemoDay';
+import BuildStationIntro from '@/app/buildstation/sections/BuildStationIntro';
+import FAQ from '@/app/buildstation/sections/FAQ';
+import Prizes from '@/app/buildstation/sections/Prizes';
+import SignUp from '@/app/buildstation/sections/SignUp';
+import WhatIs from '@/app/buildstation/sections/WhatIs';
 import HeroCarousel from '@/app/(main-sections)/HeroCarousel';
 import Nav from '@/components/Nav';
 import TextBanner from '@/components/TextBanner';
@@ -19,7 +19,6 @@ import Banner from '../../components/Banner';
 const page = () => {
   return (
     <main className='min-h-screen hyperdrive'>
-      <Banner text='Stay tuned for next buildstation' />
       <Nav />
       <FadeInDiv>
         <div className='py-5 container text-end flex justify-end'>
@@ -53,6 +52,16 @@ const page = () => {
                 <Image src='/images/discord-icon.svg' fill alt='Discord logo' />
               </div>
             </Link>
+            <Link href='https://t.me/solana_germany' target='_blank'>
+              <div className='h-6 w-6 relative'>
+                <Image
+                  src='/images/telegram.png'
+                  objectFit='fill'
+                  fill
+                  alt='Telegram logo'
+                />
+              </div>
+            </Link>
           </div>
         </div>
       </FadeInDiv>
@@ -73,18 +82,18 @@ const page = () => {
 
         <Spacer />
       </FadeInDiv>
-      <FadeInDiv>
+      {/* <FadeInDiv>
         <SignUp variant='berlin' />
         <Spacer />
-      </FadeInDiv>
-      <FadeInDiv>
+      </FadeInDiv> */}
+      {/* <FadeInDiv>
         <Prizes />
-      </FadeInDiv>
-      <FadeInDiv>
+      </FadeInDiv> */}
+      {/* <FadeInDiv>
         <Spacer />
         <SignUp />
-        <Spacer />
-      </FadeInDiv>
+      </FadeInDiv> */}
+      <Spacer />
       <FooterGroup />
     </main>
   );

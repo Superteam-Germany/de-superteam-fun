@@ -8,7 +8,7 @@ import next from 'next/types';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
-import WhatIs from '../_buildstation/sections/WhatIs';
+import WhatIs from '../buildstation/sections/WhatIs';
 
 const getEvents = async (): Promise<{ events: EventRecord[] }> => {
   const events = await fetch('api/events', {
@@ -61,7 +61,7 @@ const UpcomingEvents = () => {
                 className='mx-auto'
                 title={event.fields.event_name}
                 content={event.fields.description}
-                linkContent='Subscribe to this event'
+                linkContent='Check out upcoming events'
                 href={event.fields.url}
                 imgSrc={event.fields.image}
               />

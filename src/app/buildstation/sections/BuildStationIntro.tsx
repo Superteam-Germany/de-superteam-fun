@@ -21,11 +21,8 @@ const BuildStationIntro = () => {
             the future of Solana at our Build Station in Berlin. This is your
             opportunity to shape the future of blockchain, and to get the
             support you need to build for the{' '}
-            <a
-              href='https://solana.com/hyperdrive'
-              rel='noopener'
-              target='_blank'>
-              Hyperdrive Hackathon
+            <a href='https://www.colosseum.org/' rel='noopener' target='_blank'>
+              Upcoming Hackathon
             </a>
             .
           </p>

@@ -13,12 +13,12 @@ const menuItems = [
     link: '/#events',
     type: 'link',
   },
-  // {
-  //   name: 'Build Station',
-  //   link: '/buildstation',
-  //   type: 'link',
-  // },
-  { name: 'Join Now', link: 'https://discord.gg/CVwJhHgFfF', type: 'button' },
+  {
+    name: 'Build Station',
+    link: '/buildstation',
+    type: 'link',
+  },
+  { name: 'Join Now', link: 'https://lu.ma/buildstation', type: 'button' },
 ];
 
 const Nav = () => {
@@ -72,7 +72,7 @@ const Nav = () => {
                 }
 
                 if (item.type === 'button') {
-                  if (path === '/buildstation') return;
+                  // if (path === '/buildstation') return;
                   return (
                     <li
                       key={i}
@@ -115,7 +115,7 @@ const Nav = () => {
             }
 
             if (item.type === 'button') {
-              if (path === '/buildstation') return;
+              // if (path === '/buildstation') return;
               return (
                 <li
                   key={i}
