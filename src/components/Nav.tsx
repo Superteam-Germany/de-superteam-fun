@@ -6,6 +6,8 @@ import { useState } from "react";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
+import Spacer from "./ui/Spacer";
+
 
 const menuItems = [
   {
@@ -94,6 +96,17 @@ const Nav = () => {
                   );
                 }
               })}
+              
+              <li>
+                <div className="py-8">
+                  <Spacer />
+                </div>
+                <Link href="https://twitter.com/SuperteamDE" target="_blank">
+                  <Button className="font-secondary tracking-wide font-normal text-base">
+                    Follow us on X
+                  </Button>
+                </Link>
+              </li>
             </motion.ul>
           )}
         </AnimatePresence>
@@ -144,6 +157,13 @@ const Nav = () => {
               );
             }
           })}
+          <li>
+            <Link href="https://twitter.com/SuperteamDE" target="_blank">
+              <Button className="font-secondary tracking-wide font-normal text-base">
+                Follow us on X
+              </Button>
+            </Link>
+          </li>
         </ul>
       </div>
     </>

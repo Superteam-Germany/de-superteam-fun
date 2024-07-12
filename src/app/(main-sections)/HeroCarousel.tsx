@@ -20,9 +20,9 @@ const HeroCarousel: FC<Props> = () => {
     {
       loop: true,
       align: "start",
-      // duration: 2000,
+      duration: 50,
     },
-    [Autoplay({ delay: 4000 })]
+    [Autoplay({ delay: 5000 })]
   );
 
   const scrollPrev = useCallback(() => {

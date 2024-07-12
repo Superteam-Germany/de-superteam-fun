@@ -26,13 +26,10 @@ export default function Home() {
       <Spacer />
       <FadeInDiv>
         <Hero />
-        <Spacer />
       </FadeInDiv>
       <FadeInDiv>
-        <AboutUs />
         <TextBanner />
       </FadeInDiv>
-      <Spacer />
       <Suspense>
         <WhatIsSuperteam />
       </Suspense>

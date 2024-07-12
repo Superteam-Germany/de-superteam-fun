@@ -9,7 +9,7 @@ interface Props {
 
 const CtaCard: FC<Props> = ({ title, content, href, linkContent }) => {
   return (
-    <div className='max-w-2xl bg-gradient-to-br h-full flex flex-col overflow-hidden justify-between from-secondary/95  backdrop-blur-md via-secondary/80 to-background/50 to-100% p-10 rounded-2xl'>
+    <div className='max-w-2xl bg-gradient-to-br h-full flex flex-col overflow-hidden justify-between from-secondary/70  backdrop-blur-md via-secondary/50 to-background/30 to-100% p-10 rounded-2xl'>
       <h2 className='uppercase mb-4'>{title}</h2>
       <p className=' mb-10 font-secondary font-normal'>{content}</p>
 

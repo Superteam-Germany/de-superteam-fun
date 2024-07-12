@@ -12,7 +12,7 @@ const TextBanner = () => {
     "Developers",
   ];
   return (
-    <>
+    <div className="sm:my-8 md:my-16">
       <Spacer />
       <div className=" -ml-2 bg-background flex overflow-hidden items-center uppercase">
         {textItems.map((item, index) => (
@@ -25,7 +25,7 @@ const TextBanner = () => {
         ))}
       </div>
       <Spacer />
-    </>
+    </div>
   );
 };
 
