@@ -17,23 +17,14 @@ const WhatIsSuperteam = () => {
         </div>
         <div className="lg:max-w-[40rem] space-y-4 mx-auto sm:px-0 h-full">
           <p>
-            We’re a collective of devs, creatives, and grantees helping to build
-            the Solana Ecosystem in Germany. We are organised as a co-operative
-            of contributors who are experienced in launching and growing
-            technology businesses.
-          </p>
-
-          <p>
-            We value the sovereignty that comes with founding a company, the
-            skin in the game that comes with investing, and the joy that comes
-            with getting work done.
+          Our mission? To empower talents in the Web3 space by providing them with opportunities to learn, earn, and connect with the Solana ecosystem.
           </p>
 
           <a
-            href="https://discord.gg/CVwJhHgFfF"
+            href="https://superteam.fun"
             target="_blank"
             className="underline underline-offset-4 block">
-            <span className="block text-body">Become a member</span>
+            <span className="block text-body">Learn more about the international Superteam network.</span>
           </a>
         </div>
       </section>

@@ -1,20 +1,18 @@
 'use client';
 import React from 'react';
 import { Button } from '../../components/ui/button';
-import { NextRequest, NextResponse } from 'next/server';
-import Axios, { isAxiosError } from 'axios';
+import Spinner from './../../components/ui/Spinner'
 
 const Email = () => {
   const [error, setError] = React.useState('');
   const [loading, setLoading] = React.useState(false);
   const [input, setInput] = React.useState('');
 
-  const create = async (form: FormData) => {
+  const create = async (event: React.FormEvent) => {
+    event.preventDefault(); 
     setLoading(true);
-    const email = form.get('email');
-
-    console.log('clicked');
-
+    const email = input;
+    
     try {
       const res = await fetch('/api/newsletter', {
         method: 'POST',
@@ -45,13 +43,12 @@ const Email = () => {
 
   return (
     <section className='flex py-24 flex-col lg:flex-row  justify-between container gap-4'>
-      {/* <div> */}
       <h2 className='uppercase mb-14 lg:mb-0 shrink-0'>
         Stay up <br />
         to date
       </h2>
       <div className='p-10 rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
-        <form action={create} className='flex flex-col gap-8'>
+        <form onSubmit={create} className='flex flex-col gap-8'>
           <h3 className='max-w-2/3 leading-tight'>
             Be the first to know about the next Superteam Germany events.
           </h3>
@@ -66,8 +63,8 @@ const Email = () => {
             />
             <span>{error}</span>
           </div>
-          <Button disabled={loading} className='ml-auto'>
-            Subscribe
+          <Button type='submit' disabled={loading}  className='ml-auto'>
+            {loading ? <Spinner /> : 'Subscribe'}
           </Button>
         </form>
       </div>

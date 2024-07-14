@@ -41,7 +41,7 @@ export default function Home() {
       {/* <TitleParagraph /> */}
 
       <Spacer />
-      <Projects />
+      {/* <Projects /> */}
       <Spacer />
       <div className=' overflow-hidden relative'>
         <div
