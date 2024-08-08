@@ -18,7 +18,6 @@ const getEvents = async (): Promise< EventRecord[]> => {
   });
 
   const events = (await result.json()).events as EventRecord[];
-  console.log('events ::::: ', events);
   return events;
 };
 

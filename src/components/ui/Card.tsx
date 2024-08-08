@@ -27,7 +27,7 @@ interface Props extends VariantProps<typeof cardVariants> {
   imgSrc?: string;
   logo?: string;
   href: string;
-  date: string;
+  date?: string;
 }
 
 const Card: FC<Props> = ({
