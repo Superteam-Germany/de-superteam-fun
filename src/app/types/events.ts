@@ -1,12 +1,18 @@
 export type EventRecord = {
   id: string;
-  createdTime: string;
-  fields: {
-    date: string;
+  city: string;
+  community: {
     image: string;
-    description: string;
-    url: string;
-    event_name: string;
-    display: boolean;
+    link: string;
+    name: string;
   };
+  country: string | null;
+  description: string;
+  endTime: string;
+  image: string;
+  link: string;
+  name: string;
+  startTime: string;
+  tags: string[];
+  timeZone: string;
 };

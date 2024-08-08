@@ -27,6 +27,7 @@ interface Props extends VariantProps<typeof cardVariants> {
   imgSrc?: string;
   logo?: string;
   href: string;
+  date: string;
 }
 
 const Card: FC<Props> = ({
@@ -38,6 +39,7 @@ const Card: FC<Props> = ({
   imgSrc,
   logo,
   href,
+  date,
 }) => {
   return (
     <div className={cn(cardVariants({ variant, className }))}>
@@ -60,7 +62,7 @@ const Card: FC<Props> = ({
             alt='Placeholder image'
             className='max-w-full'
             fill
-            style={{ objectFit: 'cover', objectPosition: 'left bottom' }}
+            style={{ objectFit: 'cover', objectPosition: 'center' }}
           />
         </div>
       )}
@@ -68,8 +70,9 @@ const Card: FC<Props> = ({
         <div>
           {title && <h4 className='mt-4 w-full mb-2 font-semibold'>{title}</h4>}
           {content && (
-            <p className=' line-clamp-6 sm:line-clamp-[4]'>{content}</p>
+            <p className=' line-clamp-6 sm:line-clamp-[3]'>{content}</p>
           )}
+          {date && <p className='text-sm text-gray-500 py-4'>{date}</p>}
         </div>
         {linkContent && (
           <a

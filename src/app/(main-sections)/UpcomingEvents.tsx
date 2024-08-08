@@ -10,14 +10,29 @@ import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
 import WhatIs from '../buildstation/sections/WhatIs';
 
-const getEvents = async (): Promise<{ events: EventRecord[] }> => {
-  const events = await fetch('api/events', {
+const getEvents = async (): Promise< EventRecord[]> => {
+  const result = await fetch('api/events', {
     next: {
       revalidate: 12 * 60 * 60,
     },
   });
 
-  return await events.json();
+  const events = (await result.json()).events as EventRecord[];
+  console.log('events ::::: ', events);
+  return events;
+};
+
+const formatDateTime = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    // timeZoneName: 'short',
+  });
 };
 
 const UpcomingEvents = () => {
@@ -28,16 +43,16 @@ const UpcomingEvents = () => {
 
   React.useEffect(() => {
     const fetchEvents = async () => {
-      const { events } = await getEvents();
+      const events  = await getEvents();
 
       setEvents(
         events
           .sort(
             (a: EventRecord, b: EventRecord) =>
-              new Date(a.fields.date).getTime() -
-              new Date(b.fields.date).getTime()
+              new Date(a.startTime).getTime() -
+              new Date(b.startTime).getTime()
           )
-          .filter(e => e.fields.display)
+          .filter(e => e)
       );
     };
     fetchEvents();
@@ -59,11 +74,12 @@ const UpcomingEvents = () => {
               <Card
                 key={event.id}
                 className='mx-auto'
-                title={event.fields.event_name}
-                content={event.fields.description}
-                linkContent='Check out upcoming events'
-                href={event.fields.url}
-                imgSrc={event.fields.image}
+                title={event.name}
+                content={event.description}
+                linkContent='RSVP'
+                href={event.link}
+                imgSrc={event.image}
+                date={formatDateTime(event.startTime)}
               />
             );
           })}
