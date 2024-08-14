@@ -4,11 +4,9 @@ import Card from '../../components/ui/Card';
 import Image from 'next/image';
 import { Highlight } from '../../components/ui/Highlight';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import next from 'next/types';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
-import WhatIs from '../buildstation/sections/WhatIs';
 
 const getEvents = async (): Promise< EventRecord[]> => {
   const result = await fetch('api/events', {

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import { Highlight } from '@/components/ui/Highlight';
 import FadeInDiv from '@/components/ui/FadeInDiv';
+import { UPCOMING_HACKATHON_LINK } from './../../../lib/constances';
 
 const BuildStationIntro = () => {
   const { scrollYProgress } = useScroll();
@@ -21,7 +22,7 @@ const BuildStationIntro = () => {
             the future of Solana at our Build Station in Berlin. This is your
             opportunity to shape the future of blockchain, and to get the
             support you need to build for the{' '}
-            <a href='https://www.colosseum.org/' rel='noopener' target='_blank'>
+            <a href={UPCOMING_HACKATHON_LINK} rel='noopener' target='_blank'>
               Upcoming Hackathon
             </a>
             .

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Spacer from "./ui/Spacer";
+import { REGISTER_BUILD_STATION_LINK } from "@/lib/constances";
 
 
 const menuItems = [
@@ -15,12 +16,12 @@ const menuItems = [
     link: "/#events",
     type: "link",
   },
-  // {
-  //   name: 'Build Station',
-  //   link: '/buildstation',
-  //   type: 'link',
-  // },
-  // { name: 'Join Now', link: 'https://lu.ma/buildstation', type: 'button' },
+  {
+    name: 'Build Station',
+    link: '/buildstation',
+    type: 'link',
+  },
+  { name: 'Join Now', link: REGISTER_BUILD_STATION_LINK, type: 'button' },
 ];
 
 const Nav = () => {

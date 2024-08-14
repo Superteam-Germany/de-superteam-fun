@@ -1,10 +1,40 @@
 import React from 'react';
 import { Highlight } from '../../../components/ui/Highlight';
+import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { WEB3_HUB_LOCATION_LINK, REGISTER_BUILD_STATION_KICKOFF_LINK, REGISTER_BUILD_STATION_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from './../../../lib/constances';
+
+const BUILD_STATION_EVENTS = [
+  {
+    heading: 'Radar Hackathon Kick-Off',
+    date: 'Aug 27 - Aug 29, 2024',
+    locationText: 'Möckernstrasse 120',
+    locationLink: WEB3_HUB_LOCATION_LINK,
+    buttonText: 'Register',
+    buttonLink: REGISTER_BUILD_STATION_KICKOFF_LINK
+  },
+  {
+    heading: 'Build Station',
+    date: 'Sep 25 - Oct 9, 2024',
+    locationText: 'Möckernstrasse 120',
+    locationLink: WEB3_HUB_LOCATION_LINK,
+    buttonText: 'Register',
+    buttonLink: REGISTER_BUILD_STATION_LINK
+  },
+  {
+    heading: 'Demo Day',
+    date: 'Oct 9, 2024',
+    locationText: 'Möckernstrasse 120',
+    locationLink: WEB3_HUB_LOCATION_LINK,
+    buttonText: 'Register',
+    buttonLink: REGISTER_BUILD_STATION_DEMO_DAY_LINK
+  }
+]
 
 const WhatIs = () => {
   return (
     <div className=' w-full'>
-      <section className='container min-h-80 py-24 sm:py-36 grid grid-cols-1 lg:grid-cols-2 gap-x-12 justify-center sm:flex-row sm:justify-between items-center'>
+      <section className='container min-h-80 pt-24 sm:pt-36 grid grid-cols-1 lg:grid-cols-2 gap-x-12 justify-center sm:flex-row sm:justify-between items-center'>
         <div className='lg:mb-0 mb-12 flex justify-between h-full flex-col'>
           <h2 className='uppercase lg:mb-24 text-h2 self-start '>
             What is the
@@ -14,17 +44,6 @@ const WhatIs = () => {
               <Highlight> Station</Highlight> Berlin?
             </span>
           </h2>
-
-          <div className=''>
-            <p className='font-normal'>Mar 19 - Apr 9 2024</p>
-            <p className='font-normal'>Monday to Friday, 10 - 19h</p>
-            <p className='font-normal'>
-              <b>Address</b>:{' '}
-              <a href='https://goo.gl/maps/bsnPMX1QNZ1Bxa7w8'>
-                Möckernstrasse 120
-              </a>
-            </p>
-          </div>
         </div>
         <div className='lg:max-w-[40rem] space-y-4 mx-auto sm:px-0 h-full'>
           <p>
@@ -51,6 +70,27 @@ const WhatIs = () => {
             </a>
             .
           </p> */}
+        </div>
+      </section>
+      <section className='container pb-24'>
+        <h3 className='text-xl py-4 px-6 bg-white/5 rounded-lg text-center w-fit mx-auto mb-8 leading-none'>Event Schedule</h3>
+        <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
+          {BUILD_STATION_EVENTS.map((event, index) => (
+            <div key={index} className=' p-6 rounded-lg'>
+              <h4 className='text-2xl font-bold mb-2'>{event.heading}</h4>
+              <p className=''>Date: Aug 27 - Aug 29, 2024</p>
+              <p className=''>Location:{' '}
+                <a href={event.locationLink}>
+                  {event.locationText}
+                </a>
+              </p>
+              <Link href={event.buttonLink} target="_blank">
+                <div className='mt-8'>
+                  <Button>Register</Button>
+                </div>
+              </Link>
+            </div>
+          ))}
         </div>
       </section>
     </div>

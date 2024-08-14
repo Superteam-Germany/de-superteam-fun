@@ -3,6 +3,7 @@ import React from 'react';
 import { Highlight } from '../../../components/ui/Highlight';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { UPCOMING_HACKATHON_LINK } from './../../../lib/constances';
 
 const BerlinDemoDay = () => {
   const { scrollYProgress } = useScroll();
@@ -56,7 +57,7 @@ const BerlinDemoDay = () => {
                 <Link
                   about='_blank'
                   className=''
-                  href='https://www.colosseum.org/'>
+                  href={UPCOMING_HACKATHON_LINK}>
                   here
                 </Link>
                 . Make sure to mark Germany* in the Renaissance application form
