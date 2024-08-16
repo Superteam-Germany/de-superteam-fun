@@ -3,6 +3,7 @@ import { Highlight } from '../../../components/ui/Highlight';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import { WEB3_HUB_LOCATION_LINK, REGISTER_BUILD_STATION_KICKOFF_LINK, REGISTER_BUILD_STATION_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from './../../../lib/constances';
+import { eventNames } from 'process';
 
 const BUILD_STATION_EVENTS = [
   {
@@ -11,6 +12,7 @@ const BUILD_STATION_EVENTS = [
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
     buttonText: 'Register',
+    disabled: false,
     buttonLink: REGISTER_BUILD_STATION_KICKOFF_LINK
   },
   {
@@ -18,7 +20,8 @@ const BUILD_STATION_EVENTS = [
     date: 'Sep 25 - Oct 9, 2024',
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
-    buttonText: 'Register',
+    buttonText: 'Coming Soon',
+    disabled: true,
     buttonLink: REGISTER_BUILD_STATION_LINK
   },
   {
@@ -26,7 +29,8 @@ const BUILD_STATION_EVENTS = [
     date: 'Oct 9, 2024',
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
-    buttonText: 'Register',
+    buttonText: 'Coming Soon',
+    disabled: true,
     buttonLink: REGISTER_BUILD_STATION_DEMO_DAY_LINK
   }
 ]
@@ -78,17 +82,20 @@ const WhatIs = () => {
           {BUILD_STATION_EVENTS.map((event, index) => (
             <div key={index} className=' p-6 rounded-lg'>
               <h4 className='text-2xl font-bold mb-2'>{event.heading}</h4>
-              <p className=''>Date: Aug 27 - Aug 29, 2024</p>
+              <p className=''>{event.date}</p>
               <p className=''>Location:{' '}
                 <a href={event.locationLink}>
                   {event.locationText}
                 </a>
               </p>
-              <Link href={event.buttonLink} target="_blank">
+              {event.disabled ?<div className='mt-8'>
+                  <Button disabled={event.disabled}>{event.buttonText}</Button>
+                </div> :  <Link href={event.buttonLink} target="_blank">
                 <div className='mt-8'>
-                  <Button>Register</Button>
+                  <Button disabled={event.disabled}>{event.buttonText}</Button>
                 </div>
-              </Link>
+              </Link>}
+              
             </div>
           ))}
         </div>

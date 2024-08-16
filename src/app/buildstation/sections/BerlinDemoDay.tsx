@@ -44,7 +44,7 @@ const BerlinDemoDay = () => {
           <div>
             <ul className='list-disc list-inside space-y-2 px-4'>
               <li>Local, in real life Demo Day on the 9th of April.</li>
-              <li>Renaissance submissions are eligible to present.</li>
+              <li>Hackathon submissions are eligible to present.</li>
             </ul>
           </div>
           <div className='px-6 py-4 bg-white/5 rounded-lg flex items-center'>
@@ -53,14 +53,14 @@ const BerlinDemoDay = () => {
           <div>
             <ul className='list-decimal space-y-2 list-inside px-4'>
               <li>
-                Apply for Solana Renaissance{' '}
+                Apply for the Solana Hackathon{' '}
                 <Link
                   about='_blank'
                   className=''
                   href={UPCOMING_HACKATHON_LINK}>
                   here
                 </Link>
-                . Make sure to mark Germany* in the Renaissance application form
+                . Make sure to mark Germany* in the Hackathon application form
                 to be eligible for Berlin Demo Day prizes.{' '}
               </li>
               <li>
