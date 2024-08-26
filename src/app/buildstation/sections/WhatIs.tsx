@@ -7,7 +7,7 @@ import { eventNames } from 'process';
 
 const BUILD_STATION_EVENTS = [
   {
-    heading: 'Radar Hackathon Kick-Off',
+    heading: '3-Day Hackathon Bootcamp',
     date: 'Aug 27 - Aug 29, 2024',
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
