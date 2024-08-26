@@ -17,11 +17,11 @@ const BUILD_STATION_EVENTS = [
   },
   {
     heading: 'Build Station',
-    date: 'Sep 25 - Oct 9, 2024',
+    date: 'Sep 25 - Oct 8, 2024',
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
-    buttonText: 'Coming Soon',
-    disabled: true,
+    buttonText: 'Register',
+    disabled: false,
     buttonLink: REGISTER_BUILD_STATION_LINK
   },
   {
