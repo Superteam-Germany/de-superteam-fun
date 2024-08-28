@@ -81,9 +81,9 @@ const page = () => {
         <SignUp variant='berlin' />
         <Spacer />
       </FadeInDiv> */}
-      <FadeInDiv>
+      {/* <FadeInDiv>
         <Prizes />
-      </FadeInDiv>
+      </FadeInDiv> */}
       {/* <FadeInDiv>
         <Spacer />
         <SignUp />
