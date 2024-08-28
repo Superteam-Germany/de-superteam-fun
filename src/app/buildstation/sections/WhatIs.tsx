@@ -40,7 +40,7 @@ const WhatIs = () => {
     <div className=' w-full'>
       <section className='container min-h-80 pt-24 sm:pt-36 grid grid-cols-1 lg:grid-cols-2 gap-x-12 justify-center sm:flex-row sm:justify-between items-center'>
         <div className='lg:mb-0 mb-12 flex justify-between h-full flex-col'>
-          <h2 className='uppercase lg:mb-24 text-h2 self-start '>
+          <h2 className='uppercase lg:mb-24 text-h2 self-start'>
             What is the
             <br />{' '}
             <span>
@@ -51,10 +51,7 @@ const WhatIs = () => {
         </div>
         <div className='lg:max-w-[40rem] space-y-4 mx-auto sm:px-0 h-full'>
           <p>
-            Build Station is a three week long co-working space where all Solana
-            builders, community members and enthusiasts get together. The event
-            is designed to help teams and projects build for the Solana upcoming
-            hackathon.
+          Build Station is an multi-week IRL space where builders, community members, and Solana enthusiasts come together for co-working, workshops, and support during the Solana Global Hackathon.
           </p>
           <p>
             The Station is open to everyone interested in Solana. You&#39; ll
