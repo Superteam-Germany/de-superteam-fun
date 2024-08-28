@@ -14,6 +14,29 @@ import {
 
 type Props = {};
 
+const prices = [
+  {
+    label: '🏆 1st Place',
+    amount: '$5,000',
+  },
+  {
+    label: '🥈 2nd Place',
+    amount: '$3,000',
+  },
+  {
+    label: '🥉 3rd Place',
+    amount: '$1,000',
+  },
+  {
+    label: '🎨 Creator Track',
+    amount: '$1,000',
+  },
+  {
+    label: '🌳 Green Track',
+    amount: '$1,000',
+  },
+]
+
 const Prizes = (props: Props) => {
   return (
     <div className='relative'>
@@ -24,7 +47,7 @@ const Prizes = (props: Props) => {
           backgroundSize: 'cover',
         }}
         className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
-      <section id='prizes' className='relative container py-12 md:pt-24'>
+      <section id='prizes' className='relative container py-12 md:pt-24 mb-48'>
         <div className='py-12'>
           <h2 className='uppercase text-h2.5'>
             {' '}
@@ -47,60 +70,25 @@ const Prizes = (props: Props) => {
           type='single'
           collapsible
           className='md:space-y-8 md:grid md:grid-cols-12 gap space-y-4 py-12 md:px-8 max-w-screen-lg mx-auto'>
-          <AccordionItem
-            className='md:w-[550px] col-span-full col-start-2'
-            value='first'>
-            <AccordionTrigger>
-              <div className='flex justify-between  items-center w-full md:px-6 px-2'>
-                <h4 className='text-h4'>🏆 1st Place</h4> <span>$5,000</span>{' '}
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              You&#39;re invited to join Superteam Germany!
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            className='md:w-[550px] col-span-full md:self-center col-start-3'
-            value='second'>
-            <AccordionTrigger>
-              <div className='flex justify-between  items-center w-full md:px-6 px-2 '>
-                <h4 className='text-h4'>🥈 2nd Place</h4> <span>$3,000</span>{' '}
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              You&#39;re invited to join Superteam Germany!
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            className='md:w-[550px] col-span-full md:self-end col-start-4'
-            value='third'>
-            <AccordionTrigger>
-              <div className='flex justify-between  items-center w-full md:px-6 px-2'>
-                <h4 className='text-h4'>🥉 3rd Place</h4> <span>$1,000</span>{' '}
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              You&#39;re invited to join Superteam Germany!
-            </AccordionContent>
-          </AccordionItem>
-          <AccordionItem
-            className='md:w-[550px] col-span-full md:self-end col-start-5'
-            value='green'>
-            <AccordionTrigger
-              className='outline-primary outline outline-2'
-              chevronColor=''>
-              <div className='flex justify-between  items-center w-full md:px-6 px-2'>
-                <h4 className=''>🌳 Green Track</h4>{' '}
-                <span className=''>$1,000</span>{' '}
-              </div>
-            </AccordionTrigger>
-            <AccordionContent>
-              You&#39;re invited to join Superteam Germany!
-            </AccordionContent>
-          </AccordionItem>
+          {prices.map((price, index) => (
+            <AccordionItem
+              key={index}
+              value={price.label}
+              className={`md:w-[550px] col-span-full col-start-${index + 2}`}
+            >
+              <AccordionTrigger>
+                <div className='flex justify-between  items-center w-full md:px-6 px-2'>
+                  <h4 className='text-h4'>{price.label}</h4> <span>{price.amount}</span>{' '}
+                </div>
+              </AccordionTrigger>
+              <AccordionContent>
+                You&#39;re invited to join Superteam Germany!
+              </AccordionContent>
+            </AccordionItem>
+          ))}
         </Accordion>
 
-        <FadeInDiv>
+        {/* <FadeInDiv>
           <div className=' pt-12 sm:pt-24'>
             <div className='grid md:grid-cols-2'>
               <div className='space-y-4'>
@@ -124,7 +112,6 @@ const Prizes = (props: Props) => {
                     <div className='space-y-2'>
                       <div className='flex justify-between items-center'>
                         <h4 className='font-semibold text-xl'>{prize.title}</h4>
-                        {/* <PlusCircleIcon className="h-7 w-7" fill="#00ff04" /> */}
                       </div>
                       <div className='flex flex-col justify-between line-clamp-3'>
                         <p className='line-clamp-3'>{prize.requirements}</p>
@@ -133,9 +120,6 @@ const Prizes = (props: Props) => {
 
                     <div className='flex justify-between items-center'>
                       <div>
-                        {/* <span className="text-base block mb-2 text-white">
-                  Sponsored by
-                </span> */}
                         <Image
                           src={prize.logo}
                           className='max-h-12 max-w-fit'
@@ -157,7 +141,7 @@ const Prizes = (props: Props) => {
               ))}
             </div>
           </div>
-        </FadeInDiv>
+        </FadeInDiv> */}
       </section>
     </div>
   );

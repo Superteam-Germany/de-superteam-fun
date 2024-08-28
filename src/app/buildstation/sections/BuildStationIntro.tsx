@@ -18,7 +18,7 @@ const BuildStationIntro = () => {
       <section className='container min-h-96 py-24 flex flex-col gap-6 z-10 justify-center sm:flex-row sm:justify-between items-center'>
         <FadeInDiv>
           <h2 className='uppercase max-w-[50rem] text-h3 self-start mb-8'>Support and resources to <Highlight>win the hackathon</Highlight></h2>
-          <p className='text-quote-sm  max-w-[50rem] font-normal sm:mt-0'>
+          <p className='max-w-[50rem] sm:mt-0'>
           Join our build station and learn what it takes to successfully participate in a Solana hackathon. We provide resources, mentorship and connect you with like-minded people to support you in your hackathon journey and beyond.
             
             {/* This is your
