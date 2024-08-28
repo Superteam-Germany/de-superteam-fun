@@ -17,7 +17,7 @@ const menuItems = [
     type: "link",
   },
   {
-    name: 'Build Station',
+    name: 'Global Hackathon',
     link: '/buildstation',
     type: 'link',
   },

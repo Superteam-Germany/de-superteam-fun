@@ -10,17 +10,14 @@ const Hero = () => {
       <div className='py-5 container'>
         <h1 className='uppercase text-end'>
           Superteam <Highlight>Germany</Highlight>_
-          
         </h1>
         <p className='text-end py-5'>
           Superteam is a global community of Web3 builders who are passionate about Solana.
         </p>
       </div>
-      {/* <div className=" w-full"> */}
       <Suspense fallback={<div></div>}>
         <HeroCarousel />
       </Suspense>
-      {/* </div> */}
       <div className='relative container'>
         <div className='flex gap-6 sm:gap-10 absolute bottom-14'>
           <Link target='_blank' href='https://twitter.com/SuperteamDE'>
@@ -52,3 +49,5 @@ const Hero = () => {
 };
 
 export default Hero;
+
+
