@@ -37,6 +37,28 @@ const prices = [
   },
 ]
 
+const renderAccordionItem = (price: any, index: number) => {
+  return (
+    <div className='flex items-center'>
+      <div style={{width: `${150 * index }px`}}></div>
+      <AccordionItem
+      key={index}
+      value={price.label}
+      className={`w-1/3 my-4 ml-2`}
+      >
+        <AccordionTrigger>
+          <div className='flex justify-between items-center w-full md:px-6 px-2'>
+            <h4 className='text-h4'>{price.label}</h4><span>{price.amount}</span>{' '}
+          </div>
+        </AccordionTrigger>
+        <AccordionContent>
+          You&#39;re invited to join Superteam Germany!
+        </AccordionContent>
+      </AccordionItem>
+    </div>
+  )
+}
+
 const Prizes = (props: Props) => {
   return (
     <div className='relative'>
@@ -69,23 +91,8 @@ const Prizes = (props: Props) => {
         <Accordion
           type='single'
           collapsible
-          className='md:space-y-8 md:grid md:grid-cols-12 gap space-y-4 py-12 md:px-8 max-w-screen-lg mx-auto'>
-          {prices.map((price, index) => (
-            <AccordionItem
-              key={index}
-              value={price.label}
-              className={`md:w-[550px] col-span-full col-start-${index + 2}`}
-            >
-              <AccordionTrigger>
-                <div className='flex justify-between  items-center w-full md:px-6 px-2'>
-                  <h4 className='text-h4'>{price.label}</h4> <span>{price.amount}</span>{' '}
-                </div>
-              </AccordionTrigger>
-              <AccordionContent>
-                You&#39;re invited to join Superteam Germany!
-              </AccordionContent>
-            </AccordionItem>
-          ))}
+          className={`flex flex-col w-full ml-12`}>
+          {prices.map((price, index) => renderAccordionItem(price, index))}
         </Accordion>
 
         {/* <FadeInDiv>
