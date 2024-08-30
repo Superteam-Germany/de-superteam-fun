@@ -39,7 +39,7 @@ const prices = [
 
 const renderAccordionItem = (price: any, index: number) => {
   return (
-    <div className='flex items-center'>
+    <div className='flex items-center' key={index}>
       <div style={{width: `${150 * index }px`}}></div>
       <AccordionItem
       key={index}
@@ -95,7 +95,7 @@ const Prizes = (props: Props) => {
           {prices.map((price, index) => renderAccordionItem(price, index))}
         </Accordion>
 
-        {/* <FadeInDiv>
+        <FadeInDiv>
           <div className=' pt-12 sm:pt-24'>
             <div className='grid md:grid-cols-2'>
               <div className='space-y-4'>
@@ -115,40 +115,26 @@ const Prizes = (props: Props) => {
                   href={prize.link}
                   target='_blank'
                   className='no-underline hover:opacity-100'>
-                  <div className='bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex justify-between flex-col rounded-xl h-64 p-8'>
-                    <div className='space-y-2'>
-                      <div className='flex justify-between items-center'>
-                        <h4 className='font-semibold text-xl'>{prize.title}</h4>
-                      </div>
-                      <div className='flex flex-col justify-between line-clamp-3'>
-                        <p className='line-clamp-3'>{prize.requirements}</p>
-                      </div>
-                    </div>
-
-                    <div className='flex justify-between items-center'>
-                      <div>
-                        <Image
-                          src={prize.logo}
-                          className='max-h-12 max-w-fit'
-                          style={{
-                            objectFit: 'contain',
-                            objectPosition: 'left',
-                          }}
-                          height={1}
-                          width={130}
-                          alt={`${prize.sponsor} logo`}
-                        />
-                      </div>
-                      <span className='self-end text-right'>
-                        🏆 {prize.prize}
-                      </span>
+                  <div className='bg-[#202020] hover:scale-[1.01] select-none cursor-pointer active:scale-100 transition-all hover:shadow-lg flex flex-col items-center justify-evenly rounded-xl h-64 p-8'>
+                    <Image
+                      src={prize.logo}
+                      style={{
+                        objectFit: 'contain',
+                        objectPosition: 'center',
+                      }}
+                      height={1}
+                      width={400}
+                      alt={`${prize.sponsor} logo`}
+                    />
+                    <div>
+                      🏆 {prize.prize}
                     </div>
                   </div>
                 </a>
-              ))}
+              ))} 
             </div>
           </div>
-        </FadeInDiv> */}
+        </FadeInDiv>
       </section>
     </div>
   );
