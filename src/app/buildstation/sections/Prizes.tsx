@@ -62,13 +62,13 @@ const renderAccordionItem = (price: any, index: number) => {
 const Prizes = (props: Props) => {
   return (
     <div className='relative'>
-      <div
+      {/* <div
         style={{
           scale: '-1',
           backgroundPosition: 'right top',
           backgroundSize: 'cover',
         }}
-        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
+        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div> */}
       <section id='prizes' className='relative container py-12 md:pt-24 mb-48'>
         <div className='py-12'>
           <h2 className='uppercase text-h2.5'>

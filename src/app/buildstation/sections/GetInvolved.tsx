@@ -11,9 +11,9 @@ const GetInvolved = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '40%']);
   return (
     <div className='relative overflow-hidden'>
-      <motion.div
+      {/* <motion.div
         style={{ backgroundSize: 'cover', y }}
-        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')]  bg-bottom bg-no-repeat   -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')]  bg-bottom bg-no-repeat   -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div> */}
       <section className='pt-24'>
         <FadeInDiv>
           <div className='container my-6 gap-6 mb-12 md:flex justify-center sm:flex-row-reverse  sm:justify-between items-start'>

@@ -12,9 +12,9 @@ const BuildStationIntro = () => {
   const x = useTransform(scrollYProgress, [0, 1], ['4%', '80%']);
   return (
     <div className='relative overflow-hidden'>
-      <motion.div
+      {/* <motion.div
         style={{ y, x, backgroundSize: 'cover' }}
-        className="bg-[url('/images/backgrounds/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-screen bg-no-repeat bg-right-bottom -z-50 bg-fixed "></motion.div>
+        className="bg-[url('/images/backgrounds/line-wave-1.svg')] w-full absolute opacity-20 xl:opacity-100 h-screen bg-no-repeat bg-right-bottom -z-50 bg-fixed "></motion.div> */}
       <section className='container min-h-96 py-24 flex flex-col gap-6 z-10 justify-center sm:flex-row sm:justify-between items-center'>
         <FadeInDiv>
           <h2 className='uppercase max-w-[50rem] text-h3 self-start mb-8'>Support and resources to <Highlight>win the hackathon</Highlight></h2>
