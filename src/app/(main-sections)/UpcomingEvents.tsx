@@ -91,7 +91,7 @@ const UpcomingEvents = () => {
               height={500}
             />
             <h2 className='uppercase mb-12 lg:absolute'>
-              Upcoming <br /> <Highlight>Events</Highlight>
+              Upcoming <br /> Events
             </h2>
           </div>
         </FadeInDiv>
