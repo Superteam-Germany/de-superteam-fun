@@ -57,9 +57,9 @@ const UpcomingEvents = () => {
 
   return (
     <div className='relative overflow-hidden' id='events'>
-      {/* <motion.div
+      <motion.div
         style={{ backgroundSize: 'cover', y }}
-        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"></motion.div> */}
+        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"></motion.div>
       <section className='container  py-24 flex-col-reverse justify-between items-center flex lg:flex-row gap-6'>
         <div
           className={twMerge(

@@ -14,10 +14,10 @@ const FooterGroup = (props: Props) => {
   const y = useTransform(scrollYProgress, [0, 1], ['-200%', '0%']);
   return (
     <div className='relative w-full overflow-hidden'>
-      {/* <motion.div
+      <motion.div
         style={{ backgroundPosition: '50% 90%', backgroundSize: 'cover', y }}
         // style={{ y }}
-        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom bg-no-repeat -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div> */}
+        className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom bg-no-repeat -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div>
 
       <FAQ />
       <div className='py-48 overflow-hidden'>

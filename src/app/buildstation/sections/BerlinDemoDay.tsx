@@ -12,14 +12,14 @@ const BerlinDemoDay = () => {
 
   return (
     <motion.div className=' w-full relative overflow-hidden'>
-      {/* <motion.div
+      <motion.div
         style={{
           backgroundPosition: '-10% 90%',
           backgroundSize: 'contain',
           y,
           x,
         }}
-        className="bg-[url('/images/backgrounds/line-wave-2.svg')] hidden lg:block w-full opacity-50 absolute h-[100vh] bg-no-repeat bg-left-top -z-50  bg-fixed"></motion.div> */}
+        className="bg-[url('/images/backgrounds/line-wave-2.svg')] hidden lg:block w-full opacity-50 absolute h-[100vh] bg-no-repeat bg-left-top -z-50  bg-fixed"></motion.div>
 
       <section className='container min-h-80 space-y-6 lg:space-y-0 py-24 sm:py-36 grid grid-cols-1 lg:grid-cols-2 gap-x-8 justify-center sm:flex-row sm:justify-between items-center'>
         <div className='flex px-2 xl:px-0 flex-col h-full justify-between gap-4'>

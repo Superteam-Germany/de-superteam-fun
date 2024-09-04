@@ -44,9 +44,9 @@ export default function Home() {
       {/* <Projects /> */}
       <Spacer />
       <div className=' overflow-hidden relative'>
-        {/* <div
+        <div
           style={{ backgroundPosition: '10% 90%', backgroundSize: 'cover' }}
-          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')]  bg-bottom bg-no-repeat  -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></div> */}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')]  bg-bottom bg-no-repeat  -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></div>
         <Gallery />
 
         <h2
