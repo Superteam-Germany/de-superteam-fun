@@ -1,7 +1,8 @@
 'use client';
 import React from 'react';
+import axios from 'axios';
 import { Button } from '../../components/ui/button';
-import Spinner from './../../components/ui/Spinner'
+import Spinner from './../../components/ui/Spinner';
 
 const Email = () => {
   const [error, setError] = React.useState('');
@@ -12,14 +13,11 @@ const Email = () => {
     event.preventDefault(); 
     setLoading(true);
     const email = input;
-    
-    try {
-      const res = await fetch('/api/newsletter', {
-        method: 'POST',
-        body: JSON.stringify({ email }),
-      });
 
-      if (res.status === 200) {
+    try {
+      const res = await axios.post('/api/newsletter', { email });
+
+      if (res.status === 201) {
         setError('Thank you for subscribing!');
         setLoading(false);
         setInput('');
@@ -32,8 +30,12 @@ const Email = () => {
         setInput('');
         return;
       }
-    } catch (error) {
-      setError('Something went wrong. Please try again later.');
+    } catch (error: any) {
+      if (error.response && error.response.status === 422) {
+        setError('The email must be a valid email address.');
+      } else {
+        setError('Something went wrong. Please try again later.');
+      }
     }
 
     setInput('');
@@ -42,7 +44,7 @@ const Email = () => {
   };
 
   return (
-    <section className='flex py-24 flex-col lg:flex-row  justify-between container gap-4'>
+    <section className='flex py-24 flex-col lg:flex-row justify-between container gap-4'>
       <h2 className='uppercase mb-14 lg:mb-0 shrink-0'>
         Stay up <br />
         to date
@@ -63,7 +65,7 @@ const Email = () => {
             />
             <span>{error}</span>
           </div>
-          <Button type='submit' disabled={loading}  className='ml-auto'>
+          <Button type='submit' disabled={loading} className='ml-auto'>
             {loading ? <Spinner /> : 'Subscribe'}
           </Button>
         </form>

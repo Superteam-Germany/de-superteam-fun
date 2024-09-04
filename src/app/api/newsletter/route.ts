@@ -8,17 +8,28 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ message: "Invalid email" }, { status: 400 });
   }
 
-  try{
-    const response = await axios.post(`https://script.google.com/macros/s/AKfycbzy-hZFM6C7POgw2cs9YD0hmKeks2lg8OPZTVvuKcrOmMnvW9hdAUXN3jy_qDbsktg/exec`, null, {
-      params: {
-        email
+  try {
+    const response = await axios.post(
+      'https://connect.mailerlite.com/api/subscribers',
+      { email },
+      {
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+          'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`, // Use environment variable for API key
+        },
       }
-    });
+    );
 
-    if (response.status === 200) {
-      return NextResponse.json({ message: "Success" }, { status: 200 });
+    if (response.status === 201) {
+      return NextResponse.json({ message: "Success" }, { status: 201 });
     }
-  }catch (error){
+
+    return NextResponse.json({ message: response.data.error.message }, { status: response.status });
+  } catch (error: any) { // Type assertion to 'any'
+    if (error.response && error.response.status === 422) {
+      return NextResponse.json({ message: 'The email must be a valid email address.' }, { status: 422 });
+    }
     return NextResponse.json({ message: "Error in API route" }, { status: 500 });
   }
 }
