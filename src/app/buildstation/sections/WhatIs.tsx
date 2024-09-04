@@ -74,7 +74,7 @@ const WhatIs = () => {
         </div>
       </section>
       <section className='container pb-24'>
-        <h3 className='text-xl py-4 px-6 bg-white/5 rounded-lg text-center w-fit mx-auto mb-8 leading-none'>Event Schedule</h3>
+        <h3 className='text-xl py-4 px-6 bg-white/5 rounded-lg text-center w-fit mx-auto my-8 leading-none'>Event Schedule</h3>
         <div className='grid grid-cols-1 md:grid-cols-3 gap-8'>
           {BUILD_STATION_EVENTS.map((event, index) => (
             <div key={index} className=' p-6 rounded-lg'>

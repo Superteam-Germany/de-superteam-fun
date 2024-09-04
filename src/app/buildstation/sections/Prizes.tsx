@@ -40,12 +40,12 @@ const prices = [
 const renderAccordionItem = (price: any, index: number) => {
   return (
     <div className='flex items-center' key={index}>
-      <div style={{width: `${150 * index }px`}}></div>
+      <div className="hidden md:block" style={{width: `${150 * index }px`}}></div>
       <AccordionItem
-      key={index}
-      value={price.label}
-      className={`w-1/3 my-4 ml-2`}
-      >
+        key={index}
+        value={price.label}
+        className={`w-full lg:w-1/3 my-4`}
+        >
         <AccordionTrigger>
           <div className='flex justify-between items-center w-full md:px-6 px-2'>
             <h4 className='text-h4'>{price.label}</h4><span>{price.amount}</span>{' '}
@@ -69,7 +69,7 @@ const Prizes = (props: Props) => {
           backgroundSize: 'cover',
         }}
         className="bg-[url('/images/backgrounds/line-wave-4.svg')] bg-bottom  top-0 left-0 bottom-0 -z-50 w-full absolute h-full bg-fixed"></div>
-      <section id='prizes' className='relative container py-12 md:pt-24 mb-48'>
+      <section id='prizes' className='relative  container py-12 md:pt-24 mb-48'>
         <div className='py-12'>
           <h2 className='uppercase text-h2.5'>
             {' '}
@@ -91,7 +91,7 @@ const Prizes = (props: Props) => {
         <Accordion
           type='single'
           collapsible
-          className={`flex flex-col w-full ml-12`}>
+          className={`flex flex-col w-full sm:ml-0 lg:ml-12`}>
           {prices.map((price, index) => renderAccordionItem(price, index))}
         </Accordion>
 
