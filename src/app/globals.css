@@ -94,6 +94,10 @@
     --font-size-body-mobile: 1rem;
   }
 
+  .highlight {
+    display: inline;
+  }
+
   /* a {
     @apply text-primary underline underline-offset-2 hover:opacity-80;
   } */
