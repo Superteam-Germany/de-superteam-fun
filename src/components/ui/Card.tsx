@@ -70,7 +70,7 @@ const Card: FC<Props> = ({
         <div>
           {title && <h4 className='mt-4 w-full mb-2 font-semibold'>{title}</h4>}
           {content && (
-            <p className=' line-clamp-6 sm:line-clamp-[3]'>{content}</p>
+            <p className=' line-clamp-6 line-clamp-[3]'>{content}</p>
           )}
           {date && <p className='text-sm text-gray-500 py-4'>{date}</p>}
         </div>
