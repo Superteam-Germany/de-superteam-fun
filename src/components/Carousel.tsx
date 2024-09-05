@@ -24,9 +24,9 @@ const Carousel: FC<Props> = ({ images }) => {
       <div className="" ref={emblaRef}>
         <div className="flex h-[40vh] sm:h-[35vh]">
           {images &&
-            images.map(({ imgUrl, link }) => (
+            images.map(({ imgUrl, link }, index) => (
               <div
-                key={imgUrl.slice(-10)}
+                key={index}
                 className="mx-2  relative bg-white/5 overflow-hidden flex-grow-0 shrink-0 basis-[80%] md:basis-[40%] ">
                 <Image
                   src={imgUrl}

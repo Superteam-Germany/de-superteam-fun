@@ -99,6 +99,14 @@
   } */
 }
 
+.faq-answer {
+  backdrop-filter: blur(10px);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 24px;
+  border-radius: 10px;
+  color: white;
+}
+
 @layer base {
   * {
     @apply border-border;

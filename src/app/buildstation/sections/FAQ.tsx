@@ -3,21 +3,27 @@ import React from 'react';
 import AccordionWrapper from '../../../components/Accordion';
 import Link from 'next/link';
 import FadeInDiv from '@/components/ui/FadeInDiv';
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 const FAQ = () => {
+  const { scrollYProgress } = useScroll();
+  const y = useTransform(scrollYProgress, [0, 1], ['-40%', '40%']);
+
   return (
-    <div className=''>
-      <section className='container pt-24 space-y-24'>
+    <div className='relative overflow-hidden'>
+      <motion.div
+        style={{ y, backgroundSize: 'cover' }}
+        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] w-full absolute opacity-20 xl:opacity-100 h-screen bg-no-repeat bg-right-bottom -z-50 bg-fixed"></motion.div>
+      <section className='container pt-24 space-y-24 mb-48'>
         <FadeInDiv>
           <h2 className='text-center'>FAQ</h2>
         </FadeInDiv>
         <AccordionWrapper
           items={[
-            // 10 item questions and answers
             {
-              title: <span>Who can participate?</span>,
+              title: <span >Who can participate?</span>,
               content: (
-                <p>
+                <p className='faq-answer'>
                   The Station is open to everyone interested in Solana. May you
                   be a developer, biz-dev, artist, marketer or jpeg flippooor.
                   Whether you&apos;re just starting out, or a seasoned pro,
@@ -42,9 +48,9 @@ const FAQ = () => {
             //   ),
             // },
             {
-              title: <span>Where is the Build Station taking place?</span>,
+              title: <span >Where is the Build Station taking place?</span>,
               content: (
-                <p>
+                <p className='faq-answer'>
                   In the heart of Berlin at the W3 Hub.{' '}
                   <a
                     href='https://goo.gl/maps/KETGWHMpBVUsdvvb8'
@@ -56,8 +62,8 @@ const FAQ = () => {
               ),
             },
             {
-              title: <span>Are only German teams allowed to participate?</span>,
-              content: <p>No, we welcome everyone.</p>,
+              title: <span >Are only German teams allowed to participate?</span>,
+              content: <p className='faq-answer'>No, we welcome everyone.</p>,
             },
             // {
             //   title: (
@@ -70,30 +76,30 @@ const FAQ = () => {
             //   ),
             // },
             {
-              title: <span>Can I bring my dog?</span>,
-              content: <p>Yes, but only if we can pet it.</p>,
+              title: <span >Can I bring my dog?</span>,
+              content: <p className='faq-answer'>Yes, but only if we can pet it.</p>,
             },
             {
-              title: <span>Is it possible to get mentorship virtually?</span>,
+              title: <span >Is it possible to get mentorship virtually?</span>,
               content: (
-                <p>
+                <p className='faq-answer'>
                   Build Station channels are open to all on our Discord, and you
                   can always reach out to us for more specific help.
                 </p>
               ),
             },
             {
-              title: <span>How much does it cost to participate?</span>,
-              content: <p>Attendance is free.</p>,
+              title: <span >How much does it cost to participate?</span>,
+              content: <p className='faq-answer'>Attendance is free.</p>,
             },
             {
-              title: <span>What is the Build Station’s Code of Conduct?</span>,
-              content: <p>Be nice.</p>,
+              title: <span >What is the Build Station’s Code of Conduct?</span>,
+              content: <p className='faq-answer'>Be nice.</p>,
             },
             {
-              title: <span>Did we miss something?</span>,
+              title: <span >Did we miss something?</span>,
               content: (
-                <p>
+                <p className='faq-answer'>
                   DM{' '}
                   <a href='https://t.me/zCasee' target='_blank'>
                     @zCasee

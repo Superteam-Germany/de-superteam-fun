@@ -89,7 +89,7 @@ const page = () => {
         <SignUp />
       </FadeInDiv> */}
       <Spacer />
-      <FooterGroup />
+      <FAQ />
     </main>
   );
 };

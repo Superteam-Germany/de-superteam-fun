@@ -21,7 +21,7 @@ import Alert from '../components/Alert';
 
 export default function Home() {
   return (
-    <main className='min-h-screen'>
+    <div className='min-h-screen'>
       <Nav />
       <Spacer />
       <FadeInDiv>
@@ -89,8 +89,7 @@ export default function Home() {
             </a>
           }
         />
-        <Spacer />
-        <section className='mt-24 relative pb-48'>
+        {/* <section className='mt-24 relative pb-48'>
           <div className='max-w-screen-2xl mx-auto px-4 sm:flex justify-between'>
             <Image
               src='/images/stLogoWithIcon.svg'
@@ -100,7 +99,6 @@ export default function Home() {
               alt='Superteam logo'
             />
             <div className='space-x-6'>
-              {/* <Link href="">Terms & Conditions</Link> */}
               <Link href='/policy'>Privacy Policy</Link>
             </div>
           </div>
@@ -117,8 +115,8 @@ export default function Home() {
               </div>
             </div>
           </FadeInDiv>
-        </section>
+        </section> */}
       </div>
-    </main>
+    </div>
   );
 }
