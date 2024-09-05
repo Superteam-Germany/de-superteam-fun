@@ -98,7 +98,7 @@ const FooterGroup = () => {
                   className="mx-auto xl:mx-0"
                 />
                 <p className="text-sm leading-6 text-gray-300">
-                  Let's build the next generation of the internet together on Solana.
+                  Let&apos;s build the next generation of the internet together on Solana.
                 </p>
                 <div className="flex justify-center xl:justify-start space-x-6">
                   {navigation.social.map((item) => (
