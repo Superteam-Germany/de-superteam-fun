@@ -11,6 +11,7 @@ const navigation = {
   resources: [
     { name: 'Global Hackathon', href: '/buildstation' },
     { name: 'Superteam Wiki', href: 'https://docs.superteamde.fun/superteam-germany-guilds', target: '_blank' },
+    { name: 'Superteam Global', href: 'https://superteam.fun', target: '_blank' },
     { name: 'Guilds', href: 'https://docs.superteamde.fun/guilds', target: '_blank' },
   ],
   social: [
