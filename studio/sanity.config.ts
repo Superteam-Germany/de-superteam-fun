@@ -1,18 +1,16 @@
-import {defineConfig} from 'sanity'
-import {structureTool} from 'sanity/structure'
-import {visionTool} from '@sanity/vision'
-import {schemaTypes} from './schemaTypes'
+
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import schemas from './schemas';
 
 export default defineConfig({
-  name: 'default',
-  title: 'Superteam',
-
-  projectId: 'loktgfyy',
+  projectId: 'your_project_id', // Replace with your actual project ID
   dataset: 'production',
-
-  plugins: [structureTool(), visionTool()],
-
+  title: 'My Blog',
+  apiVersion: '2023-10-01',
+  basePath: '/blog',
+  plugins: [deskTool()],
   schema: {
-    types: schemaTypes,
+    types: schemas,
   },
-})
+});
