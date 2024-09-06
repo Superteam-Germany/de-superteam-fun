@@ -5,7 +5,7 @@ import schemas from './schemas';
 export default defineConfig({
   projectId: 'loktgfyy', 
   dataset: 'production',
-  title: 'My Blog',
+  title: 'Superteam Germany Blog',
   apiVersion: '2023-10-01',
   basePath: '/blog',
   plugins: [deskTool()],
