@@ -4,7 +4,7 @@ import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import FooterGroup from "@/app/buildstation/sections/FooterGroup";
-
+import Nav from "@/components/Nav";
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
   display: "swap",
@@ -64,7 +64,8 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable} `}>
         <main>
-        {children}
+          <Nav />
+          {children}
           <Analytics />
           <FooterGroup />
         </main>

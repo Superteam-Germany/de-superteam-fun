@@ -12,14 +12,11 @@ import { Highlight } from '@/components/ui/Highlight';
 import Spacer from '@/components/ui/Spacer';
 import Image from 'next/image';
 import Link from 'next/link';
-import FooterGroup from './sections/FooterGroup';
 import FadeInDiv from '@/components/ui/FadeInDiv';
-import Banner from '../../components/Banner';
 
 const page = () => {
   return (
-    <main className='min-h-screen hyperdrive'>
-      <Nav />
+    <div className='min-h-screen hyperdrive'>
       <FadeInDiv>
         <div className='py-5 container text-end flex justify-end'>
           <div>
@@ -90,7 +87,7 @@ const page = () => {
       </FadeInDiv> */}
       <Spacer />
       <FAQ />
-    </main>
+    </div>
   );
 };
 

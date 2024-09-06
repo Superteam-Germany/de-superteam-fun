@@ -1,28 +1,20 @@
-import AboutUs from '@/components/AboutUs';
 import Hero from './(main-sections)/Hero';
 import WhatIsSuperteam from './(main-sections)/WhatIsSupeteam';
-import Nav from '@/components/Nav';
 import TextBanner from '@/components/TextBanner';
 import Spacer from '@/components/ui/Spacer';
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
-import Card from '@/components/ui/Card';
 import UpcomingEvents from '@/app/(main-sections)/UpcomingEvents';
-import Partners from './(main-sections)/Partners';
 import GetInvolved from '@/app/buildstation/sections/GetInvolved';
-import Email from '@/app/(main-sections)/Email';
-import Projects from '@/app/(main-sections)/Projects';
 import Gallery from '@/app/(main-sections)/Gallery';
 import FadeInDiv from '@/components/ui/FadeInDiv';
 import Link from 'next/link';
 import { Suspense } from 'react';
-import Banner from '../components/Banner';
 import Alert from '../components/Alert';
 
 export default function Home() {
   return (
     <div className='min-h-screen'>
-      <Nav />
       <Spacer />
       <FadeInDiv>
         <Hero />
