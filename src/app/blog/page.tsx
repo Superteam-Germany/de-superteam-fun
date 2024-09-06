@@ -16,7 +16,7 @@ export default async function BlogPage() {
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '80%']);
   const x = useTransform(scrollYProgress, [0, 1], ['4%', '80%']);
 
-  const query = `*[_type == "blogPost"] | order(_createdAt desc) [${(page - 1) * POSTS_PER_PAGE}...${page * POSTS_PER_PAGE}] {title, slug, mainImage, _createdAt}`;
+  const query = `*[_type == "blogPost"] | order(_createdAt desc) [${(page - 1) * POSTS_PER_PAGE}...${page * POSTS_PER_PAGE}] {title, slug, mainImage, blurb, _createdAt}`; // Updated query to include 'blurb'
   const posts = await sanityClient.fetch(query);
 
   const totalQuery = `count(*[_type == "blogPost"])`;
@@ -35,7 +35,7 @@ export default async function BlogPage() {
             <Card
               key={post.slug.current}
               title={post.title}
-              content={post.blurb}
+              content={post.blurb} // Pass 'blurb' to the Card component
               linkContent="Read more"
               imgSrc={post.mainImage ? urlFor(post.mainImage).width(400).url() : undefined}
               href={`/blog/${post.slug.current}`}
