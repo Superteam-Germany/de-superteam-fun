@@ -4,6 +4,7 @@ import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
 import FooterGroup from "@/app/buildstation/sections/FooterGroup";
+import Banner from "@/components/Banner";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
@@ -64,10 +65,11 @@ export default function RootLayout({
       <body
         className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable} `}>
         <main>
-        {children}
+          {children}
           <Analytics />
           <FooterGroup />
         </main>
+        <Banner text="It's Hackathon Season! Submit your project and let us help you succeed!" link="https://tally.so/r/mD5Q7X" />
       </body>
     </html>
   );
