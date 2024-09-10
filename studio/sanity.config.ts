@@ -3,8 +3,10 @@ import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
 import schemas from './schemas';
 
+
+
 export default defineConfig({
-  projectId: 'your_project_id', // Replace with your actual project ID
+  projectId: process.env.SANITY_PROJECT_ID ?? '',
   dataset: 'production',
   title: 'My Blog',
   apiVersion: '2023-10-01',
@@ -13,4 +15,11 @@ export default defineConfig({
   schema: {
     types: schemas,
   },
+  cors: {
+    allowCredentials: true,
+    allowOrigins: [
+      "http://localhost:3000",
+      "https://de.superteam.fun"
+    ]
+  }
 });
