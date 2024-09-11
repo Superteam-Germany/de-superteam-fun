@@ -15,7 +15,7 @@ const Banner = (props: Props) => {
 
   return (
     <div className="flex w-full fixed bottom-0 justify-center items-center z-50 mb-10">
-      <div className="w-4/5 bg-gradient-primary rounded-lg shadow-lg p-4">
+      <div className="w-4/5 bg-gradient-to-r from-[#9945FF] to-[#14F195] rounded-lg shadow-lg p-4">
         <div className="flex pl-4 justify-between items-center">
           <a href={props.link || '/'} target='_blank' className="text-white">
             {props.text}
