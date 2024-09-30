@@ -12,7 +12,7 @@ const BUILD_STATION_EVENTS = [
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
     buttonText: 'Register',
-    disabled: false,
+    disabled: true,
     buttonLink: REGISTER_BUILD_STATION_KICKOFF_LINK
   },
   {
@@ -30,7 +30,7 @@ const BUILD_STATION_EVENTS = [
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
     buttonText: 'Coming Soon',
-    disabled: true,
+    disabled: false,
     buttonLink: REGISTER_BUILD_STATION_DEMO_DAY_LINK
   }
 ]
