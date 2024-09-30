@@ -4,7 +4,7 @@
     "title": "Metaplex",
     "prize": "10k MPLX",
     "logo": "/images/sponsors/metaplex-logo.png",
-    "requirements": "Focus on use cases for the Bonk token, and integrate Bonk into your project.",
+    "requirements": "",
     "link": "https://www.metaplex.com/"
   },
   {
@@ -12,7 +12,15 @@
     "title": "DePHY",
     "prize": "2k USDC",
     "logo": "/images/sponsors/dephy-logo.svg",
-    "requirements": "Focus on use cases for the Bonk token, and integrate Bonk into your project.",
+    "requirements": "",
     "link": "https://dephy.io/"
+  },
+  {
+    "sponsor": "Circle",
+    "title": "DeCirclePHY",
+    "prize": "3k USDC",
+    "logo": "/images/sponsors/circle-logo-ondark.svg",
+    "requirements": "",
+    "link": "https://earn.superteam.fun/listings/hackathon/building-with-circle-developer-platform/"
   }
 ]

@@ -29,7 +29,7 @@ const BUILD_STATION_EVENTS = [
     date: 'Oct 9, 2024',
     locationText: 'Möckernstrasse 120',
     locationLink: WEB3_HUB_LOCATION_LINK,
-    buttonText: 'Coming Soon',
+    buttonText: 'Register',
     disabled: false,
     buttonLink: REGISTER_BUILD_STATION_DEMO_DAY_LINK
   }
