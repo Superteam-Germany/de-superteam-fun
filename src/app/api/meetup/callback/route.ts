@@ -40,7 +40,11 @@ export async function GET(request: NextRequest) {
     if (tokenData.error) {
       return NextResponse.json(tokenData, { status: 400 });
     }
-
+    
+    const url = `https://secure.meetup.com/oauth2/access?client_id=${process.env.MEETUP_CLIENT_ID}&client_secret=${process.env.MEETUP_CLIENT_SECRET}&grant_type=authorization_code&redirect_uri=${encodeURIComponent(process.env.MEETUP_REDIRECT_URI || '')}&code=${code}`;
+    const res = await fetch(url);
+    const data = await res.json();
+    console.log('data', data);
     // Store the tokens securely (e.g., in a database or encrypted session)
     // For demonstration, we'll just return them in the response
     return NextResponse.json(tokenData);
