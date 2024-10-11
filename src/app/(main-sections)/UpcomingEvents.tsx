@@ -102,7 +102,7 @@ const UpcomingEvents = () => {
               width={500}
               height={500}
             />
-            <h2 className='uppercase mb-12 lg:absolute'>
+            <h2 className='hidden lg:block uppercase mb-12 lg:absolute'>
               Upcoming <br /> Events
             </h2>
           </div>
