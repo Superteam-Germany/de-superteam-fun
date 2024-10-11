@@ -5,6 +5,7 @@ export async function GET(request: NextRequest) {
   // Extract 'code' from the URL's query parameters
   console.log('------------------------------ hi from meetup callback')
   const { searchParams } = new URL(request.url);
+  console.log('searchParams', searchParams);
   const code = searchParams.get('code');
 
   if (!code) {
