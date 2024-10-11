@@ -7,6 +7,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
+import { Button } from '@/components/ui/button';
 
 const getEvents = async (): Promise< EventRecord[]> => {
   const result = await fetch('api/events', {
@@ -66,7 +67,18 @@ const UpcomingEvents = () => {
             'grid sm:grid-cols-2 grow justify-evenly gap-8 items-center',
             events.length === 1 ? 'sm:grid-cols-1 justify-center ' : ''
           )}>
-          {events.map((event: EventRecord) => {
+          <div className='p-10 rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
+            <div>
+              <h3 className='max-w-2/3 leading-tight mb-12'>
+                Explore Our Upcoming Events on Meetup
+              </h3>
+              <Button className='ml-auto'>
+                Discover Now
+              </Button>
+            </div>
+          </div>
+
+          {/* {events.map((event: EventRecord) => {
             return (
               <Card
                 key={event.id}
@@ -79,7 +91,7 @@ const UpcomingEvents = () => {
                 date={formatDateTime(event.startTime)}
               />
             );
-          })}
+          })} */}
         </div>
         <FadeInDiv>
           <div className='relative flex self-start sm:self-auto justify-center items-center'>

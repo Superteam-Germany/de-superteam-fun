@@ -1,5 +1,4 @@
 import type { Metadata } from 'next';
-import Banner from '../../components/Banner';
 
 export const metadata: Metadata = {
   title: 'Berlin Build Station | Superteam Germany',

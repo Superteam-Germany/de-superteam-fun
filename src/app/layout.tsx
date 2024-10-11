@@ -69,7 +69,6 @@ export default function RootLayout({
           <Analytics />
           <FooterGroup />
         </main>
-        <Banner text="It's Hackathon Season! Submit your project and let us help you succeed!" link="https://tally.so/r/mD5Q7X" />
       </body>
     </html>
   );
