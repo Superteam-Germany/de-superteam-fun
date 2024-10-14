@@ -13,7 +13,7 @@ const getAccessToken = async () => {
     aud: 'api.meetup.com',
     exp: Math.floor(Date.now() / 1000) + 120,
   }
-  
+
   // JWT header
   const header = {
     kid: process.env.MEETUP_SIGNING_KEY_ID,
@@ -96,6 +96,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
     return NextResponse.json({ events }, { status: 200 });
   } catch (error) {
+    console.error('Error fetching events:', error);
     return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
   }
 }
