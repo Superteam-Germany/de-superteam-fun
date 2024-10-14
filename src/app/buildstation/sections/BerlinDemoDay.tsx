@@ -3,7 +3,7 @@ import React from 'react';
 import { Highlight } from '../../../components/ui/Highlight';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { UPCOMING_HACKATHON_LINK, SUPERTEAM_EARN_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from './../../../lib/constances';
+import { UPCOMING_HACKATHON_LINK, SUPERTEAM_EARN_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from '../../../lib/constants';
 
 const BerlinDemoDay = () => {
   const { scrollYProgress } = useScroll();

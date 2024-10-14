@@ -4,7 +4,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import Spacer from '@/components/ui/Spacer';
 import { useScroll, useTransform } from 'framer-motion';
-import { PROJECT_SUBMISSION_LINK, RESOURCES_AND_GUILDS_LINK, SUPERTEAM_GLOBAL_LINK, SOCIAL_X_LINK, SOCIAL_DISCORD_LINK, SOCIAL_TELEGRAM_LINK, SOCIAL_YOUTUBE_LINK } from '@/lib/constances';
+import { PROJECT_SUBMISSION_LINK, RESOURCES_AND_GUILDS_LINK, SUPERTEAM_GLOBAL_LINK, SOCIAL_X_LINK, SOCIAL_DISCORD_LINK, SOCIAL_TELEGRAM_LINK, SOCIAL_YOUTUBE_LINK } from '@/lib/constants';
 
 const navigation = {
   resources: [

@@ -2,7 +2,7 @@ import React from 'react';
 import { Highlight } from '../../../components/ui/Highlight';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { WEB3_HUB_LOCATION_LINK, REGISTER_BUILD_STATION_KICKOFF_LINK, REGISTER_BUILD_STATION_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from './../../../lib/constances';
+import { WEB3_HUB_LOCATION_LINK, REGISTER_BUILD_STATION_KICKOFF_LINK, REGISTER_BUILD_STATION_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from '../../../lib/constants';
 import { eventNames } from 'process';
 
 const BUILD_STATION_EVENTS = [

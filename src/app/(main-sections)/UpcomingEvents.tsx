@@ -8,6 +8,8 @@ import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
 import { Button } from '@/components/ui/button';
+import Link from 'next/link';
+import { MEETUP_GROUP_LINK } from '@/lib/constants';
 
 const getEvents = async (): Promise< EventRecord[]> => {
   const result = await fetch('api/events', {
@@ -72,9 +74,11 @@ const UpcomingEvents = () => {
               <h3 className='max-w-2/3 leading-tight mb-12'>
                 Explore Our Upcoming Events on Meetup
               </h3>
-              <Button className='ml-auto'>
-                Discover Now
-              </Button>
+              <Link target="_blank" href={MEETUP_GROUP_LINK}>
+                <Button className='ml-auto'>
+                  Discover Now
+                </Button>
+              </Link>
             </div>
           </div>
 

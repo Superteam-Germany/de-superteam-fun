@@ -7,7 +7,7 @@ import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import Spacer from "./ui/Spacer";
-import { REGISTER_BUILD_STATION_LINK } from "@/lib/constances";
+import { REGISTER_BUILD_STATION_LINK } from "@/lib/constants";
 
 
 const menuItems = [

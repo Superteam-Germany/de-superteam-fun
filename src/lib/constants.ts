@@ -21,3 +21,6 @@ export const SOCIAL_DISCORD_LINK = 'https://discord.gg/CVwJhHgFfF';
 export const SOCIAL_TELEGRAM_LINK = 'https://t.me/SuperteamDE';
 export const SOCIAL_YOUTUBE_LINK = 'https://www.youtube.com/@SuperteamDE';
 
+// Meetup
+export const MEETUP_GROUP_LINK = 'https://www.meetup.com/superteam-germany/';
+
