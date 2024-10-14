@@ -1,47 +1,46 @@
 import { NextRequest, NextResponse } from 'next/server';
-import fs from 'fs';
 import jwt from 'jsonwebtoken';
 import { EventRecord } from '@/app/types/events';
 
+const encodedKey = process.env.MEETUP_PRIVATE_KEY;
+const privateKey = encodedKey ? Buffer.from(encodedKey, 'base64').toString('utf8') : '';
+
 const getAccessToken = async () => {
-  const privateKeyPath = './private.key';
-      const privateKey = fs.readFileSync(privateKeyPath, 'utf8');
+  // JWT claims
+  const claims = {
+    sub: process.env.MEETUP_MEMBER_ID,
+    iss: process.env.MEETUP_CLIENT_ID,
+    aud: 'api.meetup.com',
+    exp: Math.floor(Date.now() / 1000) + 120,
+  }
+  
+  // JWT header
+  const header = {
+    kid: process.env.MEETUP_SIGNING_KEY_ID,
+    typ: 'JWT',
+    alg: 'RS256',
+  }
 
-      // JWT claims
-      const claims = {
-        sub: process.env.MEETUP_MEMBER_ID,
-        iss: process.env.MEETUP_CLIENT_ID,
-        aud: 'api.meetup.com',
-        exp: Math.floor(Date.now() / 1000) + 120,
-      }
+  const token = jwt.sign(claims, privateKey, {
+    algorithm: 'RS256',
+    header: header,
+  });
 
-      // JWT header
-      const header = {
-        kid: process.env.MEETUP_SIGNING_KEY_ID,
-        typ: 'JWT',
-        alg: 'RS256',
-      }
+  const data = new URLSearchParams();
+  data.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
+  data.append('assertion', token);
 
-      const token = jwt.sign(claims, privateKey, {
-        algorithm: 'RS256',
-        header: header,
-      });
+  const response = await fetch('https://secure.meetup.com/oauth2/access', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: data.toString(),
+  });
 
-      const data = new URLSearchParams();
-      data.append('grant_type', 'urn:ietf:params:oauth:grant-type:jwt-bearer');
-      data.append('assertion', token);
+  const tokenData = await response.json();
 
-      const response = await fetch('https://secure.meetup.com/oauth2/access', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/x-www-form-urlencoded',
-        },
-        body: data.toString(),
-      });
-
-      const tokenData = await response.json();
-
-      return tokenData.access_token;
+  return tokenData.access_token;
 }
 
 function adaptMeetupEventToEventRecord(meetupEvent: any): EventRecord {
