@@ -23,4 +23,3 @@ export const SOCIAL_YOUTUBE_LINK = 'https://www.youtube.com/@SuperteamDE';
 
 // Meetup
 export const MEETUP_GROUP_LINK = 'https://www.meetup.com/superteam-germany/';
-
