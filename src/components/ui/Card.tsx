@@ -76,6 +76,7 @@ const Card: FC<Props> = ({
         </div>
         {linkContent && (
           <a
+            target="_blank"
             href={href}
             className={`${
               title && 'text-right'
