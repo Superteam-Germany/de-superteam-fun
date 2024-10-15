@@ -3,7 +3,7 @@ import React from 'react';
 import { Highlight } from '../../../components/ui/Highlight';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
-import { UPCOMING_HACKATHON_LINK } from './../../../lib/constances';
+import { UPCOMING_HACKATHON_LINK, SUPERTEAM_EARN_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from '../../../lib/constants';
 
 const BerlinDemoDay = () => {
   const { scrollYProgress } = useScroll();
@@ -53,23 +53,35 @@ const BerlinDemoDay = () => {
           <div>
             <ul className='list-decimal space-y-2 list-inside px-4'>
               <li>
-                Apply for the Solana Hackathon{' '}
+                Submit your project in{' '}
                 <Link
-                  about='_blank'
+                  target='_blank'
                   className=''
                   href={UPCOMING_HACKATHON_LINK}>
-                  here
+                  Colosseum
                 </Link>
-                . Make sure to mark Germany* in the Hackathon application form
-                to be eligible for Berlin Demo Day prizes.{' '}
+                {' '}by October 8th at midnight.
               </li>
               <li>
-                Fill out Berlin Demo Day form (we will make the form public
-                closer to the Demo Day date).
+                Apply separately for each side track (e.g., Superteam Germany
+                Local track) via{' '}
+                <Link
+                  target='_blank'
+                  className=''
+                  href={SUPERTEAM_EARN_LINK}>
+                  Superteam Earn
+                </Link>
+                .
               </li>
               <li>
-                Showtime! Join us in real life at the Berlin Build Station and
-                pitch your hackathon submission on stage! <br />
+                <Link
+                  target='_blank'
+                  className=''
+                  href={REGISTER_BUILD_STATION_DEMO_DAY_LINK}>
+                  Berlin Demo Day
+                </Link>
+                {' '}is on October 9th. Pitch your project for a
+                chance to win an additional 20K in Germany-only prizes.
               </li>
             </ul>
           </div>

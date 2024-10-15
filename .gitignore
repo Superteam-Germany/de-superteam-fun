@@ -30,7 +30,14 @@ yarn-error.log*
 
 # vercel
 .vercel
+private.key
+encode-key.js
 
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# sanity
+/studio/node_modules
+/studio/sanity.config.ts
+/studio/tsconfig.json
