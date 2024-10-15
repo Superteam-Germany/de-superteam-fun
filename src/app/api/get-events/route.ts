@@ -78,25 +78,24 @@ function adaptMeetupEventToEventRecord(meetupEvent: any): EventRecord {
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    // const token = await getAccessToken();
-    // const groupUrlName = process.env.MEETUP_GROUP_URLNAME;
-    // const url = `https://api.meetup.com/${groupUrlName}/events?fields=featured_photo,group_key_photo`;
+    const token = await getAccessToken();
+    console.log('token', token);
+    const groupUrlName = process.env.MEETUP_GROUP_URLNAME;
+    const url = `https://api.meetup.com/${groupUrlName}/events?fields=featured_photo,group_key_photo`;
 
-    // const response = await fetch(url, {
-    //   headers: {
-    //     'Authorization': `Bearer ${token}`
-    //   }
-    // });
+    const response = await fetch(url, {
+      headers: {
+        'Authorization': `Bearer ${token}`
+      }
+    });
 
-    // const meetupEvents = await response.json();
+    const meetupEvents = await response.json();
 
-    // const events = meetupEvents
-    //   .map(adaptMeetupEventToEventRecord)
-    //   .slice(0, 4); // Limit to 4 events
+    const events = meetupEvents
+      .map(adaptMeetupEventToEventRecord)
+      .slice(0, 4); // Limit to 4 events
 
-    // return NextResponse.json({ events }, { status: 200 });
-    console.log('Hi from the API');
-    return NextResponse.json({ events: [] }, { status: 200 });
+    return NextResponse.json({ events }, { status: 200 });
   } catch (error) {
     console.error('Error fetching events:', error);
     return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });
