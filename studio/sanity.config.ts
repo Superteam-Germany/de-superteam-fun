@@ -6,9 +6,9 @@ import schemas from './schemas';
 
 
 export default defineConfig({
-  projectId: process.env.SANITY_PROJECT_ID ?? '',
+  projectId: 'loktgfyy',
   dataset: 'production',
-  title: 'My Blog',
+  title: 'Superteam Blog',
   apiVersion: '2023-10-01',
   basePath: '/blog',
   plugins: [deskTool()],

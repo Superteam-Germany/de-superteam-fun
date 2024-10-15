@@ -2,7 +2,7 @@ import { createClient } from 'next-sanity';
 import imageUrlBuilder from '@sanity/image-url';
 
 const config = {
-  projectId: 'loktgfyy', // Ensure this is your actual project ID
+  projectId: 'loktgfyy', 
   dataset: 'production',
   apiVersion: '2023-10-01',
   useCdn: true,

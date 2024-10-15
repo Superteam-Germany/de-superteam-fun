@@ -29,7 +29,7 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="font-medium !text-blue-500">
           {post.tags && post.tags.map((tag: string) => `#${tag} `)}
         </div>
-        <h1 className="my-4 font-black text-4xl !leading-snug">
+        <h1 className="mb-8 mt-20 font-black text-4xl !leading-snug">
           {post.title}
         </h1>
         <PortableText

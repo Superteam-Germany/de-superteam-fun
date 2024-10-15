@@ -4,7 +4,7 @@ import React, { FC } from 'react';
 import Image from 'next/image';
 
 const cardVariants = cva(
-  'rounded-2xl bg-white/5 h-[450px] flex-col w-full flex justify-between backdrop-blur-xl text-ellipsis shadow-xl overflow-hidden',
+  'rounded-2xl bg-white/5 h-[460px] flex-col w-full flex justify-between backdrop-blur-xl text-ellipsis shadow-xl overflow-hidden',
   {
     variants: {
       variant: {
@@ -68,9 +68,9 @@ const Card: FC<Props> = ({
       )}
       <div className='px-6 pb-6 flex grow flex-col justify-between'>
         <div>
-          {title && <h4 className='mt-4 w-full mb-2 font-semibold'>{title}</h4>}
+          {title && <h4 className='mt-4 w-full mb-2 font-semibold line-clamp-2'>{title}</h4>}
           {content && (
-            <p className=' line-clamp-6 line-clamp-[3]'>{content}</p>
+            <p className='line-clamp-6 line-clamp-[3]'>{content}</p>
           )}
           {date && <p className='text-sm text-gray-500 py-4'>{date}</p>}
         </div>
