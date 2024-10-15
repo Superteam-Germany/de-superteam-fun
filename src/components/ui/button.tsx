@@ -49,7 +49,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         {...props}>
         {variant === 'outline' ? (
-          <div className='bg-background rounded-[calc(var(--radius)-2px)] px-8 h-full flex grow justify-center items-center'>
+          <div className='bg-background rounded-[calc(var(--radius)-2px)] px-8 h-full flex grow justify-center items-center' style={{ textShadow: '1px 1px 2px black, 0 0 1em black, 0 0 0.2em black' }}>
             {props.children}
           </div>
         ) : (

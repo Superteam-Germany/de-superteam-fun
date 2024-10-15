@@ -34,6 +34,23 @@ const formatDateTime = (dateString: string) => {
   });
 };
 
+const renderMoreEventsCTA = () => {
+  return (
+    <div className='px-10 pt-12 pb-24 lg:hidden rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
+      <div>
+        <h3 className='max-w-2/3 leading-tight mb-12'>
+          Explore more events on Meetup
+        </h3> 
+        <Button className='ml-auto' onClick={() => {
+          window.open(MEETUP_GROUP_LINK, '_blank');
+        }}>
+          Discover Now
+        </Button>
+      </div>
+    </div>
+  )
+}
+
 const UpcomingEvents = () => {
   const [events, setEvents] = React.useState<EventRecord[]>([]);
 
@@ -68,18 +85,6 @@ const UpcomingEvents = () => {
             'grid sm:grid-cols-2 grow justify-evenly gap-8 items-center',
             events.length === 1 ? 'sm:grid-cols-1 justify-center ' : ''
           )}>
-            {/* <div className='p-10 rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
-            <div>
-          <h3 className='max-w-2/3 leading-tight mb-12'>
-            Explore Our Upcoming Events on Meetup
-          </h3>
-          <Link target="_blank" href={MEETUP_GROUP_LINK}>
-            <Button className='ml-auto'>
-              Discover Now
-            </Button>
-          </Link>
-          </div>
-          </div> */}
           {events.map((event: EventRecord) => {
             return (
               <Card
@@ -104,12 +109,21 @@ const UpcomingEvents = () => {
               width={500}
               height={500}
             />
-            <h2 className='hidden lg:block uppercase mb-12 lg:absolute'>
-              Upcoming <br /> Events
-            </h2>
+            <div className='uppercase mb-12 lg:absolute'>
+              <h2  style={{ textShadow: '1px 1px 2px black, 0 0 1em black, 0 0 0.2em black' }} >
+                Upcoming <br /> Events
+              </h2>
+                <Button onClick={() => {
+                  window.open(MEETUP_GROUP_LINK, '_blank');
+                }} className='hidden lg:block mt-12 ml-8'>
+                  Explore All Events
+                </Button>
+            </div>
           </div>
+          
         </FadeInDiv>
       </section>
+      {renderMoreEventsCTA()}
     </div>
   );
 };

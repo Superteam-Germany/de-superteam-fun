@@ -6,6 +6,7 @@ const encodedKey = process.env.MEETUP_PRIVATE_KEY;
 const privateKey = encodedKey ? Buffer.from(encodedKey, 'base64').toString('utf8') : '';
 
 const getAccessToken = async () => {
+  
   // JWT claims
   const claims = {
     sub: process.env.MEETUP_MEMBER_ID,
@@ -79,7 +80,6 @@ function adaptMeetupEventToEventRecord(meetupEvent: any): EventRecord {
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
     const token = await getAccessToken();
-    console.log('token', token);
     const groupUrlName = process.env.MEETUP_GROUP_URLNAME;
     const url = `https://api.meetup.com/${groupUrlName}/events?fields=featured_photo,group_key_photo`;
 
