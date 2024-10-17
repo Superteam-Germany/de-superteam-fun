@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "yarn workspace studio build && next build",
+    "build": "cd studio && yarn build && cd .. && next build",
     "start": "next start",
     "lint": "next lint"
   },

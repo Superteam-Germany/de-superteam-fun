@@ -2,19 +2,21 @@
   "compilerOptions": {
     "target": "ESNext",
     "module": "ESNext",
-    "lib": ["DOM", "ES2017"],
+    "lib": ["DOM", "ESNext"],
     "skipLibCheck": true,
     "strict": true,
     "moduleResolution": "Node",
     "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
     "esModuleInterop": true,
+    "isolatedModules": false,
+    "noEmit": true,
     "forceConsistentCasingInFileNames": true,
     "jsx": "preserve",
-    "incremental": true,
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "types": ["react"]
   },
-  "include": ["./**/*"]
+  "include": ["./**/*"],
+  "exclude": ["node_modules"]
 }
+
 
