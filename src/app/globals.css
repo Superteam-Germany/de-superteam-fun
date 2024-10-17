@@ -156,3 +156,20 @@
     @apply container py-24 flex flex-col gap-6 justify-center sm:flex-row sm:justify-between items-center;
   }
 }
+
+.blog-content h1 {
+  margin-top: 3rem;
+  margin-bottom: 1rem;
+}
+.blog-content h2 {
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+.blog-content h3 {
+  margin-top: 1rem; 
+  margin-bottom: 1rem; 
+}
+
+.blog-content p {
+  margin-bottom: 1.5rem; 
+}

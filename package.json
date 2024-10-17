@@ -2,9 +2,10 @@
   "name": "superteam-de",
   "version": "0.1.0",
   "private": true,
+  "workspaces": ["studio"],
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "next build && pnpm --filter ./studio run build",
     "start": "next start",
     "lint": "next lint"
   },

@@ -44,6 +44,20 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
                 />
               ),
             },
+            block: {
+              h1: ({ children }) => <h1 className="mt-16 mb-4">{children}</h1>,
+              h2: ({ children }) => <h2 className="mt-12 mb-3">{children}</h2>,
+              h3: ({ children }) => <h3 className="mt-8 mb-2">{children}</h3>,
+              p: ({ children }) => <p className="mb-4">{children}</p>,
+            },
+            list: {
+              bullet: ({ children }) => <ul className="list-disc ml-5 mb-4">{children}</ul>,
+              number: ({ children }) => <ol className="list-decimal ml-5 mb-4">{children}</ol>,
+            },
+            listItem: {
+              bullet: ({ children }) => <li className="mt-2 mb-2">{children}</li>,
+              number: ({ children }) => <li className="mt-2 mb-2">{children}</li>,
+            },
           }}
         />
         <div className="mt-8">
