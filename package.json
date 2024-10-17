@@ -7,7 +7,7 @@
   ],
   "scripts": {
     "dev": "next dev",
-    "build": "next build && pnpm --filter ./studio run build",
+    "build": "yarn workspace studio build && next build",
     "start": "next start",
     "lint": "next lint"
   },

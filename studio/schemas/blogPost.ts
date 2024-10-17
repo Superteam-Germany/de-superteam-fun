@@ -35,7 +35,7 @@ export default {
       title: 'Blurb',
       type: 'text',
       description: 'A short summary of the blog post',
-      validation: Rule => Rule.max(200),
+      validation: (Rule: any) => Rule.max(200),
     },
     {
       name: 'tags',
