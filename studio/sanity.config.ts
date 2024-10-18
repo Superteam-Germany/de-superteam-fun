@@ -1,6 +1,7 @@
 
 import { defineConfig } from 'sanity';
 import { deskTool } from 'sanity/desk';
+import { visionTool } from '@sanity/vision';
 import schemas from './schemas';
 
 export default defineConfig({
@@ -8,8 +9,8 @@ export default defineConfig({
   dataset: 'production',
   title: 'Superteam Blog',
   apiVersion: '2023-10-01',
-  basePath: '/blog',
-  plugins: [deskTool()],
+  basePath: '/studio',
+  plugins: [deskTool(), visionTool()],
   schema: {
     types: schemas,
   },
@@ -17,7 +18,8 @@ export default defineConfig({
     allowCredentials: true,
     allowOrigins: [
       "http://localhost:3000",
-      "https://de.superteam.fun"
+      "https://de.superteam.fun",
+      "http://localhost:3001"
     ]
   }
 });

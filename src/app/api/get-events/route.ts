@@ -68,7 +68,7 @@ function adaptMeetupEventToEventRecord(meetupEvent: any): EventRecord {
     country: meetupEvent.group.country || null,
     description: cleanDescription, // Use cleaned description
     endTime: new Date(meetupEvent.time + meetupEvent.duration).toISOString(),
-    image: meetupEvent.featured_photo?.photo_link || '/images/online-event-placeholder.png', // Use featured photo if available
+    image: meetupEvent.featured_photo?.photo_link || '/images/online-event-placeholder.png', 
     link: meetupEvent.link,
     name: meetupEvent.name,
     startTime: new Date(meetupEvent.time).toISOString(),
