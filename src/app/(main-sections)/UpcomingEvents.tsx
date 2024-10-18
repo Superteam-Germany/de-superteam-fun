@@ -12,9 +12,9 @@ import { MEETUP_GROUP_LINK } from '@/lib/constants';
 
 const getEvents = async (): Promise< EventRecord[]> => {
   const result = await fetch('api/get-events', {
-    next: {
-      revalidate: 12 * 60 * 60,
-    },
+    // next: {
+    //   revalidate: 1 * 60 * 60,
+    // },
   });
 
   const events = (await result.json()).events as EventRecord[];
