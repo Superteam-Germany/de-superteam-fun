@@ -1,5 +1,3 @@
-// app/studio/[[...index]]/page.tsx
-
 'use client';
 
 import { NextStudio } from 'next-sanity/studio';

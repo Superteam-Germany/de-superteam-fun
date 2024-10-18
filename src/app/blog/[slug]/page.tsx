@@ -1,6 +1,7 @@
 import { sanityClient, urlFor } from '../../../../studio/client';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
+import Image from 'next/image';
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -20,9 +21,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
     <section className="p-8 min-h-screen">
       <div className="mx-auto max-w-screen-md lg:mt-12 mb-24">
         {post.mainImage && (
-          <img
+          <Image
             src={urlFor(post.mainImage).url()}
             alt={post.title}
+            width={700}
+            height={400}
             className="mb-4 h-[12rem] lg:h-[28rem] w-full rounded-xl object-cover"
           />
         )}
@@ -37,17 +40,19 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
           components={{
             types: {
               image: ({ value }) => (
-                <img
+                <Image
                   src={urlFor(value).url()}
                   alt={value.alt || 'Blog Image'}
+                  width={700}
+                  height={400}
                   className="my-4 w-full rounded-xl object-cover"
                 />
               ),
             },
             block: {
-              h1: ({ children }) => <h1 className="mt-16 mb-4">{children}</h1>,
-              h2: ({ children }) => <h2 className="mt-12 mb-3">{children}</h2>,
-              h3: ({ children }) => <h3 className="mt-8 mb-2">{children}</h3>,
+              h1: ({ children }) => <h1 className="mt-16 mb-4 text-2xl font-bold">{children}</h1>,
+              h2: ({ children }) => <h2 className="mt-12 mb-3 text-xl font-bold">{children}</h2>,
+              h3: ({ children }) => <h3 className="mt-8 mb-2 text-lg font-bold">{children}</h3>,
               p: ({ children }) => <p className="mb-4">{children}</p>,
             },
             list: {

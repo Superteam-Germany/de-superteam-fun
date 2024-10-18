@@ -45,12 +45,12 @@ const Card: FC<Props> = ({
     <div className={cn(cardVariants({ variant, className }))}>
       {logo && (
         <div className='h-48 bg-gradient-primary w-full flex justify-between items-center shrink-0 relative'>
-          <img
+          <Image
             src={logo}
             alt='Placeholder image'
-            className='max-w-fit mx-auto max-h-16 '
-            height={1}
             width={150}
+            height={1}
+            className='max-w-fit mx-auto max-h-16 '
             style={{ objectFit: 'contain', objectPosition: 'center' }}
           />
         </div>
