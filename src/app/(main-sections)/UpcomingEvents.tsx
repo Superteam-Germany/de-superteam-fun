@@ -6,15 +6,14 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { MEETUP_GROUP_LINK } from '@/lib/constants';
 
 const getEvents = async (): Promise< EventRecord[]> => {
   const result = await fetch('api/get-events', {
-    // next: {
-    //   revalidate: 1 * 60 * 60,
-    // },
+    next: {
+      revalidate: 12 * 60 * 60,
+    },
   });
 
   const events = (await result.json()).events as EventRecord[];
