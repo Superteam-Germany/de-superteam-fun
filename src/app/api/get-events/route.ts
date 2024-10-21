@@ -95,7 +95,15 @@ export async function GET(req: NextRequest, res: NextResponse) {
       .map(adaptMeetupEventToEventRecord)
       .slice(0, 4); // Limit to 4 events
 
-    return NextResponse.json({ events }, { status: 200 });
+    return NextResponse.json(
+      { events }, 
+      { 
+        status: 200,
+        headers: {
+          'Cache-Control':'max-age=3600', //'no-store', 
+        }, 
+      },
+    );
   } catch (error) {
     console.error('Error fetching events:', error);
     return NextResponse.json({ message: 'Internal Server Error' }, { status: 500 });

@@ -6,7 +6,6 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { EventRecord } from '@/app/types/events';
 import FadeInDiv from '../../components/ui/FadeInDiv';
 import { twMerge } from 'tailwind-merge';
-import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { MEETUP_GROUP_LINK } from '@/lib/constants';
 
