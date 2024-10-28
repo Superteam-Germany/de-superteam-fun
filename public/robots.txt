@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Disallow: /studio
+
+# Host
+Host: https://www.superteamde.fun/
+
+# Sitemaps
+Sitemap: https://www.superteamde.fun/sitemap.xml
