@@ -7,6 +7,7 @@ export default {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: (Rule: any) => Rule.required().error('Please add a title to your blog post.'),
     },
     {
       name: 'slug',
@@ -16,6 +17,7 @@ export default {
         source: 'title',
         maxLength: 96,
       },
+      validation: (Rule: any) => Rule.required().error('Please add a slug (url path e.g. my-blog-post or click on generate to auto-generate) to your blog post.'),
     },
     {
       name: 'mainImage',
@@ -29,13 +31,14 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
+      validation: (Rule: any) => Rule.required().error('Please add some content to your blog post.'),
     },
     {
       name: 'blurb',
       title: 'Blurb',
       type: 'text',
       description: 'A short summary of the blog post',
-      validation: (Rule: any) => Rule.max(200),
+      validation: (Rule: any) => Rule.required().max(200).error('Please add a blurb (short summary, max 200 characters) to your blog post.'),
     },
     {
       name: 'tags',
