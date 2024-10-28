@@ -8,11 +8,11 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
   const query = `*[_type == "blogPost" && slug.current == $slug][0]{
     title,
     mainImage,
+    author->{name, image},
     body,
     tags
   }`;
   const post = await sanityClient.fetch(query, { slug });
-
   if (!post) {
     return <div>Post not found</div>;
   }
@@ -32,9 +32,10 @@ export default async function BlogPostPage({ params }: { params: { slug: string 
         <div className="font-medium !text-blue-500">
           {post.tags && post.tags.map((tag: string) => `#${tag} `)}
         </div>
-        <h1 className="mb-8 mt-20 font-black text-4xl !leading-snug">
+        <h1 className="mt-20 font-black text-4xl !leading-snug">
           {post.title}
         </h1>
+        <p className="mb-8 text-gray-600">By {post.author.name}</p> 
         <PortableText
           value={post.body}
           components={{

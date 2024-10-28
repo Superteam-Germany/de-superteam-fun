@@ -49,5 +49,12 @@ export default {
         layout: 'tags',
       },
     },
+    {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'author' }],
+      validation: (Rule: any) => Rule.required().error('Please select an author for your blog post.'),
+    },
   ],
 };
