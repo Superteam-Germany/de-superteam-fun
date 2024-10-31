@@ -18,49 +18,7 @@ import { EventRecord } from '../types/events'
 import { Button } from '@/components/ui/button'
 import { MEETUP_GROUP_LINK } from '@/lib/constants'
 import { Highlight } from '@/components/ui/Highlight'
-const testimonials = [
-  {
-    img: '/testimonials/tina-yards.jpg',
-    name: 'Tina Yards',
-    title: 'VP of Sales, Protocol',
-    quote:
-      'Thanks to Radiant, we’re finding new leads that we never would have found with legal methods.',
-  },
-  {
-    img: '/testimonials/conor-neville.jpg',
-    name: 'Conor Neville',
-    title: 'Head of Customer Success, TaxPal',
-    quote:
-      'Radiant made undercutting all of our competitors an absolute breeze.',
-  },
-  {
-    img: '/testimonials/amy-chase.jpg',
-    name: 'Amy Chase',
-    title: 'Head of GTM, Pocket',
-    quote:
-      'We closed a deal in literally a few minutes because we knew their exact budget.',
-  },
-  {
-    img: '/testimonials/veronica-winton.jpg',
-    name: 'Veronica Winton',
-    title: 'CSO, Planeteria',
-    quote:
-      'We’ve managed to put two of our main competitors out of business in 6 months.',
-  },
-  {
-    img: '/testimonials/dillon-lenora.jpg',
-    name: 'Dillon Lenora',
-    title: 'VP of Sales, Detax',
-    quote: 'I was able to replace 80% of my team with RadiantAI bots.',
-  },
-  {
-    img: '/testimonials/harriet-arron.jpg',
-    name: 'Harriet Arron',
-    title: 'Account Manager, Commit',
-    quote:
-      'I’ve smashed all my targets without having to speak to a lead in months.',
-  },
-]
+
 
 const getEvents = async (): Promise< EventRecord[]> => {
     const result = await fetch('api/get-events', {
@@ -247,29 +205,30 @@ export function Events() {
         ])}
       >
         {events.map((event: EventRecord, index: number) => (
-          <TestimonialCard
-            key={event.id}
-            name={formatDateTime(event.startTime)}
-            title={event.name}
-            img={event.image}
-            bounds={bounds}
-            scrollX={scrollX}
-            onClick={() => scrollTo(index)}
-          >
-            {event.description.slice(0, 85)}...
-          </TestimonialCard>
+          <Link href={event.link} target="_blank" key={event.id} passHref>
+              <TestimonialCard
+                name={formatDateTime(event.startTime)}
+                title={event.name}
+                img={event.image}
+                bounds={bounds}
+                scrollX={scrollX}
+                onClick={() => scrollTo(index)}
+              >
+                {event.description.slice(0, 85)}...
+              </TestimonialCard>
+          </Link>
         ))}
         <div className="w-[42rem] shrink-0 sm:w-[54rem]" />
       </div>
       <Container className="mt-16">
         <div className="flex justify-between">
           <div className="hidden sm:flex sm:gap-2">
-            {testimonials.map(({ name }, testimonialIndex) => (
+            {events.map(({ name }, eventIndex) => (
               <Headless.Button
-                key={testimonialIndex}
-                onClick={() => scrollTo(testimonialIndex)}
-                data-active={activeIndex === testimonialIndex ? true : undefined}
-                aria-label={`Scroll to testimonial from ${name}`}
+                key={eventIndex}
+                onClick={() => scrollTo(eventIndex)}
+                data-active={activeIndex === eventIndex ? true : undefined}
+                aria-label={`Scroll to event from ${name}`}
                 className={clsx(
                   'w-4 h-4 rounded-full border border-transparent bg-gray-300 transition',
                   'data-[active]:bg-gray-600 data-[hover]:bg-gray-400',
