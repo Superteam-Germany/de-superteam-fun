@@ -10,7 +10,7 @@ import Spinner from './../../components/ui/Spinner';
 
 const Newsletter = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['-40%', '0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
   const [error, setError] = React.useState('');
   const [loading, setLoading] = React.useState(false);
