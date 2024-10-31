@@ -36,16 +36,12 @@ const Nav = () => {
 
   return (
     <>
-      <div className="container items-center mx-auto py-5 flex justify-between xl:px-0 relative">
+      <div className="container items-center mx-auto py-5 flex justify-between xl:px-0 relative z-50">
         <Link href="/" className="hover:opacity-100">
           <Image
-            src={
-              path === "/buildstation"
-                ? "/images/stLogoWithIcon.svg"
-                : "/images/st-logo.svg"
-            }
+            src={"/images/stLogoWithIcon.svg"}
             height={35}
-            width={path === "/buildstation" ? 160 : 35}
+            width={160}
             alt="Superteam logo"
           />
         </Link>
@@ -141,35 +137,35 @@ const Nav = () => {
               );
             }
 
-            if (item.type === "button") {
-              // if (path === '/buildstation') return;
-              return (
-                <li
-                  key={i}
-                  className={
-                    path === item.link ? "underline underline-offset-4 " : ""
-                  }
-                >
-                  <Link href={item.link} target="_blank" className="">
-                    <Button
-                      variant="outline"
-                      className="font-secondary tracking-wide font-normal text-base"
-                      size="lg"
-                    >
-                      {item.name}
-                    </Button>
-                  </Link>
-                </li>
-              );
-            }
+            // if (item.type === "button") {
+            //   // if (path === '/buildstation') return;
+            //   return (
+            //     <li
+            //       key={i}
+            //       className={
+            //         path === item.link ? "underline underline-offset-4 " : ""
+            //       }
+            //     >
+            //       <Link href={item.link} target="_blank" className="">
+            //         <Button
+            //           variant="outline"
+            //           className="font-secondary tracking-wide font-normal text-base"
+            //           size="lg"
+            //         >
+            //           {item.name}
+            //         </Button>
+            //       </Link>
+            //     </li>
+            //   );
+            // }
           })}
-          <li>
+          {/* <li>
             <Link href="https://twitter.com/SuperteamDE" target="_blank">
               <Button className="font-secondary tracking-wide font-normal text-base">
                 Follow us on X
               </Button>
             </Link>
-          </li>
+          </li> */}
         </ul>
       </div>
     </>

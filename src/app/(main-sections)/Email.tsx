@@ -45,11 +45,11 @@ const Email = () => {
 
   return (
     <section className='flex py-24 flex-col lg:flex-row justify-between container gap-4'>
-      <h2 className='uppercase mb-14 lg:mb-0 shrink-0'>
+      <h2 className='uppercase mb-14 lg:mb-0 shrink-0 text-shadow'>
         Stay up <br />
         to date
       </h2>
-      <div className='p-10 rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
+      <div className='p-10 rounded-2xl max-w-3xl bg-black/10'>
         <form onSubmit={create} className='flex flex-col gap-8'>
           <h3 className='max-w-2/3 leading-tight'>
             Be the first to know about the next Superteam Germany events.

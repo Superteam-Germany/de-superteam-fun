@@ -10,17 +10,14 @@ const GetInvolved = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '40%']);
   return (
-    <div className='relative overflow-hidden'>
-      <motion.div
-        style={{ backgroundSize: 'cover', y }}
-        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')]  bg-bottom bg-no-repeat   -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div>
-      <section className='pt-24'>
+    <div className='relative'>
+      <section className='pt-36 pb-12'>
         <FadeInDiv>
-          <div className='container my-6 gap-6 mb-12 md:flex justify-center sm:flex-row-reverse  sm:justify-between items-start'>
-            <h2 className='uppercase text-h2 mb-12'>
-              How can I <br /> get<Highlight>involved</Highlight>?
+          <div className='container w-full mb-12  flex flex-col justify-center items-center text-center sm:justify-between'>
+            <h2 className='uppercase text-h2 mb-8 '>
+              <span className='text-shadow'> get {' '}</span><Highlight>involved</Highlight>
             </h2>
-            <div className='max-w-[40rem] space-y-4'>
+            {/* <div className='max-w-[40rem] space-y-4'>
               <p className='font-light'>
                 In a pre-crypto world, we had to fit into broiler categories —
                 founder, investor, or employee. Crypto allows us to be
@@ -41,7 +38,7 @@ const GetInvolved = () => {
                   Learn more about us
                 </span>
               </a>
-            </div>
+            </div> */}
           </div>
         </FadeInDiv>
         <div className='grid lg:grid-cols-3 gap-6 container  justify-center lg:justify-between'>
@@ -64,7 +61,6 @@ const GetInvolved = () => {
             linkContent='Check out the grants'
           />
         </div>
-        <Email />
       </section>
     </div>
   );

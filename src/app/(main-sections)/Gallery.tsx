@@ -11,7 +11,7 @@ const Gallery = () => {
     <section className="">
       <FadeInDiv>
         <div className="container">
-          <h2 className="uppercase py-24">How we roll</h2>
+          <h2 className="uppercase py-24 text-shadow">How we roll</h2>
         </div>
         <Carousel images={images} />
       </FadeInDiv>

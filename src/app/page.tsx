@@ -11,6 +11,10 @@ import FadeInDiv from '@/components/ui/FadeInDiv';
 import Link from 'next/link';
 import { Suspense } from 'react';
 import Alert from '../components/Alert';
+import WhatWeDo from './(main-sections)/WhatWeDo';
+import Email from './(main-sections)/Email';
+import Newsletter from './(main-sections)/Newsletter';
+import { Events } from './(main-sections)/Events';
 
 export default function Home() {
   return (
@@ -19,31 +23,30 @@ export default function Home() {
       <FadeInDiv>
         <Hero />
       </FadeInDiv>
-      <FadeInDiv>
+      {/* <FadeInDiv>
         <TextBanner />
-      </FadeInDiv>
+      </FadeInDiv> */}
       <Suspense>
         <WhatIsSuperteam />
       </Suspense>
-      <Spacer />
-      <UpcomingEvents />
-      <Spacer />
+      <WhatWeDo/>
+      {/* <Spacer /> */}
+      {/* <UpcomingEvents /> */}
+      <Events />
+      <Newsletter />
+      {/* <Spacer /> */}
       {/* <Partners /> */}
-      <GetInvolved />
+      {/* <GetInvolved /> */}
       {/* <TitleParagraph /> */}
 
-      <Spacer />
+      {/* <Spacer /> */}
+      
       {/* <Projects /> */}
-      <Spacer />
-      <div className=' overflow-hidden relative'>
-        <div
-          style={{ backgroundPosition: '10% 90%', backgroundSize: 'cover' }}
-          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')]  bg-bottom bg-no-repeat  -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></div>
-        <Gallery />
-
+      {/* <Spacer /> */}
+      {/* <Email />
+      <div className=' relative'>
         <h2
-          className='text-center my-24 uppercase
-    '>
+          className='text-center my-24 uppercase text-shadow'>
           Keep in touch
         </h2>
         <div className='relative container flex justify-center pb-24'>
@@ -81,34 +84,7 @@ export default function Home() {
             </a>
           }
         />
-        {/* <section className='mt-24 relative pb-48'>
-          <div className='max-w-screen-2xl mx-auto px-4 sm:flex justify-between'>
-            <Image
-              src='/images/stLogoWithIcon.svg'
-              height={35}
-              className='mb-2'
-              width={200}
-              alt='Superteam logo'
-            />
-            <div className='space-x-6'>
-              <Link href='/policy'>Privacy Policy</Link>
-            </div>
-          </div>
-          <FadeInDiv>
-            <div className='relative flex justify-center'>
-              <div className='absolute top-28'>
-                <Image
-                  src='/images/st-logo.svg'
-                  height={640}
-                  width={640}
-                  className='-rotate-45'
-                  alt='Superteam logo'
-                />
-              </div>
-            </div>
-          </FadeInDiv>
-        </section> */}
-      </div>
+      </div> */}
     </div>
   );
 }

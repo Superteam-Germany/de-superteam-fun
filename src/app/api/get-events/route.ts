@@ -93,7 +93,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
     const events = meetupEvents
       .map(adaptMeetupEventToEventRecord)
-      .slice(0, 4); // Limit to 4 events
+      .slice(0, 6); // Limit to 6 events
 
     return NextResponse.json(
       { events }, 

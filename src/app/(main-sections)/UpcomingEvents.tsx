@@ -75,10 +75,11 @@ const UpcomingEvents = () => {
 
   return (
     <div className='relative overflow-hidden' id='events'>
-      <motion.div
+      {/* <motion.div
         style={{ backgroundSize: 'cover', y }}
-        className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"></motion.div>
-      <section className='container  py-24 flex-col-reverse justify-between items-center flex lg:flex-row gap-6'>
+        className="<Email /> bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[200vh] bg-fixed"
+      ></motion.div> */}
+      <section className='container py-24 lg:py-48 flex-col-reverse justify-between items-center flex lg:flex-row lg:flex-row-reverse gap-6'>
         <div
           className={twMerge(
             'grid sm:grid-cols-2 grow justify-evenly gap-8 items-center',
@@ -99,7 +100,7 @@ const UpcomingEvents = () => {
             );
           })}
         </div>
-        <FadeInDiv>
+        {/* <FadeInDiv>
           <div className='relative flex self-start sm:self-auto justify-center items-center'>
             <Image
               src='/images/solana-logomark-gradient.svg'
@@ -108,8 +109,8 @@ const UpcomingEvents = () => {
               width={500}
               height={500}
             />
-            <div className='uppercase mb-12 lg:absolute'>
-              <h2  style={{ textShadow: '1px 1px 2px black, 0 0 1em black, 0 0 0.2em black' }} >
+            <div className=' mb-12 lg:absolute'>
+              <h2 className='text-shadow'>
                 Upcoming <br /> Events
               </h2>
                 <Button onClick={() => {
@@ -120,7 +121,7 @@ const UpcomingEvents = () => {
             </div>
           </div>
           
-        </FadeInDiv>
+        </FadeInDiv> */}
       </section>
       {renderMoreEventsCTA()}
     </div>
