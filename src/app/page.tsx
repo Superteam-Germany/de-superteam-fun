@@ -1,10 +1,10 @@
-import Hero from '../sections/home/Hero';
-import WhatIsSuperteam from '../sections/home/WhatIsSupeteam';
-import FadeInDiv from '@/components/FadeInDiv';
+import Hero from '../sections/home/hero';
+import WhatIsSuperteam from '../sections/home/what-is-superteam';
+import FadeInDiv from '@/components/fade-in-div';
 import { Suspense } from 'react';
-import WhatWeDo from '../sections/home/WhatWeDo';
-import Newsletter from '../sections/home/Newsletter';
-import { Events } from '../sections/home/Events';
+import WhatWeDo from '../sections/home/what-we-do';
+import Newsletter from '../sections/home/newsletter';
+import { Events } from '../sections/home/events';
 
 export default function Home() {
   return (

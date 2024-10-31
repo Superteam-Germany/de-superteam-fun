@@ -2,8 +2,8 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Highlight } from '@/components/Highlight';
-import FadeInDiv from '@/components/FadeInDiv';
+import { Highlight } from '@/components/highlight';
+import FadeInDiv from '@/components/fade-in-div';
 import { UPCOMING_HACKATHON_LINK } from '../../lib/constants';
 
 const BuildStationIntro = () => {

@@ -1,6 +1,6 @@
 import React from 'react';
-import { Highlight } from '../../components/Highlight';
-import { Button } from '@/components/Button';
+import { Highlight } from '../../components/highlight';
+import { Button } from '@/components/button';
 import Link from 'next/link';
 import { WEB3_HUB_LOCATION_LINK, REGISTER_BUILD_STATION_KICKOFF_LINK, REGISTER_BUILD_STATION_LINK, REGISTER_BUILD_STATION_DEMO_DAY_LINK } from '../../lib/constants';
 

@@ -1,10 +1,10 @@
 'use client';
-import { Highlight } from '@/components/Highlight';
+import { Highlight } from '@/components/highlight';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
 import { scrollToAnchor } from '@/lib/utils';
-import { Button } from '@/components/Button';
+import { Button } from '@/components/button';
 
 export default function Example() {
   const { scrollYProgress } = useScroll();

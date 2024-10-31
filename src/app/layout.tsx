@@ -3,8 +3,8 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import FooterGroup from "@/sections/buildstation/FooterGroup";
-import Nav from "@/components/Nav";
+import FooterGroup from "@/sections/buildstation/footer-group";
+import Nav from "@/components/nav";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",

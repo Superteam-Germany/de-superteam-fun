@@ -14,9 +14,9 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import useMeasure, { type RectReadOnly } from 'react-use-measure'
 import Link from 'next/link'
 import { EventRecord } from '@/types/events'
-import { Button } from '@/components/Button'
+import { Button } from '@/components/button'
 import { MEETUP_GROUP_LINK } from '@/lib/constants'
-import { Highlight } from '@/components/Highlight'
+import { Highlight } from '@/components/highlight'
 
 
 const getEvents = async (): Promise< EventRecord[]> => {

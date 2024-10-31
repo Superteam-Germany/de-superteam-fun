@@ -1,10 +1,10 @@
 'use client';
 import { PlusCircleIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import { Highlight } from '../../components/Highlight';
+import { Highlight } from '../../components/highlight';
 import PrizeList from '../../misc/prizes.json';
 
-import FadeInDiv from '@/components/FadeInDiv';
+import FadeInDiv from '@/components/fade-in-div';
 
 type Props = {};
 

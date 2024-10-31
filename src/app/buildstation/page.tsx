@@ -1,14 +1,14 @@
 'use client';
-import BerlinDemoDay from '@/sections/buildstation/BerlinDemoDay';
-import BuildStationIntro from '@/sections/buildstation/BuildStationIntro';
-import FAQ from '@/sections/buildstation/FAQ';
-import Prizes from '@/sections/buildstation/Prizes';
-import WhatIs from '@/sections/buildstation/WhatIs';
-import TextBanner from '@/components/TextBanner';
-import { Highlight } from '@/components/Highlight';
+import BerlinDemoDay from '@/sections/buildstation/berlin-demo-day';
+import BuildStationIntro from '@/sections/buildstation/build-station-intro';
+import FAQ from '@/sections/buildstation/faq';
+import Prizes from '@/sections/buildstation/prizes';
+import WhatIs from '@/sections/buildstation/what-is';
+import TextBanner from '@/components/text-banner';
+import { Highlight } from '@/components/highlight';
 import Image from 'next/image';
 import Link from 'next/link';
-import FadeInDiv from '@/components/FadeInDiv';
+import FadeInDiv from '@/components/fade-in-div';
 
 const page = () => {
   return (
@@ -22,7 +22,6 @@ const page = () => {
                 fontSize:
                   'clamp(var(--font-size-h1-mobile), 4.8vw, calc(var(--font-size-h1) - 0.55rem))',
               }}>
-              {/* Hyperdrive{" "} */}
             </h1>
             <h1 className='uppercase text-end'>
               Build
@@ -30,8 +29,6 @@ const page = () => {
             </h1>
           </div>
         </div>
-        {/* <HeroCarousel /> */}
-
         <div className='relative container'>
           <div className='flex gap-8 sm:gap-16 absolute bottom-14'>
             <Link href='https://twitter.com/SuperteamDE' target='_blank'>
@@ -39,7 +36,6 @@ const page = () => {
                 <Image src='/images/x-icon.svg' fill alt='X logo' />
               </div>
             </Link>
-
             <Link href='https://discord.gg/CVwJhHgFfF' target='_blank'>
               <div className='h-6 w-8 relative scale-75 sm:scale-100'>
                 <Image src='/images/discord-icon.svg' fill alt='Discord logo' />

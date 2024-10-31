@@ -1,7 +1,7 @@
 'use client';
 import React from 'react';
-import AccordionWrapper from '../../components/Accordion';
-import FadeInDiv from '@/components/FadeInDiv';
+import AccordionWrapper from '@/components/accordion';
+import FadeInDiv from '@/components/fade-in-div';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
 const FAQ = () => {

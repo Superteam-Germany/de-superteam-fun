@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { Button } from "./Button";
+import { Button } from "./button";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
