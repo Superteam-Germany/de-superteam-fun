@@ -7,6 +7,7 @@ import { SOCIAL_X_LINK } from '@/lib/constants';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
+import { scrollToAnchor } from '@/lib/utils';
 
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -74,11 +75,9 @@ export default function Example() {
                 Connect, collaborate, and grow together with a community of creators, developers, and innovators shaping the future on Solana.
               </p>
               <Button
-                onClick={() => {
-                  window.open(SOCIAL_X_LINK, '_blank');
-                }}
-                  className="font-secondary tracking-wide font-normal text-base mt-10"
-                >
+                onClick={() => scrollToAnchor('what-we-do')}
+                className="font-secondary tracking-wide font-normal text-base mt-10"
+              >
                 Learn more
               </Button>
             </div>

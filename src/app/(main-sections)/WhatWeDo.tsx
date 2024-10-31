@@ -3,6 +3,9 @@
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
+import { SUPERTEAM_EARN_LINK } from '@/lib/constants';
+import { scrollToAnchor } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
 
 export default function WhatWeDo() {
   const { scrollYProgress } = useScroll();
@@ -40,16 +43,16 @@ export default function WhatWeDo() {
       imgSrc: "/images/what-we-do/officehour.jpg",
       title: "Hackathon Support",
       description: "Supporting projects in hackathons and providing resources, mentorship, and workshops for participants.",
-      link: "#",
+      link: "/buildstation",
       colSpan: "lg:col-span-2",
       roundedClass: "lg:rounded-bl-[2rem]",
       cta: "Learn More"
     },
     {
       imgSrc: "/images/what-we-do/4.jpg",
-      title: "Supporting Projects",
+      title: "Superteam Earn",
       description: "We've bounties and grants for builders, content creators, and projects that bring value to the Solana ecosystem.",
-      link: "#",
+      link: SUPERTEAM_EARN_LINK,
       colSpan: "lg:col-span-2",
       roundedClass: "max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]",
       cta: "Learn More"
@@ -57,7 +60,7 @@ export default function WhatWeDo() {
   ];
 
   return (
-    <section className="min-w-full overflow-hidden mt-24 pb-24">
+    <section id="what-we-do" className="min-w-full overflow-hidden mt-24 pb-24">
       <div className="relative isolate">
         {/* Background div */}
         <motion.div
@@ -84,7 +87,13 @@ export default function WhatWeDo() {
                     <h3 className="mt-2 text-lg font-medium tracking-tight">{card.title}</h3>
                     <p className="mt-2 max-w-lg text-sm/6">{card.description}</p>
                   </div>
-                  <Link href={card.link} className="mt-8">
+                  <Link href={card.link}
+                    onClick={(e) => {
+                        e.preventDefault();
+                        card.link.startsWith('#') 
+                        ? scrollToAnchor(card.link)
+                        : window.open(card.link);
+                    }} className="mt-8">
                     {card.cta}
                   </Link>
                 </div>
