@@ -1,7 +1,6 @@
 'use client'
 import React from 'react'
 import * as Headless from '@headlessui/react'
-import { ArrowLongRightIcon } from '@heroicons/react/20/solid'
 import { clsx } from 'clsx'
 import {
   MotionValue,
@@ -14,10 +13,10 @@ import {
 import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import useMeasure, { type RectReadOnly } from 'react-use-measure'
 import Link from 'next/link'
-import { EventRecord } from '../types/events'
-import { Button } from '@/components/ui/button'
+import { EventRecord } from '@/types/events'
+import { Button } from '@/components/Button'
 import { MEETUP_GROUP_LINK } from '@/lib/constants'
-import { Highlight } from '@/components/ui/Highlight'
+import { Highlight } from '@/components/Highlight'
 
 
 const getEvents = async (): Promise< EventRecord[]> => {

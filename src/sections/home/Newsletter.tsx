@@ -2,11 +2,10 @@
 import React from 'react';
 import Image from 'next/image';
 import { motion, useScroll, useTransform } from 'framer-motion';
-import { Highlight } from '@/components/ui/Highlight';
-import FadeInDiv from '@/components/ui/FadeInDiv';
+import FadeInDiv from '@/components/FadeInDiv';
 import axios from 'axios';
-import { Button } from '../../components/ui/button';
-import Spinner from './../../components/ui/Spinner';
+import { Button } from '../../components/Button';
+import Spinner from '../../components/Spinner';
 
 const Newsletter = () => {
   const { scrollYProgress } = useScroll();

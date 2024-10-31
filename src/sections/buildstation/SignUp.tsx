@@ -1,6 +1,6 @@
 import React, { FC } from "react";
-import { Button } from "../../../components/ui/button";
-import { Highlight } from "../../../components/ui/Highlight";
+import { Button } from "../../components/Button";
+import { Highlight } from "../../components/Highlight";
 
 interface Props {
   variant?: "default" | "berlin";

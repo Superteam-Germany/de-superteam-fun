@@ -1,10 +1,9 @@
 'use client';
 import React from 'react';
-import CtaCard from '../../../components/ui/CtaCard';
-import { Highlight } from '../../../components/ui/Highlight';
-import Email from '@/app/(main-sections)/Email';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import FadeInDiv from '@/components/ui/FadeInDiv';
+import CtaCard from '../../components/CtaCard';
+import { Highlight } from '../../components/Highlight';
+import { useScroll, useTransform } from 'framer-motion';
+import FadeInDiv from '@/components/FadeInDiv';
 
 const GetInvolved = () => {
   const { scrollYProgress } = useScroll();

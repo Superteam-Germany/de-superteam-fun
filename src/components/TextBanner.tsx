@@ -1,5 +1,4 @@
 import React from "react";
-import Spacer from "./ui/Spacer";
 
 const TextBanner = () => {
   const textItems = [
@@ -13,7 +12,6 @@ const TextBanner = () => {
   ];
   return (
     <div className="sm:my-8 md:my-16">
-      <Spacer />
       <div className=" -ml-2 bg-background flex overflow-hidden items-center uppercase">
         {textItems.map((item, index) => (
           <React.Fragment key={index}>
@@ -24,7 +22,6 @@ const TextBanner = () => {
           </React.Fragment>
         ))}
       </div>
-      <Spacer />
     </div>
   );
 };

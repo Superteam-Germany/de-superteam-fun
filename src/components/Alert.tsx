@@ -1,5 +1,4 @@
 import React from 'react';
-import { Button } from './ui/button';
 import { twMerge } from 'tailwind-merge';
 
 interface Props {

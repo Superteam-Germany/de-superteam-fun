@@ -1,16 +1,10 @@
 'use client';
 import { PlusCircleIcon } from '@heroicons/react/20/solid';
 import Image from 'next/image';
-import { Highlight } from '../../../components/ui/Highlight';
-import PrizeList from '../../../misc/prizes.json';
+import { Highlight } from '../../components/Highlight';
+import PrizeList from '../../misc/prizes.json';
 
-import FadeInDiv from '@/components/ui/FadeInDiv';
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from '../../../components/ui/accordion';
+import FadeInDiv from '@/components/FadeInDiv';
 
 type Props = {};
 
@@ -41,7 +35,7 @@ const renderAccordionItem = (price: any, index: number) => {
   return (
     <div className='flex items-center' key={index}>
       <div className="hidden md:block" style={{width: `${150 * index }px`}}></div>
-      <AccordionItem
+      {/* <AccordionItem
         key={index}
         value={price.label}
         className={`w-full lg:w-1/3 my-4`}
@@ -54,7 +48,7 @@ const renderAccordionItem = (price: any, index: number) => {
         <AccordionContent>
           You&#39;re invited to join Superteam Germany!
         </AccordionContent>
-      </AccordionItem>
+      </AccordionItem> */}
     </div>
   )
 }
@@ -88,12 +82,12 @@ const Prizes = (props: Props) => {
           </div>
         </div>
 
-        <Accordion
+        {/* <Accordion
           type='single'
           collapsible
           className={`flex flex-col w-full sm:ml-0 lg:ml-12`}>
           {prices.map((price, index) => renderAccordionItem(price, index))}
-        </Accordion>
+        </Accordion> */}
 
         <FadeInDiv>
           <div className=' pt-12 sm:pt-24'>

@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 import { sanityClient, urlFor } from '../../../studio/client';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
-import Card from '@/components/ui/Card';
-import { motion, useScroll, useTransform } from 'framer-motion';
-import { Highlight } from '@/components/ui/Highlight';
+import Card from '@/components/Card';
+import { useScroll, useTransform } from 'framer-motion';
 
 const POSTS_PER_PAGE = 5;
 

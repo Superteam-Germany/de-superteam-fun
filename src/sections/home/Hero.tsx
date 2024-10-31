@@ -1,16 +1,12 @@
 'use client';
-
-import { useState } from 'react';
-import { Highlight } from '@/components/ui/Highlight';
-import { Button } from '@/components/ui/button';
-import { SOCIAL_X_LINK } from '@/lib/constants';
+import { Highlight } from '@/components/Highlight';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
 import { scrollToAnchor } from '@/lib/utils';
+import { Button } from '@/components/Button';
 
 export default function Example() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
 

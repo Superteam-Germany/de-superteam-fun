@@ -5,7 +5,6 @@ import { useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { SUPERTEAM_EARN_LINK } from '@/lib/constants';
 import { scrollToAnchor } from '@/lib/utils';
-import { Button } from '@/components/ui/button';
 
 export default function WhatWeDo() {
   const { scrollYProgress } = useScroll();

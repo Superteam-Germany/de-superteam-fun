@@ -2,7 +2,6 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import Spacer from '@/components/ui/Spacer';
 import { useScroll, useTransform } from 'framer-motion';
 import { PROJECT_SUBMISSION_LINK, RESOURCES_AND_GUILDS_LINK, SUPERTEAM_GLOBAL_LINK, SOCIAL_X_LINK, SOCIAL_DISCORD_LINK, SOCIAL_TELEGRAM_LINK, SOCIAL_YOUTUBE_LINK } from '@/lib/constants';
 
@@ -68,25 +67,7 @@ const FooterGroup = () => {
 
   return (
     <div className='relative w-full overflow-hidden'>
-      {/* <motion.div
-        style={{ backgroundPosition: '50% 90%', backgroundSize: 'cover', y }}
-        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] bg-bottom bg-no-repeat -z-50 w-full bg-50% md:bg-contain absolute h-full bg-fixed"></motion.div> */}
       <div className=' overflow-hidden'>
-      <Spacer />
-        {/* <section className='mt-24 relative pb-24'>
-          <div className='max-w-screen-2xl mx-auto px-4 sm:flex justify-between'>
-            <Image
-              src='/images/stLogoWithIcon.svg'
-              height={35}
-              className='mb-2'
-              width={200}
-              alt='Superteam logo'
-            />
-            <div className='space-x-6'>
-              <Link href='/policy'>Privacy Policy</Link>
-            </div>
-          </div>
-        </section> */}
         <footer aria-labelledby="footer-heading" className="bg-transparent backdrop-blur-md font-sans">
           <h2 id="footer-heading" className="sr-only">
             Footer

@@ -1,18 +1,14 @@
 'use client';
-import BerlinDemoDay from '@/app/buildstation/sections/BerlinDemoDay';
-import BuildStationIntro from '@/app/buildstation/sections/BuildStationIntro';
-import FAQ from '@/app/buildstation/sections/FAQ';
-import Prizes from '@/app/buildstation/sections/Prizes';
-import SignUp from '@/app/buildstation/sections/SignUp';
-import WhatIs from '@/app/buildstation/sections/WhatIs';
-import HeroCarousel from '@/app/(main-sections)/HeroCarousel';
-import Nav from '@/components/Nav';
+import BerlinDemoDay from '@/sections/buildstation/BerlinDemoDay';
+import BuildStationIntro from '@/sections/buildstation/BuildStationIntro';
+import FAQ from '@/sections/buildstation/FAQ';
+import Prizes from '@/sections/buildstation/Prizes';
+import WhatIs from '@/sections/buildstation/WhatIs';
 import TextBanner from '@/components/TextBanner';
-import { Highlight } from '@/components/ui/Highlight';
-import Spacer from '@/components/ui/Spacer';
+import { Highlight } from '@/components/Highlight';
 import Image from 'next/image';
 import Link from 'next/link';
-import FadeInDiv from '@/components/ui/FadeInDiv';
+import FadeInDiv from '@/components/FadeInDiv';
 
 const page = () => {
   return (
@@ -34,7 +30,7 @@ const page = () => {
             </h1>
           </div>
         </div>
-        <HeroCarousel />
+        {/* <HeroCarousel /> */}
 
         <div className='relative container'>
           <div className='flex gap-8 sm:gap-16 absolute bottom-14'>
@@ -62,30 +58,17 @@ const page = () => {
           </div>
         </div>
       </FadeInDiv>
-      <Spacer />
       <BuildStationIntro />
       <TextBanner />
-      <Spacer />
       <FadeInDiv>
         <WhatIs />
-        <Spacer />
       </FadeInDiv>
       <FadeInDiv>
         <BerlinDemoDay />
-        <Spacer />
       </FadeInDiv>
-      {/* <FadeInDiv>
-        <SignUp variant='berlin' />
-        <Spacer />
-      </FadeInDiv> */}
       <FadeInDiv>
         <Prizes />
       </FadeInDiv>
-      {/* <FadeInDiv>
-        <Spacer />
-        <SignUp />
-      </FadeInDiv> */}
-      <Spacer />
       <FAQ />
     </div>
   );

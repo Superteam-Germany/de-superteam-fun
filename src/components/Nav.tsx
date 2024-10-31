@@ -1,12 +1,11 @@
 "use client";
+import { useState } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import Image from "next/image";
-import { Button } from "./ui/button";
-import { useState } from "react";
+import { Button } from "./Button";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import Spacer from "./ui/Spacer";
 import { REGISTER_BUILD_STATION_LINK } from "@/lib/constants";
 
 
@@ -79,7 +78,6 @@ const Nav = () => {
                 }
 
                 if (item.type === "button") {
-                  // if (path === '/buildstation') return;
                   return (
                     <li
                       key={i}
@@ -98,10 +96,8 @@ const Nav = () => {
                   );
                 }
               })}
-              
               <li>
                 <div className="py-8">
-                  <Spacer />
                 </div>
                 <Link href="https://twitter.com/SuperteamDE" target="_blank">
                   <Button className="font-secondary tracking-wide font-normal text-base">
@@ -136,36 +132,7 @@ const Nav = () => {
                 </li>
               );
             }
-
-            // if (item.type === "button") {
-            //   // if (path === '/buildstation') return;
-            //   return (
-            //     <li
-            //       key={i}
-            //       className={
-            //         path === item.link ? "underline underline-offset-4 " : ""
-            //       }
-            //     >
-            //       <Link href={item.link} target="_blank" className="">
-            //         <Button
-            //           variant="outline"
-            //           className="font-secondary tracking-wide font-normal text-base"
-            //           size="lg"
-            //         >
-            //           {item.name}
-            //         </Button>
-            //       </Link>
-            //     </li>
-            //   );
-            // }
           })}
-          {/* <li>
-            <Link href="https://twitter.com/SuperteamDE" target="_blank">
-              <Button className="font-secondary tracking-wide font-normal text-base">
-                Follow us on X
-              </Button>
-            </Link>
-          </li> */}
         </ul>
       </div>
     </>
