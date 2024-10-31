@@ -187,7 +187,7 @@ export function Events() {
   }
 
   return (
-    <div className="overflow-hidden py-32">
+    <div id="events" className="overflow-hidden py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
           <h2 className="mt-2">
