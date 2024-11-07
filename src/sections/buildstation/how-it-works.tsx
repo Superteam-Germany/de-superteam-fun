@@ -3,6 +3,8 @@
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
+import { useSwipeable } from 'react-swipeable'
+import { FaArrowLeft, FaArrowRight } from 'react-icons/fa' // Importing icons
 
 // Custom Tab components
 function CustomTabGroup({ children, className, vertical }: any) {
@@ -78,6 +80,13 @@ export function HowItWorks() {
     }
   }, [])
 
+  const handlers = useSwipeable({
+    onSwipedLeft: () => setSelectedIndex((prevIndex) => (prevIndex + 1) % features.length),
+    onSwipedRight: () => setSelectedIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length),
+    preventScrollOnSwipe: true,
+    trackMouse: true,
+  })
+
   return (
     <section
       id="features"
@@ -97,8 +106,8 @@ export function HowItWorks() {
           className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
-          <div className="-mx-4 flex overflow-x-auto pb-4 sm:mx-0 sm:overflow-visible sm:pb-0 lg:col-span-5">
-            <CustomTabList className="relative z-10 flex gap-x-4 whitespace-nowrap px-4 sm:mx-auto sm:px-0 lg:mx-0 lg:block lg:gap-x-0 lg:gap-y-1 lg:whitespace-normal">
+          <div className="lg:col-span-5">
+            <CustomTabList className="relative z-10 flex flex-col gap-y-1">
               {features.map((feature, featureIndex) => (
                 <div
                   key={feature.title}
@@ -137,7 +146,7 @@ export function HowItWorks() {
               ))}
             </CustomTabList>
           </div>
-          <CustomTabPanels className="lg:col-span-7">
+          <CustomTabPanels className="lg:col-span-7" {...handlers}>
             {features.map((feature, featureIndex) => (
               <CustomTabPanel
                 key={feature.title}
@@ -148,6 +157,20 @@ export function HowItWorks() {
                   <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
                     {feature.description}
                   </p>
+                  <div className="flex justify-between mt-4">
+                    <button
+                      className="text-white focus:outline-none"
+                      onClick={() => setSelectedIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length)}
+                    >
+                      <FaArrowLeft size={24} />
+                    </button>
+                    <button
+                      className="text-white focus:outline-none"
+                      onClick={() => setSelectedIndex((prevIndex) => (prevIndex + 1) % features.length)}
+                    >
+                      <FaArrowRight size={24} />
+                    </button>
+                  </div>
                 </div>
                 <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                   <img
@@ -161,6 +184,17 @@ export function HowItWorks() {
               </CustomTabPanel>
             ))}
           </CustomTabPanels>
+          <div className="flex justify-center mt-4">
+            {features.map((_, index) => (
+              <span
+                key={index}
+                className={clsx(
+                  'mx-1 h-2 w-2 rounded-full',
+                  selectedIndex === index ? 'bg-blue-600' : 'bg-blue-100'
+                )}
+              />
+            ))}
+          </div>
         </CustomTabGroup>
       </Container>
     </section>
