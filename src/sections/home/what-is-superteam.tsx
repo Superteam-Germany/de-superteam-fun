@@ -1,12 +1,12 @@
 "use client";
+import { BlurredCard } from "@/components/blurred-card";
 import React from "react";
 
 const WhatIsSuperteam = () => {
   return (
       <section className="container min-h-80 py-0 justify-center sm:flex-row sm:justify-between items-center">
-        
-        <div className='bg-gradient-to-br h-full flex flex-col overflow-hidden justify-between from-secondary/70  backdrop-blur-md via-secondary/50 to-background/30 to-100% p-2 lg:p-10 rounded-2xl'>
-          <div className="overflow-hidden py-16">
+        <BlurredCard>
+          <div className="overflow-hidden py-16 px-4">
             <div className="mx-auto max-w-7xl lg:flex px-0 lg:px-8">
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
                 <div className="lg:col-end-1 z-10 lg:w-full lg:max-w-lg lg:pb-8">
@@ -63,7 +63,7 @@ const WhatIsSuperteam = () => {
               <span className="block text-body">Learn more about the international Superteam network.</span>
             </a>
         </div> */}
-      </div>
+      </BlurredCard>
 
       
     </section>

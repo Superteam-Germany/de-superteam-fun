@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
-import { EventRecord } from '@/app/types/events';
+import { EventRecord } from './../../../types/events';
 
 const encodedKey = process.env.MEETUP_PRIVATE_KEY;
 const privateKey = encodedKey ? Buffer.from(encodedKey, 'base64').toString('utf8') : '';

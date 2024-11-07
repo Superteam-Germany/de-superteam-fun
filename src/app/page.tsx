@@ -3,7 +3,7 @@ import WhatIsSuperteam from '../sections/home/what-is-superteam';
 import FadeInDiv from '@/components/fade-in-div';
 import { Suspense } from 'react';
 import WhatWeDo from '../sections/home/what-we-do';
-import Newsletter from '../sections/home/newsletter';
+import NewsletterSection from '../sections/home/newsletter-section';
 import { Events } from '../sections/home/events';
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       </Suspense>
       <WhatWeDo/>
       <Events />
-      <Newsletter />
+      <NewsletterSection />
     </div>
   );
 }

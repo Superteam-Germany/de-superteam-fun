@@ -65,7 +65,7 @@ export default function Example() {
                 <Highlight>Superteam Germany</Highlight>
               </h2>
               <h1 className="text-start text-4xl lg:text-6xl">
-                <span className='text-shadow'>The Heartbeat of Germany's Solana Community</span>
+                <span className='text-shadow'>The Heartbeat of Germany&apos;s Solana Community</span>
               </h1>
               <p className="mt-4 sm:max-w-md lg:max-w-none">
                 Connect, collaborate, and grow together with a community of creators, developers, and innovators shaping the future on Solana.

@@ -186,7 +186,7 @@ export function Events() {
   }
 
   return (
-    <section id="events" className="overflow-hidden py-32">
+    <section id="events" className="overflow-hidden sm:py-24 lg:py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
           <h2 className="mt-2">
@@ -236,8 +236,12 @@ export function Events() {
               />
             ))}
           </div>
+          <Link href={MEETUP_GROUP_LINK} target="_blank">
+          Discover More Events
+        </Link>
         </div>
       </Container>
+      
     </section>
   )
 }
