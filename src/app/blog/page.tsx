@@ -305,7 +305,7 @@ export default async function Blog({
   )
 }
 
-export function Container({
+function Container({
   className,
   children,
 }: {

@@ -200,7 +200,7 @@ export default async function BlogPost({
   )
 }
 
-export function Container({
+function Container({
   className,
   children,
 }: {
@@ -214,7 +214,7 @@ export function Container({
   )
 }
 
-export const Link = forwardRef(function Link(
+const Link = forwardRef(function Link(
   props: LinkProps & React.ComponentPropsWithoutRef<'a'>,
   ref: React.ForwardedRef<HTMLAnchorElement>,
 ) {

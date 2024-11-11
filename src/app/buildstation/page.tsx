@@ -2,7 +2,6 @@
 import BerlinDemoDay from '@/sections/buildstation/berlin-demo-day';
 import BuildStationIntro from '@/sections/buildstation/build-station-intro';
 import FAQ from '@/sections/buildstation/faq';
-import Prizes from '@/sections/buildstation/prizes';
 import WhatIs from '@/sections/buildstation/what-is';
 import TextBanner from '@/components/text-banner';
 import FadeInDiv from '@/components/fade-in-div';
