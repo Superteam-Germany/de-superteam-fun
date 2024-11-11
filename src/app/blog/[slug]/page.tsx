@@ -7,11 +7,11 @@ import dayjs from 'dayjs'
 import type { Metadata } from 'next'
 import { PortableText } from 'next-sanity'
 import { notFound } from 'next/navigation'
-import { clsx } from 'clsx'
 import * as Headless from '@headlessui/react'
 import NextLink, { type LinkProps } from 'next/link'
 import { forwardRef } from 'react'
 import Newsletter from '@/sections/home/newsletter-section'
+import { Container } from '@/components/container'
 
 export async function generateMetadata({
   params,
@@ -37,7 +37,7 @@ export default async function BlogPost({
         <Subheading className="mt-16">
           {/* {dayjs(post.publishedAt).format('dddd, MMMM D, YYYY')} */}
         </Subheading>
-        <h1 className="mt-24">
+        <h1 className="mt-24 text-6xl">
           {post.title}
         </h1>
         <div className="mt-4 lg:mt-16 grid grid-cols-1 gap-8 pb-24 lg:grid-cols-[15rem_1fr] xl:grid-cols-[15rem_1fr_15rem]">
@@ -195,20 +195,6 @@ export default async function BlogPost({
       </Container>
       <Newsletter />
     </main>
-  )
-}
-
-function Container({
-  className,
-  children,
-}: {
-  className?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className={clsx(className, 'px-6 lg:px-8')}>
-      <div className="mx-auto max-w-2xl lg:max-w-7xl">{children}</div>
-    </div>
   )
 }
 

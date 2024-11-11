@@ -45,44 +45,8 @@ const WhatIs = () => {
         </div>
       </BlurredCard>
     </section>
-    // <div className=' w-full'>
-    //   <section className='container min-h-80 pt-24 sm:pt-36 grid grid-cols-1 lg:grid-cols-2 gap-x-12 justify-center sm:flex-row sm:justify-between items-center'>
-    //     <div className='lg:mb-0 mb-12 flex justify-between h-full flex-col'>
-    //       <h2 className='uppercase lg:mb-24 text-h2 self-start'>
-    //         What is the
-    //         <br />{' '}
-    //         <span>
-    //           Build
-    //           <Highlight> Station</Highlight> Berlin?
-    //         </span>
-    //       </h2>
-    //     </div>
-    //     <div className='lg:max-w-[40rem] space-y-4 mx-auto sm:px-0 h-full'>
-    //       <p>
-    //       Build Station is an multi-week IRL space where builders, community members, and Solana enthusiasts come together for co-working, workshops, and support during the Solana Global Hackathon.
-    //       </p>
-    //       <p>
-    //         The Station is open to everyone interested in Solana. You&#39; ll
-    //         find here developers, biz-devs, artists, marketers and many others.
-    //       </p>
-    //     </div>
-    //   </section>
-    // </div>
   );
 };
 
 export default WhatIs;
 
-function Container({
-  className,
-  children,
-}: {
-  className?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className={clsx(className, 'px-6 lg:px-8')}>
-      <div className="mx-auto max-w-2xl lg:max-w-7xl">{children}</div>
-    </div>
-  )
-}

@@ -17,7 +17,7 @@ import { EventRecord } from '@/types/events'
 import { Button } from '@/components/button'
 import { MEETUP_GROUP_LINK } from '@/lib/constants'
 import { Highlight } from '@/components/highlight'
-
+import { Container } from '@/components/container'
 
 const getEvents = async (): Promise< EventRecord[]> => {
     const result = await fetch('api/get-events', {
@@ -245,22 +245,3 @@ export function Events() {
     </section>
   )
 }
-
-function Container({
-    className,
-    children,
-  }: {
-    className?: string
-    children: React.ReactNode
-  }) {
-    return (
-      <div className={clsx(className, 'px-6 lg:px-8')}>
-        <div className="mx-auto max-w-2xl lg:max-w-7xl">{children}</div>
-      </div>
-    )
-  }
-
-
-
-
-

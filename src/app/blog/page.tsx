@@ -1,10 +1,9 @@
-import { Button } from '@/components/button'
-import { Heading, Lead, Subheading } from '@/components/text'
+import { Lead, Subheading } from '@/components/text'
 import { image } from './../../../studio/image'
 import Link from 'next/link'
 import { LinkButton } from '@/components/link-button'
 import { Highlight } from '@/components/highlight'
-// import { motion, useScroll, useTransform } from 'framer-motion'
+import { Container } from '@/components/container'
 import {
   getCategories,
   getFeaturedPosts,
@@ -318,20 +317,6 @@ export default async function Blog({
         <Posts page={page} category={category} />
         <Pagination page={page} category={category} />
       </Container>
-    </div>
-  )
-}
-
-function Container({
-  className,
-  children,
-}: {
-  className?: string
-  children: React.ReactNode
-}) {
-  return (
-    <div className={clsx(className, 'px-6 lg:px-8')}>
-      <div className="mx-auto max-w-2xl lg:max-w-7xl">{children}</div>
     </div>
   )
 }

@@ -8,12 +8,13 @@ import NewsletterForm from '@/components/newsletter-form';
 import { Highlight } from '@/components/highlight';
 import { BlurredCard } from '@/components/blurred-card';
 import { NewsletterGroup } from '@/types/enum';
+import { Container } from '@/components/container';
 
-// export const metadata: Metadata = {
-//   title: 'Company',
-//   description:
-//     'We&apos;re on a mission to transform revenue organizations by harnessing vast amounts of illegally acquired customer data.',
-// }
+export const metadata: Metadata = {
+  title: 'Build Station Berlin',
+  description:
+    'Don’t Hack Alone - Join Us for the Next Global Hackathon!',
+}
 
 export default function Hero() {
   const images = [
@@ -107,17 +108,3 @@ export default function Hero() {
     </section>
   );
 }
-
-function Container({
-    className,
-    children,
-  }: {
-    className?: string
-    children: React.ReactNode
-  }) {
-    return (
-      <div className={clsx(className, 'px-6 lg:px-8')}>
-        <div className="mx-auto max-w-2xl lg:max-w-7xl">{children}</div>
-      </div>
-    )
-  }
