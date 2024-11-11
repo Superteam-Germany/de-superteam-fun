@@ -32,7 +32,8 @@ const postsPerPage = 5
 
 async function FeaturedPosts() {
   let featuredPosts = await getFeaturedPosts(3)
-
+  console.log("🚀 ~ FeaturedPosts ~ featuredPosts:", featuredPosts)
+  
   if (featuredPosts.length === 0) {
     return
   }
