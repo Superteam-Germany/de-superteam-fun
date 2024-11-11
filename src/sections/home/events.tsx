@@ -14,53 +14,35 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import useMeasure, { type RectReadOnly } from 'react-use-measure'
 import Link from 'next/link'
 import { EventRecord } from '@/types/events'
-import { Button } from '@/components/button'
 import { MEETUP_GROUP_LINK } from '@/lib/constants'
 import { Highlight } from '@/components/highlight'
 import { Container } from '@/components/container'
 
 const getEvents = async (): Promise< EventRecord[]> => {
-    const result = await fetch('api/get-events', {
-      next: {
-        revalidate: 12 * 60 * 60,
-      },
-    });
-  
-    const events = (await result.json()).events as EventRecord[];
-    return events;
-  };
-  
-  const formatDateTime = (dateString: string) => {
-    const date = new Date(dateString);
-    return date.toLocaleString('en-US', {
-      weekday: 'long',
-      year: 'numeric',
-      month: 'long',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      // timeZoneName: 'short',
-    });
-  };
-  
-  const renderMoreEventsCTA = () => {
-    return (
-      <div className='px-10 pt-12 pb-24 lg:hidden rounded-2xl max-w-3xl bg-black/10 shadow-2xl backdrop-blur-xl'>
-        <div>
-          <h3 className='max-w-2/3 leading-tight mb-12'>
-            Explore more events on Meetup
-          </h3> 
-          <Button className='ml-auto' onClick={() => {
-            window.open(MEETUP_GROUP_LINK, '_blank');
-          }}>
-            Discover Now
-          </Button>
-        </div>
-      </div>
-    )
-  }
+  const result = await fetch('api/get-events', {
+    next: {
+      revalidate: 12 * 60 * 60,
+    },
+  });
 
-function TestimonialCard({
+  const events = (await result.json()).events as EventRecord[];
+  return events;
+};
+
+const formatDateTime = (dateString: string) => {
+  const date = new Date(dateString);
+  return date.toLocaleString('en-US', {
+    weekday: 'long',
+    year: 'numeric',
+    month: 'long',
+    day: 'numeric',
+    hour: '2-digit',
+    minute: '2-digit',
+    // timeZoneName: 'short',
+  });
+};
+
+function EventsCard({
   name,
   title,
   img,
@@ -126,9 +108,9 @@ function TestimonialCard({
         aria-hidden="true"
         className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black from-[calc(7/16*100%)] ring-1 ring-inset ring-gray-950/10 sm:from-25%"
       />
-      <figure className="h-2/3 relative p-10">
+      <figure className="h-2/3 relative p-6 lg:p-10">
         <blockquote>
-          <p className="relative text-xl/7 mt-12">
+          <p className="relative text-xl/7 mt-6 lg:mt-12">
             <span aria-hidden="true" className="absolute -translate-x-full">
               “
             </span>
@@ -205,7 +187,7 @@ export function Events() {
       >
         {events.map((event: EventRecord, index: number) => (
           <Link href={event.link} target="_blank" key={event.id} passHref>
-              <TestimonialCard
+              <EventsCard
                 name={formatDateTime(event.startTime)}
                 title={event.name}
                 img={event.image}
@@ -214,7 +196,7 @@ export function Events() {
                 onClick={() => scrollTo(index)}
               >
                 {event.description.slice(0, 85)}...
-              </TestimonialCard>
+              </EventsCard>
           </Link>
         ))}
         <div className="w-[42rem] shrink-0 sm:w-[54rem]" />

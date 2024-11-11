@@ -288,7 +288,7 @@ export default async function Blog({
     <div className='min-h-screen'>
       <div
         style={{ 
-          transform: 'translateY(-40%)',  // Static transform instead of animated
+          transform: 'translateY(-40%)', 
           backgroundSize: 'cover' 
         }}
         className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] 
