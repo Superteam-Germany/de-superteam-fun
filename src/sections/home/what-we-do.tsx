@@ -24,7 +24,7 @@ export default function WhatWeDo() {
       imgSrc: "/images/what-we-do/connect1.jpg",
       title: "Support Career Pathways",
       description: "We have a huge network of professionals and partners within the Solana ecosystem. We can help you to find partnerships for your project, which projects are hiring and which devs are looking for opportunities.",
-      link: "#",
+      link: "#events",
       colSpan: "lg:col-span-3",
       roundedClass: "lg:rounded-tr-[2rem]",
       cta: "Join our events"
