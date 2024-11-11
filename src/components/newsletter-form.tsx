@@ -48,7 +48,7 @@ export default function NewsletterForm({ group = NewsletterGroup.DEFAULT, title 
   };
 
   return (
-    <form className="mx-auto mt-10 flex max-w-md gap-x-4" onSubmit={create}>
+    <form className="mt-10 flex max-w-md gap-x-4 flex-wrap justify-center" onSubmit={create}>
         <label htmlFor="email-address" className="sr-only">
             Email address
         </label>
@@ -61,9 +61,13 @@ export default function NewsletterForm({ group = NewsletterGroup.DEFAULT, title 
             onChange={(e) => setInput(e.target.value)}
             placeholder="Enter your email"
             autoComplete="email"
-            className="min-w-0 flex-auto rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm/6"
+            className="min-w-0 flex-auto mb-4 rounded-md border-0 bg-white/5 px-3.5 py-2 text-white shadow-sm ring-1 ring-inset ring-white/10 focus:ring-2 focus:ring-inset focus:ring-white sm:text-sm/6"
         />
-        <Button type='submit' disabled={loading} className='ml-auto'>
+        <Button 
+            type='submit' 
+            disabled={loading} 
+            className='w-full sm:w-auto'  // Full width on mobile, auto on larger screens
+        >
             {loading ? <Spinner /> : title}
         </Button>
     </form>

@@ -184,17 +184,17 @@ export function HowItWorks() {
               </CustomTabPanel>
             ))}
           </CustomTabPanels>
-          <div className="flex justify-center mt-4">
+          {/* <div className="flex justify-center mt-4">
             {features.map((_, index) => (
               <span
                 key={index}
                 className={clsx(
                   'mx-1 h-2 w-2 rounded-full',
-                  selectedIndex === index ? 'bg-blue-600' : 'bg-blue-100'
+                  selectedIndex === index ? 'bg-[#9945FF]' : 'bg-blue-100'
                 )}
               />
             ))}
-          </div>
+          </div> */}
         </CustomTabGroup>
       </Container>
     </section>
