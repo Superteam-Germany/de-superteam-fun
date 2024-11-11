@@ -6,7 +6,7 @@ import { Button } from "./button";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { REGISTER_BUILD_STATION_LINK } from "@/lib/constants";
+import { SOCIAL_X_LINK } from "@/lib/constants";
 
 
 const menuItems = [
@@ -25,7 +25,6 @@ const menuItems = [
     link: '/buildstation',
     type: 'link',
   },
-  { name: 'Join Now', link: REGISTER_BUILD_STATION_LINK, type: 'button' },
 ];
 
 const Nav = () => {
@@ -133,6 +132,13 @@ const Nav = () => {
               );
             }
           })}
+          <li>
+            <Link href={SOCIAL_X_LINK} target="_blank">
+              <Button className="font-secondary tracking-wide font-normal text-base">
+                Follow us on X
+              </Button>
+            </Link>
+          </li>
         </ul>
       </div>
     </>

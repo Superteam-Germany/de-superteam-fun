@@ -27,7 +27,7 @@ export default function WhatWeDo() {
       link: "#",
       colSpan: "lg:col-span-3",
       roundedClass: "lg:rounded-tr-[2rem]",
-      cta: "Learn More"
+      cta: "Join our events"
     },
     {
       imgSrc: "/images/what-we-do/talk.jpg",
@@ -87,12 +87,8 @@ export default function WhatWeDo() {
                     <p className="mt-2 max-w-lg text-sm/6">{card.description}</p>
                   </div>
                   <Link href={card.link}
-                    onClick={(e) => {
-                        e.preventDefault();
-                        card.link.startsWith('#') 
-                        ? scrollToAnchor(card.link)
-                        : window.open(card.link);
-                    }} className="mt-8">
+                    onClick={() => scrollToAnchor(card.link)}
+                    className="mt-8 text-sm">
                     {card.cta}
                   </Link>
                 </div>

@@ -126,9 +126,9 @@ function TestimonialCard({
         aria-hidden="true"
         className="absolute inset-0 rounded-3xl bg-gradient-to-t from-black from-[calc(7/16*100%)] ring-1 ring-inset ring-gray-950/10 sm:from-25%"
       />
-      <figure className="relative p-10">
+      <figure className="h-2/3 relative p-10">
         <blockquote>
-          <p className="relative text-xl/7 ">
+          <p className="relative text-xl/7 mt-12">
             <span aria-hidden="true" className="absolute -translate-x-full">
               “
             </span>

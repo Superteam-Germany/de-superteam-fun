@@ -1,5 +1,7 @@
 "use client";
 import { BlurredCard } from "@/components/blurred-card";
+import { Button } from "@/components/button";
+import { SOCIAL_X_LINK } from "@/lib/constants";
 import React from "react";
 
 const WhatIsSuperteam = () => {
@@ -17,6 +19,9 @@ const WhatIsSuperteam = () => {
                   <p className="mt-6 leading-7">
                   Whether you’re new to crypto or a seasoned pro, Superteam Germany welcomes you to collaborate, learn, and build meaningful projects together.
                   </p>
+                  <Button className="mt-12" onClick={() => window.open(SOCIAL_X_LINK)}>
+                    See what we do on X
+                  </Button>
                 </div>
                 <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
                   <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">

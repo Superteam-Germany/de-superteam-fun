@@ -11,6 +11,7 @@ import { clsx } from 'clsx'
 import * as Headless from '@headlessui/react'
 import NextLink, { type LinkProps } from 'next/link'
 import { forwardRef } from 'react'
+import Newsletter from '@/sections/home/newsletter-section'
 
 export async function generateMetadata({
   params,
@@ -32,24 +33,20 @@ export default async function BlogPost({
   // TODO: Add publishedAt to the post
   return (
     <main className="overflow-hidden">
-      <Container>
+      <Container className="border-b border-gray-200">
         <Subheading className="mt-16">
           {/* {dayjs(post.publishedAt).format('dddd, MMMM D, YYYY')} */}
         </Subheading>
         <h1 className="mt-24">
           {post.title}
         </h1>
-        <div className="mt-16 grid grid-cols-1 gap-8 pb-24 lg:grid-cols-[15rem_1fr] xl:grid-cols-[15rem_1fr_15rem]">
-          <div className="flex flex-wrap items-center gap-8 max-lg:justify-between lg:flex-col lg:items-start">
+        <div className="mt-4 lg:mt-16 grid grid-cols-1 gap-8 pb-24 lg:grid-cols-[15rem_1fr] xl:grid-cols-[15rem_1fr_15rem]">
+          <div className="flex flex-wrap mb-8 items-center gap-8 max-lg:justify-between lg:flex-col lg:items-start">
             {post.author && (
               <div className="flex items-center gap-3">
-                {post.author.image && (
-                  <img
-                    alt=""
-                    src={image(post.author.image).size(64, 64).url()}
-                    className="aspect-square size-6 rounded-full object-cover"
-                  />
-                )}
+                <p className="text-sm/5">
+                  Author:
+                </p>
                 <div className="text-sm/5">
                   {post.author.name}
                 </div>
@@ -196,6 +193,7 @@ export default async function BlogPost({
           </div>
         </div>
       </Container>
+      <Newsletter />
     </main>
   )
 }

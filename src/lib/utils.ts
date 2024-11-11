@@ -6,6 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const scrollToAnchor = (anchorId: string) => {
+  console.log(anchorId)
   const element = document.getElementById(anchorId);
   if (element) {
     const position = element.getBoundingClientRect().top + window.scrollY;
