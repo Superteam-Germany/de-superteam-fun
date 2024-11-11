@@ -1,5 +1,6 @@
 import React from 'react';
 
+// spinner
 const Spinner = () => (
   <div className="spinner">
     <style jsx>{`

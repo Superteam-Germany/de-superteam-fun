@@ -4,6 +4,7 @@ import axios from 'axios';
 import { Button } from '@/components/button';
 import Spinner from '@/components/spinner';
 
+// newsletter form
 export default function NewsletterForm() {
   const [error, setError] = useState('');
   const [loading, setLoading] = useState(false);

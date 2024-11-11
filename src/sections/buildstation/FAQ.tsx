@@ -4,6 +4,7 @@ import AccordionWrapper from '@/components/accordion';
 import FadeInDiv from '@/components/fade-in-div';
 import { motion, useScroll, useTransform } from 'framer-motion';
 
+//faq
 const FAQ = () => {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '40%']);

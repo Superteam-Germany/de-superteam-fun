@@ -4,6 +4,7 @@ interface Props {
   children: React.ReactNode;
 }
 
+// highlight
 export const Highlight: FC<Props> = ({ children }) => {
   return (
     <span className="relative inline-block">
