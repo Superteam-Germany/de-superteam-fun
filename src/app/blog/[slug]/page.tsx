@@ -20,7 +20,20 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   let post = await getPost(params.slug)
 
-  return post ? { title: post.title, description: post.blurb } : {}
+  return post
+    ? {
+        title: post.title,
+        description: post.blurb,
+        openGraph: {
+          images: [
+            {
+              url: image(post.mainImage).size(1200, 630).url(), // Adjust size as needed
+              alt: post.mainImage.alt || post.title,
+            },
+          ],
+        },
+      }
+    : {}
 }
 
 
