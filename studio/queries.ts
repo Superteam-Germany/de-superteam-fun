@@ -49,25 +49,27 @@ export async function getPosts(
 
 const FEATURED_POSTS_QUERY = defineQuery(/* groq */ `*[
   _type == "blogPost"
-  && isFeatured == true
   && defined(slug.current)
-]|order(publishedAt desc)[0...$quantity]{
+]{
   title,
   "slug": slug.current,
   publishedAt,
   mainImage,
   excerpt,
+  isFeatured,
   author->{
     name,
     image,
   },
-}`)
+}[isFeatured == true][0...$quantity]`)
 
 export async function getFeaturedPosts(quantity: number) {
-  return await sanityFetch({
+  const posts = await sanityFetch({
     query: FEATURED_POSTS_QUERY,
     params: { quantity },
   })
+  console.log("Raw posts from Sanity:", posts)
+  return posts
 }
 
 const FEED_POSTS_QUERY = defineQuery(/* groq */ `*[

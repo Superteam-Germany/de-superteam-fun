@@ -3,6 +3,8 @@ import { Heading, Lead, Subheading } from '@/components/text'
 import { image } from './../../../studio/image'
 import Link from 'next/link'
 import { LinkButton } from '@/components/link-button'
+import { Highlight } from '@/components/highlight'
+// import { motion, useScroll, useTransform } from 'framer-motion'
 import {
   getCategories,
   getFeaturedPosts,
@@ -21,6 +23,7 @@ import { clsx } from 'clsx'
 import dayjs from 'dayjs'
 import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
+import FadeInDiv from '@/components/fade-in-div'
 
 export const metadata: Metadata = {
   title: 'Blog',
@@ -32,21 +35,19 @@ const postsPerPage = 5
 
 async function FeaturedPosts() {
   let featuredPosts = await getFeaturedPosts(3)
-  console.log("🚀 ~ FeaturedPosts ~ featuredPosts:", featuredPosts)
   
   if (featuredPosts.length === 0) {
     return
   }
 
   return (
-    <div className="mt-16 bg-gradient-to-t from-gray-100 pb-14">
       <Container>
         <h2 className="text-2xl font-medium tracking-tight">Featured</h2>
         <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {featuredPosts.map((post: any) => (
             <div
               key={post.slug}
-              className="relative flex flex-col rounded-3xl bg-white p-2 shadow-md shadow-black/5 ring-1 ring-black/5"
+              className="relative flex flex-col rounded-3xl p-2 bg-gradient-to-br from-secondary/70 backdrop-blur-md via-secondary/50 to-background/30  shadow-2xl  ring-1 ring-black/5"
             >
               {post.mainImage && (
                 <img
@@ -66,14 +67,14 @@ async function FeaturedPosts() {
                   </Link>
                 </div>
                 <div className="mt-2 flex-1 text-sm/6">
-                  {post.excerpt}
+                  {post.blurb}
                 </div>
                 {post.author && (
                   <div className="mt-6 flex items-center gap-3">
                     {post.author.image && (
                       <img
                         alt=""
-                        src={image(post.author.image).size(64, 64).url()}
+                        src={image(post.author.image).size(30, 30).url()}
                         className="aspect-square size-6 rounded-full object-cover"
                       />
                     )}
@@ -87,7 +88,6 @@ async function FeaturedPosts() {
           ))}
         </div>
       </Container>
-    </div>
   )
 }
 
@@ -163,18 +163,18 @@ async function Posts({ page, category }: { page: number; category?: string }) {
       {posts.map((post: any) => (
         <div
           key={post.slug}
-          className="relative grid grid-cols-1 border-b border-b-gray-100 py-10 first:border-t first:border-t-gray-200 max-sm:gap-3 sm:grid-cols-3"
+          className="relative grid grid-cols-1 border-b border-b-gray-100 py-10 first:border-t first:border-t-gray-200 max-sm:gap-3 sm:grid-cols-3 bg-gradient-to-br from-secondary/70 backdrop-blur-md via-secondary/50 to-background/30  shadow-2xl"
         >
           <div>
             <div className="text-sm/5 sm:font-medium">
               {/* {dayjs(post.publishedAt).format('dddd, MMMM D, YYYY')} */}
             </div>
             {post.author && (
-              <div className="mt-2.5 flex items-center gap-3">
+              <div className="ml-4 mt-2.5 flex items-center gap-3">
                 {post.author.image && (
                   <img
                     alt=""
-                    src={image(post.author.image).width(64).height(64).url()}
+                    src={image(post.author.image).width(30).height(30).url()}
                     className="aspect-square size-6 rounded-full object-cover"
                   />
                 )}
@@ -276,32 +276,49 @@ export default async function Blog({
       ? typeof searchParams.page === 'string' && parseInt(searchParams.page) > 1
         ? parseInt(searchParams.page)
         : notFound()
-      : 1
+      : 1;
 
   let category =
     typeof searchParams.category === 'string'
       ? searchParams.category
-      : undefined
+      : undefined;
+  // const { scrollYProgress } = useScroll();
+  // const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
 
   return (
-    <main className="overflow-hidden">
-      <Container>
-        <Subheading className="mt-16">Blog</Subheading>
-        <Heading as="h1" className="mt-2">
-          What’s happening at Radiant.
-        </Heading>
-        <Lead className="mt-6 max-w-3xl">
-          Stay informed with product updates, company news, and insights on how
-          to sell smarter at your company.
-        </Lead>
-      </Container>
-      {page === 1 && !category && <FeaturedPosts />}
+    <div className='min-h-screen'>
+      <div
+        style={{ 
+          transform: 'translateY(-40%)',  // Static transform instead of animated
+          backgroundSize: 'cover' 
+        }}
+        className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] 
+          fixed top-0 left-0
+          -z-20 
+          bg-50% bg-no-repeat 
+          w-full h-[300vh]">
+      </div>
+      <FadeInDiv>
+        <div>
+        <Container>
+          <Subheading className="mt-16">Blog</Subheading>
+          <h1 className="mt-2">
+            What’s happening at <Highlight>Superteam Germany</Highlight>.
+          </h1>
+          <Lead className="mt-6 max-w-3xl">
+            Stay informed with Solana updates, community news, and insights on how
+            to build on Solana.
+          </Lead>
+        </Container>
+        {page === 1 && !category && <FeaturedPosts />}
+        </div>
+      </FadeInDiv>
       <Container className="mt-16 pb-24">
         <Categories selected={category} />
         <Posts page={page} category={category} />
         <Pagination page={page} category={category} />
       </Container>
-    </main>
+    </div>
   )
 }
 

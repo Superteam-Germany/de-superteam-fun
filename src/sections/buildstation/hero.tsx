@@ -34,7 +34,7 @@ export default function Hero() {
           className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] -z-20 bg-50% bg-no-repeat w-full absolute h-[300vh]">
         </motion.div>
             <Container className="mt-16">
-            <h1 className='text-4xl font-semibold tracking-tight sm:text-5xl'>Don’t Hack Alone - Join Us for the Next Global Hackathon!</h1>
+            <h1 className='font-semibold tracking-tight sm:text-5xl'>Don’t Hack Alone - Join Us for the Next Global Hackathon!</h1>
             <p className="'text-2xl font-medium">
                 Come and build with us at <Highlight>Buildstation Berlin</Highlight>.
             </p>

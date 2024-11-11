@@ -10,11 +10,11 @@ import { REGISTER_BUILD_STATION_LINK } from "@/lib/constants";
 
 
 const menuItems = [
-  // {
-  //   name: "Blog",
-  //   link: "/blog",
-  //   type: "link",
-  // },
+  {
+    name: "Blog",
+    link: "/blog",
+    type: "link",
+  },
   {
     name: "Events",
     link: "/#events",

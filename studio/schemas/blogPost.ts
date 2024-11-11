@@ -67,6 +67,6 @@ export default {
       type: 'boolean',
       description: 'Toggle if this post should be featured',
       initialValue: false,
-    }),
+    })
   ],
 };
