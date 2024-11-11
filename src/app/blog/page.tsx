@@ -25,9 +25,9 @@ import { notFound } from 'next/navigation'
 import FadeInDiv from '@/components/fade-in-div'
 
 export const metadata: Metadata = {
-  title: 'Blog',
+  title: 'Superteam Germany Blog',
   description:
-    'Stay informed with product updates, company news, and insights on how to sell smarter at your company.',
+    'Stay informed with Solana updates, community news, and insights on how to build on Solana.',
 }
 
 const postsPerPage = 5

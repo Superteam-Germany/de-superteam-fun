@@ -23,6 +23,8 @@ export async function generateMetadata({
   return post ? { title: post.title, description: post.blurb } : {}
 }
 
+
+
 export default async function BlogPost({
   params,
 }: {

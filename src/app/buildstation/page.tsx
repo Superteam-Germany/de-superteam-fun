@@ -1,13 +1,9 @@
 'use client';
-import BerlinDemoDay from '@/sections/buildstation/berlin-demo-day';
-import BuildStationIntro from '@/sections/buildstation/build-station-intro';
 import FAQ from '@/sections/buildstation/faq';
 import WhatIs from '@/sections/buildstation/what-is';
-import TextBanner from '@/components/text-banner';
 import FadeInDiv from '@/components/fade-in-div';
 import Hero from '@/sections/buildstation/hero';
 import { HowItWorks } from '@/sections/buildstation/how-it-works';
-import NewsletterSection from '@/sections/home/newsletter-section';
 
 const page = () => {
   return (
@@ -21,12 +17,6 @@ const page = () => {
       <FadeInDiv>
         <HowItWorks />
       </FadeInDiv>
-      {/* <FadeInDiv>
-        <BerlinDemoDay />
-      </FadeInDiv>
-      <FadeInDiv>
-        <Prizes />
-      </FadeInDiv> */}
       <FAQ />
     </div>
   );

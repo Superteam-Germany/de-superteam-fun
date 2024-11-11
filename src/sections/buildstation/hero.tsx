@@ -1,6 +1,4 @@
 import { AnimatedNumber } from '@/components/animated-number'
-import type { Metadata } from 'next'
-import { clsx } from 'clsx'
 import Image from 'next/image';
 import { useScroll, useTransform } from 'framer-motion';
 import { motion } from 'framer-motion';
@@ -10,11 +8,7 @@ import { BlurredCard } from '@/components/blurred-card';
 import { NewsletterGroup } from '@/types/enum';
 import { Container } from '@/components/container';
 
-export const metadata: Metadata = {
-  title: 'Build Station Berlin',
-  description:
-    'Don’t Hack Alone - Join Us for the Next Global Hackathon!',
-}
+
 
 export default function Hero() {
   const images = [
