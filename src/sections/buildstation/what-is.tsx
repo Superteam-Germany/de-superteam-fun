@@ -3,6 +3,8 @@ import { Highlight } from '../../components/highlight';
 import { clsx } from 'clsx'
 import { Button } from '@/components/button'
 import { BlurredCard } from '@/components/blurred-card'
+import NewsletterForm from '@/components/newsletter-form';
+import { NewsletterGroup } from '@/types/enum';
 
 const WhatIs = () => {
   return (
@@ -27,11 +29,9 @@ const WhatIs = () => {
               The Station is open to everyone interested in Solana. You&apos;ll find here developers, 
               biz-devs, artists, marketers and many others.
             </p>
-            {/* <div className="mt-6">
-              <Button className="w-full sm:w-auto" >
-                Join us
-              </Button>
-            </div> */}
+            <div className="mt-6">
+            <NewsletterForm group={NewsletterGroup.BUILDSTATION} title='RSVP for Buildstation' />
+            </div>
           </div>
           <div className="max-lg:order-first max-lg:max-w-lg">
             <div className="aspect-[3/2] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">

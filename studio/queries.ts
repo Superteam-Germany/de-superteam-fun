@@ -68,7 +68,6 @@ export async function getFeaturedPosts(quantity: number) {
     query: FEATURED_POSTS_QUERY,
     params: { quantity },
   })
-  console.log("Raw posts from Sanity:", posts)
   return posts
 }
 

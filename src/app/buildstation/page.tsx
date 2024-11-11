@@ -7,6 +7,7 @@ import TextBanner from '@/components/text-banner';
 import FadeInDiv from '@/components/fade-in-div';
 import Hero from '@/sections/buildstation/hero';
 import { HowItWorks } from '@/sections/buildstation/how-it-works';
+import NewsletterSection from '@/sections/home/newsletter-section';
 
 const page = () => {
   return (

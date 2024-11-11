@@ -1,24 +1,53 @@
 import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
+import { NewsletterGroup } from "@/types/enum";
+
+const getGroupRequest = (group: string) => {
+  const url = `https://api.mailerlite.com/api/v2/groups/${group}/subscribers`
+
+  const headers = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      //'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`, // Use environment variable for API key
+      'X-MailerLite-ApiKey': process.env.MAILERLITE_API_KEY
+    },
+  };
+
+  return {url , headers}
+}
+
+const getStandardRequest = () => {
+  const url = 'https://connect.mailerlite.com/api/subscribers';
+
+  const headers = {
+    headers: {
+      'Content-Type': 'application/json',
+      'Accept': 'application/json',
+      'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`, // Use environment variable for API key
+    },
+  };
+
+  return {url , headers}
+
+}
 
 export async function POST(request: NextRequest) {
-  const { email } = await request.json();
+  const { email, group } = await request.json();
 
   if (!email) {
     return NextResponse.json({ message: "Invalid email" }, { status: 400 });
   }
 
+    const {url , headers} = group === NewsletterGroup.DEFAULT 
+      ? getStandardRequest() 
+      : getGroupRequest(group);
+
   try {
     const response = await axios.post(
-      'https://connect.mailerlite.com/api/subscribers',
-      { email },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json',
-          'Authorization': `Bearer ${process.env.MAILERLITE_API_KEY}`, // Use environment variable for API key
-        },
-      }
+      url,
+      { email},
+      headers
     );
 
     if (response.status === 201) {

@@ -7,6 +7,7 @@ import { motion } from 'framer-motion';
 import NewsletterForm from '@/components/newsletter-form';
 import { Highlight } from '@/components/highlight';
 import { BlurredCard } from '@/components/blurred-card';
+import { NewsletterGroup } from '@/types/enum';
 
 // export const metadata: Metadata = {
 //   title: 'Company',
@@ -49,7 +50,7 @@ export default function Hero() {
                     <p className='mt-8'>
                     Sign up to participate in the Spring Solana Global Hackathon with Superteam Germany and get notified when you can start building.
                     </p>
-                    <NewsletterForm />
+                    <NewsletterForm group={NewsletterGroup.BUILDSTATION} title='RSVP for Buildstation' />
                 </div>
                 <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
                     <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
@@ -71,29 +72,29 @@ export default function Hero() {
                     </div>
                 </div>
                 <BlurredCard className="mt-24 lg:mt-32 lg:col-span-1">
-                  <p className='text-sm uppercase font-semibold'>Numbers from the last hackathon</p>
+                  <p className='text-sm uppercase font-semibold'>Numbers from previous hackathons</p>
                   <hr className="mt-6 border-t border-gray-200" />
                   <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
                       <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-                      <dt className="text-sm/6">Submissions Globally</dt>
+                      <dt className="text-sm/6">Submissions</dt>
                       <dd className="order-first text-6xl font-medium tracking-tight">
-                          <AnimatedNumber start={500} end={1234} />
+                          <AnimatedNumber start={0} end={161} />
                       </dd>
                       </div>
                       <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
-                      <dt className="text-sm/6">Superteam Germany Submissions</dt>
+                      <dt className="text-sm/6">Shortlisted Projects</dt>
                       <dd className="order-first text-6xl font-medium tracking-tight">
-                          <AnimatedNumber start={0} end={38} />
+                          <AnimatedNumber start={0} end={41} />
                       </dd>
                       </div>
                       <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
-                      <dt className="text-sm/6">Winners Globally</dt>
+                      <dt className="text-sm/6">Honorable Mentions</dt>
                       <dd className="order-first text-6xl font-medium tracking-tight">
-                          <AnimatedNumber start={0} end={30}/>
+                          <AnimatedNumber start={0} end={10}/>
                       </dd>
                       </div>
                       <div className="flex flex-col gap-y-2">
-                      <dt className="text-sm/6">Superteam Germany Winners</dt>
+                      <dt className="text-sm/6">Global Winners</dt>
                       <dd className="order-first text-6xl font-medium tracking-tight">
                           <AnimatedNumber start={0} end={12} />
                       </dd>
