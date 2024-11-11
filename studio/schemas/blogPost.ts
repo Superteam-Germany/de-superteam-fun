@@ -1,3 +1,8 @@
+import { defineField } from 'sanity'
+import { groq } from 'next-sanity'
+
+const apiVersion = '2024-01-01'
+
 export default {
   name: 'blogPost',
   title: 'Blog Post',
@@ -56,5 +61,28 @@ export default {
       to: [{ type: 'author' }],
       validation: (Rule: any) => Rule.required().error('Please select an author for your blog post.'),
     },
+    defineField({
+      name: 'isFeatured',
+      title: 'Featured',
+      type: 'boolean',
+      description: 'Toggle if this post should be featured',
+      initialValue: false,
+      validation: (Rule) =>
+        Rule.custom(async (isFeatured, { getClient }) => {
+          if (isFeatured !== true) {
+            return true
+          }
+
+          let featuredPosts = await getClient({ apiVersion })
+            .withConfig({ perspective: 'previewDrafts' })
+            .fetch<number>(
+              groq`count(*[_type == 'blogPost' && isFeatured == true])`,
+            )
+
+          return featuredPosts > 3
+            ? 'Only 3 posts can be featured at a time.'
+            : true
+        }),
+    })
   ],
 };

@@ -8,7 +8,7 @@ export async function GET(request: Request) {
     return NextResponse.error();
   }
 
-  const url = 'https://app.getriver.io/api/v1alpha1/community/superteam/list-events?sort=geo&latitude=52.520008&longitude=13.404954&limit=4';
+  const url = 'https://app.getriver.io/api/v1alpha1/community/superteam/list-events?sort=geo&latitude=52.520008&longitude=13.404954&limit=6';
   const headers = {
     'RIVER-ACCESS-KEY': RIVER_ACCESS_KEY,
   };

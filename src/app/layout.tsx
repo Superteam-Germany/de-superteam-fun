@@ -3,8 +3,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import { Analytics } from "@vercel/analytics/react";
-import FooterGroup from "@/app/buildstation/sections/FooterGroup";
-import Nav from "@/components/Nav";
+import FooterGroup from "@/sections/buildstation/footer-group";
+import Nav from "@/components/nav";
+import Head from "next/head";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
@@ -62,6 +63,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <Head>
+        <title>Superteam Germany</title>
+        <meta name="description" content="The heartbeat of Germany's Solana community." />
+      </Head>
       <body
         className={`${satoshi.variable} ${archivo.variable} ${fontHyperdrive.variable} `}>
         <main>

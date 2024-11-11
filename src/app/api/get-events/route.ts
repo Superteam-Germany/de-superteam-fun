@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
-import { EventRecord } from '@/app/types/events';
+import { EventRecord } from './../../../types/events';
 
 const encodedKey = process.env.MEETUP_PRIVATE_KEY;
 const privateKey = encodedKey ? Buffer.from(encodedKey, 'base64').toString('utf8') : '';
@@ -93,7 +93,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
 
     const events = meetupEvents
       .map(adaptMeetupEventToEventRecord)
-      .slice(0, 4); // Limit to 4 events
+      .slice(0, 6); // Limit to 6 events
 
     return NextResponse.json(
       { events }, 

@@ -35,12 +35,12 @@
     --radius: 0.625rem;
 
     /* Desktop font sizes */
-    --font-size-h1: 6.375rem;
-    --font-size-h2: 5.125rem;
-    --font-size-h2-5: 3.875rem;
-    --font-size-h3: 2.125rem;
-    --font-size-quote: 2.625rem;
-    --font-size-body: 1.15rem;
+    --font-size-h1: 5rem;
+    --font-size-h2: 4rem;
+    --font-size-h2-5: 3rem;
+    --font-size-h3: 2rem;
+    --font-size-quote: 2rem;
+    --font-size-body: 1.25rem;
 
     /* Mobile font sizes */
     --font-size-h1-mobile: 2rem;
@@ -80,11 +80,11 @@
     --ring: 0 0% 83.1%;
 
     /* Desktop font sizes */
-    --font-size-h1: 5.5rem;
-    --font-size-h2: 5.125rem;
-    --font-size-h3: 2.125rem;
-    --font-size-quote: 2.625rem;
-    --font-size-body: 1.25rem;
+    --font-size-h1: 5rem;
+    --font-size-h2: 4rem;
+    --font-size-h3: 2rem;
+    --font-size-quote: 2rem;
+    --font-size-body: 1.12rem;
 
     /* Mobile font sizes */
     --font-size-h1-mobile: 2rem;
@@ -157,7 +157,7 @@
   }
 }
 
-.blog-content h1 {
+/* .blog-content h1 {
   margin-top: 3rem;
   margin-bottom: 1rem;
 }
@@ -172,4 +172,7 @@
 
 .blog-content p {
   margin-bottom: 1.5rem; 
+} */
+.text-shadow {
+  text-shadow: 1px 1px 2px black, 0 0 1em black, 0 0 0.2em black;
 }
