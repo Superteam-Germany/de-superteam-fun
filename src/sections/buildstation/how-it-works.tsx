@@ -98,6 +98,16 @@ export function HowItWorks() {
     }
   }
 
+  const handlePrev = (prevIndex: number) => {
+    console.log("🚀 ~ handleNext ~ prevIndex:", prevIndex)
+    
+    if (prevIndex > 0 ) {
+      setSelectedIndex(prevIndex-1)
+    } else {
+      setSelectedIndex(features.length-1)
+    }
+  }
+
   const renderMobileTab = (feature: any, featureIndex: number) => {
     if(selectedIndex === featureIndex) {
       return (
@@ -113,7 +123,7 @@ export function HowItWorks() {
           <div className='flex gap-4 mt-6'>
             <button
               className="text-white focus:outline-none"
-              onClick={() => handleNext(featureIndex)}
+              onClick={() => handlePrev(featureIndex)}
             >
               <FaChevronLeft size={24} color='gray'/>
             </button>
