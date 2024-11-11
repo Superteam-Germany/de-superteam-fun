@@ -39,7 +39,7 @@ export default async function BlogPost({
         <Subheading className="mt-16">
           {/* {dayjs(post.publishedAt).format('dddd, MMMM D, YYYY')} */}
         </Subheading>
-        <h1 className="mt-24 text-6xl">
+        <h1 className="mt-12 lg:mt-24 text-4xl lg:text-6xl">
           {post.title}
         </h1>
         <div className="mt-4 lg:mt-16 grid grid-cols-1 gap-8 pb-24 lg:grid-cols-[15rem_1fr] xl:grid-cols-[15rem_1fr_15rem]">
