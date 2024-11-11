@@ -299,16 +299,16 @@ export default async function Blog({
       </div>
       <FadeInDiv>
         <div>
-        <Container>
+        <div className='container'>
           <Subheading className="mt-16">Blog</Subheading>
           <h1 className="mt-2">
-            What’s happening at <Highlight>Superteam Germany</Highlight>.
+            Updates from <Highlight>Superteam</Highlight> Germany
           </h1>
-          <Lead className="mt-6 max-w-3xl">
+          <Lead className="mt-6">
             Stay informed with Solana updates, community news, and insights on how
             to build on Solana.
           </Lead>
-        </Container>
+        </div>
         {page === 1 && !category && <FeaturedPosts />}
         </div>
       </FadeInDiv>
