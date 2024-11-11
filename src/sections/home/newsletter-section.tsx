@@ -27,7 +27,9 @@ const NewsletterSection = () => {
               <p className="mx-auto mt-6 max-w-lg text-center text-lg text-gray-300">
                 Subscribe to our newsletter to get notified about upcoming events and community perks.
               </p>
-              <NewsletterForm />
+              <div className='flex items-center justify-center'>
+                <NewsletterForm />
+              </div>
             </div>
           </BlurredCard>
         </FadeInDiv>

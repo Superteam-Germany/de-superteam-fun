@@ -42,8 +42,8 @@ async function FeaturedPosts() {
 
   return (
       <Container>
-        <h2 className="text-2xl font-medium tracking-tight">Featured</h2>
-        <div className="mt-6 grid grid-cols-1 gap-8 lg:grid-cols-3">
+        {/* <h2 className="text-3xl mt-24">Featured</h2> */}
+        <div className="mt-16 grid grid-cols-1 gap-8 lg:grid-cols-3">
           {featuredPosts.map((post: any) => (
             <div
               key={post.slug}

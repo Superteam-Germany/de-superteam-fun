@@ -67,6 +67,22 @@ export default {
       type: 'boolean',
       description: 'Toggle if this post should be featured',
       initialValue: false,
+      validation: (Rule) =>
+        Rule.custom(async (isFeatured, { getClient }) => {
+          if (isFeatured !== true) {
+            return true
+          }
+
+          let featuredPosts = await getClient({ apiVersion })
+            .withConfig({ perspective: 'previewDrafts' })
+            .fetch<number>(
+              groq`count(*[_type == 'blogPost' && isFeatured == true])`,
+            )
+
+          return featuredPosts > 3
+            ? 'Only 3 posts can be featured at a time.'
+            : true
+        }),
     })
   ],
 };

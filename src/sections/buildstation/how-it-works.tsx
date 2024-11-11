@@ -4,8 +4,9 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import clsx from 'clsx'
 import { useSwipeable } from 'react-swipeable'
-import { FaArrowLeft, FaArrowRight } from 'react-icons/fa' // Importing icons
-
+import { FaChevronLeft, FaChevronRight } from 'react-icons/fa' // Importing icons
+import { Button } from '@/components/button'
+import Link from 'next/link'
 // Custom Tab components
 function CustomTabGroup({ children, className, vertical }: any) {
   return <div className={className}>{children}</div>
@@ -39,15 +40,15 @@ const features = [
         image: '/images/hackathon/15.jpg',
     },
     {
-        title: 'Build Your MVP and Pitch Deck',
+        title: 'Build Your MVP',
         description:
-        'You will have multiple weeks to build your product and pitch deck. Join our newsletter and follow us on X to get notified when you can start building.',
+        'You will have multiple weeks to build your product and pitch deck. Join our newsletter and follow us on X to get notified when you can start.',
         image: '/images/hackathon/13.jpg',
     },
     {
-        title: 'Submit Your Project to Local and Global Tracks',
+        title: 'Submit Your Project',
         description:
-        'There will be multiple tracks to win prizes. Some of them are exclusively for projects built by the local community; make sure to submit to both.',
+        'There will be multiple tracks to win prizes. Some of them are exclusively for projects built by the local community.',
         image: '/images/hackathon/29.jpg',
     },
     {
@@ -87,57 +88,99 @@ export function HowItWorks() {
     trackMouse: true,
   })
 
+  const handleNext = (prevIndex: number) => {
+    console.log("🚀 ~ handleNext ~ prevIndex:", prevIndex)
+    
+    if (prevIndex < features.length-1 ) {
+      setSelectedIndex(prevIndex+1)
+    } else {
+      setSelectedIndex(0)
+    }
+  }
+
+  const renderMobileTab = (feature: any, featureIndex: number) => {
+    if(selectedIndex === featureIndex) {
+      return (
+        <div className='flex flex-col justify-between items-center p-4 py-12 bg-white/5 backdrop-blur-lg w-full'>
+          <div className='mx-auto max-w-7xl px-12'>
+            <div className='text-lg font-bold mb-4' key={feature.title}>
+              {feature.title}
+            </div>
+            <p>
+              {feature.description}
+            </p>
+          </div>
+          <div className='flex gap-4 mt-6'>
+            <button
+              className="text-white focus:outline-none"
+              onClick={() => handleNext(featureIndex)}
+            >
+              <FaChevronLeft size={24} color='gray'/>
+            </button>
+            <div>
+              {featureIndex + 1} / {features.length}
+            </div>
+            <button
+              className="text-white focus:outline-none"
+              onClick={() => handleNext(featureIndex)}
+            >
+              <FaChevronRight size={24} color='gray'/>
+            </button>
+          </div>
+        </div>
+      )
+    } else return null;
+  }
+
   return (
     <section
       id="features"
       aria-label="Features for running your books"
-      className="container relative overflow-hidden pb-28 pt-20 mt-20 sm:py-32"
+      className="relative overflow-hidden pb-28 lg:pt-20 mt-20 sm:py-32"
     >
-      <Container className="relative">
-        <div className="max-w-2xl md:mx-auto md:text-center xl:max-w-none">
+      <div className="relative lg:mx-auto lg:max-w-7xl lg:px-12 lg:px-8 ">
+        <div className="mx-auto max-w-7xl px-12 sm:px-6 lg:px-8 max-w-2xl md:mx-auto md:text-center xl:max-w-none">
           <h2 className="font-display text-3xl tracking-tight text-white sm:text-4xl md:text-5xl">
-            How It Works
+            How Build Station Works
           </h2>
-          <p className="mt-6 tracking-tight font-bold text-blue-100">
+          <p className="mt-6 font-bold">
             Everything you need to win the hackathon and kickstart your idea.
           </p>
         </div>
         <CustomTabGroup
-          className="mt-16 grid grid-cols-1 items-center gap-y-2 pt-10 sm:gap-y-6 md:mt-20 lg:grid-cols-12 lg:pt-0"
+          className="mt-0 lg:mt-16 grid grid-cols-1 items-center gap-y-2 lg:grid-cols-12 lg:pt-0"
           vertical={tabOrientation === 'vertical'}
         >
+          {/* Desctop Tabs */}
           <div className="lg:col-span-5">
-            <CustomTabList className="relative z-10 flex flex-col gap-y-1">
+            <CustomTabList className="hidden lg:block relative z-10 flex flex-col gap-y-1">
               {features.map((feature, featureIndex) => (
                 <div
                   key={feature.title}
                   className={clsx(
                     'group relative rounded-full px-4 py-1 lg:rounded-l-xl lg:rounded-r-none lg:p-6',
                     selectedIndex === featureIndex
-                      ? 'bg-white/5 backdrop-blur-lg  lg:ring-inset '
-                      : 'hover:bg-white/5 lg:hover:bg-white/10',
+                      ? 'bg-white/5 backdrop-blur-lg lg:ring-inset'
+                      : 'hover:bg-white/5 lg:hover:bg-white/10'
                   )}
                 >
-                  <h3>
+                  <div>
                     <CustomTab
                       className={clsx(
                         'font-display text-lg ui-not-focus-visible:outline-none',
-                        selectedIndex === featureIndex
-                          ? 'text-blue-600 lg:text-white'
-                          : 'text-blue-100 hover:text-white lg:text-white',
                       )}
                       onClick={() => setSelectedIndex(featureIndex)}
                     >
                       <span className="absolute inset-0 rounded-full lg:rounded-l-xl lg:rounded-r-none" />
                       {feature.title}
                     </CustomTab>
-                  </h3>
+                  </div>
                   <p
                     className={clsx(
-                      'mt-2 hidden text-sm lg:block',
+                      'mt-2 text-sm',
                       selectedIndex === featureIndex
-                        ? 'text-white'
-                        : 'text-blue-100 group-hover:text-white',
+                        ? 'block'
+                        : 'hidden lg:block text-blue-100 group-hover:text-white'
                     )}
                   >
                     {feature.description}
@@ -146,32 +189,13 @@ export function HowItWorks() {
               ))}
             </CustomTabList>
           </div>
-          <CustomTabPanels className="lg:col-span-7" {...handlers}>
+          {/* Desktop Tabs */}
+          <CustomTabPanels className="mx-auto max-w-7xl px-12 lg:px-0 lg:col-span-7" {...handlers}>
             {features.map((feature, featureIndex) => (
               <CustomTabPanel
                 key={feature.title}
                 className={selectedIndex === featureIndex ? '' : 'hidden'}
               >
-                <div className="relative sm:px-6 lg:hidden">
-                  <div className="absolute -inset-x-4 bottom-[-4.25rem] top-[-6.5rem] bg-white/10 ring-1 ring-inset ring-white/10 sm:inset-x-0 sm:rounded-t-xl" />
-                  <p className="relative mx-auto max-w-2xl text-base text-white sm:text-center">
-                    {feature.description}
-                  </p>
-                  <div className="flex justify-between mt-4">
-                    <button
-                      className="text-white focus:outline-none"
-                      onClick={() => setSelectedIndex((prevIndex) => (prevIndex - 1 + features.length) % features.length)}
-                    >
-                      <FaArrowLeft size={24} />
-                    </button>
-                    <button
-                      className="text-white focus:outline-none"
-                      onClick={() => setSelectedIndex((prevIndex) => (prevIndex + 1) % features.length)}
-                    >
-                      <FaArrowRight size={24} />
-                    </button>
-                  </div>
-                </div>
                 <div className="mt-10 w-[45rem] overflow-hidden rounded-xl bg-slate-50 shadow-xl shadow-blue-900/20 sm:w-auto lg:mt-0 lg:w-[67.8125rem]">
                   <img
                     className="w-full"
@@ -184,19 +208,11 @@ export function HowItWorks() {
               </CustomTabPanel>
             ))}
           </CustomTabPanels>
-          {/* <div className="flex justify-center mt-4">
-            {features.map((_, index) => (
-              <span
-                key={index}
-                className={clsx(
-                  'mx-1 h-2 w-2 rounded-full',
-                  selectedIndex === index ? 'bg-[#9945FF]' : 'bg-blue-100'
-                )}
-              />
-            ))}
-          </div> */}
+          <div className="block lg:hidden absolute top-[30rem] left-0 w-full">
+            {features.map((feature, featureIndex) => renderMobileTab(feature, featureIndex))}
+          </div>
         </CustomTabGroup>
-      </Container>
+      </div>
     </section>
   )
 }
