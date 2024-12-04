@@ -100,7 +100,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
       { 
         status: 200,
         headers: {
-          'Cache-Control': 'no-store', 
+          'Cache-Control': 'no-cache', 
         }, 
       },
     );
