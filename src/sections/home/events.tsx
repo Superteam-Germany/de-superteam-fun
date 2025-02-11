@@ -171,9 +171,9 @@ export function Events() {
     <section id="events" className="overflow-hidden sm:py-24 lg:py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
-          <h2 className="mt-2">
-            Upcoming Events
-          </h2>
+            <h2 className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+              Upcoming Events
+            </h2>
         </div>
       </Container>
       <div

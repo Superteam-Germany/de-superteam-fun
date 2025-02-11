@@ -5,18 +5,20 @@ import FadeInDiv from '@/components/fade-in-div';
 import axios from 'axios';
 import NewsletterForm from '@/components/newsletter-form';
 import { BlurredCard } from '@/components/blurred-card';
+import WhatWeDo from './what-we-do';
 
 const NewsletterSection = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['-80%', '-0%']);
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
 
   return (
     <div className='relative overflow-hidden'>
       <motion.div
-        style={{ y, x, backgroundSize: 'cover' }}
-        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] w-full absolute opacity-20 xl:opacity-100 h-[80vh] bg-no-repeat bg-right-bottom -z-50 bg-fixed ">
-      </motion.div>
+          style={{ backgroundSize: 'cover', y }}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed">
+        </motion.div>
+      <WhatWeDo />
       <section className='container w-full min-h-96 py-24 z-10 justify-center sm:flex-row sm:justify-between items-center'>
         <FadeInDiv>
           <BlurredCard>

@@ -12,15 +12,20 @@ const WhatIsSuperteam = () => {
             <div className="mx-auto max-w-7xl lg:flex px-0 lg:px-8">
               <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-12 gap-y-16 mx-0 lg:min-w-full lg:max-w-none lg:flex-none lg:gap-y-8">
                 <div className="lg:col-end-1 z-10 lg:w-full lg:max-w-lg lg:pb-8">
-                  <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">More than a Community</h2>
+                  <h2 className="text-4xl font-semibold tracking-tight sm:text-5xl">Join Us for Our Upcoming Events</h2>
                   <p className="mt-6 leading-8">
-                    At Superteam Germany, we are a family of like minded people learning, building and thriving together.
+                    Superteam Germany is here to support your journey in the Solana ecosystem. Our events are the perfect place to learn, network, and find opportunities.
                   </p>
                   <p className="mt-6 leading-7">
-                  Whether you’re new to crypto or a seasoned pro, Superteam Germany welcomes you to collaborate, learn, and build meaningful projects together.
+                    Whether you're new to crypto or a seasoned pro, we welcome you to collaborate, learn, and build meaningful projects together.
                   </p>
-                  <Button className="mt-12" onClick={() => window.open(SOCIAL_X_LINK)}>
-                    See what we do on X
+                  <Button 
+                    className="mt-12" 
+                    onClick={() => {
+                      document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' });
+                    }}
+                  >
+                    Explore Events
                   </Button>
                 </div>
                 <div className="flex flex-wrap items-start justify-end gap-6 sm:gap-8 lg:contents">
