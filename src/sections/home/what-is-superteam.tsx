@@ -17,7 +17,10 @@ const WhatIsSuperteam = () => {
                     Superteam Germany is here to support your journey in the Solana ecosystem. Our events are the perfect place to learn, network, and find opportunities.
                   </p>
                   <p className="mt-6 leading-7">
-                    Whether you're new to crypto or a seasoned pro, we welcome you to collaborate, learn, and build meaningful projects together.
+                    Whether you&apos;re new to crypto or a seasoned pro, we welcome you to collaborate, learn, and build meaningful projects together.
+                  </p>
+                  <p className="mt-6 leading-8">
+                    Don&apos;t hack alone - join us for the next global hackathon!
                   </p>
                   <Button 
                     className="mt-12" 
