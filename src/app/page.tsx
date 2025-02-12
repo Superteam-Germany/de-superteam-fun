@@ -7,6 +7,7 @@ import NewsletterSection from '../sections/home/newsletter-section';
 import { Events } from '../sections/home/events';
 import type { Metadata } from 'next';
 import TrustedBy from '../sections/home/trusted-by';
+
 export const metadata: Metadata = {
   title: 'Superteam Germany',
   description:
@@ -24,8 +25,8 @@ export default function Home() {
       </Suspense>
       <Events />
       <TrustedBy />
-      {/* <WhatWeDo/> */}
-      <NewsletterSection />
+      <WhatWeDo/>
+      {/* <NewsletterSection /> */}
     </div>
   );
 }

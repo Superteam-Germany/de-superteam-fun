@@ -6,19 +6,23 @@ import axios from 'axios';
 import NewsletterForm from '@/components/newsletter-form';
 import { BlurredCard } from '@/components/blurred-card';
 import WhatWeDo from './what-we-do';
+import { usePathname } from 'next/navigation';
 
 const NewsletterSection = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['-80%', '-0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['40%', '-0%']);
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
+  const pathname = usePathname();
+  const isBlogPage = pathname.includes('/blog');
 
   return (
     <div className='relative overflow-hidden'>
-      <motion.div
+      {isBlogPage && (
+        <motion.div
           style={{ backgroundSize: 'cover', y }}
-          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed">
+          className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[80vh] bg-fixed">
         </motion.div>
-      <WhatWeDo />
+      )}
       <section className='container w-full min-h-96 py-24 z-10 justify-center sm:flex-row sm:justify-between items-center'>
         <FadeInDiv>
           <BlurredCard>

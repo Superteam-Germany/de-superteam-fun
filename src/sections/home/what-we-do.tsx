@@ -6,7 +6,7 @@ import Link from 'next/link';
 import { SUPERTEAM_EARN_LINK } from '@/lib/constants';
 import { scrollToAnchor } from '@/lib/utils';
 import TrustedBy from './trusted-by';
-
+import NewsletterSection from './newsletter-section';
 export default function WhatWeDo() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
@@ -60,6 +60,11 @@ export default function WhatWeDo() {
   ];
 
   return (
+    <div className='relative overflow-hidden'>
+      <motion.div
+          style={{ backgroundSize: 'cover', y }}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed">
+        </motion.div>
     <section id="what-we-do" className="min-w-full overflow-hidden mt-24 pb-24">
       {/* <div className="relative isolate">
         <motion.div
@@ -99,6 +104,8 @@ export default function WhatWeDo() {
         </div>
       </div>
     </section>
+    <NewsletterSection />
+    </div>
   );
 }
   
