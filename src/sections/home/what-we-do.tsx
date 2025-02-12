@@ -31,7 +31,7 @@ export default function WhatWeDo() {
     //   cta: "Join our events"
     // },
     {
-      imgSrc: "/images/what-we-do/talk.jpg",
+      imgSrc: "/images/what-we-do/6.jpeg",
       title: "Empower Founders",
       description: "We equip startup founders with the tools and resources necessary for success. From educational content to practical workshops, we ensure you have the knowledge and skills to thrive in the Solana ecosystem.",
       link: "#events",
@@ -40,7 +40,7 @@ export default function WhatWeDo() {
       // cta: "Join our events"
     },
     {
-      imgSrc: "/images/what-we-do/officehour.jpg",
+      imgSrc: "/images/what-we-do/7.jpeg",
       title: "Foster Connections",
       description: "Connect with a vibrant network of innovators, tech veterans, and investors. From fundraising dinners to builders brunches or gokart races - our events are fun while helping you expand your network and find potential partners or investors.",
       link: "/buildstation",
@@ -49,7 +49,7 @@ export default function WhatWeDo() {
       // cta: "Learn More"
     },
     {
-      imgSrc: "/images/what-we-do/4.jpg",
+      imgSrc: "/images/what-we-do/10.jpeg",
       title: "Accelerate Growth",
       description: "Participate in startup competitions and hackathons to accelerate your venture. Gain visibility, work directly with the best mentors, and secure funding or grants to bring your startup to the next level.",
       link: SUPERTEAM_EARN_LINK,

@@ -35,7 +35,7 @@ const WhatIsSuperteam = () => {
                   <div className="w-0 flex-auto lg:ml-auto lg:w-auto lg:flex-none lg:self-end">
                     <img
                       alt=""
-                      src="/images/about/coding.jpg"
+                      src="/images/about/1.jpeg"
                       className="aspect-[7/5] w-[37rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                     />
                   </div>
@@ -43,14 +43,14 @@ const WhatIsSuperteam = () => {
                     <div className="flex w-96 flex-auto justify-end lg:w-auto lg:flex-none">
                       <img
                         alt=""
-                        src="/images/about/keyboard.jpg"
+                        src="/images/about/2.jpeg"
                         className="aspect-[7/5] w-[37rem] max-w-none flex-none rounded-2xl bg-gray-50 object-cover"
                       />
                     </div>
                     <div className="hidden sm:block sm:w-0 sm:flex-auto lg:w-auto lg:flex-none">
                       <img
                         alt=""
-                        src="/images/about/paul.jpg"
+                        src="/images/about/3.jpeg"
                         className="aspect-[4/3] w-[24rem] max-w-none rounded-2xl bg-gray-50 object-cover"
                       />
                     </div>
