@@ -73,8 +73,9 @@ function adaptLumaEventToEventRecord(entry: LumaApiResponse['entries'][0]): Even
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
+    const currentDate = new Date().toISOString();
     const response = await fetch(
-      `https://api.lu.ma/public/v1/calendar/list-events`,
+      `https://api.lu.ma/public/v1/calendar/list-events?after=${currentDate}`,
       {
         headers: {
           'Authorization': `Bearer ${LUMA_API_KEY}`,
