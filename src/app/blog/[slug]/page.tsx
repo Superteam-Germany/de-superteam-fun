@@ -16,24 +16,41 @@ import { Container } from '@/components/container'
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string }
+  params: { slug: string };
 }): Promise<Metadata> {
-  let post = await getPost(params.slug)
+  let post = await getPost(params.slug);
+  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
 
   return post
     ? {
         title: post.title,
         description: post.blurb,
         openGraph: {
+          title: post.title,
+          description: post.blurb,
+          type: "article",
+          publishedTime: post.publishedAt,
+          authors: [post.author?.name],
+          url: `${baseUrl}/blog/${params.slug}`,
+          siteName: "Superteam DE",
+          locale: "en_US",
           images: [
             {
-              url: image(post.mainImage).size(1200, 630).url(), // Adjust size as needed
+              url: image(post.mainImage).size(1200, 630).url(),
               alt: post.mainImage.alt || post.title,
+              width: 1200,
+              height: 630,
             },
           ],
         },
+        twitter: {
+          card: "summary_large_image",
+          title: post.title,
+          description: post.blurb,
+          images: [image(post.mainImage).size(1200, 630).url()],
+        },
       }
-    : {}
+    : {};
 }
 
 

@@ -41,3 +41,5 @@ next-env.d.ts
 /studio/node_modules
 /studio/sanity.config.ts
 /studio/tsconfig.json
+
+notes

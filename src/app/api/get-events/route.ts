@@ -2,6 +2,8 @@ import { NextRequest, NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import { EventRecord } from './../../../types/events';
 
+export const fetchCache = 'force-no-store';
+
 const encodedKey = process.env.MEETUP_PRIVATE_KEY;
 const privateKey = encodedKey ? Buffer.from(encodedKey, 'base64').toString('utf8') : '';
 
@@ -100,7 +102,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
       { 
         status: 200,
         headers: {
-          'Cache-Control': 'no-store', 
+          'Cache-Control': 'no-cache', 
         }, 
       },
     );

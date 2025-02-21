@@ -5,18 +5,24 @@ import FadeInDiv from '@/components/fade-in-div';
 import axios from 'axios';
 import NewsletterForm from '@/components/newsletter-form';
 import { BlurredCard } from '@/components/blurred-card';
+import WhatWeDo from './what-we-do';
+import { usePathname } from 'next/navigation';
 
 const NewsletterSection = () => {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ['40%', '-0%']);
   const x = useTransform(scrollYProgress, [0, 1], ['0%', '0%']);
+  const pathname = usePathname();
+  const isBlogPage = pathname.includes('/blog');
 
   return (
     <div className='relative overflow-hidden'>
-      <motion.div
-        style={{ y, x, backgroundSize: 'cover' }}
-        className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] w-full absolute opacity-20 xl:opacity-100 h-[80vh] bg-no-repeat bg-right-bottom -z-50 bg-fixed ">
-      </motion.div>
+      {isBlogPage && (
+        <motion.div
+          style={{ backgroundSize: 'cover', y }}
+          className="bg-[url('/images/backgrounds/line-wave-3-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[80vh] bg-fixed">
+        </motion.div>
+      )}
       <section className='container w-full min-h-96 py-24 z-10 justify-center sm:flex-row sm:justify-between items-center'>
         <FadeInDiv>
           <BlurredCard>

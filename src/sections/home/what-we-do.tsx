@@ -5,73 +5,78 @@ import { useScroll, useTransform } from 'framer-motion';
 import Link from 'next/link';
 import { SUPERTEAM_EARN_LINK } from '@/lib/constants';
 import { scrollToAnchor } from '@/lib/utils';
-
+import TrustedBy from './trusted-by';
+import NewsletterSection from './newsletter-section';
 export default function WhatWeDo() {
   const { scrollYProgress } = useScroll();
   const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
 
   const cards = [
+    // {
+    //   imgSrc: "/images/what-we-do/fun.jpg",
+    //   title: "Hang out and have fun",
+    //   description: "Come to our events, make new friends, and learn about Solana. From Co-Working Fridays to Summer- and Halloween-parties, there is always something happening. Here we have fun exploring the Solana ecosystem.",
+    //   link: "#events",
+    //   colSpan: "lg:col-span-3",
+    //   roundedClass: "max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]",
+    //   cta: "Check out our events"
+    // },
+    // {
+    //   imgSrc: "/images/what-we-do/connect1.jpg",
+    //   title: "Support Career Pathways",
+    //   description: "We have a huge network of professionals and partners within the Solana ecosystem. We can help you to find partnerships for your project, which projects are hiring and which devs are looking for opportunities.",
+    //   link: "#events",
+    //   colSpan: "lg:col-span-3",
+    //   roundedClass: "lg:rounded-tr-[2rem]",
+    //   cta: "Join our events"
+    // },
     {
-      imgSrc: "/images/what-we-do/fun.jpg",
-      title: "Hang out and have fun",
-      description: "Come to our events, make new friends, and learn about Solana. From Co-Working Fridays to Summer- and Halloween-parties, there is always something happening. Here we have fun exploring the Solana ecosystem.",
-      link: "#events",
-      colSpan: "lg:col-span-3",
-      roundedClass: "max-lg:rounded-t-[2rem] lg:rounded-tl-[2rem]",
-      cta: "Check out our events"
-    },
-    {
-      imgSrc: "/images/what-we-do/connect1.jpg",
-      title: "Support Career Pathways",
-      description: "We have a huge network of professionals and partners within the Solana ecosystem. We can help you to find partnerships for your project, which projects are hiring and which devs are looking for opportunities.",
-      link: "#events",
-      colSpan: "lg:col-span-3",
-      roundedClass: "lg:rounded-tr-[2rem]",
-      cta: "Join our events"
-    },
-    {
-      imgSrc: "/images/what-we-do/talk.jpg",
-      title: "Providing Resources to Learn",
-      description: "Join our bi-weekly developer guilds, creator guilds and IRL events where you can share insights, troubleshoot, and work together.",
+      imgSrc: "/images/what-we-do/6.jpeg",
+      title: "Empower Founders",
+      description: "We equip startup founders with the tools and resources necessary for success. From educational content to practical workshops, we ensure you have the knowledge and skills to thrive in the Solana ecosystem.",
       link: "#events",
       colSpan: "lg:col-span-2",
       roundedClass: "lg:rounded-bl-[2rem]",
-      cta: "Join our events"
+      // cta: "Join our events"
     },
     {
-      imgSrc: "/images/what-we-do/officehour.jpg",
-      title: "Hackathon Support",
-      description: "Supporting projects in hackathons and providing resources, mentorship, and workshops for participants.",
+      imgSrc: "/images/what-we-do/7.jpeg",
+      title: "Foster Connections",
+      description: "Connect with a vibrant network of innovators, tech veterans, and investors. From fundraising dinners to builders brunches or gokart races - our events are fun while helping you expand your network and find potential partners or investors.",
       link: "/buildstation",
       colSpan: "lg:col-span-2",
-      roundedClass: "lg:rounded-bl-[2rem]",
-      cta: "Learn More"
+      roundedClass: "max-lg:rounded-b-[2rem]",
+      // cta: "Learn More"
     },
     {
-      imgSrc: "/images/what-we-do/4.jpg",
-      title: "Superteam Earn",
-      description: "We've bounties and grants for builders, content creators, and projects that bring value to the Solana ecosystem.",
+      imgSrc: "/images/what-we-do/10.jpeg",
+      title: "Accelerate Growth",
+      description: "Participate in startup competitions and hackathons to accelerate your venture. Gain visibility, work directly with the best mentors, and secure funding or grants to bring your startup to the next level.",
       link: SUPERTEAM_EARN_LINK,
       colSpan: "lg:col-span-2",
       roundedClass: "max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]",
-      cta: "Learn More"
+      // cta: "Learn More"
     }
   ];
 
   return (
+    <div className='relative overflow-hidden'>
+      <motion.div
+          style={{ backgroundSize: 'cover', y }}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed">
+        </motion.div>
     <section id="what-we-do" className="min-w-full overflow-hidden mt-24 pb-24">
-      <div className="relative isolate">
-        {/* Background div */}
+      {/* <div className="relative isolate">
         <motion.div
           style={{ backgroundSize: 'cover', y }}
           className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed"
         ></motion.div>
-      </div>
+      </div> */}
       <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
         <h2 className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
           What We Do
         </h2>
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6 lg:grid-rows-2">
+        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
           {cards.map((card, index) => (
             <div key={index} className={`relative ${card.colSpan}`}>
               <div className={`absolute inset-px rounded-lg bg-gradient-to-br from-secondary/70 backdrop-blur-md via-secondary/50 to-background/30 to-100% ${card.roundedClass}`} />
@@ -86,11 +91,11 @@ export default function WhatWeDo() {
                     <h3 className="mt-2 text-lg font-medium tracking-tight">{card.title}</h3>
                     <p className="mt-2 max-w-lg text-sm/6">{card.description}</p>
                   </div>
-                  <Link href={card.link}
+                  {/* <Link href={card.link}
                     onClick={() => scrollToAnchor(card.link)}
                     className="mt-8 text-sm">
                     {card.cta}
-                  </Link>
+                  </Link> */}
                 </div>
               </div>
               <div className={`pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 ${card.roundedClass}`} />
@@ -99,6 +104,8 @@ export default function WhatWeDo() {
         </div>
       </div>
     </section>
+    <NewsletterSection />
+    </div>
   );
 }
   

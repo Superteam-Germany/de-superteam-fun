@@ -6,6 +6,7 @@ import WhatWeDo from '../sections/home/what-we-do';
 import NewsletterSection from '../sections/home/newsletter-section';
 import { Events } from '../sections/home/events';
 import type { Metadata } from 'next';
+import TrustedBy from '../sections/home/trusted-by';
 
 export const metadata: Metadata = {
   title: 'Superteam Germany',
@@ -22,9 +23,10 @@ export default function Home() {
       <Suspense>
         <WhatIsSuperteam />
       </Suspense>
-      <WhatWeDo/>
       <Events />
-      <NewsletterSection />
+      <TrustedBy />
+      <WhatWeDo/>
+      {/* <NewsletterSection /> */}
     </div>
   );
 }
