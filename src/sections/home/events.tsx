@@ -19,7 +19,7 @@ import { Highlight } from '@/components/highlight'
 import { Container } from '@/components/container'
 
 const getEvents = async (): Promise< EventRecord[]> => {
-  const result = await fetch('api/get-events', {
+  const result = await fetch('api/get-luma-events', {
     next: {
       revalidate: 12 * 60 * 60,
     },
@@ -112,11 +112,11 @@ function EventsCard({
         <blockquote>
           <p className="relative text-xl/7 mt-6 lg:mt-12">
             <span aria-hidden="true" className="absolute -translate-x-full">
-              “
+              "
             </span>
             {children}
             <span aria-hidden="true" className="absolute">
-              ”
+              "
             </span>
           </p>
         </blockquote>
