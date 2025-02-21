@@ -18,8 +18,8 @@ import { MEETUP_GROUP_LINK } from '@/lib/constants'
 import { Highlight } from '@/components/highlight'
 import { Container } from '@/components/container'
 
-const getEvents = async (): Promise< EventRecord[]> => {
-  const result = await fetch('api/get-luma-events', {
+const getEvents = async (): Promise<EventRecord[]> => {
+  const result = await fetch('/api/get-luma-events', {
     next: {
       revalidate: 12 * 60 * 60,
     },
