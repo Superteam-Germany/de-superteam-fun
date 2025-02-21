@@ -73,7 +73,7 @@ function adaptLumaEventToEventRecord(entry: LumaApiResponse['entries'][0]): Even
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
-    const currentDate = new Date().toISOString();
+    const currentDate = new Date().toISOString().split('T')[0];
     const response = await fetch(
       `https://api.lu.ma/public/v1/calendar/list-events?after=${currentDate}`,
       {
@@ -91,7 +91,6 @@ export async function GET(req: NextRequest, res: NextResponse) {
     const data = await response.json() as LumaApiResponse
     const events = data.entries
       .map(adaptLumaEventToEventRecord)
-      .slice(0, 6)
 
     return NextResponse.json(
       { events },
