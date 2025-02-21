@@ -112,11 +112,11 @@ function EventsCard({
         <blockquote>
           <p className="relative text-xl/7 mt-6 lg:mt-12">
             <span aria-hidden="true" className="absolute -translate-x-full">
-              "
+            &quot;
             </span>
             {children}
             <span aria-hidden="true" className="absolute">
-              "
+            &quot;
             </span>
           </p>
         </blockquote>
@@ -219,8 +219,8 @@ export function Events() {
             ))}
           </div>
           <Link href={MEETUP_GROUP_LINK} target="_blank">
-          Discover More Events
-        </Link>
+            Discover More Events
+          </Link>
         </div>
       </Container>
       
