@@ -171,7 +171,7 @@ export function Events() {
     <section id="events" className="overflow-hidden sm:py-24 lg:py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
-            <h2 className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h2 className="mt-2 ml-6 lg:ml-0 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
               Upcoming Events
             </h2>
         </div>
@@ -185,7 +185,7 @@ export function Events() {
           '[--scroll-padding:max(theme(spacing.6),calc((100vw-theme(maxWidth.2xl))/2))] lg:[--scroll-padding:max(theme(spacing.8),calc((100vw-theme(maxWidth.7xl))/2))]',
         ])}
       >
-        {events.map((event: EventRecord, index: number) => (
+        {events.slice(0, 5).map((event: EventRecord, index: number) => (
           <Link href={event.link} target="_blank" key={event.id} passHref>
               <EventsCard
                 name={formatDateTime(event.startTime)}

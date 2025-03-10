@@ -72,14 +72,15 @@ export default function TrustedBy() {
           </div>
           <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
             {startups.map((startup) => (
-              <img
-                key={startup.name}
+              <div key={startup.name} className='px-2 lg:px-0'>
+                <img
                 alt={startup.name}
                 src={startup.src}
                 width={startup.width}
                 height={startup.height}
                 className="max-h-16 w-full object-contain object-left"
               />
+              </div>
             ))}
           </div>
         </div>
