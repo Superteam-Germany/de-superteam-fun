@@ -99,7 +99,6 @@ export function HowItWorks() {
   }
 
   const handlePrev = (prevIndex: number) => {
-    console.log("🚀 ~ handleNext ~ prevIndex:", prevIndex)
     
     if (prevIndex > 0 ) {
       setSelectedIndex(prevIndex-1)
@@ -111,7 +110,7 @@ export function HowItWorks() {
   const renderMobileTab = (feature: any, featureIndex: number) => {
     if(selectedIndex === featureIndex) {
       return (
-        <div className='flex flex-col justify-between items-center p-4 py-12 bg-white/5 backdrop-blur-lg w-full'>
+        <div className='flex flex-col justify-between items-center p-4 py-6 bg-white/5 backdrop-blur-lg w-full'>
           <div className='mx-auto max-w-7xl px-12'>
             <div className='text-lg font-bold mb-4' key={feature.title}>
               {feature.title}

@@ -34,7 +34,7 @@ const WhatIs = () => {
   const y = useTransform(scrollYProgress, [0, 1], ['-90%', '-0%']);
   
   return (
-      <section id="key-dates" className="min-w-full overflow-hidden">      
+      <section id="key-dates" className="min-w-full mt-24 lg:mt-0 overflow-hidden">      
         <div className="relative isolate">
           <motion.div
             style={{ backgroundSize: 'cover', y }}
