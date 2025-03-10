@@ -6,13 +6,37 @@ import { BlurredCard } from '@/components/blurred-card'
 import NewsletterForm from '@/components/newsletter-form';
 import { NewsletterGroup } from '@/types/enum';
 
+
+const benefits = [
+  {
+    highlight: 'Boost Your Odds:',
+    text: 'Superteam submissions have better chances to score and higher visibility.'
+  },
+  {
+    highlight: 'Expert Support:',
+    text: 'Workshops, pitch feedback, and intros to mentors/experienced founders.'
+  },
+  {
+    highlight: 'Massive Exposure:',
+    text: 'Demo Day streamed to thousands, plus X resharing by SuperteamDE.'
+  },
+  {
+    highlight: 'Prizes & Beyond:',
+    text: 'Win local prices in cash, score globally and higher chances to get investment.'
+  },
+  {
+    highlight: 'Network That Lasts:',
+    text: 'Connect with partners, teammates, and other founders.'
+  }
+]
+
 const WhatIs = () => {
   return (
     <section className='container'>
       <BlurredCard className="lg:mt-32 lg:px-16 py-24">
         {/* <Subheading>Meet the team</Subheading> */}
         <h3 className="mt-2">
-          Build Station Berlin
+          Why Build with Superteam Germany?
         </h3>
         <p className="'text-2xl font-medium text-blue-100 text-">
           We provide resources, mentorship and connect you with like-minded people to 
@@ -20,15 +44,14 @@ const WhatIs = () => {
         </p>
         <div className="mt-12 grid grid-cols-1 gap-12 lg:grid-cols-2">
           <div className="max-w-lg">
-            <p className="">
-              Build Station is an multi-week IRL space where builders, community members, 
-              and Solana enthusiasts come together for co-working, workshops, and support 
-              during the Solana Global Hackathon.
-            </p>
-            <p className="mt-6">
-              The Station is open to everyone interested in Solana. You&apos;ll find here developers, 
-              biz-devs, artists, marketers and many others.
-            </p>
+            <ul className="space-y-6 text-lg max-w-xl mx-auto">
+                {benefits.map((benefit) => (
+                    <li className="text-white">
+                      <span className="font-bold">{benefit.highlight}</span> 
+                      <span className="text-gray-400">{" "}{benefit.text}</span>
+                    </li>
+                ))}
+            </ul>
             <div className="mt-6">
             <NewsletterForm group={NewsletterGroup.BUILDSTATION} title='RSVP for Buildstation' />
             </div>
