@@ -168,10 +168,10 @@ export function Events() {
   }
 
   return (
-    <section id="events" className="overflow-hidden sm:py-24 lg:py-32">
+    <section id="events" className="overflow-hidden py-24 lg:py-32">
       <Container>
         <div ref={setReferenceWindowRef}>
-            <h2 className="mt-2 ml-6 lg:ml-0 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+            <h2 className="mt-16 lg:mt-2 ml-6 lg:ml-0 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
               Upcoming Events
             </h2>
         </div>
