@@ -46,7 +46,7 @@ const WhatIs = () => {
           <div className="max-w-lg">
             <ul className="space-y-6 text-lg max-w-xl mx-auto">
                 {benefits.map((benefit) => (
-                    <li className="text-white">
+                    <li key={benefit.highlight} className="text-white">
                       <span className="font-bold">{benefit.highlight}</span> 
                       <span className="text-gray-400">{" "}{benefit.text}</span>
                     </li>
