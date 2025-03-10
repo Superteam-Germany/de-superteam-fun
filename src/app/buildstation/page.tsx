@@ -4,6 +4,7 @@ import WhatIs from '@/sections/buildstation/what-is';
 import FadeInDiv from '@/components/fade-in-div';
 import Hero from '@/sections/buildstation/hero';
 import { HowItWorks } from '@/sections/buildstation/how-it-works';
+import KeyDates from '@/sections/buildstation/key-dates';
 
 const page = () => {
   return (
@@ -16,6 +17,9 @@ const page = () => {
       </FadeInDiv>
       <FadeInDiv>
         <HowItWorks />
+      </FadeInDiv>
+      <FadeInDiv>
+        <KeyDates />
       </FadeInDiv>
       <FAQ />
     </div>

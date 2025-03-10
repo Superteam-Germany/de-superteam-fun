@@ -42,13 +42,13 @@ const features = [
     {
         title: 'Build Your MVP',
         description:
-        'You will have multiple weeks to build your product and pitch deck. Join our newsletter and follow us on X to get notified when you can start.',
+        'You have multiple weeks to build your product and pitch deck. Focus on storytelling and traction—code alone won’t win. Show why your project matters.',
         image: '/images/hackathon/13.jpg',
     },
     {
         title: 'Submit Your Project',
         description:
-        'There will be multiple tracks to win prizes. Some of them are exclusively for projects built by the local community.',
+        'There will be multiple tracks to win prizes. Some of them are exclusively for projects built by the local community, make sure to submit your projects for the local tracks, too.',
         image: '/images/hackathon/29.jpg',
     },
     {
@@ -99,7 +99,6 @@ export function HowItWorks() {
   }
 
   const handlePrev = (prevIndex: number) => {
-    console.log("🚀 ~ handleNext ~ prevIndex:", prevIndex)
     
     if (prevIndex > 0 ) {
       setSelectedIndex(prevIndex-1)
@@ -111,7 +110,7 @@ export function HowItWorks() {
   const renderMobileTab = (feature: any, featureIndex: number) => {
     if(selectedIndex === featureIndex) {
       return (
-        <div className='flex flex-col justify-between items-center p-4 py-12 bg-white/5 backdrop-blur-lg w-full'>
+        <div className='flex flex-col justify-between items-center p-4 py-6 bg-white/5 backdrop-blur-lg w-full'>
           <div className='mx-auto max-w-7xl px-12'>
             <div className='text-lg font-bold mb-4' key={feature.title}>
               {feature.title}
@@ -144,9 +143,7 @@ export function HowItWorks() {
 
   return (
     <section
-      id="features"
-      aria-label="Features for running your books"
-      className="relative overflow-hidden pb-28 lg:pt-20 mt-20 sm:py-32"
+      className="relative overflow-hidden  lg:pt-20 mt-20 sm:py-32"
     >
       <div className="relative lg:mx-auto lg:max-w-7xl lg:px-12 lg:px-8 ">
         <div className="mx-auto max-w-7xl px-12 sm:px-6 lg:px-8 max-w-2xl md:mx-auto md:text-center xl:max-w-none">
@@ -154,7 +151,7 @@ export function HowItWorks() {
             How Build Station Works
           </h2>
           <p className="mt-6 font-bold">
-            Everything you need to win the hackathon and kickstart your idea.
+            Build your project online or join us in Berlin. Submit a pitch deck, 3-min demo video, and Github repo by May 16. Not sure where to start? Visit our Co-working Fridays, Workshops, and Build Station.
           </p>
         </div>
         <CustomTabGroup

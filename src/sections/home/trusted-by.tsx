@@ -58,28 +58,18 @@ export default function TrustedBy() {
             <p className="mt-6 text-lg/8 text-gray-300">
             Startup founders are crucial to our success. Superteam Germany in particular stands out as a powerhouse of innovation. We have helped top teams get into accelerator programs, fundraise, and hire talented developers. Superteam is your secret sauce to success.
             </p>
-            {/* <div className="mt-8 flex items-center gap-x-6">
-              <a
-                href="#"
-                className="rounded-md bg-indigo-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-500"
-              >
-                Create account
-              </a>
-              <a href="#" className="text-sm font-semibold text-white">
-                Contact us <span aria-hidden="true">&rarr;</span>
-              </a>
-            </div> */}
           </div>
           <div className="mx-auto grid w-full max-w-xl grid-cols-2 items-center gap-y-12 sm:gap-y-14 lg:mx-0 lg:max-w-none lg:pl-8">
             {startups.map((startup) => (
-              <img
-                key={startup.name}
+              <div key={startup.name} className='px-2 lg:px-0'>
+                <img
                 alt={startup.name}
                 src={startup.src}
                 width={startup.width}
                 height={startup.height}
                 className="max-h-16 w-full object-contain object-left"
               />
+              </div>
             ))}
           </div>
         </div>

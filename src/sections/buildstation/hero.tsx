@@ -30,20 +30,20 @@ export default function Hero() {
           className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] -z-20 bg-50% bg-no-repeat w-full absolute h-[300vh]">
         </motion.div>
             <Container className="mt-16">
-            <h1 className='font-semibold tracking-tight sm:text-5xl'>Don’t Hack Alone - Join Us for the Next Global Hackathon!</h1>
-            <p className="'text-2xl font-medium">
-                Come and build with us at <Highlight>Buildstation Berlin</Highlight>.
-            </p>
-            <section className="mt-16 lg:mt-24 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
+            <h1 className='font-semibold tracking-tight sm:text-5xl'><Highlight>Buildstation Berlin:</Highlight> Launch Your Solana Startup at the Global Hackathon</h1>
+            <section className="mt-8 lg:mt-16 lg:mt-24 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
                 <div className="max-w-lg">
                     <p>
-                        Twice a year, there is a huge global Solana hackathon where thousands of builders submit their projects and compete for prizes.  
+                      Join Superteam Germany April-May 2025 for co-working, mentorship, and a shot to win the 25k Eternal Award + accelerator admittance.
                     </p>
                     <p className='mt-6'>
-                        To help you stand out in such a competitive environment, we&apos;re hosting Buildstation Berlin.
+                      Build Station Berlin is your launchpad for the Colosseum Hackathon (April 14 - May 16, 2025), a global online competition to build game-changing Solana projects.  
+                    </p>
+                    <p className='mt-6'>
+                      Hosted by Superteam Germany at w3.hub, this in-person hub offers daily workshops, mentorship, and team-building—culminating in a livestreamed Demo Day on May 16.
                     </p>
                     <p className='mt-8'>
-                    Sign up to participate in the Spring Solana Global Hackathon with Superteam Germany and get notified when you can start building.
+                      Not a coder? No problem—we need diverse minds: developers, marketers, artists, and more.
                     </p>
                     <NewsletterForm group={NewsletterGroup.BUILDSTATION} title='RSVP for Buildstation' />
                 </div>
@@ -69,28 +69,28 @@ export default function Hero() {
                 <BlurredCard className="mt-24 lg:mt-32 lg:col-span-1">
                   <p className='text-sm uppercase font-semibold'>Numbers from previous hackathons</p>
                   <hr className="mt-6 border-t border-gray-200" />
-                  <dl className="mt-6 grid grid-cols-1 gap-x-8 gap-y-4 sm:grid-cols-2">
+                  <dl className="mt-6 grid grid-cols-2 gap-x-8 gap-y-4">
                       <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
                       <dt className="text-sm/6">Submissions</dt>
-                      <dd className="order-first text-6xl font-medium tracking-tight">
+                      <dd className="order-first text-4xl lg:text-6xl font-medium tracking-tight">
                           <AnimatedNumber start={0} end={161} />
                       </dd>
                       </div>
                       <div className="flex flex-col gap-y-2 border-b border-dotted border-gray-200 pb-4">
                       <dt className="text-sm/6">Shortlisted Projects</dt>
-                      <dd className="order-first text-6xl font-medium tracking-tight">
+                      <dd className="order-first text-4xl lg:text-6xl font-medium tracking-tight">
                           <AnimatedNumber start={0} end={41} />
                       </dd>
                       </div>
-                      <div className="flex flex-col gap-y-2 max-sm:border-b max-sm:border-dotted max-sm:border-gray-200 max-sm:pb-4">
+                      <div className="flex flex-col gap-y-2 max-sm:border-gray-200 max-sm:pb-4">
                       <dt className="text-sm/6">Honorable Mentions</dt>
-                      <dd className="order-first text-6xl font-medium tracking-tight">
+                      <dd className="order-first text-4xl lg:text-6xl font-medium tracking-tight">
                           <AnimatedNumber start={0} end={10}/>
                       </dd>
                       </div>
                       <div className="flex flex-col gap-y-2">
                       <dt className="text-sm/6">Global Winners</dt>
-                      <dd className="order-first text-6xl font-medium tracking-tight">
+                      <dd className="order-first text-4xl lg:text-6xl font-medium tracking-tight">
                           <AnimatedNumber start={0} end={12} />
                       </dd>
                       </div>
