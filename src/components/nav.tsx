@@ -8,7 +8,6 @@ import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
 import { SOCIAL_X_LINK } from "@/lib/constants";
 
-
 const menuItems = [
   {
     name: "Blog",
@@ -17,13 +16,14 @@ const menuItems = [
   },
   {
     name: "Events",
-    link: "/#events",
+    link: "https://lu.ma/SuperteamGermany",
     type: "link",
+    external: true,
   },
   {
-    name: 'Global Hackathon',
-    link: '/buildstation',
-    type: 'link',
+    name: "Global Hackathon",
+    link: "/buildstation",
+    type: "link",
   },
 ];
 
@@ -69,6 +69,8 @@ const Nav = () => {
                         className={`${
                           path === item.link ? "hover:opacity-100" : ""
                         } no-underline font-secondary font-normal text-base`}
+                        target={item.external ? "_blank" : undefined}
+                        rel={item.external ? "noopener noreferrer" : undefined}
                       >
                         <span className="block">{item.name}</span>
                       </Link>
@@ -96,8 +98,7 @@ const Nav = () => {
                 }
               })}
               <li>
-                <div className="py-8">
-                </div>
+                <div className="py-8"></div>
                 <Link href="https://twitter.com/SuperteamDE" target="_blank">
                   <Button className="font-secondary tracking-wide font-normal text-base">
                     Follow us on X
@@ -125,6 +126,8 @@ const Nav = () => {
                     className={`${
                       path === item.link ? "hover:opacity-100" : ""
                     } no-underline font-secondary tracking-wide font-normal text-base`}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                   >
                     <span className="block">{item.name}</span>
                   </Link>
