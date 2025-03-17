@@ -35,9 +35,9 @@ export default function Hero() {
           <section className="mt-8 lg:mt-16 lg:mt-24 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
             <div className="max-w-lg">
               <p>
-                Join Superteam Germany for Build Station! It's a two week long,
-                free to attend, IRL co-working space. It's mission is to support
-                teams and projects building for the{" "}
+                Join Superteam Germany for Build Station! It&apos;s a two week
+                long, free to attend, IRL co-working space. It&apos;s mission is
+                to support teams and projects building for the{" "}
                 <a
                   href="https://www.colosseum.org/hackathon"
                   target="_blank"
