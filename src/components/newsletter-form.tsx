@@ -12,7 +12,6 @@ export default function NewsletterForm({ group = NewsletterGroup.DEFAULT, title 
   const [input, setInput] = useState('');
 
   const create = async (event: FormEvent) => {
-    console.log("🚀 ~ create ~ FormEvent:", event)
     event.preventDefault(); 
     setLoading(true);
     const email = input;

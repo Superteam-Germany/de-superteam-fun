@@ -14,7 +14,7 @@ import { useCallback, useLayoutEffect, useRef, useState } from 'react'
 import useMeasure, { type RectReadOnly } from 'react-use-measure'
 import Link from 'next/link'
 import { EventRecord } from '@/types/events'
-import { MEETUP_GROUP_LINK } from '@/lib/constants'
+import { LUMA_GROUP_LINK } from '@/lib/constants'
 import { Highlight } from '@/components/highlight'
 import { Container } from '@/components/container'
 
@@ -218,7 +218,7 @@ export function Events() {
               />
             ))}
           </div>
-          <Link href={MEETUP_GROUP_LINK} target="_blank">
+          <Link href={LUMA_GROUP_LINK} target="_blank">
             Discover More Events
           </Link>
         </div>
