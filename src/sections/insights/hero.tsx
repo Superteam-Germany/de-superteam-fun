@@ -31,8 +31,8 @@ export default function Hero() {
             </h1>
             <p className="mt-6 text-lg leading-8 text-white/80">
               Dive deep into comprehensive analysis and insights about the
-              blockchain ecosystem, with a special focus on Solana's development
-              in Germany.
+              blockchain ecosystem, with a special focus on Solana&apos;s
+              development in Germany.
             </p>
           </div>
         </div>
@@ -67,10 +67,10 @@ export default function Hero() {
                     </div>
 
                     <p className="text-white/70 text-base">
-                      Superteam Germany released its highly anticipated "2025
-                      Stablecoin Report," offering critical insights into the
-                      transformative impact of stablecoins, DeFi, Web3, and AI
-                      on corporate finance in Europe. <br />
+                      Superteam Germany released its highly anticipated
+                      &quot;2025 Stablecoin Report&quot;, offering critical
+                      insights into the transformative impact of stablecoins,
+                      DeFi, Web3, and AI on corporate finance in Europe. <br />
                       <br />
                       The report highlights how stablecoins are reshaping
                       payments, fostering financial inclusion, and positioning
