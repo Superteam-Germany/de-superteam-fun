@@ -16,8 +16,8 @@ export default function Hero() {
       <div className="relative isolate">
         {/* Background div - now with fixed height */}
         <motion.div
-          style={{ backgroundSize: "cover", y }}
-          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] -z-20 bg-50% bg-no-repeat w-full absolute h-[200vh]"
+          style={{ backgroundSize: "200%", y }}
+          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] -z-20 bg-center bg-no-repeat w-full fixed h-screen"
         ></motion.div>
 
         {/* Hero Section */}
