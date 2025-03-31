@@ -25,6 +25,11 @@ const menuItems = [
     link: "/buildstation",
     type: "link",
   },
+  {
+    name: "Insights",
+    link: "/insights",
+    type: "link",
+  },
 ];
 
 const Nav = () => {
