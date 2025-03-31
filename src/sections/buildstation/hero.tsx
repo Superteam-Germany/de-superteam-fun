@@ -28,12 +28,12 @@ export default function Hero() {
           className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] -z-20 bg-50% bg-no-repeat w-full absolute h-[300vh]"
         ></motion.div>
         <Container className="mt-16">
-          <h1 className="font-semibold tracking-tight sm:text-5xl">
+          <h1 className="font-semibold tracking-tight sm:text-5xl px-4 sm:px-6 lg:px-0">
             <Highlight>Buildstation Berlin:</Highlight> Launch Your Solana
             Startup at the Global Hackathon
           </h1>
           <section className="mt-8 lg:mt-16 lg:mt-24 grid grid-cols-1 lg:grid-cols-2 lg:gap-12">
-            <div className="max-w-lg">
+            <div className="max-w-lg px-6 sm:px-6 lg:px-0">
               <p>
                 Join Superteam Germany for Build Station! It&apos;s a two week
                 long, free to attend, IRL co-working space. It&apos;s mission is
