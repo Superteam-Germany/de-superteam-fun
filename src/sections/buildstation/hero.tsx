@@ -7,6 +7,7 @@ import { Highlight } from "@/components/highlight";
 import { BlurredCard } from "@/components/blurred-card";
 import { NewsletterGroup } from "@/types/enum";
 import { Container } from "@/components/container";
+import { Button } from "@/components/button";
 
 export default function Hero() {
   const images = [
@@ -59,10 +60,19 @@ export default function Hero() {
                 devs, marketers, artists and more.
               </p>
               <p className="mt-8">May 5- May 16, w3.hub, Berlin.</p>
-              <NewsletterForm
+
+              {/* <NewsletterForm
                 group={NewsletterGroup.BUILDSTATION}
                 title="RSVP for Buildstation"
-              />
+              /> */}
+              <div className="mt-8"></div>
+              <Button
+                onClick={() =>
+                  window.open("https://lu.ma/buildstation", "_blank")
+                }
+              >
+                Register for Build Station
+              </Button>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
               <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
