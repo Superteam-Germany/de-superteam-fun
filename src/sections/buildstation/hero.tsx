@@ -66,13 +66,27 @@ export default function Hero() {
                 title="RSVP for Buildstation"
               /> */}
               <div className="mt-8"></div>
-              <Button
-                onClick={() =>
-                  window.open("https://lu.ma/buildstation", "_blank")
-                }
-              >
-                Register for Build Station
-              </Button>
+              <div className="flex flex-col gap-4 w-1/2">
+                <Button
+                  onClick={() =>
+                    window.open("https://lu.ma/buildstation", "_blank")
+                  }
+                >
+                  Register for Build Station
+                </Button>
+
+                <Button
+                  variant="outline"
+                  onClick={() =>
+                    window.open(
+                      "https://superteamdao.notion.site/colosseum-hackathon-2025",
+                      "_blank"
+                    )
+                  }
+                >
+                  Hackathon Cheatsheet
+                </Button>
+              </div>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
               <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
