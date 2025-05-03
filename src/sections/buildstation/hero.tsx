@@ -86,6 +86,17 @@ export default function Hero() {
                 >
                   Hackathon Cheatsheet
                 </Button>
+                <Button
+                  variant="outline"
+                  onClick={() =>
+                    window.open(
+                      "https://superteamdao.notion.site/colosseum-hackathon-2025#1e8794d3ba3380a7bfe1d2428dd4db04",
+                      "_blank"
+                    )
+                  }
+                >
+                  Book your 1:1 Mentoring
+                </Button>
               </div>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
