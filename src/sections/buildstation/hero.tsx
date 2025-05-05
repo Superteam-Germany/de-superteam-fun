@@ -84,7 +84,7 @@ export default function Hero() {
                     )
                   }
                 >
-                  Hackathon Cheatsheet
+                  Complete Guide
                 </Button>
                 <Button
                   variant="outline"
