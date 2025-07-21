@@ -12,6 +12,7 @@ import {
   SOCIAL_TELEGRAM_LINK,
   SOCIAL_YOUTUBE_LINK,
 } from "@/lib/constants";
+import NewsletterSection from "../home/newsletter-section";
 
 const navigation = {
   resources: [
@@ -84,6 +85,7 @@ const FooterGroup = () => {
   return (
     <div className="relative w-full overflow-hidden">
       <div className=" overflow-hidden">
+        <NewsletterSection />
         <footer
           aria-labelledby="footer-heading"
           className="bg-transparent backdrop-blur-md font-sans"

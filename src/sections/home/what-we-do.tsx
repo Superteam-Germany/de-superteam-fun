@@ -1,15 +1,15 @@
 "use client";
 
-import { motion } from 'framer-motion';
-import { useScroll, useTransform } from 'framer-motion';
-import Link from 'next/link';
-import { SUPERTEAM_EARN_LINK } from '@/lib/constants';
-import { scrollToAnchor } from '@/lib/utils';
-import TrustedBy from './trusted-by';
-import NewsletterSection from './newsletter-section';
+import { motion } from "framer-motion";
+import { useScroll, useTransform } from "framer-motion";
+import Link from "next/link";
+import { SUPERTEAM_EARN_LINK } from "@/lib/constants";
+import { scrollToAnchor } from "@/lib/utils";
+import TrustedBy from "./trusted-by";
+import NewsletterSection from "./newsletter-section";
 export default function WhatWeDo() {
   const { scrollYProgress } = useScroll();
-  const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
+  const y = useTransform(scrollYProgress, [0, 1], ["-40%", "-0%"]);
 
   const cards = [
     // {
@@ -33,7 +33,8 @@ export default function WhatWeDo() {
     {
       imgSrc: "/images/what-we-do/6.jpeg",
       title: "Empower Founders",
-      description: "We equip startup founders with the tools and resources necessary for success. From educational content to practical workshops, we ensure you have the knowledge and skills to thrive in the Solana ecosystem.",
+      description:
+        "We equip startup founders with the tools and resources necessary for success. From educational content to practical workshops, we ensure you have the knowledge and skills to thrive in the Solana ecosystem.",
       link: "#events",
       colSpan: "lg:col-span-2",
       roundedClass: "lg:rounded-bl-[2rem]",
@@ -42,7 +43,8 @@ export default function WhatWeDo() {
     {
       imgSrc: "/images/what-we-do/7.jpeg",
       title: "Foster Connections",
-      description: "Connect with a vibrant network of innovators, tech veterans, and investors. From fundraising dinners to builders brunches or gokart races - our events are fun while helping you expand your network and find potential partners or investors.",
+      description:
+        "Connect with a vibrant network of innovators, tech veterans, and investors. From fundraising dinners to builders brunches or gokart races - our events are fun while helping you expand your network and find potential partners or investors.",
       link: "/buildstation",
       colSpan: "lg:col-span-2",
       roundedClass: "max-lg:rounded-b-[2rem]",
@@ -51,61 +53,74 @@ export default function WhatWeDo() {
     {
       imgSrc: "/images/what-we-do/10.jpeg",
       title: "Accelerate Growth",
-      description: "Participate in startup competitions and hackathons to accelerate your venture. Gain visibility, work directly with the best mentors, and secure funding or grants to bring your startup to the next level.",
+      description:
+        "Participate in startup competitions and hackathons to accelerate your venture. Gain visibility, work directly with the best mentors, and secure funding or grants to bring your startup to the next level.",
       link: SUPERTEAM_EARN_LINK,
       colSpan: "lg:col-span-2",
       roundedClass: "max-lg:rounded-b-[2rem] lg:rounded-br-[2rem]",
       // cta: "Learn More"
-    }
+    },
   ];
 
   return (
-    <div className='relative overflow-hidden'>
+    <div className="relative overflow-hidden">
       <motion.div
-          style={{ backgroundSize: 'cover', y }}
-          className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed">
-        </motion.div>
-    <section id="what-we-do" className="min-w-full overflow-hidden mt-24 pb-24">
-      {/* <div className="relative isolate">
+        style={{ backgroundSize: "cover", y }}
+        className="bg-[url('/images/backgrounds/line-wave-4-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed"
+      ></motion.div>
+      <section
+        id="what-we-do"
+        className="min-w-full overflow-hidden mt-24 pb-24"
+      >
+        {/* <div className="relative isolate">
         <motion.div
           style={{ backgroundSize: 'cover', y }}
           className="bg-[url('/images/backgrounds/line-wave-2-primary.svg')] bg-50% bg-no-repeat -z-50 w-full absolute h-[180vh] bg-fixed"
         ></motion.div>
       </div> */}
-      <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
-        <h2 className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
-          What We Do
-        </h2>
-        <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
-          {cards.map((card, index) => (
-            <div key={index} className={`relative ${card.colSpan}`}>
-              <div className={`absolute inset-px rounded-lg bg-gradient-to-br from-secondary/70 backdrop-blur-md via-secondary/50 to-background/30 to-100% ${card.roundedClass}`} />
-              <div className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] ${card.roundedClass}`}>
-                <img
-                  alt=""
-                  src={card.imgSrc}
-                  className="h-80 object-cover object-left"
+        <div className="mx-auto max-w-2xl px-6 lg:max-w-7xl lg:px-8">
+          <h2 className="mt-2 max-w-lg text-pretty text-4xl font-semibold tracking-tight sm:text-5xl">
+            What We Do
+          </h2>
+          <div className="mt-10 grid grid-cols-1 gap-4 sm:mt-16 lg:grid-cols-6">
+            {cards.map((card, index) => (
+              <div key={index} className={`relative ${card.colSpan}`}>
+                <div
+                  className={`absolute inset-px rounded-lg bg-gradient-to-br from-secondary/70 backdrop-blur-md via-secondary/50 to-background/30 to-100% ${card.roundedClass}`}
                 />
-                <div className="flex flex-col justify-between p-10 pt-4">
-                  <div>
-                    <h3 className="mt-2 text-lg font-medium tracking-tight">{card.title}</h3>
-                    <p className="mt-2 max-w-lg text-sm/6">{card.description}</p>
-                  </div>
-                  {/* <Link href={card.link}
+                <div
+                  className={`relative flex h-full flex-col overflow-hidden rounded-[calc(theme(borderRadius.lg)+1px)] ${card.roundedClass}`}
+                >
+                  <img
+                    alt=""
+                    src={card.imgSrc}
+                    className="h-80 object-cover object-left"
+                  />
+                  <div className="flex flex-col justify-between p-10 pt-4">
+                    <div>
+                      <h3 className="mt-2 text-lg font-medium tracking-tight">
+                        {card.title}
+                      </h3>
+                      <p className="mt-2 max-w-lg text-sm/6">
+                        {card.description}
+                      </p>
+                    </div>
+                    {/* <Link href={card.link}
                     onClick={() => scrollToAnchor(card.link)}
                     className="mt-8 text-sm">
                     {card.cta}
                   </Link> */}
+                  </div>
                 </div>
+                <div
+                  className={`pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 ${card.roundedClass}`}
+                />
               </div>
-              <div className={`pointer-events-none absolute inset-px rounded-lg shadow ring-1 ring-black/5 ${card.roundedClass}`} />
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
-    <NewsletterSection />
+      </section>
+      {/* <NewsletterSection /> */}
     </div>
   );
 }
-  

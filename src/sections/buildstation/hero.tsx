@@ -8,6 +8,7 @@ import { BlurredCard } from "@/components/blurred-card";
 import { NewsletterGroup } from "@/types/enum";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
+import NewsletterSection from "../home/newsletter-section";
 
 export default function Hero() {
   const images = [
