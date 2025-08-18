@@ -46,7 +46,7 @@ export default function Hero() {
                   rel="noopener noreferrer"
                   className="text-primary hover:underline"
                 >
-                  Colosseum Breakout Hackathon
+                  Colosseum Hackathon
                 </a>
                 , a global online competition to build game-changing Solana
                 projects.{" "}
@@ -61,13 +61,11 @@ export default function Hero() {
                 devs, marketers, artists and more.
               </p>
               <p className="mt-8 text-xl text-primary font-semibold">
-                Disclaimer: The next Hackathon starts on September 2025!
+                Upcoming Hackathon: 25.09.2025 - 30.10.2025! <br />
+                Demo Day: 31.10.2025
               </p>
 
-              {/* <NewsletterForm
-                group={NewsletterGroup.BUILDSTATION}
-                title="RSVP for Buildstation"
-              /> */}
+              <NewsletterForm title="RSVP for Buildstation" />
               <div className="mt-8"></div>
               {/* <div className="flex flex-col gap-4 w-1/2">
                 <Button

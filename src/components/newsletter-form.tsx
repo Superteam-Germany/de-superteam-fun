@@ -32,9 +32,7 @@ export default function NewsletterForm({
         return;
       }
     } catch (error: any) {
-      setMessage(
-        "Error: Either your email is invalid or you already signed up for this newsletter."
-      );
+      setMessage("This email is already subscribed to the newsletter.");
     }
 
     setInput("");
