@@ -17,7 +17,7 @@ const timelineEvents = [
   {
     id: 2,
     title: "Build Station",
-    date: "Oct 20-30 2025",
+    date: "Oct 22-30 2025",
     icon: "diamond-gray",
   },
   {
