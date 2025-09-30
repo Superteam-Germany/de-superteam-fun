@@ -53,14 +53,14 @@ const WhatIs = () => {
             <NewsletterForm group={NewsletterGroup.BUILDSTATION} title='RSVP for Buildstation' />
             </div> */}
             <div className="mt-8"></div>
-            {/* <Button
+            <Button
               onClick={() =>
                 window.open("https://lu.ma/buildstation", "_blank")
               }
             >
               Register for Build Station
-            </Button> */}
-            <Button>Register for Build Station (soon)</Button>
+            </Button>
+            {/* <Button>Register for Build Station (soon)</Button> */}
           </div>
           <div className="max-lg:order-first max-lg:max-w-lg">
             <div className="aspect-[3/2] overflow-hidden rounded-xl shadow-xl outline-1 -outline-offset-1 outline-black/10">
