@@ -65,9 +65,9 @@ export default function Hero() {
                 Demo Day: 31.10.2025
               </p>
 
-              <NewsletterForm title="RSVP for Buildstation" />
+              {/* <NewsletterForm title="RSVP for Buildstation" /> */}
               <div className="mt-8"></div>
-              {/* <div className="flex flex-col gap-4 w-1/2">
+              <div className="flex flex-col gap-4 w-1/2">
                 <Button
                   onClick={() =>
                     window.open("https://lu.ma/buildstation", "_blank")
@@ -76,7 +76,7 @@ export default function Hero() {
                   Register for Build Station
                 </Button>
 
-                <Button
+                {/* <Button
                   variant="outline"
                   onClick={() =>
                     window.open(
@@ -97,8 +97,8 @@ export default function Hero() {
                   }
                 >
                   Book your 1:1 Mentoring
-                </Button>
-              </div> */}
+                </Button> */}
+              </div>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
               <div className="-mx-8 grid grid-cols-2 gap-4 sm:-mx-16 sm:grid-cols-4 lg:mx-0 lg:grid-cols-2 lg:gap-4 xl:gap-8">
