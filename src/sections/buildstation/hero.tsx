@@ -76,7 +76,7 @@ export default function Hero() {
                   Register for Build Station
                 </Button>
 
-                {/* <Button
+                <Button
                   variant="outline"
                   onClick={() =>
                     window.open(
@@ -97,7 +97,7 @@ export default function Hero() {
                   }
                 >
                   Book your 1:1 Mentoring
-                </Button> */}
+                </Button>
               </div>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
