@@ -1,5 +1,5 @@
-import { defineField } from 'sanity'
-import { groq } from 'next-sanity'
+import {defineField} from 'sanity'
+import {groq} from 'next-sanity'
 
 const apiVersion = '2024-01-01'
 
@@ -22,7 +22,10 @@ export default {
         source: 'title',
         maxLength: 96,
       },
-      validation: (Rule: any) => Rule.required().error('Please add a slug (url path e.g. my-blog-post or click on generate to auto-generate) to your blog post.'),
+      validation: (Rule: any) =>
+        Rule.required().error(
+          'Please add a slug (url path e.g. my-blog-post or click on generate to auto-generate) to your blog post.',
+        ),
     },
     {
       name: 'mainImage',
@@ -36,14 +39,30 @@ export default {
       name: 'body',
       title: 'Body',
       type: 'blockContent',
-      validation: (Rule: any) => Rule.required().error('Please add some content to your blog post.'),
+      validation: (Rule: any) =>
+        Rule.required().error('Please add some content to your blog post.'),
     },
     {
       name: 'blurb',
       title: 'Blurb',
       type: 'text',
       description: 'A short summary of the blog post',
-      validation: (Rule: any) => Rule.required().max(200).error('Please add a blurb (short summary, max 200 characters) to your blog post.'),
+      validation: (Rule: any) =>
+        Rule.required()
+          .max(200)
+          .error('Please add a blurb (short summary, max 200 characters) to your blog post.'),
+    },
+    {
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      description: 'A longer excerpt or summary of the blog post',
+    },
+    {
+      name: 'publishedAt',
+      title: 'Published at',
+      type: 'datetime',
+      description: 'Set the publish date for this post',
     },
     {
       name: 'tags',
@@ -55,11 +74,19 @@ export default {
       },
     },
     {
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{type: 'reference', to: [{type: 'category'}]}],
+      description: 'Select categories for this post',
+    },
+    {
       name: 'author',
       title: 'Author',
       type: 'reference',
-      to: [{ type: 'author' }],
-      validation: (Rule: any) => Rule.required().error('Please select an author for your blog post.'),
+      to: [{type: 'author'}],
+      validation: (Rule: any) =>
+        Rule.required().error('Please select an author for your blog post.'),
     },
     defineField({
       name: 'isFeatured',
@@ -68,21 +95,17 @@ export default {
       description: 'Toggle if this post should be featured',
       initialValue: false,
       validation: (Rule) =>
-        Rule.custom(async (isFeatured, { getClient }) => {
+        Rule.custom(async (isFeatured, {getClient}) => {
           if (isFeatured !== true) {
             return true
           }
 
-          let featuredPosts = await getClient({ apiVersion })
-            .withConfig({ perspective: 'previewDrafts' })
-            .fetch<number>(
-              groq`count(*[_type == 'blogPost' && isFeatured == true])`,
-            )
+          let featuredPosts = await getClient({apiVersion})
+            .withConfig({perspective: 'previewDrafts'})
+            .fetch<number>(groq`count(*[_type == 'blogPost' && isFeatured == true])`)
 
-          return featuredPosts > 3
-            ? 'Only 3 posts can be featured at a time.'
-            : true
+          return featuredPosts > 3 ? 'Only 3 posts can be featured at a time.' : true
         }),
-    })
+    }),
   ],
-};
+}
