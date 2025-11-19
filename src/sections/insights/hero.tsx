@@ -44,7 +44,76 @@ export default function Hero() {
           </h2>
 
           <div className="grid grid-cols-1 gap-8">
-            {/* Report Card 1 */}
+            {/* Report Card 1 - ICM Report */}
+            <div className="w-full">
+              <div className="overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm p-4 lg:p-6 ring-1 ring-inset ring-white/10 transition-all duration-300 hover:bg-white/10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                  <div className="lg:col-span-5 flex flex-col gap-6">
+                    <h3 className="text-3xl font-bold text-white">
+                      2025 Internet Capital Markets Report
+                    </h3>
+
+                    {/* Mobile Image */}
+                    <div className="block lg:hidden w-full">
+                      <div className="relative aspect-[16/9]">
+                        <Image
+                          src="/images/reports/Solana_ICM_Report_2025.png"
+                          alt="Solana ICM Report 2025"
+                          fill
+                          className="object-cover rounded-lg"
+                          priority
+                        />
+                      </div>
+                    </div>
+
+                    <p className="text-white/70 text-base">
+                      The Solana Superteam Germany Internet Capital Market
+                      Report got released!
+                      <br />
+                      <br />
+                      The report highlights:
+                      <br />
+                      <br />
+                      - why Solana is the home for ICM,
+                      <br />
+                      - Solana&apos;s ICM ecosystem in numbers,
+                      <br />
+                      - projects driving this evolution,
+                      <br />- and ongoing initiatives that are set to accelerate
+                      progress even further
+                    </p>
+
+                    <Link
+                      href="/reports/Solana_ICM_Report_2025.pdf"
+                      target="_blank"
+                      download
+                    >
+                      <Button
+                        variant="outline"
+                        className="uppercase tracking-wider font-medium w-full lg:w-auto"
+                      >
+                        Download Report
+                      </Button>
+                    </Link>
+                  </div>
+
+                  {/* Desktop Image */}
+                  <div className="hidden lg:block lg:col-span-7">
+                    <div className="relative aspect-[16/9]">
+                      <Image
+                        src="/images/reports/Solana_ICM_Report_2025.png"
+                        alt="Solana ICM Report 2025"
+                        fill
+                        className="object-cover rounded-lg"
+                        priority
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Report Card 2 - Stablecoin Report */}
             <div className="w-full">
               <div className="overflow-hidden rounded-2xl bg-white/5 backdrop-blur-sm p-4 lg:p-6 ring-1 ring-inset ring-white/10 transition-all duration-300 hover:bg-white/10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
@@ -60,7 +129,7 @@ export default function Hero() {
                           src="/images/reports/HPG_Solana_StableCoin_Report.png"
                           alt="HPG Solana Stablecoin Report"
                           fill
-                          className="object-contain"
+                          className="object-cover rounded-lg"
                           priority
                         />
                       </div>
@@ -98,7 +167,7 @@ export default function Hero() {
                         src="/images/reports/HPG_Solana_StableCoin_Report.png"
                         alt="HPG Solana Stablecoin Report"
                         fill
-                        className="object-contain"
+                        className="object-cover rounded-lg"
                         priority
                       />
                     </div>
