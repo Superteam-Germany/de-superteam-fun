@@ -61,8 +61,9 @@ export default function Hero() {
                 devs, marketers, artists and more.
               </p>
               <p className="mt-8 text-xl text-primary font-semibold">
-                Upcoming Hackathon: 25.09.2025 - 30.10.2025! <br />
-                Demo Day: 31.10.2025
+                Upcoming Hackathon: 06.04.2026 - 11.05.2026 <br />
+                Build Station: 27.04.2026 - 11.05.2026 <br />
+                Demo Day: 12.05.2026
               </p>
 
               {/* <NewsletterForm title="RSVP for Buildstation" /> */}

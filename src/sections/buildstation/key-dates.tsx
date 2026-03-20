@@ -10,20 +10,20 @@ import { useScroll, useTransform, motion } from "framer-motion";
 const timelineEvents = [
   {
     id: 1,
-    title: "Hackathon Kickoff",
-    date: "25 Sep 2025",
+    title: "Global Hackathon",
+    date: "06 Apr - 11 May 2026",
     icon: "diamond-blue",
   },
   {
     id: 2,
     title: "Build Station",
-    date: "Oct 20-30 2025",
+    date: "27 Apr - 11 May 2026",
     icon: "diamond-gray",
   },
   {
     id: 3,
     title: "Demo Day",
-    date: "Oct 31 2025",
+    date: "12 May 2026",
     icon: "diamond-gray",
   },
 ];

@@ -43,7 +43,7 @@ const BerlinDemoDay = () => {
           </div>
           <div>
             <ul className='list-disc list-inside space-y-2 px-4'>
-              <li>Local, in real life Demo Day on the 9th of April.</li>
+              <li>Local, in real life Demo Day on the 12th of May.</li>
               <li>Hackathon submissions are eligible to present.</li>
             </ul>
           </div>
@@ -60,7 +60,7 @@ const BerlinDemoDay = () => {
                   href={UPCOMING_HACKATHON_LINK}>
                   Colosseum
                 </Link>
-                {' '}by October 8th at midnight.
+                {' '}by May 11 at midnight.
               </li>
               <li>
                 Apply separately for each side track (e.g., Superteam Germany
@@ -80,7 +80,7 @@ const BerlinDemoDay = () => {
                   href={REGISTER_BUILD_STATION_DEMO_DAY_LINK}>
                   Berlin Demo Day
                 </Link>
-                {' '}is on October 9th. Pitch your project for a
+                {' '}is on May 12. Pitch your project for a
                 chance to win an additional 20K in Germany-only prizes.
               </li>
             </ul>
