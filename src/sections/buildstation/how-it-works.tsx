@@ -151,7 +151,11 @@ export function HowItWorks() {
             How Build Station Works
           </h2>
           <p className="mt-6 font-bold">
-            Build your project online or join us in Berlin. Submit a pitch deck, 3-min demo video, and Github repo by May 16. Not sure where to start? Visit our Co-working Fridays, Workshops, and Build Station.
+            Build your project online or join us in Berlin. The Global
+            Hackathon runs from 06.04.2026 to 11.05.2026, Build Station runs
+            from 27.04.2026 to 11.05.2026, and Demo Day takes place on
+            12.05.2026. Not sure where to start? Visit our Co-working Fridays,
+            Workshops, and Build Station.
           </p>
         </div>
         <CustomTabGroup
