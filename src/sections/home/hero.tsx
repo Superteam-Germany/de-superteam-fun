@@ -3,8 +3,9 @@ import { Highlight } from '@/components/highlight';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
-import { scrollToAnchor } from '@/lib/utils';
 import { Button } from '@/components/button';
+import Link from 'next/link';
+import { UPCOMING_HACKATHON_LINK } from '@/lib/constants';
 
 export default function Example() {
   const { scrollYProgress } = useScroll();
@@ -67,15 +68,32 @@ export default function Example() {
               <h1 className="text-start text-4xl lg:text-6xl">
                 <span className='text-shadow'>The Heartbeat of Germany&apos;s Solana Community</span>
               </h1>
-              <p className="mt-4 sm:max-w-md lg:max-w-none">
-                Connect, collaborate, and grow together with a community of founders, developers, and creators shaping the future on Solana.
+              <p className="mt-6 sm:max-w-md lg:max-w-none text-white/85">
+                Register for the Colosseum Global Hackathon through Superteam
+                Germany and build with founder, mentor, and community support
+                from our network across Germany.
               </p>
-              <Button
-                onClick={() => scrollToAnchor('what-we-do')}
-                className="font-secondary tracking-wide font-normal text-base mt-10"
-              >
-                Learn more
-              </Button>
+              <div className="mt-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur">
+                <span>06.04–11.05.2026 Hackathon</span>
+                <span className="text-white/30">•</span>
+                <span>27.04–11.05 Buildstation Berlin</span>
+                <span className="text-white/30">•</span>
+                <span>12.05 Demo Day</span>
+              </div>
+              <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
+                <Button
+                  onClick={() => window.open(UPCOMING_HACKATHON_LINK, '_blank')}
+                  className="font-secondary tracking-wide font-normal text-base"
+                >
+                  Register for the Hackathon
+                </Button>
+                <Link
+                  href="/buildstation"
+                  className="font-secondary tracking-wide font-normal text-base underline underline-offset-4 hover:opacity-80 sm:ml-2"
+                >
+                  See hackathon details
+                </Link>
+              </div>
             </div>
             <div className="mt-14 flex justify-end gap-8 sm:-mt-44 sm:justify-start sm:pl-20 lg:mt-0 lg:pl-0">
               {/* First Group */}
