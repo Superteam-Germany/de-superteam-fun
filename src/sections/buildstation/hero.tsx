@@ -9,6 +9,7 @@ import { NewsletterGroup } from "@/types/enum";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import NewsletterSection from "../home/newsletter-section";
+import { UPCOMING_HACKATHON_LINK } from "@/lib/constants";
 
 export default function Hero() {
   const images = [
@@ -68,7 +69,14 @@ export default function Hero() {
 
               {/* <NewsletterForm title="RSVP for Buildstation" /> */}
               <div className="mt-8"></div>
-              <div className="flex flex-col gap-4 w-1/2">
+              <div className="flex flex-col gap-4 w-full sm:w-1/2">
+                <Button
+                  onClick={() =>
+                    window.open(UPCOMING_HACKATHON_LINK, "_blank")
+                  }
+                >
+                  Register for the Hackathon
+                </Button>
                 <Button
                   onClick={() =>
                     window.open("https://lu.ma/buildstation", "_blank")
