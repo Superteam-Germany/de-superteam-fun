@@ -73,7 +73,18 @@ export default function Example() {
                 Germany and build with founder, mentor, and community support
                 from our network across Germany.
               </p>
-              <div className="mt-6 inline-flex flex-wrap items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur">
+              <div className="mt-6 flex flex-col items-start gap-2 text-sm text-white/80 sm:hidden">
+                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
+                  06.04–11.05.2026 Hackathon
+                </span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
+                  27.04–11.05 Buildstation Berlin
+                </span>
+                <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
+                  12.05 Demo Day
+                </span>
+              </div>
+              <div className="mt-6 hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur sm:inline-flex sm:flex-wrap sm:items-center sm:gap-2">
                 <span>06.04–11.05.2026 Hackathon</span>
                 <span className="text-white/30">•</span>
                 <span>27.04–11.05 Buildstation Berlin</span>
