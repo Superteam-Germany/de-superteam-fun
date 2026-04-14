@@ -9,6 +9,8 @@ export const REGISTER_BUILD_STATION_DEMO_DAY_LINK =
 export const PROJECT_SUBMISSION_LINK = "https://tally.so/r/mD5Q7X";
 export const UPCOMING_HACKATHON_LINK =
   "https://arena.colosseum.org/?ref=germany";
+export const HACKATHON_LINKTREE_LINK =
+  "https://linktr.ee/superteamhackathon";
 
 // Locations
 export const WEB3_HUB_LOCATION_LINK = "https://goo.gl/maps/bsnPMX1QNZ1Bxa7w8";
