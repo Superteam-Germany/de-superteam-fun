@@ -9,7 +9,11 @@ import { NewsletterGroup } from "@/types/enum";
 import { Container } from "@/components/container";
 import { Button } from "@/components/button";
 import NewsletterSection from "../home/newsletter-section";
-import { UPCOMING_HACKATHON_LINK } from "@/lib/constants";
+import Link from "next/link";
+import {
+  HACKATHON_LINKTREE_LINK,
+  UPCOMING_HACKATHON_LINK,
+} from "@/lib/constants";
 
 export default function Hero() {
   const images = [
@@ -84,29 +88,14 @@ export default function Hero() {
                 >
                   Register for Build Station
                 </Button>
-
-                <Button
-                  variant="outline"
-                  onClick={() =>
-                    window.open(
-                      "https://superteamdao.notion.site/colosseum-hackathon-2025",
-                      "_blank"
-                    )
-                  }
+                <Link
+                  href={HACKATHON_LINKTREE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center font-secondary tracking-wide font-normal text-base underline underline-offset-4 hover:opacity-80"
                 >
-                  Complete Guide
-                </Button>
-                <Button
-                  variant="outline"
-                  onClick={() =>
-                    window.open(
-                      "https://superteamdao.notion.site/colosseum-hackathon-2025#1e8794d3ba3380a7bfe1d2428dd4db04",
-                      "_blank"
-                    )
-                  }
-                >
-                  Book your 1:1 Mentoring
-                </Button>
+                  More Hackathon Info
+                </Link>
               </div>
             </div>
             <div className="pt-20 lg:row-span-2 lg:-mr-16 xl:mr-auto">
