@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useScroll, useTransform } from "framer-motion";
 import {
   PROJECT_SUBMISSION_LINK,
-  RESOURCES_AND_GUILDS_LINK,
+  RESOURCES_AND_DOCS_LINK,
   SUPERTEAM_GLOBAL_LINK,
   SOCIAL_X_LINK,
   SOCIAL_DISCORD_LINK,
@@ -18,8 +18,8 @@ const navigation = {
   resources: [
     { name: "Global Hackathon", href: "/buildstation" },
     {
-      name: "Resources and Guilds",
-      href: RESOURCES_AND_GUILDS_LINK,
+      name: "Resources and Docs",
+      href: RESOURCES_AND_DOCS_LINK,
       target: "_blank",
     },
     { name: "Superteam Global", href: SUPERTEAM_GLOBAL_LINK, target: "_blank" },

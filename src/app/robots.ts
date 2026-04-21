@@ -16,7 +16,7 @@ export default function robots(): MetadataRoute.Robots {
     ],
     sitemap: [
       `${baseUrl}/sitemap.xml`,
-      `https://docs.superteamde.fun/sitemap.xml`,
+      `https://superteamde.gitbook.io/superteamde/sitemap.xml`,
     ],
   };
 }
