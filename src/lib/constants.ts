@@ -18,7 +18,7 @@ export const WEB3_HUB_LOCATION_LINK = "https://goo.gl/maps/bsnPMX1QNZ1Bxa7w8";
 // Superteam Resources and links
 export const SUPERTEAM_GLOBAL_LINK = "https://superteam.fun";
 export const RESOURCES_AND_GUILDS_LINK =
-  "https://docs.superteamde.fun/superteam-germany-guilds";
+  "https://superteamde.gitbook.io/superteamde";
 export const SUPERTEAM_EARN_LINK =
   "https://earn.superteam.fun/hackathon/radar/";
 
