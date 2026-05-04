@@ -11,6 +11,7 @@ import { Button } from "@/components/button";
 import NewsletterSection from "../home/newsletter-section";
 import Link from "next/link";
 import {
+  HACKATHON_GUIDE_LINK,
   HACKATHON_LINKTREE_LINK,
   UPCOMING_HACKATHON_LINK,
 } from "@/lib/constants";
@@ -88,6 +89,14 @@ export default function Hero() {
                 >
                   Register for Build Station
                 </Button>
+                <Link
+                  href={HACKATHON_GUIDE_LINK}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-center font-secondary tracking-wide font-normal text-base underline underline-offset-4 hover:opacity-80"
+                >
+                  Hackathon Guide
+                </Link>
                 <Link
                   href={HACKATHON_LINKTREE_LINK}
                   target="_blank"
