@@ -2,11 +2,9 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
-import { Analytics } from "@vercel/analytics/react";
-import FooterGroup from "@/sections/buildstation/footer-group";
-import Nav from "@/components/nav";
 import Head from "next/head";
 import Script from "next/script";
+import { SiteChrome } from "@/components/site-chrome";
 
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
@@ -93,12 +91,7 @@ export default function RootLayout({
           />
         </noscript>
         {/* End Google Tag Manager (noscript) */}
-        <main>
-          <Nav />
-          {children}
-          <Analytics />
-          <FooterGroup />
-        </main>
+        <SiteChrome>{children}</SiteChrome>
       </body>
     </html>
   );

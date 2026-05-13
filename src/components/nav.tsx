@@ -6,7 +6,6 @@ import { Button } from "./button";
 import { usePathname } from "next/navigation";
 import { AnimatePresence, motion } from "framer-motion";
 import Link from "next/link";
-import { SOCIAL_X_LINK } from "@/lib/constants";
 
 const menuItems = [
   {
@@ -50,7 +49,7 @@ const Nav = () => {
         </Link>
 
         <button onClick={() => setIsOpen(!isOpen)}>
-          <Bars3Icon className="h-6 w-6 text-foreground sm:hidden text-white" />
+          <Bars3Icon className="h-6 w-6 text-foreground lg:hidden text-white" />
         </button>
         <AnimatePresence>
           {isOpen && (
@@ -104,7 +103,11 @@ const Nav = () => {
               })}
               <li>
                 <div className="py-8"></div>
-                <Link href="https://twitter.com/SuperteamDE" target="_blank">
+                <Link
+                  href="https://twitter.com/SuperteamDE"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Button className="font-secondary tracking-wide font-normal text-base">
                     Follow us on X
                   </Button>
@@ -115,7 +118,7 @@ const Nav = () => {
         </AnimatePresence>
 
         <ul
-          className={`sm:flex bg-background hidden  sm:relative sm:w-auto sm:space-x-10 items-center`}
+          className={`lg:flex bg-background hidden  lg:relative lg:w-auto lg:space-x-10 items-center`}
         >
           {menuItems.map((item, i) => {
             if (item.type === "link") {
@@ -141,7 +144,11 @@ const Nav = () => {
             }
           })}
           <li>
-            <Link href={SOCIAL_X_LINK} target="_blank">
+            <Link
+              href="https://twitter.com/SuperteamDE"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Button className="font-secondary tracking-wide font-normal text-base">
                 Follow us on X
               </Button>

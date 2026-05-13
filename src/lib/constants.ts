@@ -14,6 +14,14 @@ export const HACKATHON_GUIDE_LINK =
 export const HACKATHON_LINKTREE_LINK =
   "https://linktr.ee/superteamhackathon";
 
+// Solana Summit Germany
+export const SOLANA_SUMMIT_LUMA_LINK =
+  "https://luma.com/solanasummitgermany";
+export const SOLANA_SUMMIT_SPEAKER_FORM_LINK =
+  "https://forms.gle/peqH3eHMpxkpW5G9A";
+export const SOLANA_SUMMIT_SPONSOR_FORM_LINK =
+  "https://forms.gle/CdMwQcC4SBUiX6Cn9";
+
 // Locations
 export const WEB3_HUB_LOCATION_LINK = "https://goo.gl/maps/bsnPMX1QNZ1Bxa7w8";
 
