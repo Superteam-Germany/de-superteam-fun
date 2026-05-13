@@ -7,7 +7,9 @@ import FooterGroup from "@/sections/buildstation/footer-group";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isSummitRoute = pathname?.startsWith("/solana-summit");
+  const isSummitRoute =
+    pathname?.startsWith("/solana-summit-germany") ||
+    pathname?.startsWith("/solana-summit");
 
   if (isSummitRoute) {
     return (

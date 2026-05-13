@@ -7,10 +7,10 @@ import { SummitCta } from "./summit-cta";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Speakers", href: "/solana-summit#speakers" },
-  { label: "Agenda", href: "/solana-summit/agenda" },
-  { label: "Partners", href: "/solana-summit#partners" },
-  { label: "FAQ", href: "/solana-summit#faq" },
+  { label: "Speakers", href: "/solana-summit-germany#speakers" },
+  { label: "Agenda", href: "/solana-summit-germany/agenda" },
+  { label: "Partners", href: "/solana-summit-germany#partners" },
+  { label: "FAQ", href: "/solana-summit-germany#faq" },
 ];
 
 export function SummitShell({ children }: { children: React.ReactNode }) {
@@ -34,7 +34,7 @@ export function SummitNav({
     <header className={cn("relative z-20", className)}>
       <nav className="summit-container flex items-center justify-between py-5">
         <Link
-          href="/solana-summit"
+          href="/solana-summit-germany"
           className="-ml-5 flex items-center gap-3 no-underline focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14f195] focus-visible:ring-offset-2 focus-visible:ring-offset-black lg:-ml-7"
         >
           <Image

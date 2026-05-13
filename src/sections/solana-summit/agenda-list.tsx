@@ -185,7 +185,7 @@ export function AgendaList() {
                     <p className="font-secondary text-base font-medium text-[#14f195]">
                       {item.time}
                     </p>
-                    {item.type !== "TBD" && (
+                    {item.type && item.type !== "TBD" && (
                       <div className="md:hidden">
                         <AgendaBadge type={item.type} />
                       </div>
@@ -196,8 +196,8 @@ export function AgendaList() {
                       <h2 className="text-lg font-medium leading-tight text-white lg:text-xl">
                         {item.title}
                       </h2>
-                      {item.type !== "TBD" && (
-                        <div className="hidden md:block">
+                      {item.type && item.type !== "TBD" && (
+                        <div className="hidden md:-mt-1 md:block">
                           <AgendaBadge type={item.type} />
                         </div>
                       )}
