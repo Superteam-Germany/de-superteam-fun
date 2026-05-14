@@ -11,6 +11,11 @@ export const metadata: Metadata = {
   title: "Agenda | Solana Summit Germany",
   description:
     "Explore the placeholder agenda for Solana Summit Germany in Berlin on 13 June 2026.",
+  icons: {
+    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Solana Summit Germany Agenda",
     description:
