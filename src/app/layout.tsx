@@ -28,7 +28,9 @@ export const metadata: Metadata = {
   description:
     "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
   icons: {
-    icon: "/st-flag-logo.png",
+    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
   },
   openGraph: {
     title: "Superteam Germany",

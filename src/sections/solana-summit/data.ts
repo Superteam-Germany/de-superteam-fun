@@ -123,10 +123,28 @@ export const agendaItems: AgendaItem[] = [
     section: "Opening",
   },
   {
-    time: "TBD",
-    title: "Sessions TBD",
-    type: "TBD",
-    speakers: [],
+    time: "11:40 - 12:20",
+    title:
+      "Built in America, Validated in Europe: // Public Chain, Private Stack: Who Controls Solana's Infrastructure?",
+    type: "Panel",
+    speakers: ["TBA"],
+    location: "Main Stage",
+    section: "Onchain Capital Markets",
+  },
+  {
+    time: "12:20 - 12:35",
+    title:
+      "Stablecoin innovation: MiCA, EURC, and the European Stablecoin Race",
+    type: "Fireside Chat",
+    speakers: ["AllUnity"],
+    location: "Main Stage",
+    section: "Onchain Capital Markets",
+  },
+  {
+    time: "12:35 - 13:05",
+    title: "The RWA Boom: tokenized assets on Solana",
+    type: "Panel",
+    speakers: ["TBA"],
     location: "Main Stage",
     section: "Onchain Capital Markets",
   },

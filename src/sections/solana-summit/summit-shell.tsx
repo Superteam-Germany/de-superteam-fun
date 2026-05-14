@@ -42,7 +42,7 @@ export function SummitNav({
             alt="Solana Summit Germany"
             width={500}
             height={500}
-            className="h-[91px] w-[204px] object-cover object-center lg:h-[104px] lg:w-[232px]"
+            className="h-[82px] w-[184px] object-cover object-center sm:h-[91px] sm:w-[204px] lg:h-[104px] lg:w-[232px]"
             priority
           />
         </Link>
