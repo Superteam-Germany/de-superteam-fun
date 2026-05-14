@@ -31,6 +31,11 @@ const menuItems = [
   },
 ];
 
+const summitCta = {
+  name: "Solana Summit Germany",
+  link: "/solana-summit-germany",
+};
+
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
 
@@ -103,15 +108,19 @@ const Nav = () => {
               })}
               <li>
                 <div className="py-8"></div>
-                <Link
-                  href="https://twitter.com/SuperteamDE"
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <Button
+                  asChild
+                  className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
                 >
-                  <Button className="font-secondary tracking-wide font-normal text-base">
-                    Follow us on X
-                  </Button>
-                </Link>
+                  <Link
+                    href={summitCta.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    {summitCta.name}
+                  </Link>
+                </Button>
               </li>
             </motion.ul>
           )}
@@ -144,15 +153,18 @@ const Nav = () => {
             }
           })}
           <li>
-            <Link
-              href="https://twitter.com/SuperteamDE"
-              target="_blank"
-              rel="noopener noreferrer"
+            <Button
+              asChild
+              className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
             >
-              <Button className="font-secondary tracking-wide font-normal text-base">
-                Follow us on X
-              </Button>
-            </Link>
+              <Link
+                href={summitCta.link}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {summitCta.name}
+              </Link>
+            </Button>
           </li>
         </ul>
       </div>

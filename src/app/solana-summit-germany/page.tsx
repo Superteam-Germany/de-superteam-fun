@@ -7,6 +7,7 @@ import {
 } from "@/lib/constants";
 import { faqs } from "@/sections/solana-summit/data";
 import { SummitReveal } from "@/sections/solana-summit/summit-reveal";
+import { SummitScrollReveal } from "@/sections/solana-summit/summit-scroll-reveal";
 import { SpeakerGrid } from "@/sections/solana-summit/speaker-grid";
 import { SummitCta } from "@/sections/solana-summit/summit-cta";
 import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
@@ -117,6 +118,11 @@ export const metadata: Metadata = {
   title: "Solana Summit Germany | Superteam Germany",
   description:
     "Join Solana Summit Germany in Berlin on 13 June 2026 for talks, networking, live formats, and the German Solana ecosystem.",
+  icons: {
+    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
+  },
   openGraph: {
     title: "Solana Summit Germany",
     description:
@@ -187,7 +193,7 @@ function Hero() {
       <SummitNav className="absolute inset-x-0 top-0" />
       <SummitSidePatterns className="summit-hero-side-patterns" />
       <SummitHeroSilhouette priority />
-      <div className="summit-container relative z-10 flex min-h-screen flex-col items-center justify-center text-center">
+      <div className="summit-hero-copy summit-container relative z-10 flex min-h-screen flex-col items-center justify-center text-center">
         <p className="text-[22px] font-normal leading-none text-[#14f195] drop-shadow-[0_6px_24px_rgba(0,0,0,0.85)] md:text-[30px]">
           13 June 2026 / Berlin
         </p>
@@ -222,7 +228,7 @@ function EventDetails() {
           <h2 className="summit-section-heading">Event details</h2>
           <div className="summit-divider" />
           <div className="grid gap-10 lg:grid-cols-[520px_1fr] lg:gap-14">
-            <div className="border-t border-white/10 lg:border-t-0">
+            <div>
               {detailRows.map((fact) => (
                 <div
                   key={fact.label}
@@ -445,6 +451,14 @@ function GettingThere() {
                 </p>
                 <div className="mt-4 flex flex-col items-start gap-3 text-[20px] leading-snug text-[#aaa7b5] md:text-[22px]">
                   <a
+                    href="https://www.nhow-hotels.com/en/nhow-berlin"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="transition-colors duration-150 ease-out hover:text-[#14f195] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14f195] focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+                  >
+                    Hotel nhow Berlin
+                  </a>
+                  <a
                     href="https://www.michelbergerhotel.com/en/rooms"
                     target="_blank"
                     rel="noopener noreferrer"
@@ -474,7 +488,7 @@ function FinalCta() {
   return (
     <SummitReveal className="summit-final-stage relative overflow-hidden bg-black px-6 py-28 text-center lg:py-36">
       <SummitSidePatterns className="summit-final-side-patterns" />
-      <div className="relative z-10 mx-auto max-w-[960px]">
+      <SummitScrollReveal className="relative z-10 mx-auto max-w-[960px]">
         <h2 className="text-[56px] font-light leading-[1.03] tracking-[-0.015em] text-[#aaa7b5] md:text-[88px]">
           Don&apos;t miss
           <br />
@@ -492,7 +506,7 @@ function FinalCta() {
           height={24}
           className="mx-auto mt-10 h-auto w-[142px] opacity-70 md:mt-12 md:w-[170px]"
         />
-      </div>
+      </SummitScrollReveal>
     </SummitReveal>
   );
 }

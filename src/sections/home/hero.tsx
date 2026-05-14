@@ -5,7 +5,7 @@ import { motion } from 'framer-motion';
 import { useScroll, useTransform } from 'framer-motion';
 import { Button } from '@/components/button';
 import Link from 'next/link';
-import { UPCOMING_HACKATHON_LINK } from '@/lib/constants';
+import { SOLANA_SUMMIT_LUMA_LINK } from '@/lib/constants';
 
 export default function Example() {
   const { scrollYProgress } = useScroll();
@@ -69,40 +69,52 @@ export default function Example() {
                 <span className='text-shadow'>The Heartbeat of Germany&apos;s Solana Community</span>
               </h1>
               <p className="mt-6 sm:max-w-md lg:max-w-none text-white/85">
-                Register for the Colosseum Global Hackathon through Superteam
-                Germany and build with founder, mentor, and community support
-                from our network across Germany.
+                Join Germany&rsquo;s largest Solana conference &mdash; a one-day
+                Berlin summit for founders, developers, investors,
+                institutions, and creators shaping Internet Capital Markets.
               </p>
               <div className="mt-6 flex flex-col items-start gap-2 text-sm text-white/80 sm:hidden">
                 <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                  06.04–11.05.2026 Hackathon
+                  13 June 2026 / Berlin
                 </span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                  27.04–11.05 Buildstation Berlin
+                  Internet Capital Markets
                 </span>
                 <span className="rounded-full border border-white/10 bg-white/5 px-4 py-2 backdrop-blur">
-                  12.05 Demo Day
+                  Talks, Networking &amp; Community
                 </span>
               </div>
               <div className="mt-6 hidden rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-white/80 backdrop-blur sm:inline-flex sm:flex-wrap sm:items-center sm:gap-2">
-                <span>06.04–11.05.2026 Hackathon</span>
+                <span>13 June 2026 / Berlin</span>
                 <span className="text-white/30">•</span>
-                <span>27.04–11.05 Buildstation Berlin</span>
+                <span>Internet Capital Markets</span>
                 <span className="text-white/30">•</span>
-                <span>12.05 Demo Day</span>
+                <span>Talks, Networking &amp; Community</span>
               </div>
               <div className="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center">
                 <Button
-                  onClick={() => window.open(UPCOMING_HACKATHON_LINK, '_blank')}
+                  asChild
                   className="font-secondary tracking-wide font-normal text-base"
                 >
-                  Register for the Hackathon
+                  <Link
+                    href={SOLANA_SUMMIT_LUMA_LINK}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="no-underline hover:opacity-100"
+                  >
+                    <span className="sm:hidden">Register now</span>
+                    <span className="hidden sm:inline">
+                      Register for Solana Summit
+                    </span>
+                  </Link>
                 </Button>
                 <Link
-                  href="/buildstation"
-                  className="font-secondary tracking-wide font-normal text-base underline underline-offset-4 hover:opacity-80 sm:ml-2"
+                  href="/solana-summit-germany"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex h-10 w-full items-center justify-center rounded-[var(--radius)] border border-white/15 bg-white/5 px-4 py-2 font-secondary text-base font-normal tracking-wide text-white no-underline shadow-xl backdrop-blur-sm transition-colors hover:bg-white/10 hover:opacity-100 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:w-auto"
                 >
-                  See hackathon details
+                  See Summit Details
                 </Link>
               </div>
             </div>
