@@ -38,6 +38,7 @@ const BuildStationIntro = () => {
             alt='Solana logo'
             width={400}
             height={400}
+            unoptimized
           />
         </FadeInDiv>
       </section>

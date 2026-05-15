@@ -2,6 +2,9 @@ import { NextRequest, NextResponse } from "next/server";
 import axios from "axios";
 import { NewsletterGroup } from "@/types/enum";
 
+const validNewsletterGroups = new Set<string>(Object.values(NewsletterGroup));
+const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
 const getGroupRequest = (group: string) => {
   const url = `https://api.mailerlite.com/api/v2/groups/${group}/subscribers`;
 
@@ -32,10 +35,30 @@ const getStandardRequest = () => {
 };
 
 export async function POST(request: NextRequest) {
-  const { email, group } = await request.json();
+  if (!process.env.MAILERLITE_API_KEY) {
+    return NextResponse.json(
+      { message: "Newsletter service is not configured" },
+      { status: 500 }
+    );
+  }
 
-  if (!email) {
+  let body: { email?: unknown; group?: unknown };
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json({ message: "Invalid request body" }, { status: 400 });
+  }
+
+  const email = typeof body.email === "string" ? body.email.trim() : "";
+  const group =
+    typeof body.group === "string" ? body.group : NewsletterGroup.DEFAULT;
+
+  if (!email || !emailPattern.test(email)) {
     return NextResponse.json({ message: "Invalid email" }, { status: 400 });
+  }
+
+  if (!validNewsletterGroups.has(group)) {
+    return NextResponse.json({ message: "Invalid newsletter group" }, { status: 400 });
   }
 
   const { url, headers } =

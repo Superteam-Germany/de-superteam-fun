@@ -102,6 +102,7 @@ const FooterGroup = () => {
                   width={200}
                   alt="Superteam logo"
                   className="mx-auto xl:mx-0"
+                  unoptimized
                 />
                 <p className="text-sm leading-6 text-gray-300">
                   Let&apos;s build the next generation of the internet together
