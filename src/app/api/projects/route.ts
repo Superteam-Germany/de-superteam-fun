@@ -12,6 +12,14 @@ const axios = Axios.create({
 export async function GET(request: Request) {
   const baseId = process.env.AIRTABLE_BASE_ID;
   const tableId = process.env.AIRTABLE_PROJECTS_TABLE_ID;
+
+  if (!process.env.AIRTABLE_API_KEY || !baseId || !tableId) {
+    return NextResponse.json(
+      { message: 'Projects service is not configured' },
+      { status: 500 }
+    );
+  }
+
   try {
     const projects = await axios.get(
       `https://api.airtable.com/v0/${baseId}/${tableId}`
@@ -19,8 +27,15 @@ export async function GET(request: Request) {
     return NextResponse.json({ projects: projects.data.records });
   } catch (error) {
     if (isAxiosError(error)) {
-      return NextResponse.error();
+      return NextResponse.json(
+        { message: 'Error fetching projects' },
+        { status: 502 }
+      );
     }
+    return NextResponse.json(
+      { message: 'Internal Server Error' },
+      { status: 500 }
+    );
   }
 }
 

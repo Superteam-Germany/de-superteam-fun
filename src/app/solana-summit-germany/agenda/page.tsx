@@ -94,6 +94,7 @@ function AgendaFinalCta() {
           alt="Powered by Superteam"
           width={303}
           height={24}
+          unoptimized
           className="mx-auto mt-14 h-auto w-[130px] opacity-60 md:w-[150px]"
         />
       </div>

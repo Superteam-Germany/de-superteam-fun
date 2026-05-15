@@ -50,6 +50,7 @@ const Nav = () => {
             height={35}
             width={160}
             alt="Superteam logo"
+            unoptimized
           />
         </Link>
 

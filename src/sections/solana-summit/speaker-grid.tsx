@@ -111,7 +111,7 @@ export function SpeakerGrid() {
         </label>
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-8">
+      <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7">
         {filteredSpeakers.map((speaker, index) => (
           <article key={`${speaker.company}-${index}`} className="group">
             <div className="relative aspect-square overflow-hidden rounded-xl bg-[#1a1a1a]">

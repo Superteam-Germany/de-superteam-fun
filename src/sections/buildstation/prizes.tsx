@@ -77,6 +77,7 @@ const Prizes = (props: Props) => {
                 className=''
                 fill
                 alt='superteam germany'
+                unoptimized
               />
             </div>
           </div>
@@ -119,6 +120,7 @@ const Prizes = (props: Props) => {
                       height={1}
                       width={400}
                       alt={`${prize.sponsor} logo`}
+                      unoptimized={prize.logo.endsWith('.svg')}
                     />
                     <div>
                       🏆 {prize.prize}
