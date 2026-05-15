@@ -38,22 +38,42 @@ const speakerCards = [
     xUrl: "https://x.com/adityashetts",
   },
   {
-    name: "Speaker",
-    surname: "TBA",
-    company: "TBA",
-    role: "TBA",
+    name: "Yannik",
+    surname: "Schrade",
+    company: "Arcium",
+    role: "Co-Founder & CEO",
+    image: "/images/summit-germany/partners/yannik.jpg",
+    xUrl: "https://x.com/yrschrade",
+  },
+  {
+    name: "Vidor",
+    surname: "Gencel",
+    company: "Solflare",
+    role: "Co-Founder",
+    image: "/images/summit-germany/partners/vidor.png",
+    xUrl: "https://x.com/vidor_solflare",
+  },
+  {
+    name: "Jessica",
+    surname: "",
+    company: "Sol Strategies",
+    role: "Growth",
+    image: "/images/summit-germany/partners/jessica.jpg",
+    xUrl: "https://x.com/yesjess",
+  },
+  {
+    name: "Eno",
+    surname: "",
+    company: "Sol Brothers",
+    role: "Co-Founder",
+    image: "/images/summit-germany/partners/eno.jpeg",
+    xUrl: "https://x.com/YouKnowEno",
   },
   {
     name: "Speaker",
     surname: "TBA",
-    company: "TBA",
-    role: "TBA",
-  },
-  {
-    name: "Speaker",
-    surname: "TBA",
-    company: "TBA",
-    role: "TBA",
+    company: "More speakers",
+    role: "To be announced",
   },
 ];
 
@@ -91,14 +111,14 @@ export function SpeakerGrid() {
         </label>
       </div>
 
-      <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-7">
+      <div className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 sm:grid-cols-3 lg:grid-cols-6 xl:grid-cols-8">
         {filteredSpeakers.map((speaker, index) => (
           <article key={`${speaker.company}-${index}`} className="group">
             <div className="relative aspect-square overflow-hidden rounded-xl bg-[#1a1a1a]">
               {speaker.image ? (
                 <Image
                   src={speaker.image}
-                  alt={`${speaker.name} ${speaker.surname}`}
+                  alt={`${speaker.name}${speaker.surname ? ` ${speaker.surname}` : ""}`}
                   fill
                   sizes="(min-width: 1280px) 160px, (min-width: 1024px) 14vw, (min-width: 640px) 28vw, 42vw"
                   className="scale-[1.015] object-cover grayscale transition duration-200 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
@@ -111,8 +131,12 @@ export function SpeakerGrid() {
             </div>
             <h3 className="mt-4 text-xl font-normal uppercase leading-[0.95] tracking-[-0.035em] text-[#9657ff] transition-colors duration-150 ease-out group-hover:text-[#14f195]">
               {speaker.name}
-              <br />
-              {speaker.surname}
+              {speaker.surname ? (
+                <>
+                  <br />
+                  {speaker.surname}
+                </>
+              ) : null}
             </h3>
             <div className="mt-3 flex min-h-[44px] items-start justify-between gap-2">
               <p className="text-base font-normal leading-snug text-white">
@@ -120,7 +144,7 @@ export function SpeakerGrid() {
               </p>
               <SpeakerXIcon
                 href={speaker.xUrl}
-                label={`${speaker.name} ${speaker.surname} on X`}
+                label={`${speaker.name}${speaker.surname ? ` ${speaker.surname}` : ""} on X`}
               />
             </div>
             <p className="text-sm font-normal leading-snug text-[#aaa7b5]">

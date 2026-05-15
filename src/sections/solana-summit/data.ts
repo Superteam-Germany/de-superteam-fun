@@ -125,7 +125,7 @@ export const agendaItems: AgendaItem[] = [
   {
     time: "11:40 - 12:20",
     title:
-      "Built in America, Validated in Europe: // Public Chain, Private Stack: Who Controls Solana's Infrastructure?",
+      "Built in America, Validated in Europe: Who Controls Solana's Infrastructure?",
     type: "Panel",
     speakers: ["TBA"],
     location: "Main Stage",

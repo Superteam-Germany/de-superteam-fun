@@ -14,11 +14,27 @@ import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 
 const partnerRows = [
   {
-    label: "Headline Partners",
+    label: "Main Partners",
     labelClassName: "text-[#14f195]",
+    listClassName: "grid grid-cols-1 justify-items-center gap-y-12",
+    slotClassName: "h-20 w-full max-w-[420px] sm:h-24 md:h-28",
+    partners: [
+      {
+        name: "OKX",
+        href: "https://www.okx.com/",
+        image: "/images/summit-germany/partners/OKX_id7gsDJl-c_1.svg",
+        width: 595,
+        height: 167,
+        logoClassName: "!w-[235px] max-w-full invert sm:!w-[280px] md:!w-[340px]",
+      },
+    ],
+  },
+  {
+    label: "Gold Partners",
+    labelClassName: "text-[#facc15]",
     listClassName:
-      "grid grid-cols-1 justify-items-center gap-y-12 md:grid-cols-2 md:gap-x-24",
-    slotClassName: "h-28 w-full max-w-[430px]",
+      "grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-20",
+    slotClassName: "h-24 w-full max-w-[360px]",
     partners: [
       {
         name: "Staking Facilities",
@@ -26,7 +42,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/stacking-facilities.png",
         width: 3021,
         height: 849,
-        logoClassName: "max-h-24 max-w-[360px] md:max-w-[420px]",
+        logoClassName: "max-h-16 max-w-[210px] md:max-h-[82px] md:max-w-[300px]",
       },
       {
         name: "VIA",
@@ -34,16 +50,16 @@ const partnerRows = [
         image: "/images/summit-germany/partners/VIA-Logo-White.png",
         width: 562,
         height: 185,
-        logoClassName: "max-h-24 max-w-[320px]",
+        logoClassName: "max-h-16 max-w-[210px] md:max-h-[82px] md:max-w-[270px]",
       },
     ],
   },
   {
-    label: "Premium Partners",
+    label: "Community Partners",
     labelClassName: "text-[#9945ff]",
     listClassName:
-      "flex max-w-[1120px] flex-wrap items-center justify-center gap-x-12 gap-y-10",
-    slotClassName: "h-24 w-[240px]",
+      "flex max-w-[980px] flex-wrap items-center justify-center gap-x-10 gap-y-8",
+    slotClassName: "h-20 w-[200px]",
     partners: [
       {
         name: "Tangem",
@@ -51,7 +67,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/tangem.png",
         width: 1296,
         height: 280,
-        logoClassName: "max-h-10 max-w-[210px] md:max-h-11 md:max-w-[230px]",
+        logoClassName: "max-h-8 max-w-[165px] md:max-h-9 md:max-w-[185px]",
       },
       {
         name: "CUDIS",
@@ -59,7 +75,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/CUDIS_Wordmark_White.svg",
         width: 1622,
         height: 285,
-        logoClassName: "max-h-10 max-w-[190px] md:max-w-[235px]",
+        logoClassName: "max-h-8 max-w-[160px] md:max-w-[190px]",
       },
       {
         name: "Buddies for Paws",
@@ -67,7 +83,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/BFP-master-orange.svg",
         width: 440,
         height: 350,
-        logoClassName: "max-h-[88px] max-w-[160px]",
+        logoClassName: "max-h-[68px] max-w-[125px]",
       },
       {
         name: "Jupiter",
@@ -75,7 +91,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/jupiter-white.svg",
         width: 208,
         height: 64,
-        logoClassName: "!w-[198px] md:!w-[190px]",
+        logoClassName: "!w-[155px] md:!w-[165px]",
       },
       {
         name: "Solana Spaces",
@@ -83,7 +99,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/solana spaces + type white.png",
         width: 3192,
         height: 1063,
-        logoClassName: "max-h-14 max-w-[210px] md:max-h-16 md:max-w-[230px]",
+        logoClassName: "max-h-11 max-w-[165px] md:max-h-12 md:max-w-[185px]",
       },
       {
         name: "Seeker",
@@ -91,7 +107,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/seeker.png",
         width: 6668,
         height: 2501,
-        logoClassName: "max-h-14 max-w-[200px] md:max-h-16 md:max-w-[220px]",
+        logoClassName: "max-h-11 max-w-[160px] md:max-h-12 md:max-w-[180px]",
       },
       {
         name: "Superteam Talent",
@@ -99,16 +115,7 @@ const partnerRows = [
         image: "/images/summit-germany/partners/superteam-talent.png",
         width: 357,
         height: 62,
-        logoClassName: "max-h-10 max-w-[210px] md:max-w-[230px]",
-      },
-      {
-        name: "Lamborghini",
-        href: "https://www.lamborghini.com/",
-        image: "/images/summit-germany/partners/lamborghini-logo-27205.png",
-        width: 1024,
-        height: 252,
-        logoClassName:
-          "max-h-11 max-w-[215px] invert md:max-h-12 md:max-w-[225px]",
+        logoClassName: "max-h-8 max-w-[160px] md:max-w-[180px]",
       },
     ],
   },
@@ -285,8 +292,8 @@ function AgendaIntro() {
         </p>
         <div className="mx-auto mt-10 grid max-w-[360px] grid-cols-3 gap-8">
           {[
-            ["10+", "Sessions"],
-            ["12+", "Speakers"],
+            ["30+", "Sessions"],
+            ["40+", "Speakers"],
             ["1", "Full day"],
           ].map(([value, label]) => (
             <div key={label}>
