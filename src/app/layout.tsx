@@ -2,7 +2,6 @@ import "./globals.css";
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
-import Head from "next/head";
 import Script from "next/script";
 import { SiteChrome } from "@/components/site-chrome";
 
@@ -64,13 +63,6 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <Head>
-        <title>Superteam Germany</title>
-        <meta
-          name="description"
-          content="The heartbeat of Germany's Solana community."
-        />
-      </Head>
       {/* Google Tag Manager */}
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

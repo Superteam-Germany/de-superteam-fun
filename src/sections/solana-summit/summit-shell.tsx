@@ -44,6 +44,7 @@ export function SummitNav({
             height={500}
             className="h-[82px] w-[184px] object-cover object-center sm:h-[91px] sm:w-[204px] lg:h-[104px] lg:w-[232px]"
             priority
+            unoptimized
           />
         </Link>
 

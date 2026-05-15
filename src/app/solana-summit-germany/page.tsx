@@ -14,22 +14,6 @@ import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 
 const partnerRows = [
   {
-    label: "Main Partners",
-    labelClassName: "text-[#14f195]",
-    listClassName: "grid grid-cols-1 justify-items-center gap-y-12",
-    slotClassName: "h-20 w-full max-w-[420px] sm:h-24 md:h-28",
-    partners: [
-      {
-        name: "OKX",
-        href: "https://www.okx.com/",
-        image: "/images/summit-germany/partners/OKX_id7gsDJl-c_1.svg",
-        width: 595,
-        height: 167,
-        logoClassName: "!w-[235px] max-w-full invert sm:!w-[280px] md:!w-[340px]",
-      },
-    ],
-  },
-  {
     label: "Gold Partners",
     labelClassName: "text-[#facc15]",
     listClassName:
@@ -372,6 +356,7 @@ function Partners() {
                         alt={partner.name}
                         width={partner.width}
                         height={partner.height}
+                        unoptimized={partner.image.endsWith(".svg")}
                         className={`h-auto w-auto object-contain ${partner.logoClassName}`}
                       />
                     </a>
@@ -511,6 +496,7 @@ function FinalCta() {
           alt="Powered by Superteam"
           width={303}
           height={24}
+          unoptimized
           className="mx-auto mt-10 h-auto w-[142px] opacity-70 md:mt-12 md:w-[170px]"
         />
       </SummitScrollReveal>

@@ -73,6 +73,13 @@ function adaptLumaEventToEventRecord(entry: LumaApiResponse['entries'][0]): Even
 
 export async function GET(req: NextRequest, res: NextResponse) {
   try {
+    if (!LUMA_API_KEY) {
+      return NextResponse.json(
+        { message: 'Lu.ma service is not configured' },
+        { status: 500 }
+      )
+    }
+
     const currentDate = new Date().toISOString().split('T')[0];
     const response = await fetch(
       `https://api.lu.ma/public/v1/calendar/list-events?after=${currentDate}`,
