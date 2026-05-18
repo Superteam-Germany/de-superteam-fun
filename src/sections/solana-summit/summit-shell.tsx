@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { label: "Speakers", href: "/solana-summit-germany#speakers" },
-  { label: "Agenda", href: "/solana-summit-germany/agenda" },
   { label: "Partners", href: "/solana-summit-germany#partners" },
   { label: "FAQ", href: "/solana-summit-germany#faq" },
 ];
