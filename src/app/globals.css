@@ -185,6 +185,10 @@
     animation: summit-hero-copy-in 1200ms cubic-bezier(0.16, 1, 0.3, 1) 160ms both;
   }
 
+  .summit-hero-side-patterns {
+    animation: summit-hero-patterns-in 1800ms cubic-bezier(0.16, 1, 0.3, 1) 400ms both;
+  }
+
   .summit-scroll-reveal {
     opacity: 1;
     transform: none;
@@ -213,6 +217,17 @@
     to {
       opacity: 1;
       transform: translateY(0);
+    }
+  }
+
+  @keyframes summit-hero-patterns-in {
+    from {
+      opacity: 0;
+      transform: scaleX(0.92);
+    }
+    to {
+      opacity: 1;
+      transform: scaleX(1);
     }
   }
 
@@ -370,7 +385,8 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .summit-hero-copy {
+    .summit-hero-copy,
+    .summit-hero-side-patterns {
       animation: none;
     }
 
