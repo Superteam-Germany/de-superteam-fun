@@ -110,12 +110,12 @@ const speakerCards = [
     xUrl: "https://x.com/yashhsm",
   },
   {
-    name: "Ole",
-    surname: "Lehmann",
-    company: "Ole Lehmann",
-    role: "AI Solopreneur",
-    image: "/images/summit-germany/ole-lehmann.jpeg",
-    xUrl: "https://x.com/itsolelehmann",
+    name: "Alexandra K.",
+    surname: "Mikityuk",
+    company: "Staex",
+    role: "Co-Founder & CEO/CTO",
+    image: "/images/summit-germany/Prof. Dr. Alexandra K. Mikityuk.jpg",
+    xUrl: "https://x.com/alexandrastaex",
   },
   {
     name: "Ulrike",

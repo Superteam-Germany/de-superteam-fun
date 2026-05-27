@@ -36,6 +36,22 @@ const partnerRows = [
         height: 185,
         logoClassName: "max-h-16 max-w-[210px] md:max-h-[82px] md:max-w-[270px]",
       },
+      {
+        name: "Arcium",
+        href: "https://arcium.com/",
+        image: "/images/summit-germany/partners/arcium-logo.svg",
+        width: 1644,
+        height: 275,
+        logoClassName: "max-h-16 max-w-[210px] md:max-h-[82px] md:max-w-[270px]",
+      },
+      {
+        name: "Bags",
+        href: "https://bags.fm",
+        image: "/images/summit-germany/partners/bags-logo-2.svg",
+        width: 1224,
+        height: 280,
+        logoClassName: "max-h-16 max-w-[210px] md:max-h-[82px] md:max-w-[270px]",
+      },
     ],
   },
   {

@@ -202,7 +202,6 @@ export const agendaItems: AgendaItem[] = [
     type: "Panel",
     speakers: [
       "Yash Agarwal (SendAI)",
-      "Ole Lehmann",
       "Vidor (Solflare)",
       "Ulrike Lierow Schad (CVVC / Bundesblock)",
     ],
