@@ -10,9 +10,10 @@ import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 const agendaPreviewUrl =
   "https://www.superteamde.fun/solana-summit-germany/agenda-preview";
 const summitSocialImage =
-  "https://www.superteamde.fun/images/summit-germany/summit-og-card.png";
+  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.superteamde.fun"),
   title: "Agenda Preview | Solana Summit Germany",
   description:
     "Internal agenda preview for Solana Summit Germany in Berlin on 13 June 2026.",
@@ -34,8 +35,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: summitSocialImage,
-        width: 1584,
-        height: 792,
+        width: 1774,
+        height: 887,
         alt: "Solana Summit Germany",
       },
     ],
