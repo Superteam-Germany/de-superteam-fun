@@ -123,9 +123,10 @@ const partnerRows = [
 
 const summitUrl = "https://www.superteamde.fun/solana-summit-germany";
 const summitSocialImage =
-  "https://www.superteamde.fun/images/summit-germany/summit-og-card.png";
+  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png";
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.superteamde.fun"),
   title: "Solana Summit Germany | Superteam Germany",
   description:
     "Join Solana Summit Germany in Berlin on 13 June 2026 for talks, networking, live formats, and the German Solana ecosystem.",
@@ -143,8 +144,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: summitSocialImage,
-        width: 1584,
-        height: 792,
+        width: 1774,
+        height: 887,
         alt: "Solana Summit Germany",
       },
     ],

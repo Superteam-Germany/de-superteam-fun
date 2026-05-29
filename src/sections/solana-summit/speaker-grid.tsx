@@ -294,8 +294,8 @@ const speakerCards = [
   {
     name: "Daniela",
     surname: "Boback",
-    company: "Via · Bundesblock",
-    role: "Strategic Advisor · Head of BD & Ecosystem",
+    company: "Via",
+    role: "Strategic Advisor",
     image: "/images/summit-germany/Daniela-Boback.png",
   },
   {
