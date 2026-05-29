@@ -14,6 +14,7 @@ const typeStyles: Record<AgendaType, string> = {
   "Lightning Talk": "bg-[rgba(90,215,255,0.15)] text-[#8de9ff]",
   "Fireside Chat": "bg-[rgba(249,115,22,0.15)] text-[#fb923c]",
   Panel: "bg-[rgba(20,241,149,0.15)] text-[#14f195]",
+  Debate: "bg-[rgba(236,72,153,0.15)] text-[#f472b6]",
   "Startup showcase": "bg-[rgba(244,114,182,0.15)] text-[#f9a8d4]",
   "Trading Cup": "bg-[rgba(250,204,21,0.15)] text-[#fde68a]",
   Break: "bg-white/10 text-white/70",
@@ -49,6 +50,12 @@ const filterChipStyles: Record<
       "bg-[rgba(20,241,149,0.15)] text-[#14f195] hover:bg-[rgba(20,241,149,0.24)]",
     active:
       "bg-[rgba(20,241,149,0.24)] text-[#8fffd2] ring-1 ring-[#14f195]/55 shadow-[0_0_18px_rgba(20,241,149,0.16)]",
+  },
+  Debate: {
+    idle:
+      "bg-[rgba(236,72,153,0.14)] text-[#f472b6] hover:bg-[rgba(236,72,153,0.24)]",
+    active:
+      "bg-[rgba(236,72,153,0.26)] text-[#fbcfe8] ring-1 ring-[#ec4899]/55 shadow-[0_0_18px_rgba(236,72,153,0.14)]",
   },
   "Startup showcase": {
     idle:
