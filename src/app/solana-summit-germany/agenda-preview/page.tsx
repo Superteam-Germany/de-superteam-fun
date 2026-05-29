@@ -10,7 +10,7 @@ import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 const agendaPreviewUrl =
   "https://www.superteamde.fun/solana-summit-germany/agenda-preview";
 const summitSocialImage =
-  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png";
+  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png?v=2";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.superteamde.fun"),
