@@ -56,7 +56,7 @@ const speakerCards = [
   {
     name: "Jessica",
     surname: "",
-    company: "Sol Strategies",
+    company: "SOL Strategies",
     role: "Growth",
     image: "/images/summit-germany/partners/jessica.jpg",
     xUrl: "https://x.com/yesjess",
@@ -174,7 +174,7 @@ const speakerCards = [
   {
     name: "Vitor",
     surname: "Py",
-    company: "Sol Strategies",
+    company: "SOL Strategies",
     role: "Director of Engineering",
     image: "/images/summit-germany/vitor-py.png",
     xUrl: "https://x.com/vitorpy",

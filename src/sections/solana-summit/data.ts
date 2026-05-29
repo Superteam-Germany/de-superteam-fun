@@ -208,7 +208,7 @@ export const agendaItems: AgendaItem[] = [
     title: "What everyone is getting wrong about privacy",
     type: "Fireside Chat",
     speakers: [
-      "Vitor Py (Sol Strategies)",
+      "Vitor Py (SOL Strategies)",
       "Tilo Carl Palfner (Light Protocol)",
     ],
     location: "Main Stage",
