@@ -7,6 +7,11 @@ import { SummitCta } from "@/sections/solana-summit/summit-cta";
 import { SummitReveal } from "@/sections/solana-summit/summit-reveal";
 import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 
+const agendaPreviewUrl =
+  "https://www.superteamde.fun/solana-summit-germany/agenda-preview";
+const summitSocialImage =
+  "https://www.superteamde.fun/images/summit-germany/summit-og-card.png";
+
 export const metadata: Metadata = {
   title: "Agenda Preview | Solana Summit Germany",
   description:
@@ -24,13 +29,14 @@ export const metadata: Metadata = {
     title: "Solana Summit Germany Agenda Preview",
     description:
       "Internal agenda preview for the Solana ecosystem summit in Berlin.",
-    url: "https://de.superteam.fun/solana-summit-germany/agenda-preview",
+    url: agendaPreviewUrl,
     siteName: "Superteam Germany",
     images: [
       {
-        url: "/images/summit-germany/Twitter header (3).png",
-        width: 1500,
-        height: 500,
+        url: summitSocialImage,
+        width: 1584,
+        height: 792,
+        alt: "Solana Summit Germany",
       },
     ],
     locale: "en_US",
@@ -41,7 +47,7 @@ export const metadata: Metadata = {
     title: "Solana Summit Germany Agenda Preview",
     description:
       "Internal agenda preview for the Solana ecosystem summit in Berlin.",
-    images: ["/images/summit-germany/Twitter header (3).png"],
+    images: [summitSocialImage],
   },
 };
 
