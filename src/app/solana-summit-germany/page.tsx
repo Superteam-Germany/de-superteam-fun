@@ -117,16 +117,32 @@ const partnerRows = [
         height: 62,
         logoClassName: "max-h-8 max-w-[160px] md:max-w-[180px]",
       },
+      {
+        name: "Solyd",
+        href: "https://solyd.store/",
+        image: "/images/summit-germany/partners/solyd.png",
+        width: 550,
+        height: 114,
+        logoClassName: "max-h-8 max-w-[160px] md:max-w-[180px]",
+      },
+      {
+        name: "Pudgy Penguins",
+        href: "https://www.pudgypenguins.com/",
+        image: "/images/summit-germany/partners/pudgy-penguins.png",
+        width: 1377,
+        height: 1195,
+        logoClassName: "max-h-[68px] max-w-[125px]",
+      },
     ],
   },
 ];
 
-const summitUrl = "https://www.superteamde.fun/solana-summit-germany";
+const summitUrl = "https://de.superteam.fun/solana-summit-germany";
 const summitSocialImage =
-  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png?v=2";
+  "https://de.superteam.fun/images/summit-germany/summit-x-website-link-view.png?v=3";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.superteamde.fun"),
+  metadataBase: new URL("https://de.superteam.fun"),
   title: "Solana Summit Germany | Superteam Germany",
   description:
     "Join Solana Summit Germany in Berlin on 13 June 2026 for talks, networking, live formats, and the German Solana ecosystem.",

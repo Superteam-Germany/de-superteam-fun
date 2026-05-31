@@ -152,7 +152,7 @@ const speakerCards = [
     name: "Sabs",
     surname: "Sachdeva",
     company: "Harmonic / Temporal",
-    role: "Senior Software Engineer",
+    role: "Engineering",
     image: "/images/summit-germany/Sabs-Sachdeva.jpg",
     xUrl: "https://x.com/s4bs94",
   },
