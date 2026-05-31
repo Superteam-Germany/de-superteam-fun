@@ -8,12 +8,12 @@ import { SummitReveal } from "@/sections/solana-summit/summit-reveal";
 import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 
 const agendaPreviewUrl =
-  "https://www.superteamde.fun/solana-summit-germany/agenda-preview";
+  "https://de.superteam.fun/solana-summit-germany/agenda-preview";
 const summitSocialImage =
-  "https://www.superteamde.fun/images/summit-germany/summit-x-website-link-view.png?v=2";
+  "https://de.superteam.fun/images/summit-germany/summit-x-website-link-view.png?v=3";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.superteamde.fun"),
+  metadataBase: new URL("https://de.superteam.fun"),
   title: "Agenda Preview | Solana Summit Germany",
   description:
     "Internal agenda preview for Solana Summit Germany in Berlin on 13 June 2026.",
