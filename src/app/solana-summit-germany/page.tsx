@@ -138,7 +138,7 @@ const partnerRows = [
 ];
 
 const summitSocialImage =
-  "https://de.superteam.fun/images/summit-germany/summit-x-website-link-view-v4.png";
+  "https://de.superteam.fun/images/summit-germany/summit-social-card-v1.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://de.superteam.fun"),
@@ -158,9 +158,11 @@ export const metadata: Metadata = {
     images: [
       {
         url: summitSocialImage,
+        secureUrl: summitSocialImage,
         width: 1200,
         height: 600,
         alt: "Solana Summit Germany",
+        type: "image/jpeg",
       },
     ],
     locale: "en_US",
@@ -171,7 +173,13 @@ export const metadata: Metadata = {
     title: "Solana Summit Germany",
     description:
       "A full-day Solana ecosystem summit in Berlin hosted by Superteam Germany.",
-    images: [summitSocialImage],
+    images: [
+      {
+        url: summitSocialImage,
+        alt: "Solana Summit Germany",
+      },
+    ],
+    creator: "@SuperteamDE",
   },
 };
 
