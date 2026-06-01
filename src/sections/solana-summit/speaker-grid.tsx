@@ -95,7 +95,7 @@ const speakerCards = [
   },
   {
     name: "Carlo",
-    surname: "Abdel Nour",
+    surname: "Abdel-Nour",
     company: "Superteam Germany",
     role: "Community Lead",
     image: "/images/summit-germany/carlo-abdel-nour.jpeg",
