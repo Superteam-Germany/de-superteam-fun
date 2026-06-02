@@ -86,6 +86,15 @@ export default function SummitAgendaPreviewPage() {
             A full day of keynotes, panels, firesides, live formats, and
             networking for the Solana ecosystem in Germany.
           </p>
+          <Link
+            href="/solana-summit-germany/side-events"
+            className="summit-outline-cta mt-8 inline-flex min-h-11 items-center justify-center rounded-full px-5 text-xs font-bold uppercase tracking-[0.16em] text-white no-underline transition-colors duration-150 ease-out [box-shadow:0_0_22px_rgba(20,241,149,0.08)] hover:text-[#14f195] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14f195] focus-visible:ring-offset-2 focus-visible:ring-offset-black"
+          >
+            <span className="flex items-center gap-3">
+              View Side Events
+              <span aria-hidden="true">↗</span>
+            </span>
+          </Link>
         </div>
       </section>
       <AgendaList />

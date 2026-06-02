@@ -84,6 +84,50 @@ export type AgendaItem = {
   status?: "confirmed";
 };
 
+export type SideEvent = {
+  date: string;
+  event: string;
+  href: string;
+};
+
+export const sideEvents: SideEvent[] = [
+  {
+    date: "Fri, 12 June",
+    event: "Co-Working Fridays at w3.hub",
+    href: "https://luma.com/gopshf3k",
+  },
+  {
+    date: "Sun, 14 June",
+    event: "MonkeDAO Brunch",
+    href: "https://luma.com/MonkeDAO-SSG26",
+  },
+  {
+    date: "Sun, 14 June",
+    event: "Padel Mixer with Helius",
+    href: "https://luma.com/padelmixer",
+  },
+  {
+    date: "Sun, 14 June",
+    event: "Superteam Members Night with RedotPay",
+    href: "https://luma.com/membersnight",
+  },
+  {
+    date: "Mon, 15 June",
+    event: "SheFi Canal Coffee Meetup",
+    href: "https://luma.com/i2ttqchg",
+  },
+  {
+    date: "Mon, 15 June",
+    event: "Ping Pong, BBQ & USDC Splits",
+    href: "https://luma.com/pingpongbbq",
+  },
+  {
+    date: "Tue, 16 June",
+    event: "Bitbond after work",
+    href: "https://luma.com/t9a49z4b",
+  },
+];
+
 export const agendaItems: AgendaItem[] = [
   {
     time: "10:00 - 11:00",
