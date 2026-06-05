@@ -7,9 +7,11 @@ import { SummitCta } from "./summit-cta";
 import { cn } from "@/lib/utils";
 
 const navItems = [
+  { label: "Agenda", href: "/solana-summit-germany/agenda-preview" },
   { label: "Speakers", href: "/solana-summit-germany#speakers" },
   { label: "Partners", href: "/solana-summit-germany#partners" },
   { label: "FAQ", href: "/solana-summit-germany#faq" },
+  { label: "Side Events", href: "/solana-summit-germany/side-events" },
 ];
 
 export function SummitShell({ children }: { children: React.ReactNode }) {
@@ -47,7 +49,7 @@ export function SummitNav({
           />
         </Link>
 
-        <div className="hidden items-center gap-[38px] md:flex">
+        <div className="hidden items-center gap-6 md:flex lg:gap-[38px]">
           {navItems.map((item) => (
             <Link
               key={item.label}

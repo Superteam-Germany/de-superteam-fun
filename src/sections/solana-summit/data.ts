@@ -139,7 +139,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "11:00 - 11:07",
+    time: "11:00 - 11:10",
     title: "Welcome and What to Expect at Solana Summit Germany",
     type: "Keynote",
     speakers: ["Patricia Albrecht (Superteam Germany)"],
@@ -148,7 +148,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "11:10 - 11:27",
+    time: "11:10 - 11:30",
     title: "Fireside: Mert Mumtaz",
     type: "Fireside Chat",
     speakers: ["Mert Mumtaz (Helius)", "Aditya Shetty (Superteam)"],
@@ -157,8 +157,8 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "11:30 - 11:47",
-    title: "Jupiter: Building the Everything App",
+    time: "11:30 - 11:50",
+    title: "Jupiter - Building the Onchain SuperApp",
     type: "Fireside Chat",
     speakers: ["Sven Wagenknecht (BTC-ECHO)", "Xiao-Xiao Zhu (Jupiter)"],
     location: "Main Stage",
@@ -166,7 +166,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "11:50 - 12:17",
+    time: "11:50 - 12:20",
     title:
       "Public Chain, Private Stack: Who Controls Solana's Infrastructure?",
     type: "Debate",
@@ -181,7 +181,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "12:20 - 12:37",
+    time: "12:20 - 12:40",
     title:
       "Is USD the Final Boss of Stablecoins? MiCA and the European Stablecoin Race",
     type: "Panel",
@@ -196,7 +196,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "12:40 - 13:07",
+    time: "12:40 - 13:10",
     title: "The RWA Boom: Tokenized Assets on Solana",
     type: "Panel",
     speakers: [
@@ -220,7 +220,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "14:25 - 14:37",
+    time: "14:25 - 14:40",
     title: "Where CEXs Meet Onchain Perps: Phoenix, Hyperliquid & OKX",
     type: "Fireside Chat",
     speakers: ["TBA"],
@@ -229,7 +229,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "14:40 - 14:47",
+    time: "14:40 - 14:50",
     title: "Finance Goes Dark: Privacy & Encrypted Computation",
     type: "Keynote",
     speakers: ["Yannik Schrade (Arcium)"],
@@ -238,7 +238,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "14:50 - 14:57",
+    time: "14:50 - 15:00",
     title: "What everyone is getting wrong about privacy",
     type: "Fireside Chat",
     speakers: [
@@ -250,7 +250,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:00 - 15:07",
+    time: "15:00 - 15:10",
     title: "AI is bullish on Crypto: The Rise of Agentic Payments",
     type: "Keynote",
     speakers: ["Daniela Boback (Via)"],
@@ -259,7 +259,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:10 - 15:17",
+    time: "15:10 - 15:20",
     title: "The New Finance Stack: Stablecoins Under the Hood, Banking on Top",
     type: "Keynote",
     speakers: ["Max von Wallenberg (Iron)"],
@@ -268,7 +268,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:20 - 15:27",
+    time: "15:20 - 15:30",
     title: "When AI Agents Get Wallets: The Cryptography You're Missing",
     type: "Keynote",
     speakers: ["Alexandra K. Mikityuk (Staex)"],
@@ -277,7 +277,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:30 - 15:37",
+    time: "15:30 - 15:40",
     title: "Tokens are broken and how to fix them",
     type: "Keynote",
     speakers: ["Philipp Fock (Crafts)"],
@@ -286,7 +286,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:40 - 15:47",
+    time: "15:40 - 15:50",
     title:
       "Powering the Space Economy: Coordinating Autonomous Networks Beyond Earth",
     type: "Keynote",
@@ -296,7 +296,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "15:50 - 15:57",
+    time: "15:50 - 16:00",
     title: "Pitch Perfect",
     type: "Keynote",
     speakers: ["Voshy Ivosevic (Greed Academy / Lucid Drakes)"],
@@ -305,7 +305,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "16:00 - 16:52",
+    time: "16:00 - 16:54",
     title: "Startup Showcase",
     type: "Startup showcase",
     speakers: [
@@ -333,7 +333,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "16:54 - 17:01",
+    time: "16:50 - 17:00",
     title: "Community is a place, not a platform",
     type: "Keynote",
     speakers: ["Carlo Abdel-Nour (Superteam Germany)"],
@@ -342,7 +342,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "17:04 - 17:34",
+    time: "17:00 - 17:30",
     title: "Coffee Break",
     type: "Break",
     speakers: [],
@@ -360,7 +360,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "17:34 - 18:01",
+    time: "17:30 - 18:00",
     title: "The Next Unicorns: Where AI and Crypto Converge",
     type: "Panel",
     speakers: [
@@ -375,7 +375,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "18:04 - 18:11",
+    time: "18:00 - 18:10",
     title: "The Chain Built on Data",
     type: "Keynote",
     speakers: ["Waddah Aldrobi (Solana Foundation)"],
@@ -384,7 +384,7 @@ export const agendaItems: AgendaItem[] = [
     status: "confirmed",
   },
   {
-    time: "18:14 - 18:17",
+    time: "18:10 - 18:20",
     title: "Perps Games: vibecoding a $25K crypto trading competition from zero",
     type: "Keynote",
     speakers: ["BM (Perp.so)"],

@@ -334,9 +334,13 @@ function AgendaIntro() {
             </div>
           ))}
         </div>
-        <p className="mx-auto mt-12 max-w-[460px] text-sm font-semibold uppercase tracking-[0.16em] text-white/55">
-          Full agenda will be announced one week before the summit.
-        </p>
+        <SummitCta
+          href="/solana-summit-germany/agenda-preview"
+          variant="solid"
+          className="mt-12 min-h-[58px] px-10 text-[13px] sm:text-[15px]"
+        >
+          View Full Agenda
+        </SummitCta>
       </div>
     </SummitReveal>
   );
