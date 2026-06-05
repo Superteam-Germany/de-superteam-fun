@@ -98,8 +98,10 @@ export function AgendaList() {
       filteredItems.map((item, index) => ({
         item,
         isFirst: index === 0,
+        isMutedBreak: item.type === "Break" && !item.section,
         showSection:
-          index === 0 || item.section !== filteredItems[index - 1]?.section,
+          Boolean(item.section) &&
+          (index === 0 || item.section !== filteredItems[index - 1]?.section),
       })),
     [filteredItems]
   );
@@ -173,54 +175,71 @@ export function AgendaList() {
           </div>
 
           {visibleItems.length > 0 ? (
-            visibleItems.map(({ item, isFirst, showSection }) => (
-              <Fragment key={`${item.time}-${item.title}-${item.section}`}>
-                {showSection && (
-                  <div
+            visibleItems.map(
+              ({ item, isFirst, isMutedBreak, showSection }) => (
+                <Fragment key={`${item.time}-${item.title}-${item.section}`}>
+                  {showSection && (
+                    <div
+                      className={cn(
+                        "border-y border-white/10 bg-white/[0.025] px-4 py-3",
+                        isFirst ? "mt-0" : "mt-10"
+                      )}
+                    >
+                      <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#aaa7b5]">
+                        {item.section}
+                      </p>
+                    </div>
+                  )}
+                  <article
                     className={cn(
-                      "border-y border-white/10 bg-white/[0.025] px-4 py-3",
-                      isFirst ? "mt-0" : "mt-10"
+                      "group relative grid grid-cols-1 gap-4 border-b border-white/10 py-6 transition-colors duration-150 ease-out last:border-b-0 hover:bg-white/[0.02] md:grid-cols-[140px_1fr_100px] lg:grid-cols-[180px_1fr_120px]",
+                      isMutedBreak && "bg-white/[0.01]"
                     )}
                   >
-                    <p className="text-sm font-bold uppercase tracking-[0.18em] text-[#aaa7b5]">
-                      {item.section}
-                    </p>
-                  </div>
-                )}
-                <article className="group relative grid grid-cols-1 gap-4 border-b border-white/10 py-6 transition-colors duration-150 ease-out last:border-b-0 hover:bg-white/[0.02] md:grid-cols-[140px_1fr_100px] lg:grid-cols-[180px_1fr_120px]">
-                  <div className="flex items-start gap-3 md:flex-col md:gap-2">
-                    <p className="font-secondary text-base font-medium text-[#14f195]">
-                      {item.time}
-                    </p>
-                    {item.type && item.type !== "TBD" && (
-                      <div className="md:hidden">
-                        <AgendaBadge type={item.type} />
-                      </div>
-                    )}
-                  </div>
-                  <div>
-                    <div className="flex flex-wrap items-start gap-3">
-                      <h2 className="text-lg font-medium leading-tight text-white lg:text-xl">
-                        {item.title}
-                      </h2>
+                    <div className="flex items-start gap-3 md:flex-col md:gap-2">
+                      <p
+                        className={cn(
+                          "font-secondary text-base font-medium",
+                          isMutedBreak ? "text-white/40" : "text-[#14f195]"
+                        )}
+                      >
+                        {item.time}
+                      </p>
                       {item.type && item.type !== "TBD" && (
-                        <div className="hidden md:-mt-1 md:block">
+                        <div className="md:hidden">
                           <AgendaBadge type={item.type} />
                         </div>
                       )}
                     </div>
-                    {item.speakers.length > 0 && (
-                      <p className="mt-2 text-sm text-white/70">
-                        {item.speakers.join("  /  ")}
-                      </p>
-                    )}
-                  </div>
-                  <p className="hidden text-right text-sm text-white/40 md:block">
-                    {item.location}
-                  </p>
-                </article>
-              </Fragment>
-            ))
+                    <div>
+                      <div className="flex flex-wrap items-start gap-3">
+                        <h2
+                          className={cn(
+                            "text-lg font-medium leading-tight lg:text-xl",
+                            isMutedBreak ? "text-white/55" : "text-white"
+                          )}
+                        >
+                          {item.title}
+                        </h2>
+                        {item.type && item.type !== "TBD" && (
+                          <div className="hidden md:-mt-1 md:block">
+                            <AgendaBadge type={item.type} />
+                          </div>
+                        )}
+                      </div>
+                      {item.speakers.length > 0 && (
+                        <p className="mt-2 text-sm text-white/70">
+                          {item.speakers.join("  /  ")}
+                        </p>
+                      )}
+                    </div>
+                    <p className="hidden text-right text-sm text-white/40 md:block">
+                      {item.location}
+                    </p>
+                  </article>
+                </Fragment>
+              )
+            )
           ) : (
             <div className="border-b border-white/10 py-12 text-white/60">
               No sessions match that filter yet.
