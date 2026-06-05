@@ -4,7 +4,19 @@ import { useDeferredValue, useState } from "react";
 import Image from "next/image";
 import { Search } from "lucide-react";
 
-const speakerCards = [
+type SpeakerCard = {
+  name: string;
+  surname: string;
+  company: string;
+  role: string;
+  image?: string;
+  xUrl?: string;
+  imagePosition?: string;
+  imageScaleClass?: string;
+  imageHoverScaleClass?: string;
+};
+
+const speakerCards: SpeakerCard[] = [
   {
     name: "Patricia",
     surname: "Albrecht",
@@ -34,8 +46,11 @@ const speakerCards = [
     surname: "Shetty",
     company: "Superteam",
     role: "Lead",
-    image: "/images/summit-germany/aditya.jpg",
+    image: "/images/summit-germany/Aditya-Shetty-new.jpg",
     xUrl: "https://x.com/adityashetts",
+    imagePosition: "67% 48%",
+    imageScaleClass: "scale-[1.28]",
+    imageHoverScaleClass: "group-hover:scale-[1.34]",
   },
   {
     name: "Yannik",
@@ -126,7 +141,7 @@ const speakerCards = [
   },
   {
     name: "Waddah",
-    surname: "Drobi",
+    surname: "Aldrobi",
     company: "Solana Foundation",
     role: "Data",
     image: "/images/summit-germany/waddah-drobi.jpeg",
@@ -145,8 +160,9 @@ const speakerCards = [
     surname: "Tribus",
     company: "FTMO",
     role: "Head of Crypto",
-    image: "/images/summit-germany/tibortribus.jpg",
+    image: "/images/summit-germany/Tibor-Tribus-new.png",
     xUrl: "https://x.com/TiborTribus",
+    imagePosition: "50% 18%",
   },
   {
     name: "Sabs",
@@ -161,8 +177,9 @@ const speakerCards = [
     surname: "Mikityuk",
     company: "Staex",
     role: "Co-Founder & CEO/CTO",
-    image: "/images/summit-germany/Prof. Dr. Alexandra K. Mikityuk.jpg",
+    image: "/images/summit-germany/Dr.Alexandra-Mikityuk-new.jpg",
     xUrl: "https://x.com/alexandrastaex",
+    imagePosition: "50% 18%",
   },
   {
     name: "Andreas",
@@ -204,11 +221,11 @@ const speakerCards = [
     xUrl: "https://x.com/spacetristan",
   },
   {
-    name: "Phillip",
-    surname: "",
+    name: "Philipp",
+    surname: "Fock",
     company: "Crafts",
     role: "Co-Founder",
-    image: "/images/summit-germany/phillip-crafts.jpeg",
+    image: "/images/summit-germany/Philipp-Fock-new.jpg",
     xUrl: "https://x.com/pfo_sac",
   },
   {
@@ -300,7 +317,7 @@ const speakerCards = [
   },
   {
     name: "Erik",
-    surname: "Plauman",
+    surname: "Plaumann",
     company: "Bench",
     role: "Co-Founder",
     image: "/images/summit-germany/eric-bench.jpeg",
@@ -311,7 +328,7 @@ const speakerCards = [
     surname: "Eminger",
     company: "Staking Facilities",
     role: "CTO",
-    image: "/images/summit-germany/tom-eminger.jpeg",
+    image: "/images/summit-germany/Tomas-Eminger-new.jpg",
     xUrl: "https://x.com/EmiT87",
   },
   {
@@ -320,6 +337,90 @@ const speakerCards = [
     company: "LBBW",
     role: "Project Lead Digitization & Innovation",
     image: "/images/summit-germany/erik-frank.jpeg",
+  },
+  {
+    name: "Sven",
+    surname: "Wagenknecht",
+    company: "BTC-ECHO",
+    role: "Editor-in-chief & Co-Founder",
+    image: "/images/summit-germany/Sven-Wagenknecht.jpg",
+    xUrl: "https://x.com/wagenknecht_btc",
+  },
+  {
+    name: "Dolf",
+    surname: "Diederichsen",
+    company: "Hyphe",
+    role: "CEO & Co-Founder",
+    image: "/images/summit-germany/Dolf-Diederichsen.jpg",
+    xUrl: "https://x.com/dolf_b4c",
+  },
+  {
+    name: "Ernesto",
+    surname: "Olmedo Pereira",
+    company: "Qivalis",
+    role: "Head of Strategy & DeFi",
+    image: "/images/summit-germany/Ernesto-Pereira.jpg",
+    xUrl: "https://x.com/ernesto_says",
+    imagePosition: "50% 18%",
+  },
+  {
+    name: "Viktor",
+    surname: "Banh",
+    company: "DekaBank",
+    role: "Managing Director",
+    image: "/images/summit-germany/Viktor-Banh.jpeg",
+  },
+  {
+    name: "Daniela",
+    surname: "Machado",
+    company: "Heartfelt",
+    role: "Partner",
+    image: "/images/summit-germany/DanielaM.JPG",
+  },
+  {
+    name: "Ben",
+    surname: "Brophy",
+    company: "Solana Foundation",
+    role: "Head of Institutional Growth, Europe",
+    image: "/images/summit-germany/ben-brophy.jpeg",
+  },
+  {
+    name: "Daniel",
+    surname: "Burgmann",
+    company: "Ready",
+    role: "Head of Product",
+    image: "/images/summit-germany/Daniel-Burgmann.jpeg",
+  },
+  {
+    name: "Jonas",
+    surname: "Konstandin",
+    company: "Midas",
+    role: "Chief of Staff",
+    image: "/images/summit-germany/Jonas-Konstandin.jpeg",
+    xUrl: "https://x.com/JonasKonstandin",
+  },
+  {
+    name: "Norman",
+    surname: "Wiese",
+    company: "Coinbase",
+    role: "Growth Marketing",
+    image: "/images/summit-germany/Norman-Wiese.jpeg",
+    xUrl: "https://x.com/normanwiese",
+  },
+  {
+    name: "Robert Michael",
+    surname: "Jones",
+    company: "Jito",
+    role: "Head of Partnerships",
+    image: "/images/summit-germany/Robert-Jones.jpeg",
+  },
+  {
+    name: "BM",
+    surname: "",
+    company: "perp.so",
+    role: "Founder",
+    image: "/images/summit-germany/bm.png",
+    xUrl: "https://x.com/BusinessMngr",
   },
   {
     name: "Speaker",
@@ -373,7 +474,12 @@ export function SpeakerGrid() {
                   alt={`${speaker.name}${speaker.surname ? ` ${speaker.surname}` : ""}`}
                   fill
                   sizes="(min-width: 1280px) 160px, (min-width: 1024px) 14vw, (min-width: 640px) 28vw, 42vw"
-                  className="scale-[1.015] object-cover grayscale transition duration-200 ease-out group-hover:scale-[1.03] group-hover:grayscale-0"
+                  style={
+                    speaker.imagePosition
+                      ? { objectPosition: speaker.imagePosition }
+                      : undefined
+                  }
+                  className={`${speaker.imageScaleClass ?? "scale-[1.015]"} object-cover grayscale transition duration-200 ease-out ${speaker.imageHoverScaleClass ?? "group-hover:scale-[1.03]"} group-hover:grayscale-0`}
                 />
               ) : (
                 <div className="absolute inset-0 bg-[linear-gradient(135deg,#0f0f0f_0%,#3b3b3b_34%,#c9c9c9_52%,#2d2d2d_72%,#050505_100%)] grayscale transition duration-200 ease-out group-hover:grayscale-0" />
