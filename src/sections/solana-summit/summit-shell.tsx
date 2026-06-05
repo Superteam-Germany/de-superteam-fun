@@ -7,7 +7,7 @@ import { SummitCta } from "./summit-cta";
 import { cn } from "@/lib/utils";
 
 const navItems = [
-  { label: "Agenda", href: "/solana-summit-germany/agenda-preview" },
+  { label: "Agenda", href: "/solana-summit-germany/agenda" },
   { label: "Speakers", href: "/solana-summit-germany#speakers" },
   { label: "Partners", href: "/solana-summit-germany#partners" },
   { label: "FAQ", href: "/solana-summit-germany#faq" },
