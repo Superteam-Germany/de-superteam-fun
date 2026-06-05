@@ -335,7 +335,7 @@ function AgendaIntro() {
           ))}
         </div>
         <SummitCta
-          href="/solana-summit-germany/agenda-preview"
+          href="/solana-summit-germany/agenda"
           variant="solid"
           className="mt-12 min-h-[58px] px-10 text-[13px] sm:text-[15px]"
         >
