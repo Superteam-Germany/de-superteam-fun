@@ -279,7 +279,7 @@ const speakerCards: SpeakerCard[] = [
     surname: "Martins",
     company: "Housd",
     role: "Co-Founder",
-    image: "/images/summit-germany/joao-martins.jpg",
+    image: "/images/summit-germany/joao-new.png",
     xUrl: "https://x.com/stmartinmaxing",
   },
   {
@@ -427,6 +427,14 @@ const speakerCards: SpeakerCard[] = [
     role: "Founder",
     image: "/images/summit-germany/bm.png",
     xUrl: "https://x.com/BusinessMngr",
+  },
+  {
+    name: "Samantha",
+    surname: "Merlivat",
+    company: "Superteam Germany",
+    role: "Community & Events",
+    image: "/images/summit-germany/sam-new.jpg",
+    xUrl: "https://x.com/sammrvt",
   },
   {
     name: "Speaker",
