@@ -233,7 +233,7 @@ export const agendaItems: AgendaItem[] = [
     time: "14:25 - 14:40",
     title: "Where CEXs Meet Onchain Perps: Phoenix, Hyperliquid & OKX",
     type: "Fireside Chat",
-    speakers: ["TBA"],
+    speakers: ["Chris Grundy (OKX)", "Merdan Aslan (Superteam Germany)"],
     location: "Main Stage",
     section: "Onchain Capital Markets",
     status: "confirmed",
