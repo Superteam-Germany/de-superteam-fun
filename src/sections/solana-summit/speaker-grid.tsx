@@ -138,8 +138,8 @@ const speakerCards: SpeakerCard[] = [
   {
     name: "Ulrike",
     surname: "Lierow Schad",
-    company: "CVVC / Bundesblock",
-    role: "MD Berlin - CV Labs | Politics - Bundesblock",
+    company: "Bundesblock",
+    role: "Head of Public Affairs & Partnerships",
     image: "/images/summit-germany/ulrikel.jpeg",
   },
   {
@@ -416,7 +416,7 @@ const speakerCards: SpeakerCard[] = [
   {
     name: "Robert Michael",
     surname: "Jones",
-    company: "Jito",
+    company: "SolanaFloor",
     role: "Head of Partnerships",
     image: "/images/summit-germany/Robert-Jones.jpeg",
   },
