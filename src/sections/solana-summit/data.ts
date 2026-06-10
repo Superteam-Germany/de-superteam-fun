@@ -126,6 +126,16 @@ export const sideEvents: SideEvent[] = [
     event: "Bitbond after work",
     href: "https://luma.com/t9a49z4b",
   },
+  {
+    date: "Wed, 17 June",
+    event: "OKX Summit",
+    href: "https://luma.com/d394x7oy",
+  },
+  {
+    date: "Fri, 19 June",
+    event: "No Illusions",
+    href: "https://luma.com/noillusions",
+  },
 ];
 
 export const agendaItems: AgendaItem[] = [
