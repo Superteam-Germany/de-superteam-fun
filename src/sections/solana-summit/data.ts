@@ -103,7 +103,7 @@ export const sideEvents: SideEvent[] = [
   },
   {
     date: "Sun, 14 June",
-    event: "Padel Mixer",
+    event: "Padel Mixer with Helius",
     href: "https://luma.com/padelmixer",
   },
   {

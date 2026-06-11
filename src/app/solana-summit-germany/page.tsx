@@ -14,7 +14,25 @@ import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
 
 const partnerRows = [
   {
-    label: "Gold Partners",
+    id: "main",
+    label: null,
+    labelClassName: "",
+    listClassName: "flex justify-center",
+    slotClassName: "h-24 w-full max-w-[380px] md:h-28 md:max-w-[460px]",
+    partners: [
+      {
+        name: "OKX",
+        href: "https://www.okx.com/",
+        image: "/images/summit-germany/partners/OKX_id7gsDJl-c_0.png",
+        width: 820,
+        height: 230,
+        logoClassName: "max-h-20 max-w-[280px] brightness-0 invert md:max-h-24 md:max-w-[360px]",
+      },
+    ],
+  },
+  {
+    id: "gold",
+    label: null,
     labelClassName: "text-[#facc15]",
     listClassName:
       "grid grid-cols-1 justify-items-center gap-y-10 md:grid-cols-2 md:gap-x-20",
@@ -55,6 +73,7 @@ const partnerRows = [
     ],
   },
   {
+    id: "community",
     label: "Community Partners",
     labelClassName: "text-[#9945ff]",
     listClassName:
@@ -381,11 +400,13 @@ function Partners() {
 
           <div className="mx-auto mt-12 max-w-[1120px] space-y-20 text-center">
             {partnerRows.map((row) => (
-              <div key={row.label}>
-                <p className={`${row.labelClassName} text-sm font-semibold uppercase tracking-[0.32em]`}>
-                  {row.label}
-                </p>
-                <div className={`mx-auto mt-10 ${row.listClassName}`}>
+              <div key={row.id}>
+                {row.label ? (
+                  <p className={`${row.labelClassName} text-sm font-semibold uppercase tracking-[0.32em]`}>
+                    {row.label}
+                  </p>
+                ) : null}
+                <div className={`mx-auto ${row.label ? "mt-10" : ""} ${row.listClassName}`}>
                   {row.partners.map((partner) => (
                     <a
                       key={partner.name}
