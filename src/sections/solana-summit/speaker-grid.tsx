@@ -209,8 +209,8 @@ const speakerCards: SpeakerCard[] = [
   },
   {
     name: "Voshy",
-    surname: "Ivosevic",
-    company: "Greed Academy / Lucid Drakes",
+    surname: "",
+    company: "Greed Academy / Lucid Drakes / BlastCtrl",
     role: "Co-Founder & CEO",
     image: "/images/summit-germany/Voshy-Ivosevic.jpg",
     xUrl: "https://x.com/voshy",
