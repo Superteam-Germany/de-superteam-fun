@@ -34,7 +34,7 @@ const speakerCards: SpeakerCard[] = [
     xUrl: "https://x.com/mert",
   },
   {
-    name: "Xiao-Xiao",
+    name: "Xiao-Xiao J.",
     surname: "Zhu",
     company: "Jupiter",
     role: "President",
@@ -435,12 +435,6 @@ const speakerCards: SpeakerCard[] = [
     role: "Community & Events",
     image: "/images/summit-germany/sam-new.jpg",
     xUrl: "https://x.com/sammrvt",
-  },
-  {
-    name: "Speaker",
-    surname: "TBA",
-    company: "More speakers",
-    role: "To be announced",
   },
 ];
 
