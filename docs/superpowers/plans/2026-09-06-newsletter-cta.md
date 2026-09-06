@@ -4,7 +4,7 @@
 
 **Goal:** Add a responsive, newsletter-only final CTA after the FAQ in the local redesigned homepage prototype.
 
-**Architecture:** Keep the prototype's existing single-file React architecture. Add one isolated `NewsletterCTA` component, scoped CSS, and append the component after `FAQ`; the prototype simulates validation, loading, and success locally without storing or transmitting an email address.
+**Architecture:** Keep the prototype's existing single-file React architecture. Add one isolated `NewsletterCTA` component, scoped CSS, and append it after `FAQ`. The component uses the current site's `POST /api/newsletter` contract with the default MailerLite group when hosted by Next.js, while the static port-50336 design preview simulates the response without storing or transmitting an address.
 
 **Tech Stack:** HTML, CSS, React 18 UMD, Playwright browser verification
 
@@ -81,25 +81,47 @@ Create `NewsletterCTA` immediately after `FAQ` with:
 function NewsletterCTA(){
   const [email,setEmail]=useState("");
   const [status,setStatus]=useState("idle");
+  const [message,setMessage]=useState("");
   const inputRef=React.useRef(null);
   const timerRef=React.useRef(null);
   const isValid=value=>/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
 
   useEffect(()=>()=>{ if(timerRef.current) window.clearTimeout(timerRef.current); },[]);
 
-  const submit=event=>{
+  const submit=async event=>{
     event.preventDefault();
     const value=email.trim();
     if(!isValid(value)){
       setStatus("error");
+      setMessage("Enter a valid email address.");
       window.requestAnimationFrame(()=>inputRef.current?.focus());
       return;
     }
     setStatus("loading");
-    timerRef.current=window.setTimeout(()=>{
+    setMessage("Adding you to the newsletter…");
+    const isStaticPreview=window.location.port==="50336";
+    try{
+      if(isStaticPreview){
+        await new Promise(resolve=>{timerRef.current=window.setTimeout(resolve,600);});
+      }else{
+        const response=await fetch("/api/newsletter",{
+          method:"POST",
+          headers:{"Content-Type":"application/json"},
+          body:JSON.stringify({email:value,group:"default"})
+        });
+        if(response.status!==201){
+          const payload=await response.json().catch(()=>({}));
+          throw new Error(payload.message||"Subscription failed");
+        }
+      }
       setEmail("");
       setStatus("success");
-    },600);
+      setMessage("Thank you for subscribing! Please check your email to confirm your subscription.");
+    }catch(error){
+      setStatus("error");
+      setMessage(error.message==="Invalid email"?"Enter a valid email address.":"We couldn’t complete your subscription. Please try again or use a different email address.");
+      window.requestAnimationFrame(()=>inputRef.current?.focus());
+    }
   };
 
   return e("section",{className:"newsletter-section",id:"newsletter","data-theme":"light"},
@@ -109,15 +131,15 @@ function NewsletterCTA(){
       e("p",{className:"newsletter-copy"},"Get upcoming events, opportunities, and community updates from Superteam Germany."),
       status==="success"
         ? e("div",{className:"newsletter-success",role:"status","aria-live":"polite"},
-            e("div",null,e("strong",null,"You’re on the list."),e("span",null,"We’ll keep you updated on what’s happening next."))
+            e("div",null,e("strong",null,"You’re almost there."),e("span",null,message))
           )
         : e(React.Fragment,null,
             e("form",{className:"newsletter-form",onSubmit:submit,noValidate:true},
               e("label",{className:"newsletter-label",htmlFor:"newsletter-email"},"Email address"),
-              e("input",{className:"newsletter-input",id:"newsletter-email",ref:inputRef,type:"email",inputMode:"email",autoComplete:"email",required:true,placeholder:"Enter your email",value:email,"aria-invalid":status==="error"?"true":undefined,"aria-describedby":"newsletter-status newsletter-reassurance",disabled:status==="loading",onChange:event=>{setEmail(event.target.value);if(status==="error")setStatus("idle");}}),
+              e("input",{className:"newsletter-input",id:"newsletter-email",ref:inputRef,type:"email",inputMode:"email",autoComplete:"email",required:true,placeholder:"Enter your email",value:email,"aria-invalid":status==="error"?"true":undefined,"aria-describedby":"newsletter-status newsletter-reassurance",disabled:status==="loading",onChange:event=>{setEmail(event.target.value);if(status==="error"){setStatus("idle");setMessage("");}}}),
               e("button",{className:"newsletter-submit",type:"submit",disabled:status==="loading"},status==="loading"?"Subscribing…":"Subscribe")
             ),
-            e("div",{className:"newsletter-status",id:"newsletter-status",role:"status","aria-live":"polite"},status==="error"?"Enter a valid email address.":status==="loading"?"Adding you to the newsletter…":""),
+            e("div",{className:"newsletter-status",id:"newsletter-status",role:"status","aria-live":"polite"},message),
             e("p",{className:"newsletter-reassurance",id:"newsletter-reassurance"},"No spam. Unsubscribe anytime.")
           )
     )
@@ -125,7 +147,7 @@ function NewsletterCTA(){
 }
 ```
 
-The form explicitly sets `noValidate:true` so the required custom inline error and focus behavior is not intercepted by the browser's native validation bubble. `aria-invalid` is present only for the error state; the input is connected to status and reassurance text with `aria-describedby`; both controls are disabled while loading; and typing clears a stale error.
+The form explicitly sets `noValidate:true` so the required custom inline error and focus behavior is not intercepted by the browser's native validation bubble. `aria-invalid` is present only for the error state; the input is connected to status and reassurance text with `aria-describedby`; both controls are disabled while loading; and typing clears a stale error. The production path matches `src/components/newsletter-form.tsx` and `src/app/api/newsletter/route.ts`: same-origin POST, JSON payload, default group, and `201` success. The port-50336 branch is preview-only.
 
 - [ ] **Step 4: Insert the component**
 
@@ -156,7 +178,7 @@ Submit an empty value and then `invalid-email`. Confirm the inline error is visi
 
 - [ ] **Step 3: Verify loading and success behavior**
 
-Submit `builder@example.com`. Confirm the button reads “Subscribing…” while disabled, then the form is replaced after roughly 600 ms by a success confirmation. Confirm the email address is not shown in the success UI.
+Submit `builder@example.com` on port 50336. Confirm no network POST is made, the button reads “Subscribing…” while disabled, then the form is replaced after roughly 600 ms by the same check-your-email confirmation used on the current website. Confirm the email address is not shown in the success UI. Inspect the component source to confirm the non-preview path posts `{email, group:"default"}` to `/api/newsletter` and requires a `201` response.
 
 - [ ] **Step 4: Verify tablet and mobile layouts**
 

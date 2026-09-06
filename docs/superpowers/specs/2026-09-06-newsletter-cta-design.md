@@ -21,14 +21,16 @@ The final wording remains editable during the later site-wide content pass, but 
 
 ## Interaction and states
 
-The prototype will demonstrate the complete interaction locally without making a real network request:
+The form reuses the existing newsletter contract: `POST /api/newsletter` with `{ email, group: "default" }`. The existing server route validates the address and subscribes through MailerLite while keeping `MAILERLITE_API_KEY` server-side. A `201` response is success; non-success responses become an inline, user-friendly error.
+
+Because the standalone design prototype is served by a static Python server on port 50336, it will use a clearly scoped local preview mode there and simulate the response without collecting an address. When the component is ported into the Next.js site, the same submit flow calls the existing API route:
 
 - Empty or malformed submissions display an inline error and move focus to the email field.
-- A valid submission enters a roughly 600 ms simulated loading state and then replaces the form with a success confirmation. The submitted address is not displayed or retained.
+- A valid preview submission enters a roughly 600 ms loading state and then replaces the form with the existing confirmation instruction to check the subscriber’s email. The submitted address is not displayed or retained by preview mode.
 - Editing the field after an error clears the stale error message.
 - The form remains usable with keyboard navigation and exposes its status through an accessible live region.
 
-The production implementation will connect the same interface to the existing newsletter provider or endpoint after that integration is identified. No subscriber data will be collected by the local prototype.
+No MailerLite credential or provider call is exposed to the browser; production requests continue through the existing same-origin API route.
 
 ## Responsive behavior
 
