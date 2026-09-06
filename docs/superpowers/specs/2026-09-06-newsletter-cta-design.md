@@ -15,7 +15,6 @@ The composition is centered and intentionally spacious. A restrained black, red,
 1. A large headline: “Stay close to what’s happening.”
 2. Supporting copy: “Get upcoming events, opportunities, and community updates from Superteam Germany.”
 3. A prominent email subscription form containing an explicit email label, email input, and “Subscribe” button.
-4. Quiet reassurance text: “No spam. Unsubscribe anytime.”
 
 The final wording remains editable during the later site-wide content pass, but the hierarchy and relative emphasis are fixed for this iteration.
 
@@ -28,6 +27,7 @@ Because the standalone design prototype is served by a static Python server on p
 - Empty or malformed submissions display an inline error and move focus to the email field.
 - A valid preview submission enters a roughly 600 ms loading state and then replaces the form with the existing confirmation instruction to check the subscriber’s email. The submitted address is not displayed or retained by preview mode.
 - Editing the field after an error clears the stale error message.
+- Production requests time out safely instead of leaving the form permanently disabled.
 - The form remains usable with keyboard navigation and exposes its status through an accessible live region.
 
 No MailerLite credential or provider call is exposed to the browser; production requests continue through the existing same-origin API route.

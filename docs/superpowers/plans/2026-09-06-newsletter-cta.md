@@ -54,7 +54,6 @@ Add these scoped styles before the first responsive media query:
 .newsletter-submit:focus-visible { outline:3px solid #b2121d; outline-offset:3px; }
 .newsletter-submit:disabled { cursor:wait; opacity:.7; }
 .newsletter-status { min-height:22px; margin:12px auto 0; color:#a81018; font-size:13px; line-height:1.5; }
-.newsletter-reassurance { margin:2px 0 0; color:rgba(17,17,17,.42); font-size:12px; }
 .newsletter-success { display:grid; width:min(680px,100%); min-height:92px; margin:38px auto 0; place-items:center; padding:22px; border:1px solid rgba(17,17,17,.16); border-radius:14px; background:rgba(255,255,255,.72); box-shadow:0 18px 50px rgba(17,17,17,.08); }
 .newsletter-success strong { display:block; font-size:20px; letter-spacing:-.025em; }
 .newsletter-success span { display:block; margin-top:7px; color:rgba(17,17,17,.58); font-size:14px; }
@@ -136,18 +135,17 @@ function NewsletterCTA(){
         : e(React.Fragment,null,
             e("form",{className:"newsletter-form",onSubmit:submit,noValidate:true},
               e("label",{className:"newsletter-label",htmlFor:"newsletter-email"},"Email address"),
-              e("input",{className:"newsletter-input",id:"newsletter-email",ref:inputRef,type:"email",inputMode:"email",autoComplete:"email",required:true,placeholder:"Enter your email",value:email,"aria-invalid":status==="error"?"true":undefined,"aria-describedby":"newsletter-status newsletter-reassurance",disabled:status==="loading",onChange:event=>{setEmail(event.target.value);if(status==="error"){setStatus("idle");setMessage("");}}}),
+              e("input",{className:"newsletter-input",id:"newsletter-email",ref:inputRef,type:"email",inputMode:"email",autoComplete:"email",required:true,placeholder:"Enter your email",value:email,"aria-invalid":status==="error"?"true":undefined,"aria-describedby":"newsletter-status",disabled:status==="loading",onChange:event=>{setEmail(event.target.value);if(status==="error"){setStatus("idle");setMessage("");}}}),
               e("button",{className:"newsletter-submit",type:"submit",disabled:status==="loading"},status==="loading"?"Subscribing…":"Subscribe")
             ),
-            e("div",{className:"newsletter-status",id:"newsletter-status",role:"status","aria-live":"polite"},message),
-            e("p",{className:"newsletter-reassurance",id:"newsletter-reassurance"},"No spam. Unsubscribe anytime.")
+            e("div",{className:"newsletter-status",id:"newsletter-status",role:"status","aria-live":"polite"},message)
           )
     )
   );
 }
 ```
 
-The form explicitly sets `noValidate:true` so the required custom inline error and focus behavior is not intercepted by the browser's native validation bubble. `aria-invalid` is present only for the error state; the input is connected to status and reassurance text with `aria-describedby`; both controls are disabled while loading; and typing clears a stale error. The production path matches `src/components/newsletter-form.tsx` and `src/app/api/newsletter/route.ts`: same-origin POST, JSON payload, default group, and `201` success. The port-50336 branch is preview-only.
+The form explicitly sets `noValidate:true` so the required custom inline error and focus behavior is not intercepted by the browser's native validation bubble. `aria-invalid` is present only for the error state; the input is connected to its status with `aria-describedby`; both controls are disabled while loading; and typing clears a stale error. The production path matches `src/components/newsletter-form.tsx` and `src/app/api/newsletter/route.ts`: same-origin POST, JSON payload, default group, and `201` success. The port-50336 branch is preview-only.
 
 - [ ] **Step 4: Insert the component**
 
