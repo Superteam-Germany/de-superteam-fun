@@ -98,6 +98,7 @@ const POST_QUERY = defineQuery(/* groq */ `*[
   publishedAt,
   title,
   mainImage,
+  blurb,
   excerpt,
   body,
   author->{

@@ -26,13 +26,14 @@ const sideEventGroups = sideEvents.reduce<
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://de.superteam.fun"),
-  title: "Side Events | Solana Summit Germany",
+  title: "Solana Summit Germany Side Events",
   description:
     "Community and partner-hosted events happening around Solana Summit Germany in Berlin.",
+  alternates: { canonical: "/solana-summit-germany/side-events" },
   icons: {
-    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    icon: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    shortcut: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    apple: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
   },
   openGraph: {
     title: "Solana Summit Germany Side Events",

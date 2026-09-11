@@ -13,27 +13,40 @@ import { forwardRef } from "react";
 import Newsletter from "@/sections/home/newsletter-section";
 import { Container } from "@/components/container";
 
+type BlogPostParams = Promise<{ slug: string }>;
+
 export async function generateMetadata({
   params,
 }: {
-  params: { slug: string };
+  params: BlogPostParams;
 }): Promise<Metadata> {
-  let post = await getPost(params.slug);
-  const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+  const { slug } = await params;
+  let post = await getPost(slug);
+  const baseUrl = "https://de.superteam.fun";
+
+  const description = post
+    ? (post.blurb ||
+        post.excerpt ||
+        `Read ${post.title} from Superteam Germany.`)
+        .replace(/\s+/g, " ")
+        .trim()
+        .slice(0, 200)
+    : undefined;
 
   return post
     ? {
         title: post.title,
-        description: post.blurb,
+        description,
+        alternates: { canonical: `/blog/${slug}` },
         openGraph: {
           title: post.title,
-          description: post.blurb,
+          description,
           type: "article",
           publishedTime: post.publishedAt,
           authors: [post.author?.name],
-          url: `${baseUrl}/blog/${params.slug}`,
-          siteName: "Superteam DE",
-          locale: "en_US",
+          url: `${baseUrl}/blog/${slug}`,
+          siteName: "Superteam Germany",
+          locale: "en_DE",
           images: [
             {
               url: image(post.mainImage).size(1200, 630).url(),
@@ -46,8 +59,10 @@ export async function generateMetadata({
         twitter: {
           card: "summary_large_image",
           title: post.title,
-          description: post.blurb,
+          description,
           images: [image(post.mainImage).size(1200, 630).url()],
+          site: "@SuperteamDE",
+          creator: "@SuperteamDE",
         },
       }
     : {};
@@ -56,9 +71,10 @@ export async function generateMetadata({
 export default async function BlogPost({
   params,
 }: {
-  params: { slug: string };
+  params: BlogPostParams;
 }) {
-  let post = (await getPost(params.slug)) || notFound();
+  const { slug } = await params;
+  let post = (await getPost(slug)) || notFound();
 
   // TODO: Add publishedAt to the post
   return (

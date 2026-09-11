@@ -5,6 +5,40 @@ import { Archivo, Unbounded } from "next/font/google";
 import Script from "next/script";
 import { SiteChrome } from "@/components/site-chrome";
 
+const SITE_URL = "https://de.superteam.fun";
+const siteDescription =
+  "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
+
+const organizationSchema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": `${SITE_URL}/#organization`,
+      name: "Superteam Germany",
+      url: `${SITE_URL}/`,
+      logo: {
+        "@type": "ImageObject",
+        url: `${SITE_URL}/st-flag-logo.png`,
+      },
+      sameAs: [
+        "https://x.com/SuperteamDE",
+        "https://t.me/superteamgermany",
+        "https://www.youtube.com/@SuperteamDE",
+      ],
+    },
+    {
+      "@type": "WebSite",
+      "@id": `${SITE_URL}/#website`,
+      url: `${SITE_URL}/`,
+      name: "Superteam Germany",
+      description: "Germany’s community for Solana builders, founders and startups.",
+      publisher: { "@id": `${SITE_URL}/#organization` },
+      inLanguage: "en",
+    },
+  ],
+};
+
 const satoshi = localFont({
   src: "./Satoshi-Variable.woff2",
   display: "swap",
@@ -23,36 +57,56 @@ const fontHyperdrive = Unbounded({
 });
 
 export const metadata: Metadata = {
-  title: "Superteam Germany",
-  description:
-    "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
+  metadataBase: new URL(SITE_URL),
+  title: {
+    default: "Superteam Germany | Solana Builders, Founders & Startups",
+    template: "%s | Superteam Germany",
+  },
+  description: siteDescription,
+  applicationName: "Superteam Germany",
+  authors: [{ name: "Superteam Germany", url: SITE_URL }],
+  creator: "Superteam Germany",
+  publisher: "Superteam Germany",
+  alternates: { canonical: "/" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   icons: {
-    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    icon: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    shortcut: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    apple: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
   },
   openGraph: {
-    title: "Superteam Germany",
-    description:
-      "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
-    url: "https://de.superteam.fun",
+    title: "Superteam Germany | Solana Builders, Founders & Startups",
+    description: siteDescription,
+    url: "/",
     siteName: "Superteam Germany",
     images: [
       {
         url: "/st-banner.png",
-        width: 800,
-        height: 600,
+        width: 3023,
+        height: 1688,
+        alt: "Superteam Germany community and brand",
       },
     ],
-    locale: "en_US",
+    locale: "en_DE",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Superteam Germany",
-    description:
-      "Uniting the power of innovation, creativity, and collaboration to shape the Solana Ecosystem in Germany.",
+    title: "Superteam Germany | Solana Builders, Founders & Startups",
+    description: siteDescription,
     images: ["/st-banner.png"],
+    site: "@SuperteamDE",
+    creator: "@SuperteamDE",
   },
 };
 
@@ -63,6 +117,14 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(organizationSchema).replace(/</g, "\\u003c"),
+          }}
+        />
+      </head>
       {/* Google Tag Manager */}
       <Script id="google-tag-manager" strategy="afterInteractive">
         {`(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':

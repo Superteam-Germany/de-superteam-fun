@@ -26,6 +26,7 @@ yarn-error.log*
 
 # local env files
 .env*.local
+.env
 
 # vercel
 .vercel
@@ -42,4 +43,6 @@ next-env.d.ts
 /studio/tsconfig.json
 
 notes
-config.bat
+
+# local design brainstorming previews
+/.superpowers/

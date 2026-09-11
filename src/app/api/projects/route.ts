@@ -24,7 +24,14 @@ export async function GET(request: Request) {
     const projects = await axios.get(
       `https://api.airtable.com/v0/${baseId}/${tableId}`
     );
-    return NextResponse.json({ projects: projects.data.records });
+    return NextResponse.json(
+      { projects: projects.data.records },
+      {
+        headers: {
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=900',
+        },
+      }
+    );
   } catch (error) {
     if (isAxiosError(error)) {
       return NextResponse.json(

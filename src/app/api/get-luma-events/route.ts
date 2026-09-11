@@ -1,5 +1,5 @@
 import { EventRecord } from '@/types/events'
-import { NextRequest, NextResponse } from 'next/server'
+import { NextResponse } from 'next/server'
 
 export const fetchCache = 'force-no-store';
 
@@ -71,7 +71,7 @@ function adaptLumaEventToEventRecord(entry: LumaApiResponse['entries'][0]): Even
   return event
 }
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET() {
   try {
     if (!LUMA_API_KEY) {
       return NextResponse.json(
@@ -104,7 +104,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
       {
         status: 200,
         headers: {
-          'Cache-Control': 'no-cache',
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=900',
         },
       }
     )

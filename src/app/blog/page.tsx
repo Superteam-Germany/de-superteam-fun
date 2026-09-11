@@ -25,12 +25,17 @@ import { notFound } from "next/navigation";
 import FadeInDiv from "@/components/fade-in-div";
 
 export const metadata: Metadata = {
-  title: "Superteam Germany Blog",
+  title: "Blog",
   description:
     "Stay informed with Solana updates, community news, and insights on how to build on Solana.",
+  alternates: { canonical: "/blog" },
 };
 
 const postsPerPage = 5;
+
+type BlogSearchParams = Promise<{
+  [key: string]: string | string[] | undefined;
+}>;
 
 async function FeaturedPosts() {
   let featuredPosts = await getFeaturedPosts(3);
@@ -259,18 +264,20 @@ async function Pagination({
 export default async function Blog({
   searchParams,
 }: {
-  searchParams: { [key: string]: string | string[] | undefined };
+  searchParams: BlogSearchParams;
 }) {
+  const resolvedSearchParams = await searchParams;
   let page =
-    "page" in searchParams
-      ? typeof searchParams.page === "string" && parseInt(searchParams.page) > 1
-        ? parseInt(searchParams.page)
+    "page" in resolvedSearchParams
+      ? typeof resolvedSearchParams.page === "string" &&
+        parseInt(resolvedSearchParams.page) > 1
+        ? parseInt(resolvedSearchParams.page)
         : notFound()
       : 1;
 
   let category =
-    typeof searchParams.category === "string"
-      ? searchParams.category
+    typeof resolvedSearchParams.category === "string"
+      ? resolvedSearchParams.category
       : undefined;
   // const { scrollYProgress } = useScroll();
   // const y = useTransform(scrollYProgress, [0, 1], ['-40%', '-0%']);
