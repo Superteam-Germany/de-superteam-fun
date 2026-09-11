@@ -3,7 +3,7 @@
 import { MetadataRoute } from "next";
 import { sanityClient } from "../../studio/client";
 
-const baseUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const baseUrl = "https://de.superteam.fun";
 
 async function getBlogPosts() {
   const posts = await sanityClient.fetch(`
@@ -31,6 +31,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     {
+      url: `${baseUrl}/blog`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/insights`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    },
+    {
       url: `${baseUrl}/buildstation`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
@@ -47,6 +59,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       lastModified: new Date(),
       changeFrequency: "weekly" as const,
       priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/solana-summit-germany/side-events`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.7,
+    },
+    {
+      url: `${baseUrl}/policy`,
+      lastModified: new Date(),
+      changeFrequency: "yearly" as const,
+      priority: 0.2,
     },
   ];
 

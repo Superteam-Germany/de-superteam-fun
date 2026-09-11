@@ -2,16 +2,16 @@
 
 This repo uses Node 22 and Yarn v1.
 
-Install dependencies:
-
-```bash
-yarn install
-```
-
-Use the correct Node version:
+Select the repository's Node version (the `.nvmrc` file selects Node 22):
 
 ```bash
 nvm use
+```
+
+Install dependencies with Yarn v1:
+
+```bash
+yarn install
 ```
 
 Export the Sanity values needed for local builds:
@@ -19,7 +19,6 @@ Export the Sanity values needed for local builds:
 ```bash
 export SANITY_PROJECT_ID=loktgfyy
 export SANITY_DATASET=production
-export NEXT_PUBLIC_SITE_URL=http://localhost:3000
 ```
 
 Run the website locally:

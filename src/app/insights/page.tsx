@@ -3,9 +3,10 @@ import FadeInDiv from "@/components/fade-in-div";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Insights | Superteam Germany",
+  title: "Insights",
   description:
     "Latest insights and updates from the Solana ecosystem in Germany.",
+  alternates: { canonical: "/insights" },
 };
 
 export default function Insights() {

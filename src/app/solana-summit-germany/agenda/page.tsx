@@ -7,13 +7,14 @@ const summitSocialImage =
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://de.superteam.fun"),
-  title: "Agenda | Solana Summit Germany",
+  title: "Solana Summit Germany Agenda",
   description:
     "Conference agenda for Solana Summit Germany in Berlin on 13 June 2026.",
+  alternates: { canonical: "/solana-summit-germany/agenda" },
   icons: {
-    icon: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    shortcut: [{ url: "/st-flag-logo.png", type: "image/png" }],
-    apple: [{ url: "/st-flag-logo.png", type: "image/png" }],
+    icon: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    shortcut: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
+    apple: [{ url: "/superteamgermany-favicon.png", type: "image/png" }],
   },
   openGraph: {
     title: "Solana Summit Germany Agenda",

@@ -9,8 +9,10 @@ import type { Metadata } from "next";
 import TrustedBy from "../sections/home/trusted-by";
 
 export const metadata: Metadata = {
-  title: "Superteam Germany",
-  description: "The heartbeat of Germany's Solana community.",
+  title: { absolute: "Superteam Germany | Solana Builders, Founders & Startups" },
+  description:
+    "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.",
+  alternates: { canonical: "/" },
 };
 
 export default function Home() {
