@@ -43,6 +43,10 @@ next-env.d.ts
 /studio/tsconfig.json
 
 notes
+config.bat
 
 # local design brainstorming previews
 /.superpowers/
+
+# local Playwright MCP test artifacts
+/.playwright-mcp/
