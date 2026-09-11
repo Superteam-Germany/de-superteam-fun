@@ -43,3 +43,6 @@ next-env.d.ts
 /studio/tsconfig.json
 
 notes
+
+# local design brainstorming previews
+/.superpowers/

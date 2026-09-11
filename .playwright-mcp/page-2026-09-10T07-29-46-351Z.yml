@@ -1,0 +1,5 @@
+- generic [active] [ref=f26e1]:
+  - heading "Error response" [level=1] [ref=f26e2]
+  - paragraph [ref=f26e3]: "Error code: 404"
+  - paragraph [ref=f26e4]: "Message: File not found."
+  - paragraph [ref=f26e5]: "Error code explanation: HTTPStatus.NOT_FOUND - Nothing matches the given URI."

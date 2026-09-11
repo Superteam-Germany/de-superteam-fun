@@ -1,0 +1,1095 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Superteam Germany | Solana Builders, Founders &amp; Startups</title>
+    <meta name="description" content="Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany." />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="theme-color" content="#050505" />
+    <link rel="canonical" href="https://de.superteam.fun/" />
+    <link rel="icon" href="/superteamgermany-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/superteamgermany-favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Superteam Germany" />
+    <meta property="og:locale" content="en_DE" />
+    <meta property="og:title" content="Superteam Germany | Solana Builders, Founders &amp; Startups" />
+    <meta property="og:description" content="Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany." />
+    <meta property="og:url" content="https://de.superteam.fun/" />
+    <meta property="og:image" content="https://de.superteam.fun/st-banner.png" />
+    <meta property="og:image:width" content="3023" />
+    <meta property="og:image:height" content="1688" />
+    <meta property="og:image:alt" content="Superteam Germany community and brand" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SuperteamDE" />
+    <meta name="twitter:title" content="Superteam Germany | Solana Builders, Founders &amp; Startups" />
+    <meta name="twitter:description" content="Launch, grow and connect with Germany’s Solana builder and founder community." />
+    <meta name="twitter:image" content="https://de.superteam.fun/st-banner.png" />
+    <meta name="twitter:image:alt" content="Superteam Germany community and brand" />
+    <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://de.superteam.fun/#organization","name":"Superteam Germany","url":"https://de.superteam.fun/","logo":{"@type":"ImageObject","url":"https://de.superteam.fun/st-flag-logo.png"},"sameAs":["https://x.com/SuperteamDE","https://t.me/superteamgermany","https://www.youtube.com/@SuperteamDE"]},{"@type":"WebSite","@id":"https://de.superteam.fun/#website","url":"https://de.superteam.fun/","name":"Superteam Germany","description":"Germany’s community for Solana builders, founders and startups.","publisher":{"@id":"https://de.superteam.fun/#organization"},"inLanguage":"en"}]}</script>
+    <script type="importmap">
+      {"imports":{"react":"https://esm.sh/react@18.3.1","react/jsx-runtime":"https://esm.sh/react@18.3.1/jsx-runtime","react-dom/client":"https://esm.sh/react-dom@18.3.1/client?external=react"}}
+    </script>
+    <link rel="stylesheet" href="https://esm.sh/react-tweet@3.3.1/X-ZXJlYWN0LHJlYWN0LWRvbQ/es2022/react-tweet.bundle.css" />
+    <style>
+      :root { color-scheme:dark; --ink:#f6efe3; --gold:#ffcf32; --red:#e5222d; --canvas:#050505; }
+      * { box-sizing:border-box; }
+      .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
+      html,body,#root { margin:0; min-height:100%; background:var(--canvas); }
+      body { font-family:Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); }
+      .hero { position:relative; height:100svh; min-height:720px; overflow:hidden; isolation:isolate; background:var(--canvas); }
+      .shader { --corner-mask:radial-gradient(ellipse 62% 64% at 100% 0%,#000 0 34%,rgba(0,0,0,.84) 52%,transparent 80%),radial-gradient(ellipse 62% 68% at 0% 100%,#000 0 34%,rgba(0,0,0,.84) 52%,transparent 80%); position:absolute; inset:0; z-index:-5; isolation:isolate; -webkit-mask-image:var(--corner-mask); mask-image:var(--corner-mask); -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat; }
+      .shader::before { position:absolute; inset:0; z-index:1; pointer-events:none; content:""; background:radial-gradient(ellipse 49% 44% at 100% 0%,rgba(255,201,20,.42) 0 26%,rgba(255,190,16,.2) 46%,transparent 70%),radial-gradient(ellipse 49% 44% at 0% 100%,rgba(255,201,20,.4) 0 25%,rgba(255,190,16,.18) 45%,transparent 69%); mix-blend-mode:screen; }
+      .shader::after { position:absolute; inset:0; z-index:1; pointer-events:none; content:""; background:radial-gradient(ellipse 54% 48% at 100% 42%,rgba(205,0,25,.78) 0 28%,rgba(218,12,32,.46) 48%,transparent 75%),radial-gradient(ellipse 54% 48% at 0% 56%,rgba(205,0,25,.74) 0 26%,rgba(218,12,32,.42) 46%,transparent 73%); mix-blend-mode:multiply; }
+      .center-protection { position:absolute; inset:0; z-index:-4; pointer-events:none; background:radial-gradient(ellipse 66% 60% at 50% 34%,rgba(2,2,2,.94) 0%,rgba(2,2,2,.86) 46%,rgba(2,2,2,.38) 72%,rgba(2,2,2,.04) 100%); }
+      .bottom-fade { position:absolute; inset:0; z-index:-3; pointer-events:none; background:linear-gradient(to bottom,transparent 60%,rgba(5,5,5,.38) 82%,var(--canvas) 100%); }
+      nav { position:relative; z-index:20; width:min(1180px,calc(100% - 48px)); height:84px; margin:0 auto; display:flex; align-items:center; justify-content:space-between; gap:30px; }
+      .brand img { display:block; width:172px; height:auto; }
+      .navlinks { display:flex; align-items:center; gap:24px; font-size:13.5px; color:rgba(246,239,227,.75); }
+      .navlinks a { color:inherit; text-decoration:none; white-space:nowrap; }
+      .navlinks a:not(.primary-cta):hover { color:transparent; background:linear-gradient(105deg,#f6efe3 20%,#ffcf32 45%,#fff8dc 52%,#ffcf32 59%,#f6efe3 80%); background-size:240% 100%; background-clip:text; -webkit-background-clip:text; animation:nav-shimmer 1.25s linear infinite; }
+      .navlinks a:focus-visible { border-radius:4px; outline:2px solid var(--gold); outline-offset:5px; }
+      .navlinks .community-link { position:relative; }
+      .navlinks .community-link:after { position:absolute; right:0; bottom:-6px; left:0; height:1px; background:rgba(255,255,255,.82); content:""; transition:background-color .15s cubic-bezier(0,0,.2,1); }
+      .navlinks .community-link:hover:after { background:var(--gold); }
+      .navlinks .primary-cta { position:relative; isolation:isolate; overflow:hidden; min-height:44px; display:flex; align-items:center; gap:.28em; padding:10px 18px; border:1px solid rgba(255,207,50,.72); border-radius:999px; background:rgba(7,7,7,.7); color:#fff7df; font-weight:760; box-shadow:0 8px 28px rgba(0,0,0,.2); backdrop-filter:blur(12px); transition:background-color .15s cubic-bezier(0,0,.2,1),color .15s cubic-bezier(0,0,.2,1),transform .15s cubic-bezier(0,0,.2,1); }
+      .navlinks .primary-cta:before { position:absolute; z-index:-1; top:-80%; bottom:-80%; left:-48%; width:34%; background:linear-gradient(90deg,transparent,rgba(255,255,255,.42),transparent); content:""; transform:skewX(-18deg); animation:cta-shimmer 2.8s linear infinite; }
+      .navlinks .primary-cta:hover { background:rgba(7,7,7,.82); color:#fff7df; transform:translateY(-1px); }
+      .mobile-menu-toggle,.mobile-navigation { display:none; }
+      .hero-content { width:min(1120px,calc(100% - 40px)); height:calc(100% - 84px); margin:0 auto; padding:0 0 18px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+      h1 { max-width:840px; margin:0; font-size:clamp(48px,4.9vw,70px); line-height:.98; letter-spacing:-.058em; font-weight:530; text-wrap:balance; }
+      h1 em { color:var(--gold); font:inherit; font-style:italic; }
+      .builder-pill { display:flex; min-height:44px; align-items:center; gap:10px; margin-top:22px; padding:7px 15px 7px 8px; border:1px solid rgba(255,255,255,.12); border-radius:999px; background:rgba(8,8,8,.52); backdrop-filter:blur(14px); color:rgba(246,239,227,.7); font-size:12px; text-decoration:none; transition:border-color .15s cubic-bezier(0,0,.2,1),background-color .15s cubic-bezier(0,0,.2,1),color .15s cubic-bezier(0,0,.2,1),transform .15s cubic-bezier(0,0,.2,1); }
+      .avatars { display:flex; padding-left:7px; }
+      .avatars img { width:26px; height:26px; margin-left:-7px; object-fit:cover; border:2px solid #181818; border-radius:50%; }
+      .builder-pill b { color:var(--ink); font-weight:740; }
+      .builder-pill-arrow { color:var(--gold); font-weight:800; transition:transform .2s ease; }
+      .builder-pill:hover { border-color:rgba(255,207,50,.58); background:rgba(14,14,14,.76); color:var(--ink); transform:translateY(-1px); }
+      .builder-pill:hover .builder-pill-arrow { transform:translateX(2px); }
+      .builder-pill:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .collage { position:relative; width:min(1020px,100%); height:390px; margin-top:22px; }
+      .tile { --tile-rotate:0deg; position:absolute; overflow:hidden; margin:0; border:1px solid rgba(255,255,255,.14); border-radius:17px; background:#121212; box-shadow:0 28px 70px rgba(0,0,0,.34); transform:rotate(var(--tile-rotate)); }
+      .tile img { width:100%; height:100%; object-fit:cover; display:block; }
+      .tile:after { content:""; position:absolute; inset:0; box-shadow:inset 0 0 0 1px rgba(255,255,255,.04); border-radius:inherit; pointer-events:none; }
+      .photo-a { --tile-rotate:-.7deg; left:0; top:108px; z-index:4; width:246px; height:164px; }
+      .photo-b { --tile-rotate:-.15deg; left:240px; top:12px; z-index:2; width:260px; height:185px; }
+      .photo-c { left:240px; top:216px; z-index:3; width:540px; height:168px; }
+      .photo-d { --tile-rotate:.15deg; right:240px; top:12px; z-index:2; width:260px; height:185px; }
+      .photo-e { --tile-rotate:.7deg; right:0; top:108px; z-index:4; width:246px; height:164px; }
+
+      .impact-strip { padding:88px 24px 24px; background:var(--canvas); color:var(--ink); }
+      .impact-inner { display:grid; width:min(1200px,100%); margin:0 auto; grid-template-columns:repeat(4,minmax(0,1fr)); }
+      .impact-stat { min-width:0; padding:2px clamp(18px,3vw,42px); border-left:1px solid rgba(246,239,227,.13); }
+      .impact-stat:first-child { padding-left:0; border-left:0; }
+      .impact-value { margin:0; color:var(--ink); font-size:clamp(34px,3.5vw,50px); font-weight:500; line-height:.92; letter-spacing:-.05em; }
+      .impact-label { margin:10px 0 0; color:var(--gold); font-size:13px; font-weight:700; line-height:1.35; letter-spacing:.012em; }
+      .impact-copy { max-width:230px; margin:7px 0 0; color:rgba(246,239,227,.43); font-size:11px; line-height:1.45; }
+
+      .what-we-do { min-height:760px; padding:96px 24px 108px; background:var(--canvas); color:#fff; }
+      .section-inner { width:min(1200px,100%); margin:0 auto; }
+      .section-label { margin:0; color:var(--gold); font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; }
+      .what-we-do-intro { max-width:600px; margin:14px 0 40px; color:rgba(246,239,227,.64); font-size:15px; line-height:1.6; }
+      .pillars { display:flex; width:100%; height:400px; gap:12px; }
+      .pillar { position:relative; min-width:68px; flex-basis:68px; flex-shrink:0; flex-grow:0; overflow:hidden; padding:0; border:1px solid rgba(255,255,255,.28); border-radius:13px; background:#f7f7f5; color:#090909; cursor:pointer; text-align:left; transform:translateZ(0); transition:flex-grow .54s cubic-bezier(.22,.78,.2,1),background-color .2s ease,border-color .2s ease; }
+      .pillar:hover { background:#eaeae7; }
+      .pillar.active { flex-grow:1; cursor:default; border-color:rgba(255,255,255,.3); background:#111; }
+      .pillar-bg { position:absolute; inset:0; background-position:center; background-size:cover; opacity:0; transform:scale(1.045); transition:opacity .28s ease .12s,transform .62s cubic-bezier(.22,.78,.2,1); }
+      .pillar-bg:after { content:""; position:absolute; inset:0; background:linear-gradient(90deg,rgba(3,3,3,.9) 0%,rgba(3,3,3,.63) 48%,rgba(3,3,3,.16) 100%); }
+      .pillar.active .pillar-bg { opacity:1; transform:scale(1); }
+      .collapsed-label { position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; padding:17px 0; opacity:1; transition:opacity .1s ease .18s; }
+      .collapsed-label .number { color:rgba(9,9,9,.5); font:700 12px/1 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.1em; }
+      .collapsed-label .vertical { flex:1; display:flex; align-items:center; margin-top:15px; color:#090909; font-size:12px; font-weight:780; letter-spacing:.1em; text-transform:uppercase; white-space:nowrap; writing-mode:vertical-rl; transform:rotate(180deg); }
+      .pillar.active .collapsed-label { opacity:0; pointer-events:none; transition:opacity .08s linear; }
+      .expanded-content { position:absolute; inset:0; display:flex; visibility:hidden; flex-direction:column; justify-content:flex-end; width:min(510px,80%); padding:32px; opacity:0; transform:translateX(-12px); pointer-events:none; transition:opacity .07s linear,transform .12s ease; }
+      .pillar.active .expanded-content { visibility:visible; opacity:1; transform:none; transition:opacity .28s ease .25s,transform .36s ease .21s; }
+      .expanded-content h3 { margin:0; color:#fff; font-size:clamp(28px,2.7vw,43px); font-weight:540; line-height:.98; letter-spacing:-.045em; }
+      .expanded-content p { max-width:455px; margin:15px 0 0; color:rgba(255,255,255,.76); font-size:14px; line-height:1.5; }
+      .events-section { padding:96px 24px; background:var(--canvas); color:#fff; }
+      .events-inner { width:min(1200px,100%); margin:0 auto; }
+      .events-layout { display:grid; grid-template-columns:minmax(260px,.72fr) minmax(520px,1.28fr); align-items:start; gap:clamp(44px,7vw,92px); }
+      .events-copy { padding-top:18px; }
+      .events-copy h2 { max-width:470px; margin:0; color:#f6efe3; font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; text-wrap:balance; }
+      .events-copy h2 em { color:var(--gold); font:inherit; font-style:italic; }
+      .events-intro { max-width:430px; margin:22px 0 0; color:rgba(246,239,227,.64); font-size:15px; line-height:1.6; }
+      .luma-link { display:inline-flex; min-height:44px; align-items:center; gap:8px; margin-top:32px; padding:11px 17px; border:1px solid rgba(255,255,255,.22); border-radius:999px; color:#fff; font-size:12px; font-weight:650; text-decoration:none; transition:background-color .2s ease,color .2s ease,border-color .2s ease; }
+      .luma-link:hover { border-color:var(--gold); background:var(--gold); color:#111; }
+      .luma-link:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .luma-shell { position:relative; overflow:hidden; border:1px solid rgba(191,203,218,.53); border-radius:14px; background:#fff; box-shadow:0 30px 80px rgba(0,0,0,.38); }
+      .luma-shell iframe { display:block; width:100%; height:560px; border:0; background:#fff; }
+      .summit-section { position:relative; padding:104px 0 112px; overflow:hidden; background:var(--canvas); color:#fff; }
+      .summit-inner { width:min(1200px,calc(100% - 48px)); margin:0 auto; }
+      .summit-header { display:flex; align-items:flex-end; justify-content:space-between; gap:36px; margin-bottom:38px; }
+      .summit-heading { margin:0; color:var(--gold); font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; }
+      .summit-intro { max-width:590px; margin:14px 0 0; color:rgba(246,239,227,.64); font-size:15px; line-height:1.6; }
+      .summit-link { display:inline-flex; min-height:44px; flex:0 0 auto; align-items:center; gap:8px; padding:11px 17px; border:1px solid rgba(255,255,255,.22); border-radius:999px; color:#fff; font-size:12px; font-weight:650; text-decoration:none; transition:background-color .2s ease,color .2s ease,border-color .2s ease; }
+      .summit-link:hover { border-color:var(--gold); background:var(--gold); color:#111; }
+      .summit-link:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .summit-gallery { display:grid; gap:14px; }
+      .summit-lambo { position:absolute; right:-18px; bottom:22px; z-index:2; display:block; width:clamp(112px,10vw,148px); opacity:.48; transform:translateX(12%); image-rendering:pixelated; transition:opacity .22s ease,transform .34s cubic-bezier(.2,.75,.2,1); }
+      .summit-lambo img { display:block; width:100%; height:auto; image-rendering:pixelated; }
+      .summit-lambo:after { position:absolute; top:46%; right:2%; width:4px; height:3px; border-radius:1px; background:#ffe7a0; box-shadow:0 0 7px rgba(255,211,81,.9); content:""; opacity:0; transition:opacity .18s ease; }
+      .summit-lambo:hover { opacity:.94; transform:translateX(calc(12% + 3px)); }
+      .summit-lambo:hover:after { opacity:1; animation:lambo-headlight .8s steps(2,end) infinite; }
+      .summit-lambo:focus-visible { border-radius:5px; outline:2px solid var(--gold); outline-offset:5px; opacity:.94; }
+      .summit-photo-marquee { width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 3%,#000 12%,#000 88%,transparent 97%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,transparent 3%,#000 12%,#000 88%,transparent 97%,transparent 100%); }
+      .summit-photo-track { display:flex; width:max-content; animation:summit-gallery-left 79s linear infinite; will-change:transform; }
+      .summit-photo-marquee:nth-child(2) .summit-photo-track { animation-name:summit-gallery-right; animation-duration:94s; }
+      .summit-photo-cycle { display:flex; flex:0 0 auto; gap:14px; padding-right:14px; }
+      .summit-photo { width:clamp(270px,29vw,390px); height:220px; flex:0 0 auto; overflow:hidden; margin:0; border:1px solid rgba(255,255,255,.12); border-radius:15px; background:#171717; }
+      .summit-photo img { display:block; width:100%; height:100%; object-fit:cover; filter:saturate(.84) contrast(1.04); transform:scale(1.01); transition:filter .24s ease,transform .36s cubic-bezier(.2,.75,.2,1); }
+      .summit-photo:hover img { filter:saturate(1) contrast(1.02); transform:scale(1.025); }
+      .summit-photo-marquee:hover .summit-photo-track { animation-play-state:paused; }
+      @keyframes summit-gallery-left { to { transform:translateX(-50%); } }
+      @keyframes summit-gallery-right { from { transform:translateX(-50%); } to { transform:translateX(0); } }
+      @keyframes lambo-headlight { 0%,100% { opacity:.35; } 50% { opacity:1; } }
+      .team-section { padding:96px 24px 104px; overflow:hidden; background:#f3f0e7; color:#111; }
+      .team-inner { width:min(1200px,100%); margin:0 auto; }
+      .team-header { margin-bottom:28px; }
+      .team-heading { margin:0; color:#111; font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; }
+      .team-intro { max-width:560px; margin:12px 0 0; color:rgba(17,17,17,.58); font-size:15px; line-height:1.55; }
+      .team-track { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:12px; }
+      .team-card { position:relative; min-width:0; color:#111; }
+      .team-portrait { position:relative; aspect-ratio:4/5; overflow:hidden; border-radius:15px; background:#171717; }
+      .team-card img { width:100%; height:100%; display:block; object-fit:cover; filter:saturate(1) contrast(1.02); transform:scale(1.01); transition:transform .36s cubic-bezier(.2,.75,.2,1); }
+      .team-portrait:after { position:absolute; z-index:2; inset:0; background:linear-gradient(180deg,transparent 43%,rgba(0,0,0,.12) 62%,rgba(0,0,0,.86) 100%); content:""; }
+      .team-card:hover img,.team-card:focus-within img { transform:scale(1.025); }
+      .team-card-copy { position:absolute; z-index:3; right:0; bottom:0; left:0; padding:18px; }
+      .team-card-copy h3 { margin:0; overflow:hidden; color:#fff; font-size:clamp(16px,1.45vw,20px); font-weight:580; line-height:1; letter-spacing:-.04em; text-overflow:ellipsis; white-space:nowrap; }
+      .team-role { margin:6px 0 0; color:rgba(255,255,255,.67); font-size:12px; line-height:1.3; }
+      .team-social-links { display:flex; align-items:center; gap:0; margin:-4px 0 -6px -14px; }
+      .team-social-link { display:grid; width:44px; height:44px; place-items:center; border-radius:50%; color:rgba(255,255,255,.76); text-decoration:none; transition:color .18s ease; }
+      .team-social-link:hover { color:#f5c542; }
+      .team-social-link:focus-visible { outline:2px solid #f5c542; outline-offset:-3px; }
+      .team-social-link.is-placeholder { color:rgba(255,255,255,.32); cursor:default; }
+      .team-social-link svg { width:14px; height:14px; fill:currentColor; }
+      .partners-section { padding:96px 0 104px; overflow:hidden; background:var(--canvas); color:#fff; }
+      .partners-inner { width:min(1200px,calc(100% - 48px)); margin:0 auto; }
+      .partners-header { margin-bottom:28px; }
+      .partners-heading { margin:0; color:var(--gold); font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; }
+      .partners-intro { max-width:560px; margin:12px 0 0; color:rgba(246,239,227,.6); font-size:15px; line-height:1.55; }
+      .partners-marquee { position:relative; width:100%; overflow:hidden; -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 3%,#000 12%,#000 88%,transparent 97%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,transparent 3%,#000 12%,#000 88%,transparent 97%,transparent 100%); }
+      .partners-track { display:flex; width:max-content; align-items:center; animation:partners-left 92s linear infinite; will-change:transform; }
+      .partners-cycle { display:flex; flex:0 0 auto; align-items:center; gap:clamp(28px,3.2vw,58px); padding-right:clamp(28px,3.2vw,58px); }
+      .partner-link { position:relative; display:flex; width:clamp(220px,17.5vw,260px); height:122px; flex:0 0 auto; align-items:center; justify-content:center; padding:20px 18px; border-radius:10px; color:rgba(246,239,227,.68); text-decoration:none; transition:color .15s cubic-bezier(0,0,.2,1); }
+      .partner-link:hover { color:var(--ink); }
+      .partner-link:focus-visible { z-index:2; outline:2px solid var(--gold); outline-offset:-3px; }
+      .partner-logo { display:block; width:100%; max-width:184px; max-height:64px; object-fit:contain; opacity:.76; filter:grayscale(1) brightness(0) invert(.82); transform:scale(.96); transition:opacity .15s cubic-bezier(0,0,.2,1),transform .15s cubic-bezier(0,0,.2,1),filter .15s cubic-bezier(0,0,.2,1); }
+      .partner-link:hover .partner-logo,.partner-link:focus-visible .partner-logo { opacity:1; filter:grayscale(1) brightness(0) invert(1); transform:scale(1); }
+      .partner-lockup { display:flex; align-items:center; justify-content:center; gap:12px; color:inherit; font-size:clamp(17px,1.25vw,20px); font-weight:730; letter-spacing:-.025em; white-space:nowrap; }
+      .partner-lockup .partner-logo { width:50px; height:50px; object-fit:contain; }
+      .partner-link[data-partner="OKX"] .partner-logo,.partner-link[data-partner="VIA"] .partner-logo { max-width:158px; max-height:52px; }
+      .partner-link[data-partner="Visa"] .partner-logo { max-width:146px; max-height:46px; }
+      .partner-link[data-partner="Solana Foundation"] .partner-logo { max-width:180px; max-height:46px; }
+      .partner-link[data-partner="Solana Spaces"] .partner-logo { max-width:195px; max-height:66px; }
+      .partner-link[data-partner="Pudgy Penguins"] .partner-logo { max-width:136px; max-height:76px; opacity:.86; filter:grayscale(1) brightness(1.12) contrast(.9); }
+      .partner-link[data-partner="Pudgy Penguins"]:hover .partner-logo,.partner-link[data-partner="Pudgy Penguins"]:focus-visible .partner-logo { opacity:1; filter:grayscale(1) brightness(1.24) contrast(.94); }
+      .partner-link[data-partner="Buddies for Paws"] .partner-logo { max-width:132px; max-height:64px; }
+      .partners-marquee:hover .partners-track,.partners-marquee:focus-within .partners-track { animation-play-state:paused; }
+      @keyframes partners-left { to { transform:translateX(-50%); } }
+      .love-section { padding:96px 24px 104px; overflow:hidden; background:#f3f0e7; color:#111; }
+      .love-inner { width:min(1200px,100%); margin:0 auto; }
+      .love-header { display:flex; align-items:flex-end; justify-content:space-between; gap:32px; margin-bottom:32px; }
+      .love-heading { margin:0; color:#111; font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; }
+      .love-intro { max-width:560px; margin:12px 0 0; color:rgba(17,17,17,.58); font-size:15px; line-height:1.55; }
+      .love-follow { display:inline-flex; min-height:44px; flex:0 0 auto; align-items:center; gap:7px; padding:10px 0; color:#111; font-size:13px; font-weight:700; text-decoration:none; }
+      .love-follow span { transition:transform .15s cubic-bezier(0,0,.2,1); }
+      .love-follow:hover { color:#a81018; }
+      .love-follow:hover span { transform:translateX(4px); }
+      .love-follow:focus-visible { outline:2px solid #a81018; outline-offset:5px; }
+      .love-columns { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:24px; }
+      .love-column { min-width:0; }
+      .love-viewport { position:relative; height:680px; overflow:hidden; border-radius:15px; }
+      .love-viewport:before,.love-viewport:after { position:absolute; z-index:3; right:0; left:0; height:64px; pointer-events:none; content:""; }
+      .love-viewport:before { top:0; background:linear-gradient(to bottom,#f3f0e7,rgba(243,240,231,0)); }
+      .love-viewport:after { bottom:0; background:linear-gradient(to top,#f3f0e7,rgba(243,240,231,0)); }
+      .love-column-track { display:flex; flex-direction:column; min-height:max-content; will-change:transform; }
+      .love-cycle { display:flex; flex:0 0 auto; flex-direction:column; }
+      .love-column.is-ready .love-column-track { animation:love-up 32s linear infinite; }
+      .love-column:nth-child(2).is-ready .love-column-track { animation-name:love-down; animation-duration:35s; }
+      .love-column:nth-child(3).is-ready .love-column-track { animation-duration:37s; }
+      .love-column:hover .love-column-track,.love-column:focus-within .love-column-track { animation-play-state:paused; }
+      .love-post { min-width:0; margin:0 0 20px; }
+      .love-post .react-tweet-theme { width:100%; min-width:0; max-width:none; margin:0; }
+      .love-mobile { display:none; }
+      .faq-section { padding:96px 24px 112px; background:var(--canvas); color:var(--ink); }
+      .faq-inner { width:min(1200px,100%); margin:0 auto; }
+      .faq-layout { display:grid; grid-template-columns:minmax(260px,360px) minmax(0,1fr); gap:clamp(64px,9vw,128px); }
+      .faq-display { max-width:360px; margin:0; color:var(--ink); font-size:clamp(42px,4.4vw,62px); font-weight:530; line-height:.98; letter-spacing:-.052em; text-wrap:balance; }
+      .faq-intro { max-width:325px; margin:22px 0 0; color:rgba(246,239,227,.62); font-size:15px; line-height:1.6; }
+      .faq-contact { display:inline-flex; min-height:44px; align-items:center; gap:8px; margin-top:24px; padding:11px 15px; border:1px solid rgba(246,239,227,.18); border-radius:10px; background:rgba(246,239,227,.08); color:var(--ink); font-size:13px; font-weight:700; text-decoration:none; transition:background-color .22s ease,transform .22s cubic-bezier(.2,.75,.2,1); }
+      .faq-contact:hover { background:rgba(246,239,227,.14); transform:translateY(-2px); }
+      .faq-contact:focus-visible,.faq-question:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .faq-list { border-top:1px solid rgba(246,239,227,.14); }
+      .faq-item { border-bottom:1px solid rgba(246,239,227,.14); }
+      .faq-question { display:flex; width:100%; min-height:82px; align-items:center; justify-content:space-between; gap:24px; padding:23px 0; border:0; background:transparent; color:rgba(246,239,227,.72); cursor:pointer; font:650 19px/1.35 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; letter-spacing:-.012em; text-align:left; transition:color .2s ease; }
+      .faq-question:hover,.faq-item.open .faq-question { color:var(--ink); }
+      .faq-icon { position:relative; display:grid; width:36px; height:36px; flex:0 0 auto; place-items:center; border:1px solid rgba(246,239,227,.22); border-radius:10px; background:rgba(246,239,227,.07); transition:background-color .22s ease,border-color .22s ease,transform .22s ease; }
+      .faq-icon:before,.faq-icon:after { position:absolute; width:12px; height:1.5px; border-radius:999px; background:currentColor; content:""; transition:transform .22s cubic-bezier(.2,.75,.2,1); }
+      .faq-icon:after { transform:rotate(90deg); }
+      .faq-item.open .faq-icon { border-color:rgba(255,207,50,.55); background:rgba(255,207,50,.14); color:var(--gold); }
+      .faq-item.open .faq-icon:after { transform:rotate(0deg) scaleX(0); }
+      .faq-panel { display:grid; grid-template-rows:0fr; opacity:0; transition:grid-template-rows .25s cubic-bezier(.2,.75,.2,1),opacity .18s ease; }
+      .faq-item.open .faq-panel { grid-template-rows:1fr; opacity:1; }
+      .faq-answer-clip { overflow:hidden; }
+      .faq-answer { max-width:690px; padding:0 60px 26px 0; color:rgba(246,239,227,.66); font-size:15px; line-height:1.72; }
+      .faq-answer p { margin:0; }
+      .faq-answer p + p,.faq-answer ul,.faq-answer ul + p { margin-top:14px; }
+      .faq-answer ul { display:grid; gap:7px; margin-bottom:0; padding-left:20px; }
+
+      .newsletter-section { position:relative; overflow:hidden; padding:112px 24px 120px; background:#f3f0e7; color:#111; }
+      .newsletter-inner { position:relative; z-index:1; width:min(980px,100%); margin:0 auto; text-align:center; }
+      .newsletter-accent { position:absolute; top:-210px; right:-140px; width:520px; height:520px; border-radius:50%; background:radial-gradient(circle at 67% 34%,rgba(229,34,45,.2) 0 12%,transparent 33%),radial-gradient(circle at 30% 66%,rgba(255,207,50,.24) 0 10%,transparent 31%),radial-gradient(circle at 51% 49%,rgba(17,17,17,.13) 0 22%,transparent 52%); opacity:.72; pointer-events:none; }
+      .newsletter-heading { max-width:860px; margin:0 auto; color:#111; font-size:clamp(48px,6vw,80px); font-weight:540; line-height:.98; letter-spacing:-.055em; text-wrap:balance; }
+      .newsletter-copy { max-width:590px; margin:24px auto 0; color:rgba(17,17,17,.62); font-size:17px; line-height:1.55; text-wrap:balance; }
+      .newsletter-form { display:flex; width:min(680px,100%); gap:10px; margin:38px auto 0; padding:8px; border:1px solid rgba(17,17,17,.12); border-radius:16px; background:rgba(255,253,247,.76); box-shadow:0 18px 50px rgba(40,30,12,.09); backdrop-filter:blur(14px); }
+      .newsletter-label { position:absolute; width:1px; height:1px; overflow:hidden; margin:-1px; padding:0; border:0; clip:rect(0 0 0 0); white-space:nowrap; }
+      .newsletter-input { min-width:0; min-height:56px; flex:1 1 auto; padding:0 18px; border:1px solid transparent; border-radius:10px; outline:none; background:rgba(255,255,255,.54); color:#111; font:500 16px/1.2 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; transition:border-color .18s ease,box-shadow .18s ease,background-color .18s ease; }
+      .newsletter-input::placeholder { color:rgba(17,17,17,.62); }
+      .newsletter-input:focus-visible { border-color:#111; background:#fffdf7; box-shadow:0 0 0 3px rgba(255,207,50,.55); }
+      .newsletter-form.has-error { border-color:rgba(178,20,31,.38); }
+      .newsletter-form.has-error .newsletter-input { border-color:#b2141f; box-shadow:0 0 0 3px rgba(178,20,31,.1); }
+      .newsletter-submit { position:relative; isolation:isolate; min-width:142px; min-height:56px; padding:0 22px; border:0; border-radius:10px; background:#111; color:#fff; cursor:pointer; font:750 14px/1 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; transition:background-color .15s cubic-bezier(0,0,.2,1),transform .15s cubic-bezier(0,0,.2,1),opacity .2s ease; }
+      .newsletter-submit:after { position:absolute; z-index:-1; inset:0; border-radius:inherit; background:inherit; box-shadow:0 0 0 0 rgba(17,17,17,.34); content:""; pointer-events:none; animation:subscribe-pulse 2s cubic-bezier(0,0,.2,1) infinite; }
+      .newsletter-submit:hover:not(:disabled) { background:#171717; transform:translateY(-1px) scale(1.02); }
+      .newsletter-submit:focus-visible { outline:3px solid var(--gold); outline-offset:3px; }
+      .newsletter-submit:disabled,.newsletter-input:disabled { cursor:wait; opacity:.62; }
+      .newsletter-submit:disabled:after { animation:none; }
+      .newsletter-status { min-height:22px; max-width:680px; margin:12px auto 0; color:rgba(17,17,17,.62); font-size:13px; line-height:1.55; }
+      .newsletter-status.is-error { color:#a81018; font-weight:650; }
+      .newsletter-success { width:min(680px,100%); margin:38px auto 0; padding:30px; border:1px solid rgba(17,17,17,.12); border-radius:16px; background:rgba(255,253,247,.78); box-shadow:0 18px 50px rgba(40,30,12,.08); }
+      .newsletter-success h3 { margin:0; color:#111; font-size:28px; font-weight:620; line-height:1.05; letter-spacing:-.035em; }
+      .newsletter-success p { max-width:540px; margin:12px auto 0; color:rgba(17,17,17,.64); font-size:15px; line-height:1.55; }
+      .site-footer { padding:56px 24px 20px; background:#090909; color:#f6efe3; }
+      .site-footer-inner { width:min(1200px,100%); margin:0 auto; }
+      .site-footer-sr { position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; clip-path:inset(50%); }
+      .site-footer-main { display:grid; grid-template-columns:minmax(260px,1.6fr) repeat(3,minmax(130px,1fr)); gap:clamp(38px,6vw,82px); align-items:start; }
+      .site-footer-group { width:auto; height:auto; margin:0; padding:0; display:block; border:0; border-radius:0; background:transparent; box-shadow:none; backdrop-filter:none; }
+      .site-footer-brand img { display:block; width:190px; height:auto; }
+      .site-footer-tagline { max-width:300px; margin:24px 0 0; color:rgba(246,239,227,.58); font-size:14px; line-height:1.6; }
+      .site-footer-group h3 { margin:2px 0 22px; color:#ffcf32; font-size:11px; font-weight:750; letter-spacing:.13em; text-transform:uppercase; }
+      .site-footer-links { display:grid; gap:13px; margin:0; padding:0; list-style:none; }
+      .site-footer-link { display:inline-flex; min-height:30px; align-items:center; gap:7px; color:rgba(246,239,227,.66); font-size:14px; text-decoration:none; transition:color .18s ease,transform .18s cubic-bezier(.2,.75,.2,1); }
+      .site-footer-link:hover { color:#f6efe3; transform:translateX(3px); }
+      .site-footer-home:focus-visible,.site-footer-link:focus-visible { border-radius:3px; outline:2px solid #ffcf32; outline-offset:4px; }
+      .site-footer-arrow { color:rgba(246,239,227,.36); font-size:11px; }
+      .site-footer-legal { display:flex; align-items:center; justify-content:space-between; gap:24px; margin-top:32px; padding-top:18px; border-top:1px solid rgba(246,239,227,.12); }
+      .site-footer-legal p { margin:0; color:rgba(246,239,227,.62); font-size:13px; }
+      .reveal-item { opacity:0; transform:translate3d(0,20px,0); transition:opacity var(--reveal-duration,600ms) cubic-bezier(.22,1,.36,1),transform var(--reveal-duration,600ms) cubic-bezier(.22,1,.36,1); transition-delay:var(--reveal-delay,0ms); }
+      .reveal-item.is-visible { opacity:1; transform:none; }
+      @keyframes love-up { from { transform:translate3d(0,0,0); } to { transform:translate3d(0,-50%,0); } }
+      @keyframes love-down { from { transform:translate3d(0,-50%,0); } to { transform:translate3d(0,0,0); } }
+      @keyframes nav-shimmer { from { background-position:100% 50%; } to { background-position:-60% 50%; } }
+      @keyframes cta-shimmer { from { left:-48%; } to { left:122%; } }
+      @keyframes subscribe-pulse { 0%,100% { box-shadow:0 0 0 0 rgba(17,17,17,.34); } 50% { box-shadow:0 0 0 11px rgba(17,17,17,.34); } }
+      @media(hover:hover) and (prefers-reduced-motion:no-preference) {
+        .tile { transition:transform 150ms cubic-bezier(0,0,.2,1); }
+        .tile:hover { z-index:6; transform:scale(1.065) rotate(var(--tile-rotate)); }
+        .team-card { transition:transform 150ms cubic-bezier(0,0,.2,1); }
+        .team-card:hover,.team-card:focus-within { z-index:2; transform:scale(1.035); }
+      }
+      @media(max-width:900px) {
+        .events-layout { grid-template-columns:1fr; gap:38px; }
+        .events-copy { display:grid; grid-template-columns:minmax(0,1fr) minmax(250px,.7fr); gap:28px; padding-top:0; }
+        .events-copy h2 { grid-row:1 / 3; }
+        .events-intro { margin-top:0; }
+        .luma-link { width:max-content; margin-top:0; }
+        .team-track { grid-template-columns:repeat(3,minmax(0,1fr)); }
+        .love-columns { grid-template-columns:repeat(2,minmax(0,1fr)); }
+        .love-column:nth-child(3) { width:calc(50% - 12px); grid-column:1 / -1; justify-self:center; }
+        .faq-layout { display:block; }
+        .faq-display { max-width:520px; }
+        .faq-intro { max-width:420px; }
+        .faq-list { margin-top:56px; }
+        .site-footer-main { grid-template-columns:repeat(2,minmax(0,1fr)); }
+      }
+      @media(max-width:620px) {
+        .events-section { padding:78px 16px 88px; }
+        .events-copy { display:block; }
+        .events-copy h2,.team-heading,.partners-heading,.love-heading { font-size:44px; }
+        .events-intro { margin-top:19px; }
+        .luma-link { margin-top:25px; }
+        .luma-shell { border-radius:11px; }
+        .luma-shell iframe { height:520px; }
+        .team-section { padding:78px 16px 88px; }
+        .summit-section { padding:78px 0 88px; }
+        .summit-inner { width:calc(100% - 32px); }
+        .summit-header { display:block; margin-bottom:28px; }
+        .summit-heading { font-size:44px; }
+        .summit-intro { font-size:14px; }
+        .summit-link { margin-top:24px; }
+        .summit-gallery { gap:10px; }
+        .summit-photo-marquee { -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 4%,#000 16%,#000 84%,transparent 96%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,transparent 4%,#000 16%,#000 84%,transparent 96%,transparent 100%); }
+        .summit-photo-cycle { gap:10px; padding-right:10px; }
+        .summit-photo { width:230px; height:158px; border-radius:12px; }
+        .summit-lambo { right:-22px; bottom:18px; width:112px; }
+        .team-header { margin-bottom:26px; }
+        .team-intro { max-width:280px; font-size:14px; }
+        .team-track { grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; }
+        .team-portrait { border-radius:13px; }
+        .team-card-copy { padding:13px; }
+        .team-card-copy h3 { font-size:16px; }
+        .team-role { font-size:11px; }
+        .partners-section { padding:78px 0 88px; }
+        .partners-inner { width:calc(100% - 32px); }
+        .partners-header { margin-bottom:22px; }
+        .partners-intro { font-size:14px; }
+        .partners-marquee { -webkit-mask-image:linear-gradient(90deg,transparent 0%,transparent 4%,#000 16%,#000 84%,transparent 96%,transparent 100%); mask-image:linear-gradient(90deg,transparent 0%,transparent 4%,#000 16%,#000 84%,transparent 96%,transparent 100%); }
+        .partners-track { animation-duration:74s; }
+        .partners-cycle { gap:20px; padding-right:20px; }
+        .partner-link { width:210px; height:112px; padding:18px 14px; }
+        .love-section { padding:78px 16px 88px; }
+        .love-header { display:block; margin-bottom:26px; }
+        .love-intro { max-width:300px; font-size:14px; }
+        .love-follow { margin-top:12px; }
+        .love-columns { display:none; }
+        .love-mobile { display:block; }
+        .love-mobile .love-viewport { height:min(680px,72svh); }
+        .love-mobile .love-column.is-ready .love-column-track { animation:love-up 87s linear infinite; }
+        .love-post { margin-bottom:14px; }
+        .faq-section { padding:78px 16px 88px; }
+        .faq-layout { display:block; }
+        .faq-display { max-width:330px; font-size:44px; }
+        .faq-intro { margin-top:18px; }
+        .faq-contact { margin-top:20px; }
+        .faq-list { margin-top:48px; }
+        .faq-question { min-height:76px; gap:18px; padding:20px 0; font-size:17px; }
+        .faq-answer { padding:0 48px 23px 0; font-size:14px; }
+        .newsletter-section { padding:84px 16px 92px; }
+        .newsletter-accent { top:-185px; right:-230px; width:440px; height:440px; opacity:.58; }
+        .newsletter-heading { max-width:360px; font-size:46px; }
+        .newsletter-copy { max-width:330px; margin-top:20px; font-size:15px; }
+        .newsletter-form { flex-direction:column; gap:8px; margin-top:32px; padding:7px; }
+        .newsletter-submit { width:100%; }
+        .newsletter-success { margin-top:30px; padding:26px 22px; }
+        .site-footer { padding:48px 16px 18px; }
+        .site-footer-main { grid-template-columns:1fr; gap:42px; }
+        .site-footer-tagline { margin-top:18px; }
+        .site-footer-group h3 { margin-bottom:16px; }
+        .site-footer-legal { align-items:flex-start; flex-direction:column; gap:10px; margin-top:32px; padding-top:16px; }
+      }
+
+      @media(prefers-reduced-motion:reduce) {
+        .mobile-navigation,.mobile-menu-icon:before,.mobile-menu-icon:after { transition:none; }
+        .navlinks a:not(.primary-cta):hover { animation:none; color:var(--gold); background:none; }
+        .navlinks .primary-cta:before,.newsletter-submit:after { animation:none; }
+        .tile,.team-card img,.team-social-link,.partner-link,.partner-logo { transition:none; }
+        .partners-marquee { overflow-x:auto; -webkit-mask-image:none; mask-image:none; scrollbar-width:none; }
+        .partners-marquee::-webkit-scrollbar { display:none; }
+        .partners-track { animation:none; transform:none; }
+        .partners-cycle[aria-hidden="true"] { display:none; }
+        .summit-photo-marquee { overflow-x:auto; -webkit-mask-image:none; mask-image:none; scrollbar-width:none; }
+        .summit-photo-marquee::-webkit-scrollbar { display:none; }
+        .summit-photo-track { animation:none; transform:none; }
+        .summit-photo-cycle[aria-hidden="true"] { display:none; }
+        .summit-lambo,.summit-lambo:hover { opacity:.58; transform:translateX(12%); transition:none; }
+        .summit-lambo:hover:after { animation:none; }
+        .love-column.is-ready .love-column-track,
+        .love-mobile .love-column.is-ready .love-column-track { animation:none; transform:none; }
+        .love-cycle[aria-hidden="true"] { display:none; }
+        .love-viewport { overflow-y:auto; }
+        .love-follow span { transition:none; }
+        .faq-contact,.faq-question,.faq-icon,.faq-icon:before,.faq-icon:after,.faq-panel { transition:none; }
+        .builder-pill,.builder-pill-arrow,.newsletter-submit,.newsletter-input { transition:none; }
+        .site-footer-link { transition:none; }
+        .reveal-item { opacity:1; transform:none; transition:none; }
+      }
+
+      @media(max-width:900px){
+        .impact-inner { grid-template-columns:repeat(2,minmax(0,1fr)); row-gap:28px; }
+        .impact-stat:nth-child(3) { padding-left:0; border-left:0; }
+        .what-we-do { min-height:0; }
+        .pillars { height:auto; flex-direction:column; }
+        .pillar { width:100%; min-width:0; min-height:62px; flex:0 0 62px; transition:flex-basis .46s cubic-bezier(.22,.78,.2,1); }
+        .pillar.active { flex:0 0 330px; }
+        .collapsed-label { flex-direction:row; gap:15px; padding:0 20px; }
+        .collapsed-label .vertical { margin:0; writing-mode:horizontal-tb; transform:none; }
+        .expanded-content { width:min(520px,90%); padding:27px; }
+      }
+      @media(max-width:800px){
+        .hero { height:100svh; min-height:760px; }
+        nav { width:calc(100% - 32px); height:70px; gap:12px; }
+        .brand img { width:138px; }
+        .navlinks { gap:8px; }
+        .navlinks .desktop-nav-link { display:none; }
+        .navlinks .primary-cta { min-height:44px; padding:9px 13px; }
+        .cta-global { display:none; }
+        .mobile-menu-toggle { position:relative; display:grid; width:44px; height:44px; flex:0 0 auto; place-items:center; padding:0; border:1px solid rgba(255,255,255,.18); border-radius:50%; background:rgba(7,7,7,.7); color:var(--ink); cursor:pointer; backdrop-filter:blur(12px); }
+        .mobile-menu-toggle:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+        .mobile-menu-icon { position:relative; display:block; width:17px; height:12px; }
+        .mobile-menu-icon:before,.mobile-menu-icon:after { position:absolute; right:0; left:0; height:1.5px; border-radius:999px; background:currentColor; content:""; transition:top .18s cubic-bezier(.2,.75,.2,1),transform .18s cubic-bezier(.2,.75,.2,1); }
+        .mobile-menu-icon:before { top:2px; }
+        .mobile-menu-icon:after { top:9px; }
+        .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-icon:before { top:5.5px; transform:rotate(45deg); }
+        .mobile-menu-toggle[aria-expanded="true"] .mobile-menu-icon:after { top:5.5px; transform:rotate(-45deg); }
+        .mobile-navigation { position:absolute; top:62px; right:0; display:grid; width:min(288px,calc(100vw - 32px)); padding:8px; border:1px solid rgba(255,255,255,.14); border-radius:15px; background:rgba(8,8,8,.94); box-shadow:0 24px 60px rgba(0,0,0,.48); opacity:0; visibility:hidden; transform:translateY(-8px); pointer-events:none; backdrop-filter:blur(18px); transition:opacity .18s cubic-bezier(.2,.75,.2,1),transform .18s cubic-bezier(.2,.75,.2,1),visibility 0s linear .18s; }
+        .mobile-navigation.is-open { opacity:1; visibility:visible; transform:none; pointer-events:auto; transition-delay:0s; }
+        .mobile-navigation a { display:flex; min-height:44px; align-items:center; justify-content:space-between; padding:0 13px; border-radius:9px; color:rgba(246,239,227,.82); font-size:13px; font-weight:650; text-decoration:none; }
+        .mobile-navigation a:hover { background:rgba(255,255,255,.07); color:var(--ink); }
+        .mobile-navigation a:focus-visible { outline:2px solid var(--gold); outline-offset:-2px; }
+        .mobile-navigation .mobile-join { color:var(--gold); }
+        .hero-content { width:calc(100% - 28px); height:calc(100% - 70px); min-height:0; padding:48px 0 0; }
+        h1 { font-size:clamp(44px,13vw,68px); }
+        .collage { transform:scale(.68); transform-origin:top center; width:1020px; max-width:none; margin-bottom:-75px; }
+      }
+      @media(max-width:560px){
+        .brand img { width:136px; }
+        .navlinks .primary-cta { min-height:44px; padding:9px 12px; font-size:11px; }
+        .hero-content { width:calc(100% - 24px); padding:72px 0 0; }
+        h1 { max-width:360px; font-size:clamp(36px,9.6vw,41px); line-height:1.02; }
+        .collage { flex:0 0 322px; width:min(400px,calc(100vw - 32px)); height:322px; margin-top:26px; margin-bottom:26px; transform:none; }
+        .collage .tile { --tile-rotate:0deg; inset:auto; margin:0; border-radius:12px; }
+        .collage .photo-a { top:117px; left:0; z-index:4; width:40%; height:30%; }
+        .collage .photo-b { top:8px; left:13%; z-index:2; width:36%; height:40%; }
+        .collage .photo-c { bottom:0; left:13%; z-index:3; width:74%; height:42%; }
+        .collage .photo-d { top:8px; right:13%; z-index:2; width:36%; height:40%; }
+        .collage .photo-e { top:117px; right:0; z-index:4; width:40%; height:30%; }
+        .what-we-do { padding:78px 16px 88px; }
+        .impact-strip { padding:26px 16px 30px; }
+        .impact-inner { row-gap:24px; }
+        .impact-stat { padding-right:12px; padding-left:12px; }
+        .impact-stat:nth-child(odd) { padding-left:0; border-left:0; }
+        .impact-stat:nth-child(even) { padding-right:0; }
+        .impact-value { font-size:36px; }
+        .impact-label { max-width:140px; font-size:12px; }
+        .section-label { font-size:44px; }
+        .what-we-do-intro { margin:12px 0 30px; }
+        .collapsed-label .vertical { font-size:13px; letter-spacing:.06em; }
+        .photo-c { right:0; }
+        .photo-g { right:48px; }
+        .pillar.active { flex-basis:310px; }
+        .expanded-content h3 { font-size:32px; }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module">
+      import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+      import { createRoot } from "react-dom/client";
+      import { GrainGradient } from "https://esm.sh/@paper-design/shaders-react@0.0.80?external=react";
+      import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "https://esm.sh/react-tweet@3.3.1/X-ZXJlYWN0LHJlYWN0LWRvbQ/es2022/react-tweet.bundle.mjs";
+      const e = React.createElement;
+      const pillars = [
+        { title:"Builder & Founder Support", description:"Product and technical guidance that helps teams ship, with hands-on support throughout hackathons, bounties and ecosystem programs.", image:"https://de.superteam.fun/images/hero/17.jpg" },
+        { title:"Capital & Fundraising", description:"Connecting promising projects with capital while helping founders strengthen their positioning and prepare for investor conversations.", image:"https://de.superteam.fun/images/what-we-do/10.jpeg" },
+        { title:"Growth & Distribution", description:"Practical go-to-market support plus access to community and ecosystem channels across Germany and the wider Superteam network.", image:"https://de.superteam.fun/images/what-we-do/7.jpeg" },
+        { title:"Talent & Hiring", description:"Bringing developers, designers and operators together with teams, supporting both early team formation and long-term growth.", image:"/images/new-site/_T6_0970.jpg" },
+        { title:"Ecosystem & Community", description:"Events, education and ecosystem coordination that create a welcoming home for builders and showcase their work globally.", image:"/images/new-site/_T6_2752.jpg" },
+        { title:"Institutional Engagement", description:"Connecting builders with established organizations and supporting conversations that can lead to meaningful real-world adoption.", image:"/images/new-site/frankfurt.jpg" }
+      ];
+      const metrics = [
+        {value:1000,suffix:"+",title:"Builders Impacted",copy:"Through workshops, hackathons and community events across Germany."},
+        {value:100,suffix:"+",title:"Startups Accelerated",copy:"Projects supported from their first build through launch and growth."},
+        {value:470,prefix:"€",suffix:"K+",title:"Funds Distributed",copy:"Grants and bounties distributed to builders and teams."},
+        {value:5,prefix:"€",suffix:"M+",title:"GDP Raised",copy:"Capital raised, originated and invoiced by community members."}
+      ];
+      const team = [
+        {name:"Patricia Albrecht",role:"Lead",image:"/images/new-site/patti-example.jpg",xUrl:"https://x.com/pattiruss_",linkedinUrl:"https://www.linkedin.com/in/pattiruss/",position:"center"},
+        {name:"Carlo Abdel-Nour",role:"Community & Events Lead",image:"https://de.superteam.fun/images/summit-germany/carlo-abdel-nour.jpeg",xUrl:"https://x.com/zCase_",linkedinUrl:"https://www.linkedin.com/in/carlo-abdel-nour/",position:"center 30%"},
+        {name:"Samantha Merlivat",role:"Growth",image:"https://de.superteam.fun/images/summit-germany/sam-new.jpg",xUrl:"https://x.com/sammrvt",linkedinUrl:"https://www.linkedin.com/in/samantha-merlivat/",position:"center 26%"},
+        {name:"Thuy Emilia Dang",role:"Social Media Marketing",image:"/images/new-site/emilia.jpeg",xUrl:"https://x.com/TED3166",linkedinUrl:"https://www.linkedin.com/in/thuy-emilia-dang/",position:"center"},
+        {name:"Merdan Aslan",role:"Developer Relations",image:"https://de.superteam.fun/images/summit-germany/merdan-aslan-speaker.jpg",xUrl:"https://x.com/merdussss",linkedinUrl:"https://www.linkedin.com/in/merdan-aslan-1aba4740b/",position:"center 24%"}
+      ];
+      const partners = [
+        {name:"Solana Foundation",image:"/images/new-site/partners/solana-foundation.png",url:"https://solana.org/"},
+        {name:"Visa",image:"/images/new-site/partners/visa-brandmark-blue-1960x622.png",url:"https://www.visa.com/"},
+        {name:"OKX",image:"/images/summit-germany/partners/OKX_id7gsDJl-c_0.png",url:"https://www.okx.com/"},
+        {name:"Staking Facilities",image:"/images/summit-germany/partners/stacking-facilities.png",url:"https://stakingfacilities.com/"},
+        {name:"Jupiter",image:"/images/summit-germany/partners/jupiter-white.svg",url:"https://jup.ag/"},
+        {name:"VIA",image:"/images/summit-germany/partners/VIA-Logo-White.png",url:"https://www.solvewithvia.com/"},
+        {name:"Arcium",image:"/images/summit-germany/partners/arcium-logo.svg",url:"https://arcium.com/"},
+        {name:"Tangem",image:"/images/summit-germany/partners/tangem.png",url:"https://tangem.com/en"},
+        {name:"CUDIS",image:"/images/summit-germany/partners/CUDIS_Wordmark_White.svg",url:"https://www.cudis.xyz/"},
+        {name:"Buddies for Paws",image:"/images/summit-germany/partners/BFP-master-orange.svg",url:"https://www.buddiesforpaws.org/"},
+        {name:"Solana Spaces",image:"/images/new-site/partners/solana-spaces.png",url:"https://solanaspaces.com/"},
+        {name:"Seeker",image:"/images/summit-germany/partners/seeker.png",url:"https://solanamobile.com/seeker"},
+        {name:"Superteam Talent",image:"/images/summit-germany/partners/superteam-talent.png",url:"https://talent.superteam.fun/"},
+        {name:"Pudgy Penguins",image:"/images/summit-germany/partners/pudgy-penguins.png",url:"https://www.pudgypenguins.com/"}
+      ];
+      const summitPhotos = [
+        {src:"/images/new-site/summit/web/_T6_0653.jpg",alt:"Speaker presenting Berlin's startup ecosystem at Solana Summit Germany"},
+        {src:"/images/new-site/summit/web/_T6_0706.jpg",alt:"Aditya Shetty and Mert Mumtaz in conversation on the Summit stage"},
+        {src:"/images/new-site/summit/web/_T6_0819.jpg",alt:"Attendee playing golf beside the Spree during Solana Summit Germany"},
+        {src:"/images/new-site/summit/web/_T6_1316.jpg",alt:"Lamborghini beside the Spree and Oberbaum Bridge at Solana Summit Germany"},
+        {src:"/images/new-site/summit/web/_T6_0970.jpg",alt:"Community members gathering at the Superteam Talent booth"},
+        {src:"/images/new-site/summit/web/_T6_1126.jpg",alt:"Audience watching a Solana Summit Germany presentation"},
+        {src:"/images/new-site/summit/web/_T6_1598.jpg",alt:"Trading Cup winner receiving the first-place award"},
+        {src:"/images/new-site/summit/web/OTL_0009.jpg",alt:"Outdoor interview beside the Spree at Solana Summit Germany"},
+        {src:"/images/new-site/summit/web/OTL_0022.jpg",alt:"Attendees gathering outside the riverside Summit venue"},
+        {src:"/images/new-site/summit/web/OTL_0044.jpg",alt:"Solana Summit Germany attendees on the riverside terrace"},
+        {src:"/images/new-site/summit/web/_T6_0439.jpg",alt:"Superteam hosts welcoming guests beside the Summit Lamborghini"},
+        {src:"/images/new-site/summit/web/OTL_0048.jpg",alt:"Attendees exploring the event merchandise area"},
+        {src:"/images/new-site/summit/web/OTL_0137.jpg",alt:"Competitors at the live Trading Cup final"},
+        {src:"/images/new-site/summit/web/OTL_0174.jpg",alt:"Trading Cup presenter speaking after the competition"},
+        {src:"/images/new-site/summit/web/OTL_0207.jpg",alt:"Solana Summit Germany community group on stage"},
+        {src:"/images/new-site/summit/web/_T6_0391.jpg",alt:"Solana Summit Germany welcome and merchandise desk"},
+        {src:"/images/new-site/summit/web/_T6_0478.jpg",alt:"Superteam Germany builders posing with the Summit Lamborghini"},
+        {src:"/images/new-site/summit/web/_T6_0402.jpg",alt:"Crowd arriving at the Solana Summit Germany venue"}
+      ];
+      const lovePosts = [
+        "https://x.com/merdussss/status/2067189440359883087",
+        "https://x.com/merdussss/status/2066459946762244535",
+        "https://x.com/pattiruss_/status/2066547905998033362",
+        "https://x.com/sammrvt/status/2067221240008380868",
+        "https://x.com/TED3166/status/2095888663926243652",
+        "https://x.com/zCase_/status/2067157158752371076",
+        "https://x.com/MrTimister/status/2066089389340401851",
+        "https://x.com/MrTimister/status/2067238302067933553",
+        "https://x.com/lostsol/status/2070826688217321829",
+        "https://x.com/TheWeb3Jessica_/status/2070978343281815886",
+        "https://x.com/mangusxbt/status/2093636830516166888",
+        "https://x.com/__Official__1/status/2067839732348866576",
+        "https://x.com/SuperteamDE/status/2068656185301971101",
+        "https://x.com/SuperteamDE/status/2075475164863803829",
+        "https://x.com/SuperteamDE/status/2069676951078629416",
+        "https://x.com/SuperteamDE/status/2083810037798183134",
+        "https://x.com/SuperteamDE/status/2077649467969528191",
+        "https://x.com/SuperteamDE/status/2065886789735186927"
+      ];
+      const LOVE_BATCH_SIZE=6;
+      const LOVE_COLUMN_SIZE=2;
+      const LOVE_BATCH_COUNT=Math.ceil(lovePosts.length/LOVE_BATCH_SIZE);
+      const LOVE_BATCH_ORDER=[0,12,2,6,8,13,1,14,3,7,9,15,4,16,5,10,11,17];
+      const getLoveBatch=batchIndex=>{
+        const start=(batchIndex%LOVE_BATCH_COUNT)*LOVE_BATCH_SIZE;
+        return LOVE_BATCH_ORDER.slice(start,start+LOVE_BATCH_SIZE).map(index=>lovePosts[index]);
+      };
+      const faqItems = [
+        {
+          question:"What is Superteam Germany?",
+          paragraphs:["Superteam Germany is a community for founders, developers, creators, operators and institutions building in the Solana ecosystem. We help people find collaborators, opportunities, events and practical support to build and grow."]
+        },
+        {
+          question:"What opportunities are available?",
+          paragraphs:["The community connects people with events, hackathons, bounties, grants, jobs, mentorship and introductions across the wider Solana ecosystem. Opportunities vary throughout the year and are shared through our community channels."]
+        },
+        {
+          question:"Do I need to be a developer to get involved?",
+          paragraphs:["No. Developers are an important part of the community, but strong ecosystems also need founders, designers, marketers, creators, community leaders, investors, researchers and operators. What matters is that you want to contribute and create useful work."]
+        },
+        {
+          question:"How do I become a member?",
+          paragraphs:["Official membership is invite-only and recognizes people who consistently contribute to the ecosystem. German citizenship, residency or a German entity is not required. Strong candidates typically demonstrate:"],
+          bullets:["Proof of work in the Solana ecosystem","Meaningful contributions to the Germany community","Recommendations from at least two existing members"],
+          closing:"You do not need to be an official member to attend events, participate in the community, contribute or explore opportunities."
+        },
+        {
+          question:"How can projects partner with us?",
+          paragraphs:["Projects can work with Superteam Germany through sponsored or co-hosted events, bounty programs, ecosystem initiatives, community activations and opportunities for local talent. Reach out through our official channels and tell us what you want to achieve."]
+        },
+        {
+          question:"Is Superteam Germany only for Germans?",
+          paragraphs:["No. German citizenship, residency or a German entity is not required. Our focus is the Solana ecosystem in Germany, and we welcome people from anywhere who want to contribute meaningfully to that community."]
+        }
+      ];
+      // Wall of Love motion storyboard:
+      //      0 ms  Local skeleton cards render while post data loads.
+      //    600 ms  After data settles, desktop starts three streams and mobile starts one.
+      const LOVE_TIMING = { startAfterLoadMs:600 };
+      // Section reveal storyboard:
+      //      0 ms  The hero headline begins rising into view.
+      //    180 ms  The builder count follows.
+      //    360 ms  The image collage completes the hero sequence.
+      //    600 ms  Each item settles at full opacity; it never replays.
+      const REVEAL_TIMING = { durationMs:600, staggerMs:70, heroPillDelayMs:180, heroCollageDelayMs:360 };
+      const postId = url => url.split("/status/")[1];
+      const TweetAvatar = ({src,...props}) => {
+        const highResSrc=src.replace(/_normal(?=\.[a-z]+(?:\?|$))/i,"_200x200");
+        return e("img",{...props,src:highResSrc,srcSet:`${src} 1x, ${highResSrc} 2x`,loading:"lazy",decoding:"async"});
+      };
+      const tweetComponents={AvatarImg:TweetAvatar};
+
+      function HeroNav(){
+        const [menuOpen,setMenuOpen]=useState(false);
+        useEffect(()=>{
+          const closeOnEscape=event=>{ if(event.key==="Escape") setMenuOpen(false); };
+          const closeOnDesktop=()=>{ if(window.innerWidth>800) setMenuOpen(false); };
+          window.addEventListener("keydown",closeOnEscape);
+          window.addEventListener("resize",closeOnDesktop);
+          return()=>{
+            window.removeEventListener("keydown",closeOnEscape);
+            window.removeEventListener("resize",closeOnDesktop);
+          };
+        },[]);
+        const closeMenu=()=>setMenuOpen(false);
+        return e("nav",{className:"hero-nav","aria-label":"Primary"},
+          e("a",{className:"brand",href:"#","aria-label":"Superteam Germany home"},e("img",{src:"https://de.superteam.fun/images/stLogoWithIcon.svg",alt:""})),
+          e("div",{className:"navlinks"},
+            e("a",{className:"desktop-nav-link",href:"#what-we-do"},"What We Do"),
+            e("a",{className:"desktop-nav-link",href:"#events"},"Events"),
+            e("a",{className:"desktop-nav-link",href:"#team"},"Team"),
+            e("a",{className:"desktop-nav-link",href:"#faq"},"FAQ"),
+            e("a",{className:"desktop-nav-link community-link",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer"},"Join Us ↗"),
+            e("a",{className:"primary-cta",href:"/buildstation"},e("span",{className:"cta-global"},"Global"),e("span",{className:"cta-hackathon"},"Hackathon ↗")),
+            e("button",{className:"mobile-menu-toggle",type:"button","aria-expanded":menuOpen,"aria-controls":"mobile-navigation","aria-label":menuOpen?"Close navigation":"Open navigation",onClick:()=>setMenuOpen(open=>!open)},e("span",{className:"mobile-menu-icon","aria-hidden":"true"}))
+          ),
+          e("div",{className:`mobile-navigation${menuOpen?" is-open":""}`,id:"mobile-navigation","aria-hidden":!menuOpen,inert:!menuOpen},
+            e("a",{href:"#what-we-do",onClick:closeMenu},"What We Do",e("span",{"aria-hidden":"true"},"01")),
+            e("a",{href:"#events",onClick:closeMenu},"Events",e("span",{"aria-hidden":"true"},"02")),
+            e("a",{href:"#team",onClick:closeMenu},"Team",e("span",{"aria-hidden":"true"},"03")),
+            e("a",{href:"#faq",onClick:closeMenu},"FAQ",e("span",{"aria-hidden":"true"},"04")),
+            e("a",{className:"mobile-join",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer",onClick:closeMenu},"Join Us",e("span",{"aria-hidden":"true"},"↗"))
+          )
+        );
+      }
+
+      function Shader(){return e(GrainGradient,{colorBack:"hsl(0, 0%, 0%)",colors:["hsl(357, 84%, 49%)","hsl(0, 88%, 40%)","hsl(43, 100%, 53%)","hsl(48, 100%, 73%)"],softness:.76,intensity:.45,noise:0,shape:"corners",offsetX:0,offsetY:0,scale:1,rotation:0,speed:window.matchMedia("(prefers-reduced-motion: reduce)").matches?0:.68,style:{width:"100%",height:"100%"}});}
+      function useSectionReveals(){
+        useLayoutEffect(()=>{
+          const selectors=[
+            ".hero h1",".builder-pill",".collage",".impact-stat",".section-label",".what-we-do-intro",".pillars",
+            ".events-copy",".luma-shell",".summit-header",".summit-gallery",".team-header",".team-card",".partners-header",".partners-marquee",
+            ".love-header",".love-columns",".love-mobile",".faq-aside",".faq-list",
+            ".newsletter-inner",".site-footer-main"
+          ];
+          const items=[...document.querySelectorAll(selectors.join(","))];
+          const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          items.forEach((item,index)=>{
+            item.classList.add("reveal-item");
+            item.style.setProperty("--reveal-duration",`${REVEAL_TIMING.durationMs}ms`);
+            let delay=(index%4)*REVEAL_TIMING.staggerMs;
+            if(item.matches(".hero h1"))delay=0;
+            else if(item.matches(".builder-pill"))delay=REVEAL_TIMING.heroPillDelayMs;
+            else if(item.matches(".collage"))delay=REVEAL_TIMING.heroCollageDelayMs;
+            item.style.setProperty("--reveal-delay",`${delay}ms`);
+          });
+          if(reduced){items.forEach(item=>item.classList.add("is-visible"));return;}
+          const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
+            if(!entry.isIntersecting)return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }),{threshold:.12,rootMargin:"0px 0px -8%"});
+          items.forEach(item=>observer.observe(item));
+          return()=>observer.disconnect();
+        },[]);
+      }
+      const img = (cls,src,alt) => e("figure",{className:`tile ${cls}`},e("img",{src,alt}));
+      function CountUp({value,prefix="",suffix=""}){
+        const ref=useRef(null);
+        const [current,setCurrent]=useState(0);
+        useEffect(()=>{
+          const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+          if(reduced){setCurrent(value);return;}
+          let frame;
+          const observer=new IntersectionObserver(entries=>{
+            if(!entries[0].isIntersecting)return;
+            observer.disconnect();
+            const started=performance.now();
+            const tick=now=>{
+              const progress=Math.min((now-started)/1200,1);
+              setCurrent(Math.round(value*(1-Math.pow(1-progress,3))));
+              if(progress<1)frame=requestAnimationFrame(tick);
+            };
+            frame=requestAnimationFrame(tick);
+          },{threshold:.35});
+          if(ref.current)observer.observe(ref.current);
+          return()=>{observer.disconnect();if(frame)cancelAnimationFrame(frame);};
+        },[value]);
+        const formatted=current.toLocaleString("en-US");
+        return e("span",{ref},e("span",{"aria-hidden":"true"},prefix,formatted,suffix),e("span",{className:"site-footer-sr"},prefix,value.toLocaleString("en-US"),suffix));
+      }
+      function ImpactStrip(){return e("section",{className:"impact-strip","aria-label":"Superteam Germany impact"},e("div",{className:"impact-inner"},...metrics.map(metric=>e("article",{className:"impact-stat",key:metric.title},e("p",{className:"impact-value"},e(CountUp,metric)),e("p",{className:"impact-label"},metric.title),e("p",{className:"impact-copy"},metric.copy)))));}
+      function WhatWeDo(){const [active,setActive]=useState(0);return e("section",{className:"what-we-do",id:"what-we-do"},e("div",{className:"section-inner"},e("h2",{className:"section-label"},"What We Do"),e("p",{className:"what-we-do-intro"},"Hands-on support to help builders and founders launch, grow and succeed across the Solana ecosystem."),e("div",{className:"pillars",role:"tablist","aria-label":"What Superteam Germany does"},...pillars.map((pillar,index)=>e("button",{key:pillar.title,className:`pillar${active===index?" active":""}`,type:"button",role:"tab","aria-selected":active===index,"aria-expanded":active===index,onMouseEnter:()=>setActive(index),onFocus:()=>setActive(index),onClick:()=>setActive(index)},e("div",{className:"pillar-bg",style:{backgroundImage:`url(${pillar.image})`}}),e("div",{className:"collapsed-label","aria-hidden":active===index},e("span",{className:"number"},String(index+1).padStart(2,"0")),e("span",{className:"vertical"},pillar.title)),e("div",{className:"expanded-content"},e("h3",null,pillar.title),e("p",null,pillar.description)))))));}
+
+      function Events(){return e("section",{className:"events-section",id:"events"},e("div",{className:"events-inner"},e("div",{className:"events-layout"},e("div",{className:"events-copy"},e("h2",null,"Join us for our upcoming events."),e("p",{className:"events-intro"},"Join builders, founders and operators at Superteam Germany gatherings across the country."),e("a",{className:"luma-link",href:"https://luma.com/user/superteamde",target:"_blank",rel:"noreferrer"},"View all on Luma ↗")),e("div",null,e("div",{className:"luma-shell"},e("iframe",{src:"https://luma.com/embed/calendar/cal-rMdmYCRWtrzLUwa/events",width:"600",height:"450",frameBorder:"0",allowFullScreen:true,"aria-hidden":"false",tabIndex:"0",title:"Upcoming Superteam Germany events",loading:"lazy"}))))));}
+
+      function XMark(){return e("svg",{viewBox:"0 0 24 24","aria-hidden":"true"},e("path",{d:"M13.71 10.62 20.41 3h-1.59l-5.82 6.62L8.35 3H3l7.03 10.01L3 21h1.59l6.15-6.99L15.65 21H21l-7.29-10.38Zm-2.18 2.47-.71-.99-5.67-7.93h2.44l4.57 6.39.71.99 5.95 8.32h-2.44l-4.85-6.78Z"}));}
+      function LinkedInMark(){return e("svg",{viewBox:"0 0 24 24","aria-hidden":"true"},e("path",{d:"M5.34 3.5A2.34 2.34 0 1 1 5.34 8a2.34 2.34 0 0 1 0-4.5ZM3.32 9.66h4.04V21H3.32V9.66Zm6.58 0h3.87v1.55h.05c.54-1.02 1.86-2.09 3.83-2.09 4.1 0 4.86 2.7 4.86 6.21V21h-4.04v-5.02c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.31-1.93 2.65V21H9.9V9.66Z"}));}
+
+      function SummitPhotoRow({photos,reverse=false}){
+        const sequence=reverse?[...photos].reverse():photos;
+        const renderCycle=(duplicate)=>e("div",{className:"summit-photo-cycle","aria-hidden":duplicate?"true":undefined,key:duplicate?"duplicate":"primary"},...sequence.map((photo,index)=>e("figure",{className:"summit-photo",key:`${duplicate?"duplicate":"primary"}-${photo.src}`},e("img",{src:photo.src,alt:duplicate?"":photo.alt,loading:index<3&&!duplicate?"eager":"lazy",decoding:"async"}))));
+        return e("div",{className:"summit-photo-marquee"},e("div",{className:"summit-photo-track"},renderCycle(false),renderCycle(true)));
+      }
+
+      function SummitRecap(){
+        return e("section",{className:"summit-section",id:"summit"},
+          e("div",{className:"summit-inner"},
+            e("div",{className:"summit-header"},
+              e("div",null,
+                e("h2",{className:"summit-heading"},"Solana Summit Germany"),
+                e("p",{className:"summit-intro"},"Germany’s flagship Solana gathering—bringing builders, founders and institutions together in Berlin.")),
+              e("a",{className:"summit-link",href:"https://de.superteam.fun/solana-summit-germany",target:"_blank",rel:"noreferrer"},"Explore the Summit ↗"))),
+          e("div",{className:"summit-gallery",role:"region","aria-label":"Solana Summit Germany photo highlights"},
+            e(SummitPhotoRow,{photos:summitPhotos})),
+          e("a",{className:"summit-lambo",href:"https://de.superteam.fun/solana-summit-germany",target:"_blank",rel:"noreferrer","aria-label":"Explore Solana Summit Germany"},
+            e("img",{src:"/images/new-site/summit-gold-aventador-pixel.png",alt:"",loading:"lazy",decoding:"async"}))
+        );
+      }
+
+      function Team(){
+        return e("section",{className:"team-section",id:"team"},
+          e("div",{className:"team-inner"},
+            e("div",{className:"team-header"},
+              e("div",null,
+                e("h2",{className:"team-heading"},"Team"),
+                e("p",{className:"team-intro"},"The team growing Solana across Germany.")
+              )
+            ),
+            e("div",{className:"team-track"},
+              ...team.map(member=>e("article",{className:"team-card",key:member.name},
+                e("div",{className:"team-portrait"},
+                  e("img",{src:member.image,alt:`Portrait of ${member.name}`,style:{objectPosition:member.position}}),
+                  e("div",{className:"team-card-copy"},
+                    e("h3",null,member.name),
+                    e("p",{className:"team-role"},member.role),
+                    e("div",{className:"team-social-links"},
+                      member.xUrl ? e("a",{className:"team-social-link",href:member.xUrl,target:"_blank",rel:"noreferrer","aria-label":`${member.name} on X`},e(XMark)) : e("span",{className:"team-social-link is-placeholder","aria-label":`${member.name} X profile to be added`,title:"X profile to be added"},e(XMark)),
+                      member.linkedinUrl ? e("a",{className:"team-social-link",href:member.linkedinUrl,target:"_blank",rel:"noreferrer","aria-label":`${member.name} on LinkedIn`},e(LinkedInMark)) : null
+                    )
+                  )
+                )
+              ))
+            )
+          )
+        );
+      }
+
+      function Partners(){
+        const renderPartner=(partner,isDuplicate)=>e("a",{
+          className:"partner-link",
+          key:`${isDuplicate?"duplicate":"primary"}-${partner.name}`,
+          href:partner.url,
+          target:"_blank",
+          rel:"noreferrer",
+          title:partner.name,
+          "aria-label":`Visit ${partner.name}`,
+          "data-partner":partner.name,
+          tabIndex:isDuplicate?-1:undefined
+        },partner.lockup
+          ? e("span",{className:"partner-lockup"},
+              e("img",{className:"partner-logo",src:partner.image,alt:""}),
+              e("span",null,partner.name)
+            )
+          : e("img",{className:"partner-logo",src:partner.image,alt:isDuplicate?"":partner.name}));
+        return e("section",{className:"partners-section",id:"partners"},
+          e("div",{className:"partners-inner"},
+            e("div",{className:"partners-header"},
+              e("h2",{className:"partners-heading",id:"partners-heading"},"Ecosystem Partners"),
+              e("p",{className:"partners-intro"},"Our top-tier collaborators.")
+            )
+          ),
+          e("div",{className:"partners-marquee",role:"region","aria-labelledby":"partners-heading"},
+            e("div",{className:"partners-track"},
+              e("div",{className:"partners-cycle"},...partners.map(partner=>renderPartner(partner,false))),
+              e("div",{className:"partners-cycle","aria-hidden":"true"},...partners.map(partner=>renderPartner(partner,true)))
+            )
+          )
+        );
+      }
+
+      function TweetCard({url,tweet,error}){
+        if(error) return e("a",{href:url,target:"_blank",rel:"noreferrer","aria-label":"Open unavailable post on X"},e(TweetNotFound));
+        if(!tweet) return e(TweetSkeleton);
+        return e(EmbeddedTweet,{tweet,components:tweetComponents});
+      }
+      function WallOfLove(){
+        const sectionRef=useRef(null);
+        const [ready,setReady]=useState(false);
+        const [tweets,setTweets]=useState({});
+        const [errors,setErrors]=useState({});
+        const [shouldLoad,setShouldLoad]=useState(false);
+        const [isMobile,setIsMobile]=useState(()=>window.matchMedia("(max-width:620px)").matches);
+        const [mobileLoveBatch,setMobileLoveBatch]=useState(0);
+        const [desktopLoveBatches,setDesktopLoveBatches]=useState([0,0,0]);
+        const mobileLovePosts=getLoveBatch(mobileLoveBatch);
+        const loveColumns=desktopLoveBatches.map((batchIndex,columnIndex)=>{
+          const batch=getLoveBatch(batchIndex);
+          const start=columnIndex*LOVE_COLUMN_SIZE;
+          return batch.slice(start,start+LOVE_COLUMN_SIZE);
+        });
+        const activeLovePosts=isMobile?mobileLovePosts:loveColumns.flat();
+        const nextLovePosts=isMobile
+          ? getLoveBatch(mobileLoveBatch+1)
+          : desktopLoveBatches.flatMap((batchIndex,columnIndex)=>{
+              const batch=getLoveBatch(batchIndex+1);
+              const start=columnIndex*LOVE_COLUMN_SIZE;
+              return batch.slice(start,start+LOVE_COLUMN_SIZE);
+            });
+        const postsToLoad=[...new Set(activeLovePosts)];
+        const postsToPrefetch=[...new Set(nextLovePosts)];
+        const desktopLoveBatchKey=desktopLoveBatches.join(",");
+        const advanceLoveColumn=columnIndex=>setDesktopLoveBatches(current=>
+          current.map((batchIndex,index)=>index===columnIndex?(batchIndex+1)%LOVE_BATCH_COUNT:batchIndex)
+        );
+        useEffect(()=>{
+          const query=window.matchMedia("(max-width:620px)");
+          const update=event=>setIsMobile(event.matches);
+          query.addEventListener("change",update);
+          return()=>query.removeEventListener("change",update);
+        },[]);
+        useEffect(()=>{
+          if(!("IntersectionObserver" in window)){ setShouldLoad(true); return; }
+          const observer=new IntersectionObserver(([entry])=>{
+            if(!entry.isIntersecting)return;
+            setShouldLoad(true);
+            observer.disconnect();
+          },{rootMargin:"500px 0px"});
+          if(sectionRef.current) observer.observe(sectionRef.current);
+          return()=>observer.disconnect();
+        },[]);
+        useEffect(()=>{
+          if(!shouldLoad)return;
+          const controller=new AbortController();
+          let startTimer;
+          let preloadTimer;
+          const loadPost=async url=>{
+            const id=postId(url);
+            if(tweets[id]||errors[id])return;
+            try{
+              const response=await fetch(`https://react-tweet.vercel.app/api/tweet/${id}`,{signal:controller.signal});
+              if(!response.ok) throw new Error(`Post request failed with ${response.status}`);
+              const payload=await response.json();
+              if(!payload.data) throw new Error("Post data missing");
+              setTweets(current=>({...current,[id]:payload.data}));
+            }catch(error){
+              if(error.name!=="AbortError") setErrors(current=>({...current,[id]:true}));
+            }
+          };
+          Promise.all(postsToLoad.map(loadPost)).then(()=>{
+            startTimer=window.setTimeout(()=>setReady(true),LOVE_TIMING.startAfterLoadMs);
+            preloadTimer=window.setTimeout(()=>{ Promise.all(postsToPrefetch.map(loadPost)); },LOVE_TIMING.startAfterLoadMs*2);
+          });
+          return()=>{
+            controller.abort();
+            if(startTimer) window.clearTimeout(startTimer);
+            if(preloadTimer) window.clearTimeout(preloadTimer);
+          };
+        },[shouldLoad,isMobile,mobileLoveBatch,desktopLoveBatchKey]);
+        const renderCycle=(posts,columnIndex,isClone)=>e("div",{
+          className:"love-cycle",
+          key:isClone?"clone":"original",
+          "aria-hidden":isClone?"true":undefined,
+          inert:isClone?true:undefined
+        },...posts.map(url=>{const id=postId(url);return e("div",{className:"love-post",key:`${url}-${isClone?"clone":"original"}`},
+          e(TweetCard,{url,tweet:tweets[id],error:errors[id]})
+        );}));
+        const renderColumn=(posts,columnIndex,key)=>e("div",{className:`love-column${ready?" is-ready":""}`,key},
+          e("div",{className:"love-viewport"},
+            e("div",{
+              className:"love-column-track",
+              onAnimationIteration:event=>{
+                if(event.target!==event.currentTarget)return;
+                if(isMobile) setMobileLoveBatch(current=>(current+1)%LOVE_BATCH_COUNT);
+                else advanceLoveColumn(columnIndex);
+              }
+            },renderCycle(posts,columnIndex,false),renderCycle(posts,columnIndex,true))
+          )
+        );
+        return e("section",{ref:sectionRef,className:"love-section",id:"wall-of-love","data-theme":"light"},
+          e("div",{className:"love-inner"},
+            e("div",{className:"love-header"},
+              e("div",null,
+                e("h2",{className:"love-heading"},"Wall of Love"),
+                e("p",{className:"love-intro"},"What our community is saying.")
+              ),
+              e("a",{className:"love-follow",href:"https://x.com/SuperteamDE",target:"_blank",rel:"noreferrer"},"Follow @SuperteamDE on X",e("span",{"aria-hidden":"true"},"→"))
+            ),
+            isMobile
+              ? e("div",{className:"love-mobile","aria-label":"Community posts from X"},renderColumn(mobileLovePosts,0,"mobile"))
+              : e("div",{className:"love-columns","aria-label":"Community posts from X"},
+                  ...loveColumns.map((posts,columnIndex)=>renderColumn(posts,columnIndex,columnIndex))
+                )
+          )
+        );
+      }
+
+      function FAQ(){
+        const [openIndex,setOpenIndex]=useState(0);
+        return e("section",{className:"faq-section",id:"faq"},
+          e("div",{className:"faq-inner"},
+            e("div",{className:"faq-layout"},
+              e("div",{className:"faq-aside"},
+                e("h2",{className:"faq-display"},"Frequently asked questions."),
+                e("p",{className:"faq-intro"},"Can’t find what you’re looking for? Reach out and we’ll point you in the right direction."),
+                e("a",{className:"faq-contact",href:"https://x.com/SuperteamDE",target:"_blank",rel:"noreferrer"},"Ask us on X",e("span",{"aria-hidden":"true"},"↗"))
+              ),
+              e("div",{className:"faq-list"},
+                ...faqItems.map((item,index)=>{
+                  const isOpen=openIndex===index;
+                  const buttonId=`faq-question-${index}`;
+                  const panelId=`faq-answer-${index}`;
+                  return e("article",{className:`faq-item${isOpen?" open":""}`,key:item.question},
+                    e("button",{className:"faq-question",id:buttonId,type:"button","aria-expanded":isOpen,"aria-controls":panelId,onClick:()=>setOpenIndex(isOpen?-1:index)},
+                      e("span",null,item.question),
+                      e("span",{className:"faq-icon","aria-hidden":"true"})
+                    ),
+                    e("div",{className:"faq-panel",id:panelId,role:"region","aria-labelledby":buttonId,"aria-hidden":!isOpen,inert:!isOpen},
+                      e("div",{className:"faq-answer-clip"},
+                        e("div",{className:"faq-answer"},
+                          ...item.paragraphs.map((paragraph,paragraphIndex)=>e("p",{key:paragraphIndex},paragraph)),
+                          item.bullets?e("ul",null,...item.bullets.map(bullet=>e("li",{key:bullet},bullet))):null,
+                          item.closing?e("p",null,item.closing):null
+                        )
+                      )
+                    )
+                  );
+                })
+              )
+            )
+          )
+        );
+      }
+
+      function NewsletterCTA(){
+        const [email,setEmail]=useState("");
+        const [status,setStatus]=useState("idle");
+        const [message,setMessage]=useState("");
+        const inputRef=useRef(null);
+        const timerRef=useRef(null);
+        const controllerRef=useRef(null);
+        const requestTimeoutRef=useRef(null);
+        const emailPattern=/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+
+        useEffect(()=>()=>{
+          if(timerRef.current) window.clearTimeout(timerRef.current);
+          if(requestTimeoutRef.current) window.clearTimeout(requestTimeoutRef.current);
+          controllerRef.current?.abort();
+        },[]);
+
+        const handleChange=event=>{
+          setEmail(event.target.value);
+          if(status==="error"){
+            setStatus("idle");
+            setMessage("");
+          }
+        };
+
+        const handleSubmit=async event=>{
+          event.preventDefault();
+          const value=email.trim();
+          if(!emailPattern.test(value)){
+            setStatus("error");
+            setMessage("Enter a valid email address.");
+            inputRef.current?.focus();
+            return;
+          }
+
+          setStatus("loading");
+          setMessage("Adding you to the newsletter…");
+          try{
+            const controller=new AbortController();
+            controllerRef.current=controller;
+            requestTimeoutRef.current=window.setTimeout(()=>controller.abort(),10000);
+            const response=await fetch("/api/newsletter",{
+              method:"POST",
+              headers:{"Content-Type":"application/json"},
+              body:JSON.stringify({email:value,group:"default"}),
+              signal:controller.signal
+            });
+            if(response.status!==201) throw new Error(`Newsletter request failed with ${response.status}`);
+            setEmail("");
+            setStatus("success");
+            setMessage("Thank you for subscribing! Please check your email to confirm your subscription.");
+          }catch(error){
+            setStatus("error");
+            setMessage("We couldn’t complete your subscription. Please try again or use a different email address.");
+            window.requestAnimationFrame(()=>inputRef.current?.focus());
+          }finally{
+            if(requestTimeoutRef.current) window.clearTimeout(requestTimeoutRef.current);
+            requestTimeoutRef.current=null;
+            controllerRef.current=null;
+          }
+        };
+
+        const isLoading=status==="loading";
+        return e("section",{className:"newsletter-section",id:"newsletter"},
+          e("div",{className:"newsletter-accent","aria-hidden":"true"}),
+          e("div",{className:"newsletter-inner"},
+            e("h2",{className:"newsletter-heading"},"Stay close to what’s happening."),
+            e("p",{className:"newsletter-copy"},"Get upcoming events, opportunities, and community updates from Superteam Germany."),
+            status==="success"
+              ? e("div",{className:"newsletter-success",role:"status","aria-live":"polite"},
+                  e("h3",null,"You’re almost there."),
+                  e("p",null,message)
+                )
+              : e(React.Fragment,null,
+                  e("form",{className:`newsletter-form${status==="error"?" has-error":""}`,onSubmit:handleSubmit,noValidate:true},
+                    e("label",{className:"newsletter-label",htmlFor:"newsletter-email"},"Email address"),
+                    e("input",{className:"newsletter-input",id:"newsletter-email",ref:inputRef,type:"email",name:"email",value:email,onChange:handleChange,placeholder:"Email address",autoComplete:"email",inputMode:"email",required:true,disabled:isLoading,"aria-invalid":status==="error","aria-describedby":"newsletter-status"}),
+                    e("button",{className:"newsletter-submit",type:"submit",disabled:isLoading},isLoading?"Subscribing…":"Subscribe")
+                  ),
+                  e("p",{className:`newsletter-status${status==="error"?" is-error":""}`,id:"newsletter-status",role:"status","aria-live":"polite"},message)
+                )
+          )
+        );
+      }
+
+      function Footer(){
+        const footerGroups=[
+          {title:"Navigate",links:[
+              {label:"What We Do",href:"#what-we-do"},
+              {label:"Events",href:"#events"},
+              {label:"Solana Summit Germany",href:"https://de.superteam.fun/solana-summit-germany",external:true},
+              {label:"Team",href:"#team"},
+            {label:"Partners",href:"#partners"},
+            {label:"FAQ",href:"#faq"}
+          ]},
+          {title:"Resources",links:[
+            {label:"Global Hackathon",href:"/buildstation",external:false},
+            {label:"Resources & Docs",href:"https://superteamde.gitbook.io/superteamde",external:true},
+            {label:"Superteam Global",href:"https://superteam.fun",external:true}
+          ]},
+          {title:"Connect",links:[
+            {label:"X",href:"https://x.com/SuperteamDE",external:true},
+            {label:"Discord",href:"https://discord.gg/CVwJhHgFfF",external:true},
+            {label:"Telegram",href:"https://t.me/superteamgermany",external:true},
+            {label:"YouTube",href:"https://www.youtube.com/@SuperteamDE",external:true}
+          ]}
+        ];
+        return e("footer",{className:"site-footer",id:"footer","aria-labelledby":"footer-heading"},
+          e("h2",{className:"site-footer-sr",id:"footer-heading"},"Footer"),
+          e("div",{className:"site-footer-inner"},
+            e("div",{className:"site-footer-main"},
+              e("div",{className:"site-footer-brand"},
+                e("a",{href:"#",className:"site-footer-home","aria-label":"Back to the top"},e("img",{src:"https://de.superteam.fun/images/stLogoWithIcon.svg",alt:"Superteam Germany"})),
+                e("p",{className:"site-footer-tagline"},"Accelerating Internet Capital Markets in Germany.")
+              ),
+              ...footerGroups.map(group=>e("nav",{className:"site-footer-group",key:group.title,"aria-label":group.title},
+                e("h3",null,group.title),
+                e("ul",{className:"site-footer-links"},...group.links.map(link=>e("li",{key:link.label},
+                  e("a",{className:"site-footer-link",href:link.href,target:link.external?"_blank":undefined,rel:link.external?"noreferrer":undefined},link.label,link.external?e("span",{className:"site-footer-arrow","aria-hidden":"true"},"↗"):null)
+                )))
+              ))
+            ),
+            e("div",{className:"site-footer-legal"},
+              e("p",null,"© 2026 Superteam Germany. All rights reserved.")
+            )
+          )
+        );
+      }
+
+      function App(){
+        useSectionReveals();
+        return e(React.Fragment,null,
+          e("main",{className:"hero"},
+            e("div",{className:"shader"},e(Shader)),
+            e("div",{className:"center-protection"}),
+            e("div",{className:"bottom-fade"}),
+            e(HeroNav),
+            e("section",{className:"hero-content"},
+              e("h1",null,"Powering the Next Wave",e("br"),"of ",e("em",null,"Solana Builders")," in Germany"),
+              e("a",{className:"builder-pill",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer","aria-label":"Join the Superteam Germany community on Telegram"},
+                e("span",{className:"avatars","aria-hidden":"true"},
+                  e("img",{src:"https://de.superteam.fun/images/hero/17.jpg",alt:""}),
+                  e("img",{src:"https://de.superteam.fun/images/hero/13.jpg",alt:""}),
+                  e("img",{src:"https://de.superteam.fun/images/hero/12.jpg",alt:""})
+                ),
+                e("span",null,"Join ",e("b",null,"1,000+ builders")," ",e("span",{className:"builder-pill-arrow","aria-hidden":"true"},"↗"))
+              ),
+              e("div",{className:"collage"},
+                img("photo-a","/images/new-site/team.jpg","Superteam Germany team"),
+                img("photo-b","/images/new-site/_TL61949-Enhanced-NR.jpg","Builders celebrating together at a Superteam Germany event"),
+                img("photo-c","/images/new-site/_T6_2752.jpg","Superteam Germany Frontier Demo Day community"),
+                img("photo-d","https://de.superteam.fun/images/hackathon/group.jpg","Superteam Germany builders at Demo Day"),
+                img("photo-e","/images/new-site/hero-crowd-image.jpg","Superteam Germany community at Solana Summit Germany")
+              )
+            )
+          ),
+          e(ImpactStrip),e(WhatWeDo),e(Events),e(Team),e(Partners),e(WallOfLove),e(SummitRecap),e(FAQ),e(NewsletterCTA),e(Footer)
+        );
+      }
+      createRoot(document.getElementById("root")).render(e(App));
+    </script>
+  </body>
+</html>

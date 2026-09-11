@@ -1,0 +1,307 @@
+- generic [active] [ref=f29e1]:
+  - banner [ref=f29e2]:
+    - navigation "Primary" [ref=f29e6]:
+      - link "Superteam Germany home" [ref=f29e7] [cursor=pointer]:
+        - /url: grain-shader-v12-upcoming-events.html
+        - img "Superteam Germany" [ref=f29e8]
+      - generic [ref=f29e9]:
+        - link "What We Do" [ref=f29e10] [cursor=pointer]:
+          - /url: grain-shader-v12-upcoming-events.html#what-we-do
+        - link "Events" [ref=f29e11] [cursor=pointer]:
+          - /url: grain-shader-v12-upcoming-events.html#events
+        - link "Team" [ref=f29e12] [cursor=pointer]:
+          - /url: grain-shader-v12-upcoming-events.html#team
+        - link "FAQ" [ref=f29e13] [cursor=pointer]:
+          - /url: grain-shader-v12-upcoming-events.html#faq
+        - link "Join the Hackathon ↗" [ref=f29e14] [cursor=pointer]:
+          - /url: https://arena.colosseum.org/?ref=germany
+    - generic [ref=f29e15]:
+      - paragraph [ref=f29e16]: Colosseum · Sep 14 - Oct 12, 2026
+      - heading [level=1] [ref=f29e17]:
+        - text: Germany joins the
+        - emphasis [ref=f29e18]: Crypto World’s Fair.
+      - paragraph [ref=f29e19]: The world’s largest online hackathon. Four weeks, one submission, and a shot at $250,000 in pre-seed. Your route from registration to submission, with Superteam Germany behind you.
+      - paragraph [ref=f29e20]: Submission closes in
+      - timer "Time remaining until the submission date" [ref=f29e21]:
+        - generic [ref=f29e22]:
+          - generic [ref=f29e23]: "32"
+          - generic [ref=f29e24]: Days
+        - generic [ref=f29e25]:
+          - generic [ref=f29e26]: "14"
+          - generic [ref=f29e27]: Hrs
+        - generic [ref=f29e28]:
+          - generic [ref=f29e29]: "22"
+          - generic [ref=f29e30]: Min
+        - generic [ref=f29e31]:
+          - generic [ref=f29e32]: "44"
+          - generic [ref=f29e33]: Sec
+      - generic [ref=f29e34]:
+        - link "Join the Hackathon ↗" [ref=f29e35] [cursor=pointer]:
+          - /url: https://arena.colosseum.org/?ref=germany
+        - link "Register for BuildStation ↗" [ref=f29e36] [cursor=pointer]:
+          - /url: https://lu.ma/buildstation
+  - main [ref=f29e37]:
+    - region [ref=f29e38]:
+      - heading "Hackathon statistics" [level=2] [ref=f29e39]
+      - generic [ref=f29e40]:
+        - article [ref=f29e41]:
+          - paragraph [ref=f29e42]: 300+
+          - paragraph [ref=f29e43]: Submissions
+          - paragraph [ref=f29e44]: Projects submitted by builders supported across our community.
+        - article [ref=f29e45]:
+          - paragraph [ref=f29e46]: 50+
+          - paragraph [ref=f29e47]: Shortlisted Projects
+          - paragraph [ref=f29e48]: Teams recognized for the quality and potential of their work.
+        - article [ref=f29e49]:
+          - paragraph [ref=f29e50]: 15+
+          - paragraph [ref=f29e51]: Honorable Mentions
+          - paragraph [ref=f29e52]: Standout projects celebrated beyond the finalist cohort.
+        - article [ref=f29e53]:
+          - paragraph [ref=f29e54]: 20+
+          - paragraph [ref=f29e55]: Global Winners
+          - paragraph [ref=f29e56]: Community projects that went on to win on the global stage.
+    - region [ref=f29e57]:
+      - generic [ref=f29e59]:
+        - generic [ref=f29e60]:
+          - paragraph [ref=f29e61]: Superteam Germany
+          - heading "Count yourself in." [level=2] [ref=f29e62]
+          - paragraph [ref=f29e63]: These three steps take less than a minute and help us recognize, support and amplify the teams building from Germany.
+        - list [ref=f29e64]:
+          - listitem [ref=f29e65]:
+            - generic [ref=f29e66]: "01"
+            - heading "Enter via the Germany referral link" [level=3] [ref=f29e67]
+            - paragraph [ref=f29e68]: Register for Crypto World’s Fair through the Superteam Germany referral link.
+            - link "Register ↗" [ref=f29e69] [cursor=pointer]:
+              - /url: https://arena.colosseum.org/?ref=germany
+          - listitem [ref=f29e70]:
+            - generic [ref=f29e71]: "02"
+            - heading "Set your location to Germany" [level=3] [ref=f29e72]
+            - paragraph [ref=f29e73]: Select Germany as your team’s primary base when you complete your Colosseum profile.
+          - listitem [ref=f29e74]:
+            - generic [ref=f29e75]: "03"
+            - heading "Submit to the Germany listing" [level=3] [ref=f29e76]
+            - paragraph [ref=f29e77]: Submit the same project to the Germany listing when it opens. We’ll share the link in the builder Telegram.
+            - link "Join the Telegram ↗" [ref=f29e78] [cursor=pointer]:
+              - /url: https://t.me/+3iejfJ72wjA4YmEy
+        - paragraph [ref=f29e80]: Already registered? Tell us so we can include you in kickoff updates, office hours and submission support.
+    - article [ref=f29e83]:
+      - generic [ref=f29e84]:
+        - generic [ref=f29e85]:
+          - heading "Why build with Superteam Germany?" [level=2] [ref=f29e86]
+          - paragraph [ref=f29e87]: We provide resources, mentorship and connect you with like-minded people to support you throughout the hackathon and beyond.
+        - generic [ref=f29e88]:
+          - paragraph [ref=f29e90]:
+            - strong [ref=f29e91]: "Boost Your Odds:"
+            - text: Pressure-test your idea early and improve the clarity of your submission.
+          - paragraph [ref=f29e93]:
+            - strong [ref=f29e94]: "Expert Support:"
+            - text: Workshops, pitch feedback and introductions to experienced builders and founders.
+          - paragraph [ref=f29e96]:
+            - strong [ref=f29e97]: "Massive Exposure:"
+            - text: Showcase your work to Germany’s community and the wider Superteam network.
+          - paragraph [ref=f29e99]:
+            - strong [ref=f29e100]: "Prizes & Beyond:"
+            - text: Build toward the hackathon while creating something strong enough to continue afterwards.
+          - paragraph [ref=f29e102]:
+            - strong [ref=f29e103]: "A Network That Lasts:"
+            - text: Connect with potential teammates, partners, mentors and early users.
+        - link "Join the Builder Community ↗" [ref=f29e104] [cursor=pointer]:
+          - /url: https://t.me/superteamgermany
+      - img "Superteam Germany builders at Demo Day" [ref=f29e106]
+    - generic [ref=f29e108]:
+      - generic [ref=f29e109]:
+        - heading "How BuildStation works." [level=2] [ref=f29e110]
+        - paragraph [ref=f29e111]: Build online or join the community in Germany. We keep the process focused on the work that turns an idea into a convincing product and submission.
+      - generic [ref=f29e112]:
+        - tablist "BuildStation steps" [ref=f29e113]:
+          - tab "01 Join The Community" [selected] [ref=f29e114] [cursor=pointer]:
+            - generic [ref=f29e115]: "01"
+            - generic [ref=f29e116]: Join The Community
+            - generic [aria-hidden] [ref=f29e117]: →
+          - tab "02 Build Your MVP" [ref=f29e118] [cursor=pointer]:
+            - generic [ref=f29e119]: "02"
+            - generic [ref=f29e120]: Build Your MVP
+            - generic [aria-hidden] [ref=f29e121]: →
+          - tab "03 Submit Your Project" [ref=f29e122] [cursor=pointer]:
+            - generic [ref=f29e123]: "03"
+            - generic [ref=f29e124]: Submit Your Project
+            - generic [aria-hidden] [ref=f29e125]: →
+          - tab "04 Showcase Your Project" [ref=f29e126] [cursor=pointer]:
+            - generic [ref=f29e127]: "04"
+            - generic [ref=f29e128]: Showcase Your Project
+            - generic [aria-hidden] [ref=f29e129]: →
+        - tabpanel [ref=f29e130]:
+          - generic [ref=f29e132]:
+            - generic [ref=f29e133]: STEP 01
+            - heading "Join The Community" [level=3] [ref=f29e134]
+            - paragraph [ref=f29e135]: Meet mentors, find your team and discuss your ideas. Co-working sessions and community channels help you get moving before the build period begins.
+    - region [ref=f29e136]:
+      - generic [ref=f29e137]:
+        - generic [ref=f29e138]:
+          - heading "Resources." [level=2] [ref=f29e139]
+          - paragraph [ref=f29e140]: Everything you need to find an idea, build on Solana, assemble a team and prepare a strong submission.
+        - generic [ref=f29e141]:
+          - article [ref=f29e142]:
+            - button "01 Tech Resources" [expanded]:
+              - generic: "01"
+              - generic: Tech Resources
+            - region "01 Tech Resources" [ref=f29e143]:
+              - generic [ref=f29e144]:
+                - heading "Tech Resources" [level=3] [ref=f29e145]
+                - paragraph [ref=f29e146]: Official documentation, learning platforms and recordings from Superteam Germany workshops.
+                - list [ref=f29e147]:
+                  - listitem [ref=f29e148]:
+                    - link "Hackathon Headquarters ↗" [ref=f29e149] [cursor=pointer]:
+                      - /url: https://superteam.fun/hackathon
+                  - listitem [ref=f29e150]:
+                    - link "Superteam Build ↗" [ref=f29e151] [cursor=pointer]:
+                      - /url: https://build.superteam.fun/resources
+                  - listitem [ref=f29e152]:
+                    - link "Solana AI Skills ↗" [ref=f29e153] [cursor=pointer]:
+                      - /url: https://www.solana.new/
+                  - listitem [ref=f29e154]:
+                    - link "Solana Developer Resources ↗" [ref=f29e155] [cursor=pointer]:
+                      - /url: https://solana.com/developers
+                  - listitem [ref=f29e156]:
+                    - link "Blueshift ↗" [ref=f29e157] [cursor=pointer]:
+                      - /url: https://blueshift.gg/
+                  - listitem [ref=f29e158]:
+                    - link "Workshop Recordings ↗" [ref=f29e159] [cursor=pointer]:
+                      - /url: https://www.youtube.com/@SuperteamDE/streams
+                  - listitem [ref=f29e160]:
+                    - link "Solana Documentation ↗" [ref=f29e161] [cursor=pointer]:
+                      - /url: https://solana.com/docs
+                  - listitem [ref=f29e162]:
+                    - link "Solana Stack Exchange ↗" [ref=f29e163] [cursor=pointer]:
+                      - /url: https://solana.stackexchange.com/
+                  - listitem [ref=f29e164]:
+                    - link "Solana Cookbook ↗" [ref=f29e165] [cursor=pointer]:
+                      - /url: https://solanacookbook.com/
+          - article [ref=f29e166]:
+            - button "02 Looking for ideas?" [ref=f29e167] [cursor=pointer]:
+              - generic [ref=f29e168]: "02"
+              - generic [ref=f29e169]: Looking for ideas?
+          - article [ref=f29e170]:
+            - button "03 Find a team" [ref=f29e171] [cursor=pointer]:
+              - generic [ref=f29e172]: "03"
+              - generic [ref=f29e173]: Find a team
+          - article [ref=f29e174]:
+            - button "04 FAQ" [ref=f29e175] [cursor=pointer]:
+              - generic [ref=f29e176]: "04"
+              - generic [ref=f29e177]: FAQ
+          - article [ref=f29e178]:
+            - button "05 Community Support" [ref=f29e179] [cursor=pointer]:
+              - generic [ref=f29e180]: "05"
+              - generic [ref=f29e181]: Community Support
+          - article [ref=f29e182]:
+            - button "06 Pitch Deck" [ref=f29e183] [cursor=pointer]:
+              - generic [ref=f29e184]: "06"
+              - generic [ref=f29e185]: Pitch Deck
+    - generic [ref=f29e187]:
+      - complementary [ref=f29e188]:
+        - heading "Frequently asked questions." [level=2] [ref=f29e189]
+        - paragraph [ref=f29e190]: Can’t find what you’re looking for? Reach out and we’ll point you in the right direction.
+        - link "Ask us on X ↗" [ref=f29e191] [cursor=pointer]:
+          - /url: https://x.com/SuperteamDE
+      - generic [ref=f29e192]:
+        - article [ref=f29e193]:
+          - button "Who can participate?" [expanded] [ref=f29e194] [cursor=pointer]
+          - paragraph [ref=f29e199]: Builders, founders, developers, designers, marketers and operators are welcome. You do not need to be a coder or an official Superteam member to take part.
+        - article [ref=f29e200]:
+          - button "Where is the BuildStation taking place?" [ref=f29e201] [cursor=pointer]
+          - paragraph [ref=f29e204]: The hackathon itself is online. Germany-based co-working sessions and local BuildStation details will be shared through Superteam Germany’s official channels.
+        - article [ref=f29e205]:
+          - button "Are only German teams allowed to participate?" [ref=f29e206] [cursor=pointer]
+          - paragraph [ref=f29e209]: No. Our support is focused on the German ecosystem, but international teammates and collaborators are welcome.
+        - article [ref=f29e210]:
+          - button "Can I bring my dog?" [ref=f29e211] [cursor=pointer]
+          - paragraph [ref=f29e214]: That depends on the venue for each in-person session. Check the individual event details before bringing a four-legged teammate.
+        - article [ref=f29e215]:
+          - button "Is virtual mentorship available?" [ref=f29e216] [cursor=pointer]
+          - paragraph [ref=f29e219]: Yes, some support can happen remotely. Availability and formats will be shared with registered builders through the community channels.
+        - article [ref=f29e220]:
+          - button "How much does it cost to participate?" [ref=f29e221] [cursor=pointer]
+          - paragraph [ref=f29e224]: Joining the hackathon and Superteam Germany’s community support is free.
+        - article [ref=f29e225]:
+          - button "What is the BuildStation Code of Conduct?" [ref=f29e226] [cursor=pointer]
+          - paragraph [ref=f29e229]: BuildStation is an inclusive, collaborative environment. Participants are expected to treat one another respectfully and follow the venue and hackathon rules.
+        - article [ref=f29e230]:
+          - button "Did we miss something?" [ref=f29e231] [cursor=pointer]
+          - paragraph [ref=f29e234]: Send us a message on X or Telegram and the team will help you find the right answer.
+    - generic [ref=f29e236]:
+      - heading "Ready to build your next startup?" [level=2] [ref=f29e237]
+      - paragraph [ref=f29e238]: Register for Crypto World’s Fair and build alongside the Superteam Germany community.
+      - link "Join the Hackathon ↗" [ref=f29e239] [cursor=pointer]:
+        - /url: https://arena.colosseum.org/?ref=germany
+  - contentinfo [ref=f29e240]:
+    - heading "Footer" [level=2] [ref=f29e241]
+    - generic [ref=f29e242]:
+      - generic [ref=f29e243]:
+        - generic [ref=f29e244]:
+          - link "Superteam Germany home" [ref=f29e245] [cursor=pointer]:
+            - /url: grain-shader-v12-upcoming-events.html
+            - img "Superteam Germany" [ref=f29e246]
+          - paragraph [ref=f29e247]: Accelerating Internet Capital Markets in Germany.
+        - navigation "Navigate" [ref=f29e248]:
+          - heading "Navigate" [level=3] [ref=f29e249]
+          - list [ref=f29e250]:
+            - listitem [ref=f29e251]:
+              - link "What We Do" [ref=f29e252] [cursor=pointer]:
+                - /url: grain-shader-v12-upcoming-events.html#what-we-do
+            - listitem [ref=f29e253]:
+              - link "Events" [ref=f29e254] [cursor=pointer]:
+                - /url: grain-shader-v12-upcoming-events.html#events
+            - listitem [ref=f29e255]:
+              - link "Solana Summit Germany ↗" [ref=f29e256] [cursor=pointer]:
+                - /url: https://de.superteam.fun/solana-summit-germany
+                - text: Solana Summit Germany
+                - generic [ref=f29e257]: ↗
+            - listitem [ref=f29e258]:
+              - link "Team" [ref=f29e259] [cursor=pointer]:
+                - /url: grain-shader-v12-upcoming-events.html#team
+            - listitem [ref=f29e260]:
+              - link "Partners" [ref=f29e261] [cursor=pointer]:
+                - /url: grain-shader-v12-upcoming-events.html#partners
+            - listitem [ref=f29e262]:
+              - link "FAQ" [ref=f29e263] [cursor=pointer]:
+                - /url: "#faq"
+        - navigation "Resources" [ref=f29e264]:
+          - heading "Resources" [level=3] [ref=f29e265]
+          - list [ref=f29e266]:
+            - listitem [ref=f29e267]:
+              - link "Global Hackathon" [ref=f29e268] [cursor=pointer]:
+                - /url: "#top"
+            - listitem [ref=f29e269]:
+              - link "Resources & Docs ↗" [ref=f29e270] [cursor=pointer]:
+                - /url: https://superteamde.gitbook.io/superteamde
+                - text: Resources & Docs
+                - generic [ref=f29e271]: ↗
+            - listitem [ref=f29e272]:
+              - link "Superteam Global ↗" [ref=f29e273] [cursor=pointer]:
+                - /url: https://superteam.fun
+                - text: Superteam Global
+                - generic [ref=f29e274]: ↗
+        - navigation "Connect" [ref=f29e275]:
+          - heading "Connect" [level=3] [ref=f29e276]
+          - list [ref=f29e277]:
+            - listitem [ref=f29e278]:
+              - link "X ↗" [ref=f29e279] [cursor=pointer]:
+                - /url: https://x.com/SuperteamDE
+                - text: X
+                - generic [ref=f29e280]: ↗
+            - listitem [ref=f29e281]:
+              - link "Discord ↗" [ref=f29e282] [cursor=pointer]:
+                - /url: https://discord.gg/CVwJhHgFfF
+                - text: Discord
+                - generic [ref=f29e283]: ↗
+            - listitem [ref=f29e284]:
+              - link "Telegram ↗" [ref=f29e285] [cursor=pointer]:
+                - /url: https://t.me/superteamgermany
+                - text: Telegram
+                - generic [ref=f29e286]: ↗
+            - listitem [ref=f29e287]:
+              - link "YouTube ↗" [ref=f29e288] [cursor=pointer]:
+                - /url: https://www.youtube.com/@SuperteamDE
+                - text: YouTube
+                - generic [ref=f29e289]: ↗
+      - paragraph [ref=f29e291]: © 2026 Superteam Germany. All rights reserved.

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextResponse } from 'next/server';
 import jwt from 'jsonwebtoken';
 import { EventRecord } from './../../../types/events';
 
@@ -101,7 +101,7 @@ function adaptMeetupEventToEventRecord(meetupEvent: any): EventRecord {
   };
 }
 
-export async function GET(req: NextRequest, res: NextResponse) {
+export async function GET() {
   try {
     const config = getMeetupConfig();
     const token = await getAccessToken();
@@ -128,7 +128,7 @@ export async function GET(req: NextRequest, res: NextResponse) {
       { 
         status: 200,
         headers: {
-          'Cache-Control': 'no-cache', 
+          'Cache-Control': 'public, s-maxage=300, stale-while-revalidate=900',
         }, 
       },
     );
