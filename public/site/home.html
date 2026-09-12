@@ -10,6 +10,7 @@
     <link rel="canonical" href="https://de.superteam.fun/" />
     <link rel="icon" href="/superteamgermany-favicon.png" type="image/png" />
     <link rel="apple-touch-icon" href="/superteamgermany-favicon.png" />
+    <link rel="preload" as="image" href="/images/hero-optimized/frontier-demo-day-640.webp" imagesrcset="/images/hero-optimized/frontier-demo-day-640.webp 640w, /images/hero-optimized/frontier-demo-day-1080.webp 1080w, /images/hero-optimized/frontier-demo-day-1600.webp 1600w, /images/hero-optimized/frontier-demo-day-2160.webp 2160w" imagesizes="(max-width: 560px) 74vw, (max-width: 800px) 367px, 540px" fetchpriority="high" />
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Superteam Germany" />
     <meta property="og:locale" content="en_DE" />
@@ -663,7 +664,17 @@
           return()=>observer.disconnect();
         },[]);
       }
-      const img = (cls,src,alt) => e("figure",{className:`tile ${cls}`},e("img",{src,alt}));
+      const heroImg = (cls,src,srcSet,sizes,alt,fetchPriority="auto") => e("figure",{className:`tile ${cls}`},e("img",{
+        src,
+        srcSet,
+        sizes,
+        alt,
+        width:3,
+        height:2,
+        loading:"eager",
+        decoding:"async",
+        fetchPriority
+      }));
       function CountUp({value,prefix="",suffix=""}){
         const ref=useRef(null);
         const [current,setCurrent]=useState(0);
@@ -1071,18 +1082,18 @@
               e("h1",null,"Powering the Next Wave",e("br"),"of ",e("em",null,"Solana Builders")," in Germany"),
               e("a",{className:"builder-pill",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer","aria-label":"Join the Superteam Germany community on Telegram"},
                 e("span",{className:"avatars","aria-hidden":"true"},
-                  e("img",{src:"https://de.superteam.fun/images/hero/17.jpg",alt:""}),
-                  e("img",{src:"https://de.superteam.fun/images/hero/13.jpg",alt:""}),
-                  e("img",{src:"https://de.superteam.fun/images/hero/12.jpg",alt:""})
+                  e("img",{src:"/images/hero-optimized/avatar-17-64.webp",alt:"",width:26,height:26,loading:"eager",decoding:"async"}),
+                  e("img",{src:"/images/hero-optimized/avatar-13-64.webp",alt:"",width:26,height:26,loading:"eager",decoding:"async"}),
+                  e("img",{src:"/images/hero-optimized/avatar-12-64.webp",alt:"",width:26,height:26,loading:"eager",decoding:"async"})
                 ),
                 e("span",null,"Join ",e("b",null,"1,000+ builders")," ",e("span",{className:"builder-pill-arrow","aria-hidden":"true"},"↗"))
               ),
               e("div",{className:"collage"},
-                img("photo-a","/images/new-site/team.jpg","Superteam Germany team"),
-                img("photo-b","/images/new-site/_TL61949-Enhanced-NR.jpg","Builders celebrating together at a Superteam Germany event"),
-                img("photo-c","/images/new-site/_T6_2752.jpg","Superteam Germany Frontier Demo Day community"),
-                img("photo-d","https://de.superteam.fun/images/hackathon/group.jpg","Superteam Germany builders at Demo Day"),
-                img("photo-e","/images/new-site/hero-crowd-image.jpg","Superteam Germany community at Solana Summit Germany")
+                heroImg("photo-a","/images/hero-optimized/team-320.webp","/images/hero-optimized/team-320.webp 320w, /images/hero-optimized/team-640.webp 640w, /images/hero-optimized/team-960.webp 960w, /images/hero-optimized/team-1280.webp 1280w","(max-width: 560px) 40vw, (max-width: 800px) 168px, 246px","Superteam Germany team"),
+                heroImg("photo-b","/images/hero-optimized/builders-320.webp","/images/hero-optimized/builders-320.webp 320w, /images/hero-optimized/builders-640.webp 640w, /images/hero-optimized/builders-960.webp 960w, /images/hero-optimized/builders-1280.webp 1280w","(max-width: 560px) 36vw, (max-width: 800px) 177px, 260px","Builders celebrating together at a Superteam Germany event"),
+                heroImg("photo-c","/images/hero-optimized/frontier-demo-day-640.webp","/images/hero-optimized/frontier-demo-day-640.webp 640w, /images/hero-optimized/frontier-demo-day-1080.webp 1080w, /images/hero-optimized/frontier-demo-day-1600.webp 1600w, /images/hero-optimized/frontier-demo-day-2160.webp 2160w","(max-width: 560px) 74vw, (max-width: 800px) 367px, 540px","Superteam Germany Frontier Demo Day community","high"),
+                heroImg("photo-d","/images/hero-optimized/demo-day-320.webp","/images/hero-optimized/demo-day-320.webp 320w, /images/hero-optimized/demo-day-640.webp 640w, /images/hero-optimized/demo-day-960.webp 960w, /images/hero-optimized/demo-day-1280.webp 1280w","(max-width: 560px) 36vw, (max-width: 800px) 177px, 260px","Superteam Germany builders at Demo Day"),
+                heroImg("photo-e","/images/hero-optimized/summit-community-320.webp","/images/hero-optimized/summit-community-320.webp 320w, /images/hero-optimized/summit-community-640.webp 640w, /images/hero-optimized/summit-community-960.webp 960w, /images/hero-optimized/summit-community-1280.webp 1280w","(max-width: 560px) 40vw, (max-width: 800px) 168px, 246px","Superteam Germany community at Solana Summit Germany")
               )
             )
           ),
