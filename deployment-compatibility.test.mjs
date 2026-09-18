@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const read = path => readFileSync(new URL(path, import.meta.url), "utf8");
 
@@ -29,11 +31,7 @@ test("the production routes serve tracked copies of the approved redesign", () =
 test("production HTML uses clean internal routes and deployable asset paths", () => {
   const home = read("./public/site/home.html");
   const hackathon = read("./public/site/buildstation.html");
-  const reviewHome = read("./.superpowers/brainstorm/83126-1788606365/grain-shader-v12-upcoming-events.html");
-  const reviewHackathon = read("./.superpowers/brainstorm/83126-1788606365/global-hackathon.html");
 
-  assert.equal(home, reviewHome);
-  assert.equal(hackathon, reviewHackathon);
   assert.match(home, /href:["']\/buildstation["']/);
   assert.doesNotMatch(home, /global-hackathon\.html/);
   assert.doesNotMatch(home, /assets\/summit/);
@@ -134,5 +132,69 @@ test("public data proxies publish bounded CDN cache policies", () => {
     "./src/app/api/projects/route.ts",
   ]) {
     assert.match(read(path), /s-maxage=300, stale-while-revalidate=900/);
+  }
+});
+
+test("homepage metadata uses the approved versioned social card", async () => {
+  const home = read("./public/site/home.html");
+  const layout = read("./src/app/layout.tsx");
+  const cardUrl = new URL(
+    "./public/images/home-social-card-v1.jpg",
+    import.meta.url,
+  );
+  const cardPath = fileURLToPath(cardUrl);
+  const expectedHtmlTitle =
+    "Superteam Germany | Solana Builders, Founders &amp; Startups";
+  const expectedLayoutTitle =
+    "Superteam Germany | Solana Builders, Founders & Startups";
+  const expectedDescription =
+    "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
+  const expectedHtmlTwitterDescription =
+    "Launch, grow and connect with Germany’s Solana builder and founder community.";
+
+  assert.ok(existsSync(cardPath), "the versioned homepage social card must exist");
+  const cardMetadata = await sharp(cardPath).metadata();
+  assert.equal(cardMetadata.width, 1200);
+  assert.equal(cardMetadata.height, 630);
+  assert.ok(statSync(cardPath).size < 1_000_000, "social card must stay under 1 MB");
+
+  assert.match(home, new RegExp(`<title>${expectedHtmlTitle}</title>`));
+  assert.ok(home.includes(`content="${expectedDescription}"`));
+  assert.ok(home.includes(`content="${expectedHtmlTwitterDescription}"`));
+  assert.match(
+    home,
+    /<meta property="og:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+  );
+  assert.match(home, /<meta property="og:image:width" content="1200" \/>/);
+  assert.match(home, /<meta property="og:image:height" content="630" \/>/);
+  assert.match(home, /<meta name="twitter:card" content="summary_large_image" \/>/);
+  assert.match(
+    home,
+    /<meta name="twitter:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+  );
+  assert.doesNotMatch(home, /st-banner\.png/);
+
+  assert.ok(layout.includes(`default: "${expectedLayoutTitle}"`));
+  assert.ok(layout.includes(`"${expectedDescription}"`));
+  assert.match(
+    layout,
+    /const HOME_SOCIAL_IMAGE = "\/images\/home-social-card-v1\.jpg";/,
+  );
+  assert.match(
+    layout,
+    /url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,/,
+  );
+  assert.match(layout, /twitter:\s*\{[\s\S]*?card:\s*"summary_large_image"/);
+  assert.match(layout, /images:\s*\[HOME_SOCIAL_IMAGE\]/);
+  assert.doesNotMatch(layout, /st-banner\.png/);
+
+  for (const summitPath of [
+    "./src/app/solana-summit-germany/page.tsx",
+    "./src/app/solana-summit-germany/agenda/page.tsx",
+    "./src/app/solana-summit-germany/side-events/page.tsx",
+  ]) {
+    const summitPage = read(summitPath);
+    assert.match(summitPage, /summit-social-card-v1\.jpg/);
+    assert.doesNotMatch(summitPage, /home-social-card-v1\.jpg/);
   }
 });
