@@ -1,89 +1,49 @@
-# Homepage Social Preview Implementation Plan
+# Exact Option C Social Preview Implementation Plan
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Publish the approved Option C Brandenburg Gate social card for both homepage domains and the Superteam Germany Luma calendar.
+**Goal:** Replace the approximate social card with a deterministic export of the exact approved browser Option C, then verify and redeploy it.
 
-**Architecture:** Build one versioned 1200 × 630 image from a generated homepage-style backdrop plus deterministic Superteam Germany logo and Gate assets. Point both homepage metadata implementations at that asset, then upload the identical file to Luma as a separate external update. Keep the existing Summit-specific metadata unchanged.
+**Architecture:** Preserve a browser-rendered, lossless 1200 × 600 golden made from the approved 518 × 259 Option C prototype at 2× device scale, then resize it once to the target artwork size. The production renderer treats that golden as immutable input, centers it on a 1200 × 630 social canvas, and encodes the JPEG. A reproducible capture fixture retains the exact CSS and full Gate filter, while visual regression compares the independently frozen golden to the production export with both RGB and edge-sensitive metrics.
 
-**Tech Stack:** OpenAI image generation for background-only artwork, Sharp 0.35.4 for deterministic normalization and composition, Node.js 22 tests, Next.js metadata, static HTML metadata, and the Luma web UI.
+**Tech Stack:** Node.js 22, Sharp 0.35.4, SVG filters/gradients, Node test runner, Next.js metadata, Vercel.
 
 ---
 
 ## File structure
 
-- Create `design-assets/social/home-social-card-background-v1.png` — retained background-only source produced with image generation.
-- Create `design-assets/social/brandenburg-gate-mask-v1.png` — normalized transparent Gate silhouette used by the renderer.
-- Create `scripts/normalize-brandenburg-gate-mask.mjs` — deterministic black-on-white to transparent-mask conversion.
-- Create `scripts/render-home-social-card.mjs` — deterministic compositor for the background, Gate, and exact navbar logo.
-- Create `public/images/home-social-card-v1.jpg` — production social asset used by the website and uploaded to Luma.
-- Modify `deployment-compatibility.test.mjs` — portable metadata, image, payload-size, and Summit-isolation contract.
-- Modify `package.json` and `yarn.lock` — direct, exact Sharp development dependency.
-- Modify `public/site/home.html` — production root-page Open Graph and X metadata.
-- Modify `src/app/layout.tsx` — shared Next.js Open Graph and X metadata.
+- Create `design-assets/social/brandenburg-gate-source-v1.png` — byte-identical 485 × 412 user-approved Gate source.
+- Create `design-assets/social/home-social-card-option-c-source.html` — exact fixed-size browser capture fixture.
+- Create `design-assets/social/home-social-card-option-c-golden.png` — frozen approved 1200 × 600 browser-rendered golden; normal rendering never overwrites it.
+- Modify `design-assets/social/brandenburg-gate-mask-v1.png` — continuous-alpha Gate mask.
+- Delete `design-assets/social/home-social-card-background-v1.png` — rejected generated approximation.
+- Modify `scripts/normalize-brandenburg-gate-mask.mjs` — derive the exact antialiased mask.
+- Create `scripts/capture-home-social-card-option-c.mjs` — explicit manual golden-capture command using local Chrome.
+- Modify `scripts/render-home-social-card.mjs` — render the 1200 × 630 JPEG from the immutable golden.
+- Modify `deployment-compatibility.test.mjs` — enforce visual regression, bands, metadata, and Summit isolation.
+- Modify `public/images/home-social-card-v1.jpg` — corrected production card.
+- Verify `public/site/home.html` and `src/app/layout.tsx` — identical homepage preview metadata.
 
-### Task 1: Make the compatibility suite portable and add the failing social-card contract
+### Task 1: Lock the exact visual contract
 
 **Files:**
 - Modify: `deployment-compatibility.test.mjs`
-- Modify: `package.json`
-- Modify: `yarn.lock`
 
-- [ ] **Step 1: Remove all ignored-prototype coupling**
+- [ ] **Step 1: Add regression helpers**
 
-In the existing production-route test, remove both ignored prototype reads and both full-file equality assertions:
+Add helpers that decode two Sharp images to 3-channel raw RGB buffers and calculate mean absolute channel error. Add an edge-map comparison using a fixed Laplacian kernel, plus a helper that compares a solid band against RGB `5,5,5`.
 
-- `.superpowers/brainstorm/83126-1788606365/grain-shader-v12-upcoming-events.html`
-- `.superpowers/brainstorm/83126-1788606365/global-hackathon.html`
+- [ ] **Step 2: Extend the existing social-card test**
 
-Keep the assertions that validate the committed `public/site/home.html` and `public/site/global-hackathon.html` files themselves. This makes the suite reproducible in a clean checkout and removes the already-existing unrelated failures without weakening production-file coverage.
+Require:
 
-- [ ] **Step 2: Add an exact direct Sharp dependency under Node 22**
+- `design-assets/social/home-social-card-option-c-golden.png` exists at 1200 × 600;
+- the central 1200 × 600 crop of `public/images/home-social-card-v1.jpg` differs from the golden by mean absolute RGB error below `8`;
+- its Laplacian edge-map error stays below a calibrated threshold that passes the approved JPEG but fails test fixtures with the logo or Gate shifted by four pixels;
+- the 15-pixel top and bottom bands differ from `#050505` by mean absolute RGB error below `8`;
+- the existing 1200 × 630, sub-1 MB, metadata, `st-banner.png` removal, and Summit-isolation assertions remain.
 
-Run:
-
-```bash
-source "$HOME/.nvm/nvm.sh"
-nvm use 22
-yarn add --dev --exact sharp@0.35.4
-```
-
-Expected: `sharp` is listed directly in `devDependencies`, and `yarn.lock` records the exact requested package version.
-
-- [ ] **Step 3: Add the failing production contract**
-
-Import `statSync` from `node:fs`, `fileURLToPath` from `node:url`, and `sharp` from `sharp`. Add an asynchronous test named `homepage metadata uses the approved versioned social card` that verifies all of the following:
-
-```js
-const cardUrl = new URL(
-  "./public/images/home-social-card-v1.jpg",
-  import.meta.url,
-);
-const cardPath = fileURLToPath(cardUrl);
-const expectedHtmlTitle =
-  "Superteam Germany | Solana Builders, Founders &amp; Startups";
-const expectedLayoutTitle =
-  "Superteam Germany | Solana Builders, Founders & Startups";
-const expectedDescription =
-  "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
-const expectedHtmlTwitterDescription =
-  "Launch, grow and connect with Germany’s Solana builder and founder community.";
-```
-
-- `public/images/home-social-card-v1.jpg` exists.
-- `await sharp(cardPath).metadata()` reports exactly 1200 × 630.
-- `statSync(cardPath).size` is less than 1,000,000 bytes.
-- `public/site/home.html` still contains the exact HTML-encoded current title, main description, and shorter X description.
-- Its Open Graph and X image URLs are `https://de.superteam.fun/images/home-social-card-v1.jpg`.
-- Its Open Graph width and height are `1200` and `630`, and its X card remains `summary_large_image`.
-- `src/app/layout.tsx` still contains the exact unescaped current title and `siteDescription` value.
-- It defines `HOME_SOCIAL_IMAGE = "/images/home-social-card-v1.jpg"`, uses 1200 × 630 in Open Graph, keeps `twitter.card` as `summary_large_image`, and uses `HOME_SOCIAL_IMAGE` for X.
-- Neither homepage metadata implementation references `st-banner.png`.
-- `src/app/solana-summit-germany/page.tsx`, `agenda/page.tsx`, and `side-events/page.tsx` still reference `summit-social-card-v1.jpg` and do not reference `home-social-card-v1.jpg`.
-
-- [ ] **Step 4: Prove the intended failure is isolated**
-
-Run:
+- [ ] **Step 3: Run the test and prove the old export fails**
 
 ```bash
 source "$HOME/.nvm/nvm.sh"
@@ -91,177 +51,92 @@ nvm use 22
 node --test deployment-compatibility.test.mjs
 ```
 
-Expected: both former ignored-prototype failure paths are gone; the new social-card test fails only because the new asset and metadata do not exist yet.
+Expected: the new golden assertion fails because the exact Option C golden does not exist yet.
 
-- [ ] **Step 5: Commit the portable test contract**
-
-```bash
-git add deployment-compatibility.test.mjs package.json yarn.lock
-git commit -m "Test homepage social preview metadata"
-```
-
-### Task 2: Create the approved Option C production asset
+### Task 2: Render the literal browser Option C
 
 **Files:**
-- Create: `design-assets/social/home-social-card-background-v1.png`
-- Create: `design-assets/social/brandenburg-gate-mask-v1.png`
-- Create: `scripts/normalize-brandenburg-gate-mask.mjs`
-- Create: `scripts/render-home-social-card.mjs`
-- Create: `public/images/home-social-card-v1.jpg`
+- Create: `design-assets/social/brandenburg-gate-source-v1.png`
+- Create: `design-assets/social/home-social-card-option-c-source.html`
+- Create: `design-assets/social/home-social-card-option-c-golden.png`
+- Modify: `design-assets/social/brandenburg-gate-mask-v1.png`
+- Delete: `design-assets/social/home-social-card-background-v1.png`
+- Modify: `scripts/normalize-brandenburg-gate-mask.mjs`
+- Create: `scripts/capture-home-social-card-option-c.mjs`
+- Modify: `scripts/render-home-social-card.mjs`
+- Modify: `public/images/home-social-card-v1.jpg`
 
-- [ ] **Step 1: Create all durable asset directories**
+- [ ] **Step 1: Persist the exact Gate source**
 
-Run:
+Copy `.superpowers/brainstorm/6436-1789727766/brandenburg-gate.png` byte-for-byte to `design-assets/social/brandenburg-gate-source-v1.png`, verify both SHA-256 hashes match, and remove `design-assets/social/home-social-card-background-v1.png`.
 
-```bash
-mkdir -p design-assets/social scripts public/images
-```
+- [ ] **Step 2: Preserve continuous Gate edges**
 
-- [ ] **Step 2: Generate the background-only artwork**
+Keep the normalizer's inverted continuous grayscale alpha with no threshold and assert source and mask are 485 × 412. The normalized mask remains a durable asset, while the browser capture fixture applies the complete approved CSS filter chain `invert(1) sepia(1) saturate(.35) brightness(.92)` and `screen` blend to the byte-identical source.
 
-Use the `imagegen` skill and image-generation tool with this prompt:
+- [ ] **Step 3: Freeze the exact 1200 × 600 browser golden**
 
-```text
-Create a background-only social card at a 1200:630 aspect ratio for Superteam Germany. Match the redesigned website hero: near-black center; warm gold glow emerging from the upper-right corner with red beneath it; a mirrored warm gold and red glow from the lower-left corner. Keep the central 60 percent very dark and uncluttered for a white logo. Add only extremely subtle fine grain. No text, no logo, no icons, no buildings, no silhouettes, and no borders.
-```
+Create a fixed 518 × 259 capture fixture using the prototype's exact HTML/CSS values:
 
-Save the chosen output as `design-assets/social/home-social-card-background-v1.png`. Inspect it at full size and reject any output containing text, symbols, landmark shapes, or an insufficiently dark center.
+- base `#050505`;
+- top-right radial ellipse 54% × 76%: gold `.88`, red `.68` at 38%, transparent at 74%;
+- bottom-left radial ellipse 54% × 76%: gold `.82`, red `.66` at 38%, transparent at 74%;
+- protection ellipse 67% × 70%: black `.98` at 0%, `.9` at 46%, `.18` at 83%, transparent at 100%;
+- grain `baseFrequency=.92`, two octaves, stitched tiles, inner opacity `.24`, layer opacity `.24`, soft-light blend;
+- Gate box `left:50%`, `bottom:-23%`, `width:77%`, `height:79%`, bottom-contained, opacity `.19`, screen blend;
+- exact navbar SVG and the approved logo shadows.
 
-- [ ] **Step 3: Normalize the approved Gate source into a transparent mask**
+Create an explicit capture script that launches `/Applications/Google Chrome.app/Contents/MacOS/Google Chrome` headlessly at 518 × 259 with 2× device scale, captures the fixture losslessly, then resizes the 1036 × 518 capture to 1200 × 600. Write `design-assets/social/home-social-card-option-c-golden.png` once, record its SHA-256 in the test, and require an explicit `--update-golden` flag to overwrite it. This makes the approved oracle reproducible without letting normal rendering update its own expected image.
 
-Create `scripts/normalize-brandenburg-gate-mask.mjs`. It must:
+- [ ] **Step 4: Build the 1200 × 630 production export**
 
-- accept input and output paths from `process.argv` and fail clearly when either is missing;
-- use Sharp to remove alpha, convert to grayscale, and negate without thresholding;
-- preserve the inverted grayscale values directly as alpha coverage so the source's antialiased edge pixels remain smooth at social-card size;
-- write an RGBA PNG whose RGB channels are `239, 232, 222` and whose alpha channel comes from that continuous grayscale mask;
-- create the output directory recursively.
+Replace the approximate renderer with one that reads the frozen golden, verifies its recorded hash and 1200 × 600 dimensions, creates a `#050505` 1200 × 630 canvas, composites the golden at `x=0,y=15` without resizing, and encodes `public/images/home-social-card-v1.jpg` at quality 90, chroma subsampling `4:4:4`, and mozjpeg. Assert both output dimensions.
 
-Then run:
+- [ ] **Step 5: Render, test, and visually compare**
 
 ```bash
 source "$HOME/.nvm/nvm.sh"
 nvm use 22
 node scripts/normalize-brandenburg-gate-mask.mjs \
-  .superpowers/brainstorm/6436-1789727766/brandenburg-gate.png \
+  design-assets/social/brandenburg-gate-source-v1.png \
   design-assets/social/brandenburg-gate-mask-v1.png
-```
-
-Inspect the normalized file with the image viewer. Expected: a transparent canvas containing only the exact approved Quadriga and six-column Gate silhouette, with no white rectangular background.
-
-- [ ] **Step 4: Add the deterministic renderer**
-
-Create `scripts/render-home-social-card.mjs`. It must:
-
-- load `design-assets/social/home-social-card-background-v1.png` and resize/crop it to exactly 1200 × 630;
-- load the normalized transparent Gate PNG;
-- load the exact navbar asset `public/images/stLogoWithIcon.svg`;
-- composite the Gate at `x=306`, `y=350`, `width=588`, `height=498`, opacity `0.19`;
-- add a subtle monochrome grain overlay at approximately `0.025` opacity;
-- composite the logo at `x=340`, `y=244`, `width=520`, `height=107`, with a restrained black drop shadow;
-- render `public/images/home-social-card-v1.jpg` as JPEG quality 90, chroma subsampling `4:4:4`, with `mozjpeg: true`;
-- assert that the output is exactly 1200 × 630 and fail otherwise.
-
-The logo geometry is intentional: its visual center is at `297.5px`, approximately `17.5px` above the card center at `315px`, matching the approved Option C composition.
-
-- [ ] **Step 5: Render and inspect at full and unfurl size**
-
-Run:
-
-```bash
-source "$HOME/.nvm/nvm.sh"
-nvm use 22
+node scripts/capture-home-social-card-option-c.mjs --update-golden
 node scripts/render-home-social-card.mjs
+node --test deployment-compatibility.test.mjs
 sips -g pixelWidth -g pixelHeight public/images/home-social-card-v1.jpg
 wc -c public/images/home-social-card-v1.jpg
 ```
 
-Expected: 1200 × 630 and less than 1 MB. Inspect both the full-size card and an approximately 600 × 315 preview. Confirm that:
+Expected: all 13 tests pass; the final image is 1200 × 630 and below 1 MB. Inspect the frozen golden, final JPEG, and a 600 × 315 preview. Glow positions, logo proportions, Gate geometry, and contrast must match the captured approved prototype. Prove the edge assertion fails after shifting either the logo or Gate by four pixels in a temporary fixture, then restore the approved fixture.
 
-- the exact navbar logo is horizontally centered and easily readable;
-- the Gate is subtle but recognizable;
-- the Quadriga remains below the wordmark;
-- the Gate is not visibly cut out toward the center;
-- the red/gold corners match the approved Option C direction.
-
-If inspection exposes a mismatch, adjust only Gate coordinates/opacity, logo coordinates, or grain opacity, rerender, and inspect again.
-
-- [ ] **Step 6: Commit the reproducible design sources and output**
+- [ ] **Step 6: Commit the correction**
 
 ```bash
-git add design-assets/social scripts/normalize-brandenburg-gate-mask.mjs \
+git add deployment-compatibility.test.mjs design-assets/social \
+  scripts/capture-home-social-card-option-c.mjs \
+  scripts/normalize-brandenburg-gate-mask.mjs \
   scripts/render-home-social-card.mjs public/images/home-social-card-v1.jpg
-git commit -m "Create homepage social preview card"
+git commit -m "Match social card to approved Option C"
 ```
 
-### Task 3: Point both homepage metadata implementations at the new card
+### Task 3: Verify the repository and metadata
 
 **Files:**
-- Modify: `public/site/home.html:20-29`
-- Modify: `src/app/layout.tsx:8-10,87-108`
+- Verify: `public/site/home.html`
+- Verify: `src/app/layout.tsx`
+- Verify: Summit metadata pages.
 
-- [ ] **Step 1: Update the static production homepage metadata**
-
-In `public/site/home.html`, replace only the old image metadata with:
-
-```html
-<meta property="og:image" content="https://de.superteam.fun/images/home-social-card-v1.jpg" />
-<meta property="og:image:width" content="1200" />
-<meta property="og:image:height" content="630" />
-<meta property="og:image:alt" content="Superteam Germany logo above a Brandenburg Gate silhouette" />
-...
-<meta name="twitter:image" content="https://de.superteam.fun/images/home-social-card-v1.jpg" />
-<meta name="twitter:image:alt" content="Superteam Germany logo above a Brandenburg Gate silhouette" />
-```
-
-Do not change the current title or description.
-
-- [ ] **Step 2: Update shared Next.js metadata**
-
-Add below `SITE_URL` in `src/app/layout.tsx`:
-
-```ts
-const HOME_SOCIAL_IMAGE = "/images/home-social-card-v1.jpg";
-```
-
-Use it in the Open Graph image object with width `1200`, height `630`, and alt text `Superteam Germany logo above a Brandenburg Gate silhouette`. Use `[HOME_SOCIAL_IMAGE]` for the X image and retain `card: "summary_large_image"`. Do not change the current title or description.
-
-- [ ] **Step 3: Run the focused contract**
+- [ ] **Step 1: Run focused checks and formatting validation**
 
 ```bash
 source "$HOME/.nvm/nvm.sh"
 nvm use 22
 node --test deployment-compatibility.test.mjs
-```
-
-Expected: all tests pass, including dimensions, file size, title/description preservation, X card type, and Summit isolation.
-
-- [ ] **Step 4: Commit the metadata switch**
-
-```bash
-git add public/site/home.html src/app/layout.tsx
-git commit -m "Use new homepage social preview"
-```
-
-### Task 4: Verify the repository build and final diff
-
-**Files:**
-- Verify only; no expected changes.
-
-- [ ] **Step 1: Check formatting and intended scope**
-
-Run:
-
-```bash
 git diff --check 258a8aa..HEAD
 git status --short
 ```
 
-Expected: no whitespace errors and no unexpected files.
-
-- [ ] **Step 2: Build under the repository's required environment**
-
-Run:
+- [ ] **Step 2: Run the production build**
 
 ```bash
 source "$HOME/.nvm/nvm.sh"
@@ -271,54 +146,32 @@ export SANITY_DATASET=production
 yarn build
 ```
 
-Expected: the production build succeeds.
+Expected: build succeeds; existing non-blocking `<img>` warnings may remain.
 
-- [ ] **Step 3: Perform the final visual check**
+- [ ] **Step 3: Confirm one asset is used everywhere intended**
 
-Open `public/images/home-social-card-v1.jpg` at full size and at an approximate social-unfurl size. Confirm no crop risk, blurred logo, white box around the Gate, accidental generated text, or visual regression from approved Option C.
+Confirm both homepage metadata files point to the same `home-social-card-v1.jpg` and 1200 × 630 dimensions; neither references `st-banner.png`. Assert the SHA-256 hashes of the three Summit metadata files remain `e08e6db427bdda5e650c2d7079c2eff625deeae22498db1293fcdca340750224`, `e2a5bef9e453102c88070a77fcf53c04427a7e5f40471482c6f28c87cd49cf62`, and `d30d554d8b130d896e16b50c98d2f356b1901986fee0e9957e05ffb1406ef06d`, matching baseline commit `258a8aa` exactly.
 
-### Task 5: Replace the Luma calendar cover with the identical card
-
-**External surface:**
-- Update: `https://luma.com/SuperteamGermany` calendar cover/appearance only.
-
-- [ ] **Step 1: Open the authenticated calendar appearance editor**
-
-In the Luma web UI, open the Superteam Germany calendar appearance/cover settings. Do not change the calendar title, description, URL, permissions, or events.
-
-- [ ] **Step 2: Upload the production file and preserve its crop**
-
-Upload `public/images/home-social-card-v1.jpg`. Use the full 1200 × 630 frame without zooming or cropping away the logo, Gate, or corner glows. Save the appearance change.
-
-- [ ] **Step 3: Verify the saved Luma result**
-
-Reload the public calendar page and visually inspect the actual saved cover/crop. Confirm it matches Option C rather than merely confirming that the upload completed.
-
-Fetch the public page metadata and verify that its preview image is a new Luma CDN URL with 1200 × 630 dimensions. Open that URL and confirm it visually shows the same Option C asset.
-
-### Task 6: Final deployment and unfurl verification
+### Task 4: Redeploy and verify live previews
 
 **External surfaces:**
-- Verify: `https://de.superteam.fun/`
-- Verify: `https://www.superteamde.fun/`
-- Verify privately: X composer draft and a Slack DM to self/private test channel.
+- Release path: feature branch → `development` → `main`
+- Production: Vercel
+- Verify: `https://de.superteam.fun/`, `https://www.superteamde.fun/`
+- Separate admin update: `https://luma.com/SuperteamGermany`
 
-- [ ] **Step 1: Record the final repository state**
+- [ ] **Step 1: Prepare the Git handoff**
 
-Run:
+Record the clean status, commits, and diff. Push the feature branch only with the user's established GitHub workflow, merge through `development`, and release `development` to `main`.
 
-```bash
-git status --short
-git log --oneline -6
-git diff 258a8aa..HEAD --stat
-```
+- [ ] **Step 2: Verify Vercel**
 
-Expected: the worktree is clean and the diff contains only the planned tests, dependency declaration, reproducible design sources, production card, and homepage metadata.
+Wait for the `main` deployment for the released commit to reach `Ready`. Verify both live homepage documents expose the corrected versioned image and 1200 × 630 dimensions, and verify the live image visually matches Option C.
 
-- [ ] **Step 2: Verify both live homepage hosts after deployment**
+- [ ] **Step 3: Verify unfurls privately**
 
-Fetch the rendered metadata from both homepage URLs and confirm each exposes the versioned absolute card URL and 1200 × 630 dimensions. Open the live image URL and confirm it is the approved Option C card.
+Paste each homepage URL into an X draft and a Slack DM to self/private test channel. Do not publish or send to another person. Allow for cache latency.
 
-- [ ] **Step 3: Check real unfurls without publishing messages**
+- [ ] **Step 4: Update Luma separately**
 
-Paste each homepage URL into an X composer draft and into a Slack DM to yourself or a private test channel. Verify the new image, title, and description appear. Remove the draft/test message if desired; do not post publicly or send to other people as part of verification.
+A Superteam Germany Luma calendar administrator uploads the same `public/images/home-social-card-v1.jpg` as the calendar cover. Verify the saved public Luma cover and its Luma CDN social image use the same Option C composition. If the signed-in account is not a calendar administrator, stop and hand off the file without changing accounts or calendar data.
