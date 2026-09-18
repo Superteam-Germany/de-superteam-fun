@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=518, initial-scale=1" />
+    <style>
+      html,
+      body {
+        width: 518px;
+        height: 259px;
+        margin: 0;
+        overflow: hidden;
+        background: #050505;
+      }
+
+      .og-card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        display: grid;
+        place-items: center;
+        overflow: hidden;
+        color: #f6efe3;
+        isolation: isolate;
+      }
+
+      .og-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -3;
+        background: #050505;
+      }
+
+      .og-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background:
+          radial-gradient(ellipse 54% 76% at 100% 0%, rgba(255, 207, 50, 0.88), rgba(229, 34, 45, 0.68) 38%, transparent 74%),
+          radial-gradient(ellipse 54% 76% at 0% 100%, rgba(255, 207, 50, 0.82), rgba(229, 34, 45, 0.66) 38%, transparent 74%);
+      }
+
+      .protection {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background: radial-gradient(ellipse 67% 70% at 50% 50%, rgba(5, 5, 5, 0.98) 0%, rgba(5, 5, 5, 0.9) 46%, rgba(5, 5, 5, 0.18) 83%, transparent 100%);
+      }
+
+      .grain {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        opacity: 0.24;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.24'/%3E%3C/svg%3E");
+        mix-blend-mode: soft-light;
+      }
+
+      .brandenburg-gate {
+        position: absolute;
+        z-index: 1;
+        left: 50%;
+        bottom: -23%;
+        width: 77%;
+        max-width: none;
+        height: 79%;
+        object-fit: contain;
+        object-position: center bottom;
+        opacity: 0.19;
+        filter: invert(1) sepia(1) saturate(0.35) brightness(0.92);
+        transform: translateX(-50%);
+        mix-blend-mode: screen;
+      }
+
+      .identity {
+        width: 62%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        z-index: 3;
+        transform: translateY(-18px);
+      }
+
+      .identity img {
+        width: 82%;
+        max-height: 74px;
+        object-fit: contain;
+        filter: drop-shadow(0 3px 7px rgba(0, 0, 0, 0.95)) drop-shadow(0 0 22px rgba(0, 0, 0, 0.82));
+      }
+    </style>
+  </head>
+  <body>
+    <div class="og-card">
+      <div class="protection"></div>
+      <div class="grain"></div>
+      <img class="brandenburg-gate" src="./brandenburg-gate-source-v1.png" alt="" />
+      <div class="identity">
+        <img src="../../public/images/stLogoWithIcon.svg" alt="Superteam Germany" />
+      </div>
+    </div>
+  </body>
+</html>
