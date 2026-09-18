@@ -1,67 +1,61 @@
+import { createHash } from "node:crypto";
 import { mkdir, readFile } from "node:fs/promises";
 import path from "node:path";
+import { fileURLToPath } from "node:url";
 import sharp from "sharp";
 
-const root = process.cwd();
+const root = fileURLToPath(new URL("..", import.meta.url));
 const width = 1200;
 const height = 630;
-const backgroundPath = path.join(
+const goldenWidth = 1200;
+const goldenHeight = 600;
+const goldenTop = 15;
+const expectedGoldenHash =
+  "a34b25a483c1d13ba0dfe9e1781af9c1d79b607df5707588d5226b684f4ddbf6";
+const goldenPath = path.join(
   root,
-  "design-assets/social/home-social-card-background-v1.png",
+  "design-assets/social/home-social-card-option-c-golden.png",
 );
-const gatePath = path.join(
-  root,
-  "design-assets/social/brandenburg-gate-mask-v1.png",
-);
-const logoPath = path.join(root, "public/images/stLogoWithIcon.svg");
 const outputPath = path.join(root, "public/images/home-social-card-v1.jpg");
 
-const [background, gateSource, logoSource] = await Promise.all([
-  sharp(backgroundPath)
-    .resize(width, height, { fit: "cover", position: "centre" })
-    .png()
-    .toBuffer(),
-  readFile(gatePath),
-  readFile(logoPath),
-]);
+const golden = await readFile(goldenPath);
+const goldenHash = createHash("sha256").update(golden).digest("hex");
+if (goldenHash !== expectedGoldenHash) {
+  throw new Error(
+    `Frozen Option C golden hash mismatch: ${goldenHash}; expected ${expectedGoldenHash}`,
+  );
+}
 
-const gateData = gateSource.toString("base64");
-const logoData = logoSource.toString("base64");
-const overlay = Buffer.from(`
-  <svg width="${width}" height="${height}" viewBox="0 0 ${width} ${height}"
-       xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <filter id="logo-shadow" x="-25%" y="-60%" width="150%" height="220%">
-        <feDropShadow dx="0" dy="4" stdDeviation="8" flood-color="#000" flood-opacity="0.92" />
-        <feDropShadow dx="0" dy="0" stdDeviation="18" flood-color="#000" flood-opacity="0.72" />
-      </filter>
-      <filter id="grain">
-        <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="18" />
-        <feColorMatrix type="saturate" values="0" />
-      </filter>
-    </defs>
-
-    <image href="data:image/png;base64,${gateData}" x="306" y="350"
-           width="588" height="498" preserveAspectRatio="xMidYMid meet"
-           opacity="0.19" />
-    <rect width="1200" height="630" filter="url(#grain)" opacity="0.025"
-          style="mix-blend-mode:soft-light" />
-    <image href="data:image/svg+xml;base64,${logoData}" x="340" y="244"
-           width="520" height="107" preserveAspectRatio="xMidYMid meet"
-           filter="url(#logo-shadow)" />
-  </svg>
-`);
+const goldenMetadata = await sharp(golden).metadata();
+if (
+  goldenMetadata.width !== goldenWidth ||
+  goldenMetadata.height !== goldenHeight
+) {
+  throw new Error(
+    `Unexpected golden size: ${goldenMetadata.width}x${goldenMetadata.height}; expected ${goldenWidth}x${goldenHeight}`,
+  );
+}
 
 await mkdir(path.dirname(outputPath), { recursive: true });
-await sharp(background)
-  .composite([{ input: overlay, top: 0, left: 0 }])
+await sharp({
+  create: {
+    width,
+    height,
+    channels: 3,
+    background: "#050505",
+  },
+})
+  .composite([{ input: golden, left: 0, top: goldenTop }])
   .jpeg({ quality: 90, chromaSubsampling: "4:4:4", mozjpeg: true })
   .toFile(outputPath);
 
-const metadata = await sharp(outputPath).metadata();
-
-if (metadata.width !== width || metadata.height !== height) {
-  throw new Error(`Unexpected output size: ${metadata.width}x${metadata.height}`);
+const outputMetadata = await sharp(outputPath).metadata();
+if (outputMetadata.width !== width || outputMetadata.height !== height) {
+  throw new Error(
+    `Unexpected output size: ${outputMetadata.width}x${outputMetadata.height}; expected ${width}x${height}`,
+  );
 }
 
-console.log(`${outputPath}: ${metadata.width}x${metadata.height}`);
+console.log(
+  `${outputPath}: ${outputMetadata.width}x${outputMetadata.height}, golden ${goldenHash}`,
+);

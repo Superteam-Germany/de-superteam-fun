@@ -14,25 +14,26 @@ const sha256 = path =>
 const SOCIAL_CARD_WIDTH = 1200;
 const SOCIAL_CARD_CONTENT_HEIGHT = 600;
 const SOCIAL_CARD_BAND_HEIGHT = 15;
-const MAX_SOCIAL_CARD_RGB_MAE = 8;
-// Keep this named threshold simple to tune once the independent golden exists.
-const MAX_SOCIAL_CARD_LAPLACIAN_MAE = 25;
+const HOME_SOCIAL_CARD_GOLDEN_SHA256 =
+  "a34b25a483c1d13ba0dfe9e1781af9c1d79b607df5707588d5226b684f4ddbf6";
+const MAX_SOCIAL_CARD_RGB_MAE = 0.75;
+const MAX_SOCIAL_CARD_LAPLACIAN_MAE = 2;
 const SOCIAL_CARD_LOGO_ROI = {
   left: 340,
   top: 229,
   width: 520,
   height: 107,
 };
-const MAX_SOCIAL_CARD_LOGO_RGB_MAE = 12;
-const MAX_SOCIAL_CARD_LOGO_LAPLACIAN_MAE = 20;
+const MAX_SOCIAL_CARD_LOGO_RGB_MAE = 2;
+const MAX_SOCIAL_CARD_LOGO_LAPLACIAN_MAE = 6;
 const SOCIAL_CARD_GATE_ROI = {
   left: 306,
   top: 335,
   width: 588,
   height: 265,
 };
-const MAX_SOCIAL_CARD_GATE_RGB_MAE = 12;
-const MAX_SOCIAL_CARD_GATE_LAPLACIAN_MAE = 20;
+const MAX_SOCIAL_CARD_GATE_RGB_MAE = 1;
+const MAX_SOCIAL_CARD_GATE_LAPLACIAN_MAE = 2;
 const LAPLACIAN_KERNEL = [
   0, 1, 0,
   1, -4, 1,
@@ -273,6 +274,7 @@ test("homepage metadata uses the approved versioned social card", async () => {
 
   assert.ok(existsSync(cardPath), "the versioned homepage social card must exist");
   assert.ok(existsSync(goldenPath), "the independent Option C golden must exist");
+  assert.equal(sha256(goldenPath), HOME_SOCIAL_CARD_GOLDEN_SHA256);
   const cardMetadata = await sharp(cardPath).metadata();
   assert.equal(cardMetadata.width, SOCIAL_CARD_WIDTH);
   assert.equal(cardMetadata.height, 630);
