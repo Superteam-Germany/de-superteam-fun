@@ -63,6 +63,7 @@
     "zod": "^3.22.2"
   },
   "devDependencies": {
-    "@types/jsonwebtoken": "^9.0.7"
+    "@types/jsonwebtoken": "^9.0.7",
+    "sharp": "0.35.4"
   }
 }

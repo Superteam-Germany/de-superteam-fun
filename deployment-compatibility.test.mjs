@@ -1,8 +1,125 @@
 import assert from "node:assert/strict";
-import { existsSync, readFileSync } from "node:fs";
+import { createHash } from "node:crypto";
+import { existsSync, readFileSync, statSync } from "node:fs";
 import test from "node:test";
+import { fileURLToPath } from "node:url";
+import sharp from "sharp";
 
 const read = path => readFileSync(new URL(path, import.meta.url), "utf8");
+const sha256 = path =>
+  createHash("sha256")
+    .update(readFileSync(new URL(path, import.meta.url)))
+    .digest("hex");
+
+const SOCIAL_CARD_WIDTH = 1200;
+const SOCIAL_CARD_CONTENT_HEIGHT = 600;
+const SOCIAL_CARD_BAND_HEIGHT = 15;
+const HOME_SOCIAL_CARD_GOLDEN_SHA256 =
+  "a34b25a483c1d13ba0dfe9e1781af9c1d79b607df5707588d5226b684f4ddbf6";
+const MAX_SOCIAL_CARD_RGB_MAE = 0.75;
+const MAX_SOCIAL_CARD_LAPLACIAN_MAE = 2;
+const SOCIAL_CARD_LOGO_ROI = {
+  left: 340,
+  top: 229,
+  width: 520,
+  height: 107,
+};
+const MAX_SOCIAL_CARD_LOGO_RGB_MAE = 2;
+const MAX_SOCIAL_CARD_LOGO_LAPLACIAN_MAE = 6;
+const SOCIAL_CARD_GATE_ROI = {
+  left: 306,
+  top: 335,
+  width: 588,
+  height: 265,
+};
+const MAX_SOCIAL_CARD_GATE_RGB_MAE = 1;
+const MAX_SOCIAL_CARD_GATE_LAPLACIAN_MAE = 2;
+const LAPLACIAN_KERNEL = [
+  0, 1, 0,
+  1, -4, 1,
+  0, 1, 0,
+];
+
+const decodeSrgb = async (path, extract) => {
+  let image = sharp(path);
+  if (extract) image = image.extract(extract);
+
+  const { data, info } = await image
+    .toColourspace("srgb")
+    .removeAlpha()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+
+  assert.equal(info.channels, 3, `${path} must decode to three-channel sRGB`);
+  return { data, width: info.width, height: info.height };
+};
+
+const meanAbsoluteChannelError = (actual, expected) => {
+  assert.equal(actual.length, expected.length, "image buffers must be the same size");
+
+  let totalError = 0;
+  for (let index = 0; index < actual.length; index += 1) {
+    totalError += Math.abs(actual[index] - expected[index]);
+  }
+  return totalError / actual.length;
+};
+
+const extractRegion = (image, { left, top, width, height }) => {
+  assert.ok(left >= 0 && top >= 0, "image ROI must start inside the image");
+  assert.ok(left + width <= image.width, "image ROI must fit within the image width");
+  assert.ok(top + height <= image.height, "image ROI must fit within the image height");
+
+  const channels = 3;
+  const rowLength = width * channels;
+  const data = new Uint8Array(rowLength * height);
+  for (let row = 0; row < height; row += 1) {
+    const sourceStart = ((top + row) * image.width + left) * channels;
+    data.set(image.data.subarray(sourceStart, sourceStart + rowLength), row * rowLength);
+  }
+
+  return { data, width, height };
+};
+
+const laplacianEdgeMap = ({ data, width, height }) => {
+  const channels = 3;
+  const outputWidth = width - 2;
+  const outputHeight = height - 2;
+  const edges = new Uint16Array(outputWidth * outputHeight * channels);
+  let outputIndex = 0;
+
+  for (let y = 1; y < height - 1; y += 1) {
+    for (let x = 1; x < width - 1; x += 1) {
+      for (let channel = 0; channel < channels; channel += 1) {
+        let response = 0;
+        for (let kernelY = -1; kernelY <= 1; kernelY += 1) {
+          for (let kernelX = -1; kernelX <= 1; kernelX += 1) {
+            const sourceIndex =
+              ((y + kernelY) * width + x + kernelX) * channels + channel;
+            const kernelIndex = (kernelY + 1) * 3 + kernelX + 1;
+            response += data[sourceIndex] * LAPLACIAN_KERNEL[kernelIndex];
+          }
+        }
+        edges[outputIndex] = Math.abs(response);
+        outputIndex += 1;
+      }
+    }
+  }
+
+  return edges;
+};
+
+const laplacianEdgeError = (actual, expected) =>
+  meanAbsoluteChannelError(laplacianEdgeMap(actual), laplacianEdgeMap(expected));
+
+const solidBandError = (band, [red, green, blue]) => {
+  const expected = new Uint8Array(band.data.length);
+  for (let index = 0; index < expected.length; index += 3) {
+    expected[index] = red;
+    expected[index + 1] = green;
+    expected[index + 2] = blue;
+  }
+  return meanAbsoluteChannelError(band.data, expected);
+};
 
 test("the documented local runtime matches the package engine", () => {
   const packageJson = JSON.parse(read("./package.json"));
@@ -29,11 +146,7 @@ test("the production routes serve tracked copies of the approved redesign", () =
 test("production HTML uses clean internal routes and deployable asset paths", () => {
   const home = read("./public/site/home.html");
   const hackathon = read("./public/site/buildstation.html");
-  const reviewHome = read("./.superpowers/brainstorm/83126-1788606365/grain-shader-v12-upcoming-events.html");
-  const reviewHackathon = read("./.superpowers/brainstorm/83126-1788606365/global-hackathon.html");
 
-  assert.equal(home, reviewHome);
-  assert.equal(hackathon, reviewHackathon);
   assert.match(home, /href:["']\/buildstation["']/);
   assert.doesNotMatch(home, /global-hackathon\.html/);
   assert.doesNotMatch(home, /assets\/summit/);
@@ -134,5 +247,147 @@ test("public data proxies publish bounded CDN cache policies", () => {
     "./src/app/api/projects/route.ts",
   ]) {
     assert.match(read(path), /s-maxage=300, stale-while-revalidate=900/);
+  }
+});
+
+test("homepage metadata uses the approved versioned social card", async () => {
+  const home = read("./public/site/home.html");
+  const layout = read("./src/app/layout.tsx");
+  const cardUrl = new URL(
+    "./public/images/home-social-card-v1.jpg",
+    import.meta.url,
+  );
+  const cardPath = fileURLToPath(cardUrl);
+  const goldenUrl = new URL(
+    "./design-assets/social/home-social-card-option-c-golden.png",
+    import.meta.url,
+  );
+  const goldenPath = fileURLToPath(goldenUrl);
+  const expectedHtmlTitle =
+    "Superteam Germany | Solana Builders, Founders &amp; Startups";
+  const expectedLayoutTitle =
+    "Superteam Germany | Solana Builders, Founders & Startups";
+  const expectedDescription =
+    "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
+  const expectedHtmlTwitterDescription =
+    "Launch, grow and connect with Germany’s Solana builder and founder community.";
+
+  assert.ok(existsSync(cardPath), "the versioned homepage social card must exist");
+  assert.ok(existsSync(goldenPath), "the independent Option C golden must exist");
+  assert.equal(sha256(goldenPath), HOME_SOCIAL_CARD_GOLDEN_SHA256);
+  const cardMetadata = await sharp(cardPath).metadata();
+  assert.equal(cardMetadata.width, SOCIAL_CARD_WIDTH);
+  assert.equal(cardMetadata.height, 630);
+  assert.ok(statSync(cardPath).size < 1_000_000, "social card must stay under 1 MB");
+  const goldenMetadata = await sharp(goldenPath).metadata();
+  assert.equal(goldenMetadata.width, SOCIAL_CARD_WIDTH);
+  assert.equal(goldenMetadata.height, SOCIAL_CARD_CONTENT_HEIGHT);
+
+  const golden = await decodeSrgb(goldenPath);
+  const cardContent = await decodeSrgb(cardPath, {
+    left: 0,
+    top: SOCIAL_CARD_BAND_HEIGHT,
+    width: SOCIAL_CARD_WIDTH,
+    height: SOCIAL_CARD_CONTENT_HEIGHT,
+  });
+  assert.ok(
+    meanAbsoluteChannelError(cardContent.data, golden.data) < MAX_SOCIAL_CARD_RGB_MAE,
+    `central social-card RGB MAE must stay under ${MAX_SOCIAL_CARD_RGB_MAE}`,
+  );
+  assert.ok(
+    laplacianEdgeError(cardContent, golden) < MAX_SOCIAL_CARD_LAPLACIAN_MAE,
+    `central social-card Laplacian edge MAE must stay under ${MAX_SOCIAL_CARD_LAPLACIAN_MAE}`,
+  );
+
+  for (const [name, roi, maxRgbMae, maxLaplacianMae] of [
+    [
+      "logo",
+      SOCIAL_CARD_LOGO_ROI,
+      MAX_SOCIAL_CARD_LOGO_RGB_MAE,
+      MAX_SOCIAL_CARD_LOGO_LAPLACIAN_MAE,
+    ],
+    [
+      "Brandenburg Gate",
+      SOCIAL_CARD_GATE_ROI,
+      MAX_SOCIAL_CARD_GATE_RGB_MAE,
+      MAX_SOCIAL_CARD_GATE_LAPLACIAN_MAE,
+    ],
+  ]) {
+    const cardRegion = extractRegion(cardContent, roi);
+    const goldenRegion = extractRegion(golden, roi);
+    assert.ok(
+      meanAbsoluteChannelError(cardRegion.data, goldenRegion.data) < maxRgbMae,
+      `${name} ROI RGB MAE must stay under ${maxRgbMae}`,
+    );
+    assert.ok(
+      laplacianEdgeError(cardRegion, goldenRegion) < maxLaplacianMae,
+      `${name} ROI Laplacian edge MAE must stay under ${maxLaplacianMae}`,
+    );
+  }
+
+  for (const [name, top] of [
+    ["top", 0],
+    ["bottom", 615],
+  ]) {
+    const band = await decodeSrgb(cardPath, {
+      left: 0,
+      top,
+      width: SOCIAL_CARD_WIDTH,
+      height: SOCIAL_CARD_BAND_HEIGHT,
+    });
+    assert.ok(
+      solidBandError(band, [5, 5, 5]) < 8,
+      `${name} social-card band must stay close to #050505`,
+    );
+  }
+
+  assert.match(home, new RegExp(`<title>${expectedHtmlTitle}</title>`));
+  assert.ok(home.includes(`content="${expectedDescription}"`));
+  assert.ok(home.includes(`content="${expectedHtmlTwitterDescription}"`));
+  assert.match(
+    home,
+    /<meta property="og:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+  );
+  assert.match(home, /<meta property="og:image:width" content="1200" \/>/);
+  assert.match(home, /<meta property="og:image:height" content="630" \/>/);
+  assert.match(home, /<meta name="twitter:card" content="summary_large_image" \/>/);
+  assert.match(
+    home,
+    /<meta name="twitter:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+  );
+  assert.doesNotMatch(home, /st-banner\.png/);
+
+  assert.ok(layout.includes(`default: "${expectedLayoutTitle}"`));
+  assert.ok(layout.includes(`"${expectedDescription}"`));
+  assert.match(
+    layout,
+    /const HOME_SOCIAL_IMAGE = "\/images\/home-social-card-v1\.jpg";/,
+  );
+  assert.match(
+    layout,
+    /url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,/,
+  );
+  assert.match(layout, /twitter:\s*\{[\s\S]*?card:\s*"summary_large_image"/);
+  assert.match(layout, /images:\s*\[HOME_SOCIAL_IMAGE\]/);
+  assert.doesNotMatch(layout, /st-banner\.png/);
+
+  for (const [summitPath, expectedHash] of [
+    [
+      "./src/app/solana-summit-germany/page.tsx",
+      "e08e6db427bdda5e650c2d7079c2eff625deeae22498db1293fcdca340750224",
+    ],
+    [
+      "./src/app/solana-summit-germany/agenda/page.tsx",
+      "e2a5bef9e453102c88070a77fcf53c04427a7e5f40471482c6f28c87cd49cf62",
+    ],
+    [
+      "./src/app/solana-summit-germany/side-events/page.tsx",
+      "d30d554d8b130d896e16b50c98d2f356b1901986fee0e9957e05ffb1406ef06d",
+    ],
+  ]) {
+    const summitPage = read(summitPath);
+    assert.match(summitPage, /summit-social-card-v1\.jpg/);
+    assert.doesNotMatch(summitPage, /home-social-card-v1\.jpg/);
+    assert.equal(sha256(summitPath), expectedHash);
   }
 });

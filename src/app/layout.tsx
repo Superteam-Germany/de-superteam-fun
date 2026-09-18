@@ -6,6 +6,7 @@ import Script from "next/script";
 import { SiteChrome } from "@/components/site-chrome";
 
 const SITE_URL = "https://de.superteam.fun";
+const HOME_SOCIAL_IMAGE = "/images/home-social-card-v1.jpg";
 const siteDescription =
   "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
 
@@ -91,10 +92,10 @@ export const metadata: Metadata = {
     siteName: "Superteam Germany",
     images: [
       {
-        url: "/st-banner.png",
-        width: 3023,
-        height: 1688,
-        alt: "Superteam Germany community and brand",
+        url: HOME_SOCIAL_IMAGE,
+        width: 1200,
+        height: 630,
+        alt: "Superteam Germany logo above a Brandenburg Gate silhouette",
       },
     ],
     locale: "en_DE",
@@ -104,7 +105,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Superteam Germany | Solana Builders, Founders & Startups",
     description: siteDescription,
-    images: ["/st-banner.png"],
+    images: [HOME_SOCIAL_IMAGE],
     site: "@SuperteamDE",
     creator: "@SuperteamDE",
   },
