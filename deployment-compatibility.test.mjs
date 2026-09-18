@@ -13,24 +13,24 @@ const sha256 = path =>
 
 const SOCIAL_CARD_WIDTH = 1200;
 const SOCIAL_CARD_CONTENT_HEIGHT = 600;
-const SOCIAL_CARD_BAND_HEIGHT = 15;
+const SOCIAL_CARD_HEIGHT = 630;
 const HOME_SOCIAL_CARD_GOLDEN_SHA256 =
   "a34b25a483c1d13ba0dfe9e1781af9c1d79b607df5707588d5226b684f4ddbf6";
 const MAX_SOCIAL_CARD_RGB_MAE = 0.75;
 const MAX_SOCIAL_CARD_LAPLACIAN_MAE = 2;
 const SOCIAL_CARD_LOGO_ROI = {
   left: 340,
-  top: 229,
+  top: 240,
   width: 520,
-  height: 107,
+  height: 112,
 };
 const MAX_SOCIAL_CARD_LOGO_RGB_MAE = 2;
 const MAX_SOCIAL_CARD_LOGO_LAPLACIAN_MAE = 6;
 const SOCIAL_CARD_GATE_ROI = {
   left: 306,
-  top: 335,
+  top: 352,
   width: 588,
-  height: 265,
+  height: 278,
 };
 const MAX_SOCIAL_CARD_GATE_RGB_MAE = 1;
 const MAX_SOCIAL_CARD_GATE_LAPLACIAN_MAE = 2;
@@ -40,8 +40,9 @@ const LAPLACIAN_KERNEL = [
   0, 1, 0,
 ];
 
-const decodeSrgb = async (path, extract) => {
+const decodeSrgb = async (path, extract, resize) => {
   let image = sharp(path);
+  if (resize) image = image.resize(resize);
   if (extract) image = image.extract(extract);
 
   const { data, info } = await image
@@ -110,16 +111,6 @@ const laplacianEdgeMap = ({ data, width, height }) => {
 
 const laplacianEdgeError = (actual, expected) =>
   meanAbsoluteChannelError(laplacianEdgeMap(actual), laplacianEdgeMap(expected));
-
-const solidBandError = (band, [red, green, blue]) => {
-  const expected = new Uint8Array(band.data.length);
-  for (let index = 0; index < expected.length; index += 3) {
-    expected[index] = red;
-    expected[index + 1] = green;
-    expected[index + 2] = blue;
-  }
-  return meanAbsoluteChannelError(band.data, expected);
-};
 
 test("the documented local runtime matches the package engine", () => {
   const packageJson = JSON.parse(read("./package.json"));
@@ -277,26 +268,26 @@ test("homepage metadata uses the approved versioned social card", async () => {
   assert.equal(sha256(goldenPath), HOME_SOCIAL_CARD_GOLDEN_SHA256);
   const cardMetadata = await sharp(cardPath).metadata();
   assert.equal(cardMetadata.width, SOCIAL_CARD_WIDTH);
-  assert.equal(cardMetadata.height, 630);
+  assert.equal(cardMetadata.height, SOCIAL_CARD_HEIGHT);
   assert.ok(statSync(cardPath).size < 1_000_000, "social card must stay under 1 MB");
   const goldenMetadata = await sharp(goldenPath).metadata();
   assert.equal(goldenMetadata.width, SOCIAL_CARD_WIDTH);
   assert.equal(goldenMetadata.height, SOCIAL_CARD_CONTENT_HEIGHT);
 
-  const golden = await decodeSrgb(goldenPath);
-  const cardContent = await decodeSrgb(cardPath, {
-    left: 0,
-    top: SOCIAL_CARD_BAND_HEIGHT,
+  const golden = await decodeSrgb(goldenPath, undefined, {
     width: SOCIAL_CARD_WIDTH,
-    height: SOCIAL_CARD_CONTENT_HEIGHT,
+    height: SOCIAL_CARD_HEIGHT,
+    fit: "fill",
+    kernel: sharp.kernel.lanczos3,
   });
+  const cardContent = await decodeSrgb(cardPath);
   assert.ok(
     meanAbsoluteChannelError(cardContent.data, golden.data) < MAX_SOCIAL_CARD_RGB_MAE,
-    `central social-card RGB MAE must stay under ${MAX_SOCIAL_CARD_RGB_MAE}`,
+    `edge-to-edge social-card RGB MAE must stay under ${MAX_SOCIAL_CARD_RGB_MAE}`,
   );
   assert.ok(
     laplacianEdgeError(cardContent, golden) < MAX_SOCIAL_CARD_LAPLACIAN_MAE,
-    `central social-card Laplacian edge MAE must stay under ${MAX_SOCIAL_CARD_LAPLACIAN_MAE}`,
+    `edge-to-edge social-card Laplacian edge MAE must stay under ${MAX_SOCIAL_CARD_LAPLACIAN_MAE}`,
   );
 
   for (const [name, roi, maxRgbMae, maxLaplacianMae] of [
@@ -325,35 +316,24 @@ test("homepage metadata uses the approved versioned social card", async () => {
     );
   }
 
-  for (const [name, top] of [
-    ["top", 0],
-    ["bottom", 615],
-  ]) {
-    const band = await decodeSrgb(cardPath, {
-      left: 0,
-      top,
-      width: SOCIAL_CARD_WIDTH,
-      height: SOCIAL_CARD_BAND_HEIGHT,
-    });
-    assert.ok(
-      solidBandError(band, [5, 5, 5]) < 8,
-      `${name} social-card band must stay close to #050505`,
-    );
-  }
-
   assert.match(home, new RegExp(`<title>${expectedHtmlTitle}</title>`));
   assert.ok(home.includes(`content="${expectedDescription}"`));
   assert.ok(home.includes(`content="${expectedHtmlTwitterDescription}"`));
   assert.match(
     home,
-    /<meta property="og:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+    /<meta property="og:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3" \/>/,
   );
+  assert.match(
+    home,
+    /<meta property="og:image:secure_url" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3" \/>/,
+  );
+  assert.match(home, /<meta property="og:image:type" content="image\/jpeg" \/>/);
   assert.match(home, /<meta property="og:image:width" content="1200" \/>/);
   assert.match(home, /<meta property="og:image:height" content="630" \/>/);
   assert.match(home, /<meta name="twitter:card" content="summary_large_image" \/>/);
   assert.match(
     home,
-    /<meta name="twitter:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg" \/>/,
+    /<meta name="twitter:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3" \/>/,
   );
   assert.doesNotMatch(home, /st-banner\.png/);
 
@@ -361,14 +341,17 @@ test("homepage metadata uses the approved versioned social card", async () => {
   assert.ok(layout.includes(`"${expectedDescription}"`));
   assert.match(
     layout,
-    /const HOME_SOCIAL_IMAGE = "\/images\/home-social-card-v1\.jpg";/,
+    /const HOME_SOCIAL_IMAGE =\s*"https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3";/,
   );
   assert.match(
     layout,
-    /url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,/,
+    /url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?secureUrl:\s*HOME_SOCIAL_IMAGE,[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,[\s\S]*?type:\s*"image\/jpeg",/,
   );
   assert.match(layout, /twitter:\s*\{[\s\S]*?card:\s*"summary_large_image"/);
-  assert.match(layout, /images:\s*\[HOME_SOCIAL_IMAGE\]/);
+  assert.match(
+    layout,
+    /twitter:\s*\{[\s\S]*?images:\s*\[\s*\{\s*url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?alt:\s*"Superteam Germany logo above a Brandenburg Gate silhouette",?\s*\},?\s*\]/,
+  );
   assert.doesNotMatch(layout, /st-banner\.png/);
 
   for (const [summitPath, expectedHash] of [
