@@ -12,6 +12,12 @@ import NextLink, { type LinkProps } from "next/link";
 import { forwardRef } from "react";
 import Newsletter from "@/sections/home/newsletter-section";
 import { Container } from "@/components/container";
+import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+} from "@/lib/social-metadata";
 
 type BlogPostParams = Promise<{ slug: string }>;
 
@@ -49,10 +55,12 @@ export async function generateMetadata({
           locale: "en_DE",
           images: [
             {
-              url: image(post.mainImage).size(1200, 630).url(),
-              alt: post.mainImage.alt || post.title,
-              width: 1200,
-              height: 630,
+              url: SITE_SOCIAL_IMAGE,
+              secureUrl: SITE_SOCIAL_IMAGE,
+              alt: SITE_SOCIAL_IMAGE_ALT,
+              width: SITE_SOCIAL_IMAGE_WIDTH,
+              height: SITE_SOCIAL_IMAGE_HEIGHT,
+              type: "image/jpeg",
             },
           ],
         },
@@ -60,7 +68,7 @@ export async function generateMetadata({
           card: "summary_large_image",
           title: post.title,
           description,
-          images: [image(post.mainImage).size(1200, 630).url()],
+          images: [{ url: SITE_SOCIAL_IMAGE, alt: SITE_SOCIAL_IMAGE_ALT }],
           site: "@SuperteamDE",
           creator: "@SuperteamDE",
         },

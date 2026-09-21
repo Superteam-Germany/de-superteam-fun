@@ -4,10 +4,13 @@ import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import Script from "next/script";
 import { SiteChrome } from "@/components/site-chrome";
-
-const SITE_URL = "https://de.superteam.fun";
-const HOME_SOCIAL_IMAGE =
-  "https://de.superteam.fun/images/home-social-card-v1.jpg?v=3";
+import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+  SITE_URL,
+} from "@/lib/social-metadata";
 const siteDescription =
   "Superteam Germany helps Solana builders and founders launch, grow, raise capital, hire talent and connect through events across Germany.";
 
@@ -93,11 +96,11 @@ export const metadata: Metadata = {
     siteName: "Superteam Germany",
     images: [
       {
-        url: HOME_SOCIAL_IMAGE,
-        secureUrl: HOME_SOCIAL_IMAGE,
-        width: 1200,
-        height: 630,
-        alt: "Superteam Germany logo above a Brandenburg Gate silhouette",
+        url: SITE_SOCIAL_IMAGE,
+        secureUrl: SITE_SOCIAL_IMAGE,
+        width: SITE_SOCIAL_IMAGE_WIDTH,
+        height: SITE_SOCIAL_IMAGE_HEIGHT,
+        alt: SITE_SOCIAL_IMAGE_ALT,
         type: "image/jpeg",
       },
     ],
@@ -110,8 +113,8 @@ export const metadata: Metadata = {
     description: siteDescription,
     images: [
       {
-        url: HOME_SOCIAL_IMAGE,
-        alt: "Superteam Germany logo above a Brandenburg Gate silhouette",
+        url: SITE_SOCIAL_IMAGE,
+        alt: SITE_SOCIAL_IMAGE_ALT,
       },
     ],
     site: "@SuperteamDE",

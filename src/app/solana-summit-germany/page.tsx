@@ -1,6 +1,12 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+} from "@/lib/social-metadata";
+import {
   SOLANA_SUMMIT_LUMA_LINK,
   SOLANA_SUMMIT_SPEAKER_FORM_LINK,
   SOLANA_SUMMIT_SPONSOR_FORM_LINK,
@@ -156,9 +162,6 @@ const partnerRows = [
   },
 ];
 
-const summitSocialImage =
-  "https://de.superteam.fun/images/summit-germany/summit-social-card-v1.jpg";
-
 export const metadata: Metadata = {
   metadataBase: new URL("https://de.superteam.fun"),
   title: "Solana Summit Germany",
@@ -178,11 +181,11 @@ export const metadata: Metadata = {
     siteName: "Superteam Germany",
     images: [
       {
-        url: summitSocialImage,
-        secureUrl: summitSocialImage,
-        width: 1200,
-        height: 600,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        secureUrl: SITE_SOCIAL_IMAGE,
+        width: SITE_SOCIAL_IMAGE_WIDTH,
+        height: SITE_SOCIAL_IMAGE_HEIGHT,
+        alt: SITE_SOCIAL_IMAGE_ALT,
         type: "image/jpeg",
       },
     ],
@@ -196,8 +199,8 @@ export const metadata: Metadata = {
       "A full-day Solana ecosystem summit in Berlin hosted by Superteam Germany.",
     images: [
       {
-        url: summitSocialImage,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        alt: SITE_SOCIAL_IMAGE_ALT,
       },
     ],
     creator: "@SuperteamDE",

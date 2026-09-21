@@ -1,4 +1,10 @@
 import type { Metadata } from 'next';
+import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+} from '@/lib/social-metadata';
 
 const buildstationSchema = {
   '@context': 'https://schema.org',
@@ -47,10 +53,12 @@ export const metadata: Metadata = {
     siteName: 'Superteam Germany',
     images: [
       {
-        url: '/images/colosseum-germany-image.png',
-        width: 1536,
-        height: 1024,
-        alt: 'Superteam Germany builders at the Colosseum Global Hackathon',
+        url: SITE_SOCIAL_IMAGE,
+        secureUrl: SITE_SOCIAL_IMAGE,
+        width: SITE_SOCIAL_IMAGE_WIDTH,
+        height: SITE_SOCIAL_IMAGE_HEIGHT,
+        alt: SITE_SOCIAL_IMAGE_ALT,
+        type: 'image/jpeg',
       },
     ],
     locale: 'en_DE',
@@ -61,7 +69,7 @@ export const metadata: Metadata = {
     title: 'Colosseum Hackathon & Berlin BuildStation | Superteam Germany',
     description:
       'Register through Germany, find teammates and get workshops, mentorship and submission support.',
-    images: ['/images/colosseum-germany-image.png'],
+    images: [{ url: SITE_SOCIAL_IMAGE, alt: SITE_SOCIAL_IMAGE_ALT }],
     site: '@SuperteamDE',
     creator: '@SuperteamDE',
   },

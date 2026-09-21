@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>Superteam Germany BuildStation hero background</title>
+    <style>
+      html,
+      body {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: #050505;
+      }
+
+      .buildstation-background {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        isolation: isolate;
+        background: #050505;
+      }
+
+      .shader-still {
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background:
+          radial-gradient(ellipse 78% 94% at 100% 0%, #ffe06e 0%, #ffca25 11%, #ef552d 25%, #c30b2b 43%, rgba(82, 0, 20, 0.48) 62%, transparent 82%),
+          radial-gradient(ellipse 78% 94% at 0% 100%, #ffe06e 0%, #ffca25 11%, #ef552d 25%, #c30b2b 43%, rgba(82, 0, 20, 0.48) 62%, transparent 82%),
+          radial-gradient(ellipse 62% 70% at 18% 16%, rgba(229, 34, 45, 0.22), transparent 70%),
+          radial-gradient(ellipse 62% 70% at 82% 84%, rgba(229, 34, 45, 0.2), transparent 70%),
+          #050505;
+      }
+
+      .center-protection {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: radial-gradient(ellipse 58% 62% at 50% 42%, rgba(2, 2, 2, 0.9) 0%, rgba(2, 2, 2, 0.77) 43%, rgba(2, 2, 2, 0.27) 72%, rgba(2, 2, 2, 0.02) 100%);
+      }
+
+      .hero-fade {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent 68%, rgba(5, 5, 5, 0.55) 87%, #050505 100%);
+      }
+
+      .grain {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0.17;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+        mix-blend-mode: soft-light;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="buildstation-background">
+      <div class="shader-still"></div>
+      <div class="center-protection"></div>
+      <div class="hero-fade"></div>
+      <div class="grain"></div>
+    </main>
+  </body>
+</html>
