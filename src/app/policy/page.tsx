@@ -1,12 +1,23 @@
 import Nav from "@/components/nav";
 import React from "react";
 import type { Metadata } from "next";
+import { createSocialMetadata } from "@/lib/social-metadata";
+
+const title = "Privacy Policy";
+const description =
+  "Read the Superteam Germany privacy policy and learn how personal data is processed and protected.";
+const socialMetadata = createSocialMetadata({
+  title,
+  description,
+  path: "/policy",
+});
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
-  description:
-    "Read the Superteam Germany privacy policy and learn how personal data is processed and protected.",
+  title,
+  description,
   alternates: { canonical: "/policy" },
+  openGraph: socialMetadata.openGraph,
+  twitter: socialMetadata.twitter,
 };
 
 const policy = () => {

@@ -1,9 +1,13 @@
 import type { Metadata } from "next";
 import { SummitAgendaPageContent } from "@/sections/solana-summit/agenda-page";
+import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+} from "@/lib/social-metadata";
 
 const agendaUrl = "https://de.superteam.fun/solana-summit-germany/agenda";
-const summitSocialImage =
-  "https://de.superteam.fun/images/summit-germany/summit-social-card-v1.jpg";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://de.superteam.fun"),
@@ -24,11 +28,11 @@ export const metadata: Metadata = {
     siteName: "Superteam Germany",
     images: [
       {
-        url: summitSocialImage,
-        secureUrl: summitSocialImage,
-        width: 1200,
-        height: 600,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        secureUrl: SITE_SOCIAL_IMAGE,
+        width: SITE_SOCIAL_IMAGE_WIDTH,
+        height: SITE_SOCIAL_IMAGE_HEIGHT,
+        alt: SITE_SOCIAL_IMAGE_ALT,
         type: "image/jpeg",
       },
     ],
@@ -42,8 +46,8 @@ export const metadata: Metadata = {
       "Conference agenda for the Solana ecosystem summit in Berlin.",
     images: [
       {
-        url: summitSocialImage,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        alt: SITE_SOCIAL_IMAGE_ALT,
       },
     ],
   },
