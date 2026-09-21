@@ -244,6 +244,7 @@ test("public data proxies publish bounded CDN cache policies", () => {
 test("homepage metadata uses the approved versioned social card", async () => {
   const home = read("./public/site/home.html");
   const layout = read("./src/app/layout.tsx");
+  const socialMetadata = read("./src/lib/social-metadata.ts");
   const cardUrl = new URL(
     "./public/images/home-social-card-v1.jpg",
     import.meta.url,
@@ -340,37 +341,79 @@ test("homepage metadata uses the approved versioned social card", async () => {
   assert.ok(layout.includes(`default: "${expectedLayoutTitle}"`));
   assert.ok(layout.includes(`"${expectedDescription}"`));
   assert.match(
-    layout,
-    /const HOME_SOCIAL_IMAGE =\s*"https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3";/,
+    socialMetadata,
+    /SITE_SOCIAL_IMAGE\s*=\s*"https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3";/,
   );
   assert.match(
     layout,
-    /url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?secureUrl:\s*HOME_SOCIAL_IMAGE,[\s\S]*?width:\s*1200,[\s\S]*?height:\s*630,[\s\S]*?type:\s*"image\/jpeg",/,
+    /url:\s*SITE_SOCIAL_IMAGE,[\s\S]*?secureUrl:\s*SITE_SOCIAL_IMAGE,[\s\S]*?width:\s*SITE_SOCIAL_IMAGE_WIDTH,[\s\S]*?height:\s*SITE_SOCIAL_IMAGE_HEIGHT,[\s\S]*?type:\s*"image\/jpeg",/,
   );
   assert.match(layout, /twitter:\s*\{[\s\S]*?card:\s*"summary_large_image"/);
   assert.match(
     layout,
-    /twitter:\s*\{[\s\S]*?images:\s*\[\s*\{\s*url:\s*HOME_SOCIAL_IMAGE,[\s\S]*?alt:\s*"Superteam Germany logo above a Brandenburg Gate silhouette",?\s*\},?\s*\]/,
+    /twitter:\s*\{[\s\S]*?images:\s*\[\s*\{\s*url:\s*SITE_SOCIAL_IMAGE,[\s\S]*?alt:\s*SITE_SOCIAL_IMAGE_ALT,?\s*\},?\s*\]/,
   );
   assert.doesNotMatch(layout, /st-banner\.png/);
 
-  for (const [summitPath, expectedHash] of [
-    [
-      "./src/app/solana-summit-germany/page.tsx",
-      "e08e6db427bdda5e650c2d7079c2eff625deeae22498db1293fcdca340750224",
-    ],
-    [
-      "./src/app/solana-summit-germany/agenda/page.tsx",
-      "e2a5bef9e453102c88070a77fcf53c04427a7e5f40471482c6f28c87cd49cf62",
-    ],
-    [
-      "./src/app/solana-summit-germany/side-events/page.tsx",
-      "d30d554d8b130d896e16b50c98d2f356b1901986fee0e9957e05ffb1406ef06d",
-    ],
-  ]) {
-    const summitPage = read(summitPath);
-    assert.match(summitPage, /summit-social-card-v1\.jpg/);
-    assert.doesNotMatch(summitPage, /home-social-card-v1\.jpg/);
-    assert.equal(sha256(summitPath), expectedHash);
+});
+
+test("every website page uses the approved shared social card", () => {
+  const sharedMetadata = read("./src/lib/social-metadata.ts");
+  const routeFiles = [
+    "./src/app/layout.tsx",
+    "./src/app/buildstation/layout.tsx",
+    "./src/app/blog/[slug]/page.tsx",
+    "./src/app/solana-summit-germany/page.tsx",
+    "./src/app/solana-summit-germany/agenda/page.tsx",
+    "./src/app/solana-summit-germany/side-events/page.tsx",
+  ];
+
+  assert.match(
+    sharedMetadata,
+    /SITE_SOCIAL_IMAGE\s*=\s*"https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3"/,
+  );
+  assert.match(sharedMetadata, /SITE_SOCIAL_IMAGE_WIDTH\s*=\s*1200/);
+  assert.match(sharedMetadata, /SITE_SOCIAL_IMAGE_HEIGHT\s*=\s*630/);
+
+  for (const path of routeFiles) {
+    const route = read(path);
+    assert.match(route, /SITE_SOCIAL_IMAGE/);
+    assert.match(route, /SITE_SOCIAL_IMAGE_ALT/);
+    assert.doesNotMatch(route, /colosseum-germany-image\.png/);
+    assert.doesNotMatch(route, /summit-social-card-v1\.jpg/);
+  }
+
+  for (const path of ["./public/site/home.html", "./public/site/buildstation.html"]) {
+    const html = read(path);
+    assert.match(
+      html,
+      /<meta property="og:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3" \/>/,
+    );
+    assert.match(
+      html,
+      /<meta name="twitter:image" content="https:\/\/de\.superteam\.fun\/images\/home-social-card-v1\.jpg\?v=3" \/>/,
+    );
+    assert.doesNotMatch(html, /colosseum-germany-image\.png/);
+  }
+});
+
+test("inherited routes publish route-specific social metadata", () => {
+  const sharedMetadata = read("./src/lib/social-metadata.ts");
+  const routes = [
+    ["./src/app/blog/page.tsx", "/blog"],
+    ["./src/app/insights/page.tsx", "/insights"],
+    ["./src/app/policy/page.tsx", "/policy"],
+  ];
+
+  assert.match(sharedMetadata, /export function createSocialMetadata/);
+  assert.match(sharedMetadata, /url:\s*new URL\(path, SITE_URL\)/);
+  assert.match(sharedMetadata, /url:\s*SITE_SOCIAL_IMAGE/);
+
+  for (const [path, route] of routes) {
+    const source = read(path);
+    assert.match(source, /createSocialMetadata/);
+    assert.match(source, new RegExp(`path:\\s*["']${route}["']`));
+    assert.match(source, /openGraph:\s*socialMetadata\.openGraph/);
+    assert.match(source, /twitter:\s*socialMetadata\.twitter/);
   }
 });

@@ -5,11 +5,15 @@ import { sideEvents, type SideEvent } from "@/sections/solana-summit/data";
 import { SummitCta } from "@/sections/solana-summit/summit-cta";
 import { SummitReveal } from "@/sections/solana-summit/summit-reveal";
 import { SummitNav, SummitShell } from "@/sections/solana-summit/summit-shell";
+import {
+  SITE_SOCIAL_IMAGE,
+  SITE_SOCIAL_IMAGE_ALT,
+  SITE_SOCIAL_IMAGE_HEIGHT,
+  SITE_SOCIAL_IMAGE_WIDTH,
+} from "@/lib/social-metadata";
 
 const sideEventsUrl =
   "https://de.superteam.fun/solana-summit-germany/side-events";
-const summitSocialImage =
-  "https://de.superteam.fun/images/summit-germany/summit-social-card-v1.jpg";
 const sideEventGroups = sideEvents.reduce<
   Array<{ date: string; events: SideEvent[] }>
 >((groups, event) => {
@@ -43,11 +47,11 @@ export const metadata: Metadata = {
     siteName: "Superteam Germany",
     images: [
       {
-        url: summitSocialImage,
-        secureUrl: summitSocialImage,
-        width: 1200,
-        height: 600,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        secureUrl: SITE_SOCIAL_IMAGE,
+        width: SITE_SOCIAL_IMAGE_WIDTH,
+        height: SITE_SOCIAL_IMAGE_HEIGHT,
+        alt: SITE_SOCIAL_IMAGE_ALT,
         type: "image/jpeg",
       },
     ],
@@ -61,8 +65,8 @@ export const metadata: Metadata = {
       "Community and partner-hosted events happening around Solana Summit Germany in Berlin.",
     images: [
       {
-        url: summitSocialImage,
-        alt: "Solana Summit Germany",
+        url: SITE_SOCIAL_IMAGE,
+        alt: SITE_SOCIAL_IMAGE_ALT,
       },
     ],
     creator: "@SuperteamDE",

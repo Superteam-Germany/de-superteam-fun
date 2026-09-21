@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1920, initial-scale=1" />
+    <title>Superteam Germany hero background</title>
+    <style>
+      html,
+      body,
+      #root {
+        width: 1920px;
+        height: 1080px;
+        margin: 0;
+        overflow: hidden;
+        background: #050505;
+      }
+
+      .hero-background {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        isolation: isolate;
+        background: #050505;
+      }
+
+      .shader {
+        --corner-mask:
+          radial-gradient(ellipse 62% 64% at 100% 0%, #000 0 34%, rgba(0, 0, 0, 0.84) 52%, transparent 80%),
+          radial-gradient(ellipse 62% 68% at 0% 100%, #000 0 34%, rgba(0, 0, 0, 0.84) 52%, transparent 80%);
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        isolation: isolate;
+        -webkit-mask-image: var(--corner-mask);
+        mask-image: var(--corner-mask);
+        -webkit-mask-repeat: no-repeat;
+        mask-repeat: no-repeat;
+        background:
+          radial-gradient(ellipse 82% 90% at 105% -8%, #ffd65b 0%, #ffbd13 12%, #d71b31 34%, rgba(130, 0, 20, 0.72) 48%, transparent 72%),
+          radial-gradient(ellipse 82% 90% at -5% 108%, #ffd65b 0%, #ffbd13 12%, #d71b31 34%, rgba(130, 0, 20, 0.72) 48%, transparent 72%),
+          #050505;
+      }
+
+      .shader::before {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        content: "";
+        background:
+          radial-gradient(ellipse 49% 44% at 100% 0%, rgba(255, 201, 20, 0.42) 0 26%, rgba(255, 190, 16, 0.2) 46%, transparent 70%),
+          radial-gradient(ellipse 49% 44% at 0% 100%, rgba(255, 201, 20, 0.4) 0 25%, rgba(255, 190, 16, 0.18) 45%, transparent 69%);
+        mix-blend-mode: screen;
+      }
+
+      .shader::after {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        content: "";
+        background:
+          radial-gradient(ellipse 54% 48% at 100% 42%, rgba(205, 0, 25, 0.78) 0 28%, rgba(218, 12, 32, 0.46) 48%, transparent 75%),
+          radial-gradient(ellipse 54% 48% at 0% 56%, rgba(205, 0, 25, 0.74) 0 26%, rgba(218, 12, 32, 0.42) 46%, transparent 73%);
+        mix-blend-mode: multiply;
+      }
+
+      .center-protection {
+        position: absolute;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        background: radial-gradient(ellipse 66% 60% at 50% 34%, rgba(2, 2, 2, 0.94) 0%, rgba(2, 2, 2, 0.86) 46%, rgba(2, 2, 2, 0.38) 72%, rgba(2, 2, 2, 0.04) 100%);
+      }
+
+      .bottom-fade {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        pointer-events: none;
+        background: linear-gradient(to bottom, transparent 60%, rgba(5, 5, 5, 0.38) 82%, #050505 100%);
+      }
+
+      .grain {
+        position: absolute;
+        inset: 0;
+        z-index: 3;
+        pointer-events: none;
+        opacity: 0.17;
+        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.92' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E");
+        mix-blend-mode: soft-light;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="hero-background">
+      <div class="shader"></div>
+      <div class="center-protection"></div>
+      <div class="bottom-fade"></div>
+      <div class="grain"></div>
+    </main>
+  </body>
+</html>

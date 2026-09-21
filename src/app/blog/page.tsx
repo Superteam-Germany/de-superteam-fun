@@ -23,12 +23,23 @@ import dayjs from "dayjs";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import FadeInDiv from "@/components/fade-in-div";
+import { createSocialMetadata } from "@/lib/social-metadata";
+
+const title = "Blog";
+const description =
+  "Stay informed with Solana updates, community news, and insights on how to build on Solana.";
+const socialMetadata = createSocialMetadata({
+  title,
+  description,
+  path: "/blog",
+});
 
 export const metadata: Metadata = {
-  title: "Blog",
-  description:
-    "Stay informed with Solana updates, community news, and insights on how to build on Solana.",
+  title,
+  description,
   alternates: { canonical: "/blog" },
+  openGraph: socialMetadata.openGraph,
+  twitter: socialMetadata.twitter,
 };
 
 const postsPerPage = 5;
