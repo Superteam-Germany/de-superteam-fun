@@ -147,6 +147,53 @@
       .step-detail-copy h3 { margin:auto 0 0; font-size:clamp(31px,3.6vw,49px); font-weight:540; line-height:.95; letter-spacing:-.05em; }
       .step-detail-copy p { margin:17px 0 0; color:rgba(255,255,255,.7); font-size:14px; line-height:1.6; }
 
+      .checklist-section { position:relative; overflow:hidden; padding-top:76px; padding-bottom:88px; background:#070707; border-top:1px solid rgba(255,255,255,.06); }
+      .checklist-section::before { position:absolute; top:-280px; right:-220px; width:620px; height:620px; border-radius:50%; background:radial-gradient(circle,rgba(255,207,50,.11),transparent 68%); content:""; pointer-events:none; }
+      .checklist-section .section-header { position:relative; max-width:790px; margin-bottom:24px; }
+      .checklist-section .section-title { color:var(--ink); }
+      .checklist-panel { position:relative; overflow:hidden; border:1px solid rgba(246,239,227,.15); border-radius:14px; background:rgba(255,255,255,.018); box-shadow:0 28px 80px rgba(0,0,0,.25); }
+      .checklist-progress-header { padding:20px 26px 17px; border-bottom:1px solid var(--line); }
+      .checklist-progress-meta { display:flex; align-items:center; justify-content:space-between; gap:24px; color:rgba(246,239,227,.58); font:760 11px/1 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.12em; text-transform:uppercase; }
+      .checklist-progress-meta strong { color:var(--ink); font:inherit; font-variant-numeric:tabular-nums; }
+      .checklist-progress-track { height:4px; margin-top:14px; overflow:hidden; background:rgba(246,239,227,.1); }
+      .checklist-progress-value { width:0; height:100%; background:var(--gold); transition:width .35s cubic-bezier(.2,.75,.2,1); }
+      .checklist-list { margin:0; padding:0; list-style:none; }
+      .checklist-item { border-bottom:1px solid var(--line); transition:background-color .2s ease; }
+      .checklist-item:last-child { border-bottom:0; }
+      .checklist-item:hover,.checklist-item.open { background:rgba(255,255,255,.025); }
+      .checklist-row { display:grid; grid-template-columns:44px minmax(0,1fr); align-items:stretch; gap:8px; min-height:62px; padding:0 25px; }
+      .checklist-check { width:44px; height:44px; align-self:center; display:flex; align-items:center; justify-content:flex-start; cursor:pointer; }
+      .checklist-checkbox { appearance:none; width:22px; height:22px; flex:0 0 auto; margin:0; border:1px solid rgba(246,239,227,.25); border-radius:2px; background:transparent; color:#111; cursor:pointer; display:grid; place-items:center; transition:background-color .18s ease,border-color .18s ease,transform .18s ease; }
+      .checklist-checkbox::after { width:10px; height:6px; border-bottom:2px solid currentColor; border-left:2px solid currentColor; content:""; opacity:0; transform:translateY(-1px) rotate(-45deg) scale(.7); transition:opacity .14s ease,transform .18s ease; }
+      .checklist-checkbox:checked { border-color:var(--gold); background:var(--gold); }
+      .checklist-checkbox:checked::after { opacity:1; transform:translateY(-1px) rotate(-45deg) scale(1); }
+      .checklist-checkbox:hover { border-color:var(--gold); transform:scale(1.04); }
+      .checklist-checkbox:focus-visible { outline:2px solid var(--gold); outline-offset:4px; }
+      .checklist-trigger { width:100%; min-width:0; display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 0; border:0; background:transparent; color:var(--ink); cursor:pointer; text-align:left; }
+      .checklist-trigger:focus-visible { border-radius:4px; outline:2px solid var(--gold); outline-offset:4px; }
+      .checklist-question { min-width:0; display:flex; align-items:baseline; gap:12px; font-size:15px; font-weight:620; line-height:1.38; letter-spacing:-.018em; }
+      .checklist-category { flex:0 0 118px; color:var(--gold); font:760 9px/1.25 ui-monospace,SFMono-Regular,Menlo,monospace; letter-spacing:.1em; text-transform:uppercase; }
+      .checklist-question-text { min-width:0; transition:color .18s ease,text-decoration-color .18s ease; }
+      .checklist-item.complete .checklist-question-text { color:rgba(246,239,227,.68); text-decoration:line-through; text-decoration-color:rgba(255,207,50,.56); text-decoration-thickness:1px; }
+      .checklist-icon { position:relative; width:18px; height:18px; flex:0 0 auto; }
+      .checklist-icon::before,.checklist-icon::after { position:absolute; top:50%; left:50%; width:13px; height:1px; background:var(--gold); content:""; transform:translate(-50%,-50%); transition:transform .24s ease; }
+      .checklist-icon::after { transform:translate(-50%,-50%) rotate(90deg); }
+      .checklist-item.open .checklist-icon::after { transform:translate(-50%,-50%) rotate(0); }
+      .checklist-details { padding:0 25px 22px 73px; }
+      .checklist-details-inner { max-width:850px; animation:checklist-details-in .25s cubic-bezier(.2,.75,.2,1); }
+      .checklist-details p { margin:0 0 11px; color:rgba(246,239,227,.58); font-size:14px; line-height:1.68; }
+      .checklist-details p:last-of-type { margin-bottom:0; }
+      .checklist-resources { display:flex; flex-wrap:wrap; gap:10px 22px; margin-top:18px; }
+      .checklist-resource { display:inline-flex; min-height:32px; align-items:center; color:var(--gold); font-size:11px; font-weight:780; letter-spacing:.08em; text-decoration:none; text-transform:uppercase; }
+      .checklist-resource::after { margin-left:7px; content:"↗"; }
+      .checklist-resource:hover { color:var(--ink); }
+      .checklist-resource:focus-visible { border-radius:3px; outline:2px solid var(--gold); outline-offset:4px; }
+      .checklist-celebration { position:fixed; z-index:90; inset:0; overflow:hidden; pointer-events:none; visibility:hidden; }
+      .checklist-celebration.active { visibility:visible; }
+      .checklist-confetti-canvas { position:absolute; inset:0; width:100%; height:100%; }
+      .checklist-lambo { position:absolute; z-index:1; bottom:18px; left:0; width:clamp(170px,16vw,230px); max-width:none; image-rendering:pixelated; filter:drop-shadow(0 18px 22px rgba(0,0,0,.42)); transform:translateX(-110%); }
+      .checklist-celebration.active .checklist-lambo { animation:checklist-lambo-drive 2.8s cubic-bezier(.2,.72,.2,1) both; }
+
       .resources-section { background:#090909; border-top:1px solid rgba(255,255,255,.06); border-bottom:1px solid rgba(255,255,255,.06); }
       .resources-section .section-title { color:var(--ink); }
       .resource-accordion { display:flex; width:100%; height:400px; gap:12px; }
@@ -223,6 +270,8 @@
       @keyframes subscribe-pulse { 0%,100% { box-shadow:0 0 0 0 rgba(17,17,17,.34); } 50% { box-shadow:0 0 0 11px rgba(17,17,17,.34); } }
       @keyframes resource-panel-in { from { opacity:0; transform:translateY(-7px); } to { opacity:1; transform:none; } }
       @keyframes count-shine-border { 0%,100% { background-position:0% 0%; } 50% { background-position:100% 100%; } }
+      @keyframes checklist-details-in { from { opacity:0; transform:translateY(-6px); } to { opacity:1; transform:none; } }
+      @keyframes checklist-lambo-drive { 0%,100% { transform:translateX(-110%); } 34%,68% { transform:translateX(-38%); } }
 
       @media(prefers-reduced-motion:reduce) {
         .resource-accordion-item,.resource-indicator,.resource-panel-inner { animation:none; transition:none; }
@@ -247,6 +296,8 @@
         .resource-panel,.resource-accordion-item.active .resource-panel { position:relative; inset:auto; }
         .resource-panel-inner { width:min(520px,90%); height:auto; overflow:visible; padding:27px; animation:resource-panel-in .32s cubic-bezier(.22,.78,.2,1); }
         .resource-links { margin-top:22px; }
+        .checklist-row { padding-inline:25px; }
+        .checklist-details { padding-right:25px; padding-left:79px; }
         .faq-layout { grid-template-columns:1fr; }
         .faq-aside { position:static; }
         .site-footer-main { grid-template-columns:repeat(2,minmax(0,1fr)); }
@@ -298,6 +349,16 @@
         .count-footer { align-items:flex-start; flex-direction:column; gap:18px; padding:24px; }
         .count-contact { width:100%; }
         .content-section { padding:84px 16px 92px; }
+        .checklist-section { padding-top:64px; padding-bottom:72px; }
+        .checklist-progress-header { padding:24px 22px 20px; }
+        .checklist-row { grid-template-columns:44px minmax(0,1fr); gap:8px; min-height:68px; padding:0 20px; }
+        .checklist-checkbox { width:24px; height:24px; }
+        .checklist-trigger { gap:14px; padding:18px 0; }
+        .checklist-question { align-items:flex-start; flex-direction:column; gap:5px; font-size:14px; line-height:1.45; }
+        .checklist-category { flex-basis:auto; }
+        .checklist-details { padding:0 20px 24px 68px; }
+        .checklist-details p { font-size:13px; }
+        .checklist-lambo { bottom:12px; width:clamp(150px,44vw,190px); }
         .why-copy { padding:28px 24px 32px; }
         .why-image { min-height:300px; }
         .step-detail-copy { padding:30px; }
@@ -326,6 +387,7 @@
         html { scroll-behavior:auto; }
         *,*::before,*::after { animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
         .reveal { opacity:1; transform:none; }
+        .checklist-celebration { display:none; }
       }
     </style>
   </head>
@@ -455,6 +517,160 @@
         </div>
       </section>
 
+      <section class="content-section checklist-section" id="submission-checklist" aria-labelledby="submission-checklist-title">
+        <div class="shell">
+          <header class="section-header reveal">
+            <h2 class="section-title" id="submission-checklist-title">Is your submission ready?</h2>
+            <p class="section-intro">Twelve final checks before you submit. Tick them off as you go—your progress is saved in this browser.</p>
+          </header>
+          <div class="checklist-panel reveal">
+            <div class="checklist-progress-header">
+              <div class="checklist-progress-meta"><span id="checklist-status">Ready</span><strong id="checklist-score">0 / 12</strong></div>
+              <div class="checklist-progress-track" id="checklist-progress" role="progressbar" aria-label="Submission checklist progress" aria-valuemin="0" aria-valuemax="12" aria-valuenow="0"><div class="checklist-progress-value" id="checklist-progress-value"></div></div>
+              <p class="sr-only" id="checklist-progress-description" aria-live="polite">0 of 12 submission checks completed.</p>
+            </div>
+            <ol class="checklist-list">
+              <li class="checklist-item" data-checklist-id="one-liner">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="one-liner" aria-label="Mark the one-liner and project blurb check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-1" type="button" aria-expanded="false" aria-controls="checklist-panel-1"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Pitch</span><span class="checklist-question-text">Are your one-liner and project blurb clear and reviewed by someone outside the team?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-1" role="region" aria-labelledby="checklist-trigger-1" hidden><div class="checklist-details-inner">
+                  <p>Your one-liner should explain what the product does in plain English. Your project blurb should add who it is for and why it matters.</p>
+                  <p>Ask someone unfamiliar with the project to explain it back to you. Avoid leading with buzzwords or a list of technologies.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://x.com/JosipVolarevic2/status/2096885934532768013?s=20" target="_blank" rel="noreferrer">One-liner guide</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="market">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="market" aria-label="Mark the users and go-to-market check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-2" type="button" aria-expanded="false" aria-controls="checklist-panel-2"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Pitch</span><span class="checklist-question-text">Have you explained your target users, validation, business model, and go-to-market plan?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-2" role="region" aria-labelledby="checklist-trigger-2" hidden><div class="checklist-details-inner">
+                  <p>Explain whose problem you are solving, what evidence supports demand, how you plan to reach users, and how the product could become sustainable.</p>
+                  <p>Include genuine feedback or traction where available and clearly label assumptions. A large market-size number alone does not demonstrate demand for your product.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://blog.colosseum.com/perfecting-your-hackathon-submission/" target="_blank" rel="noreferrer">Submission guidance</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="presentation-video">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="presentation-video" aria-label="Mark the presentation video check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-3" type="button" aria-expanded="false" aria-controls="checklist-panel-3"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Pitch</span><span class="checklist-question-text">Have you recorded and reviewed your presentation video, keeping it under two minutes?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-3" role="region" aria-labelledby="checklist-trigger-3" hidden><div class="checklist-details-inner">
+                  <p>Use the presentation video to explain what you are building, why it matters, and why your team is suited to build it.</p>
+                  <p>Have someone review the story before recording. If you use slides, make sure they are readable. Watch the uploaded version to check the audio, playback, and final length.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://x.com/colosseum/status/2103525773529534648" target="_blank" rel="noreferrer">Event announcement</a><a class="checklist-resource" href="https://x.com/JosipVolarevic2/status/2106374392166973692?s=20" target="_blank" rel="noreferrer">First-slide advice</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="mvp">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="mvp" aria-label="Mark the working MVP check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-4" type="button" aria-expanded="false" aria-controls="checklist-panel-4"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Product &amp; Demo</span><span class="checklist-question-text">Does your MVP work end to end, and can judges access and try it?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-4" role="region" aria-labelledby="checklist-trigger-4" hidden><div class="checklist-details-inner">
+                  <p>Test the main product flow and provide a working product link. For developer tools or infrastructure, provide a reproducible example instead.</p>
+                  <p>Include test credentials where necessary and keep the relevant services running during judging. Avoid broken deployments, inaccessible environments, or a waitlist in place of a working product.</p>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="demo-video">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="demo-video" aria-label="Mark the product demo video check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-5" type="button" aria-expanded="false" aria-controls="checklist-panel-5"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Product &amp; Demo</span><span class="checklist-question-text">Have you recorded a separate product-demo video, keeping it under three minutes and showing the working product?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-5" role="region" aria-labelledby="checklist-trigger-5" hidden><div class="checklist-details-inner">
+                  <p>The product demo should be separate from the presentation video. Demonstrate the core product flow and provide enough technical context for judges to understand how it works.</p>
+                  <p>Show the actual product rather than recording a second pitch. Clearly identify anything that is mocked, planned, or unfinished. The demo must be no longer than three minutes.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://colosseum.com/hackathon" target="_blank" rel="noreferrer">Requirements and FAQ</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="repository">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="repository" aria-label="Mark the repository check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-6" type="button" aria-expanded="false" aria-controls="checklist-panel-6"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Code</span><span class="checklist-question-text">Is your repository up to date, documented, and accessible to the reviewers?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-6" role="region" aria-labelledby="checklist-trigger-6" hidden><div class="checklist-details-inner">
+                  <p>Link the correct repository, push the latest relevant code, and explain the setup and any important branches in the README.</p>
+                  <p>Private repositories are allowed, but access must be granted to <code>hackathon@colosseum.com</code>. Do not assume judges will contact you after discovering that the repository is locked.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://colosseum.com/hackathon" target="_blank" rel="noreferrer">Requirements and FAQ</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="team">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="team" aria-label="Mark the team registration check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-7" type="button" aria-expanded="false" aria-controls="checklist-panel-7"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Team &amp; Profile</span><span class="checklist-question-text">Is every teammate registered for the current hackathon and included in the project submission?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-7" role="region" aria-labelledby="checklist-trigger-7" hidden><div class="checklist-details-inner">
+                  <p>Every teammate must register for the current competition, and the team leader must include the complete team in the project submission.</p>
+                  <p>Check that everyone’s details, background, and role are accurate. Do not assume that having an existing Colosseum account means someone is registered for the current hackathon.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf" target="_blank" rel="noreferrer">Official rules</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="germany-country">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="germany-country" aria-label="Mark the Germany primary base country check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-8" type="button" aria-expanded="false" aria-controls="checklist-panel-8"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Team &amp; Profile</span><span class="checklist-question-text">Have you selected Germany as your team’s primary base country on Colosseum?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-8" role="region" aria-labelledby="checklist-trigger-8" hidden><div class="checklist-details-inner">
+                  <p>Check the team location in Colosseum before submitting. Registering through the Germany referral link does not automatically set the country.</p>
+                  <p>Germany must be selected for the team to be recognized as Germany-based and to qualify for the regional Earn track.</p>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="eligibility">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="eligibility" aria-label="Mark the eligibility and submission fields check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-9" type="button" aria-expanded="false" aria-controls="checklist-panel-9"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Final Checks</span><span class="checklist-question-text">Have you checked your eligibility, disclosed previous work, and completed every required submission field in English?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-9" role="region" aria-labelledby="checklist-trigger-9" hidden><div class="checklist-details-inner">
+                  <p>Review the current eligibility rules, including age, restricted jurisdictions, employer or contractual obligations, previous work, and the one-team/one-product restriction.</p>
+                  <p>Disclose relevant work completed before the hackathon and clearly distinguish it from work completed during the competition. Complete every required field accurately; all submitted content must be in English.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf" target="_blank" rel="noreferrer">Official rules</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="links">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="links" aria-label="Mark the submitted links check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-10" type="button" aria-expanded="false" aria-controls="checklist-panel-10"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Final Checks</span><span class="checklist-question-text">Have you tested every submitted link and verified that reviewers have the necessary access permissions?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-10" role="region" aria-labelledby="checklist-trigger-10" hidden><div class="checklist-details-inner">
+                  <p>Test the exact links pasted into the submission form—not only the versions saved in your bookmarks.</p>
+                  <p>Open product, video, repository, and document links while logged out. Verify access to private repositories separately. Ideally, ask someone outside the team to check all materials as well.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://blog.colosseum.com/perfecting-your-hackathon-submission/" target="_blank" rel="noreferrer">Submission guidance</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="colosseum-submission">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="colosseum-submission" aria-label="Mark the final Colosseum submission check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-11" type="button" aria-expanded="false" aria-controls="checklist-panel-11"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Final Checks</span><span class="checklist-question-text">Have you completed the final Colosseum submission before the deadline and confirmed its submitted status—not just saved a draft?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-11" role="region" aria-labelledby="checklist-trigger-11" hidden><div class="checklist-details-inner">
+                  <p>The team leader must complete the final submission before the deadline.</p>
+                  <p>Review the project information and uploaded materials, confirm that the entry shows as submitted, and save the confirmation. Do not stop after registering, creating a project, or saving a draft. Afterwards, monitor the contact inbox included in the submission.</p>
+                  <div class="checklist-resources"><a class="checklist-resource" href="https://colosseum.com/legal/Crypto%20World%27s%20Fair%20Hackathon%20Rules.pdf" target="_blank" rel="noreferrer">Official rules</a></div>
+                </div></div>
+              </li>
+              <li class="checklist-item" data-checklist-id="germany-track">
+                <div class="checklist-row">
+                  <label class="checklist-check"><input class="checklist-checkbox" type="checkbox" value="germany-track" aria-label="Mark the Superteam Germany Earn submission check complete" /></label>
+                  <button class="checklist-trigger" id="checklist-trigger-12" type="button" aria-expanded="false" aria-controls="checklist-panel-12"><span class="checklist-question"><span class="checklist-category" aria-hidden="true">Final Checks</span><span class="checklist-question-text">Have you submitted the same project to the Superteam Germany listing on Earn?</span></span><span class="checklist-icon" aria-hidden="true"></span></button>
+                </div>
+                <div class="checklist-details" id="checklist-panel-12" role="region" aria-labelledby="checklist-trigger-12" hidden><div class="checklist-details-inner">
+                  <p>Submit the same project to the Superteam Germany listing on Earn in addition to your Colosseum submission.</p>
+                  <p>The project must be built on Solana, comply with the global hackathon rules, and meet the regional eligibility requirements, including having Germany selected as the country. Check the Earn deadline and confirm the separate submission.</p>
+                  <p>Teams building for the Machine Economy can also submit their project separately to the optional peaq Germany side track.</p>
+                  <div class="checklist-resources">
+                    <a class="checklist-resource" href="https://superteam.fun/earn/listing/colosseum-crypto-worlds-fair-hackathon-superteam-germany-track/" target="_blank" rel="noreferrer">Superteam Germany listing on Earn</a>
+                    <a class="checklist-resource" href="https://superteam.fun/earn/listing/build-solutions-advancing-the-machine-economy-with-peaq" target="_blank" rel="noreferrer">Optional: peaq Machine Economy side track</a>
+                  </div>
+                </div></div>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <div class="checklist-celebration" id="checklist-celebration" aria-hidden="true"><canvas class="checklist-confetti-canvas" id="checklist-confetti-canvas"></canvas><img class="checklist-lambo" src="/images/new-site/summit-gold-aventador-pixel.png" alt="" /></div>
+
       <section class="content-section resources-section" id="resources" aria-labelledby="resources-title">
         <div class="shell">
           <header class="section-header reveal">
@@ -538,7 +754,7 @@
       createRoot(document.getElementById("hero-shader")).render(React.createElement(GrainGradient,{colorBack:"hsl(0, 0%, 0%)",colors:["hsl(357, 84%, 49%)","hsl(0, 88%, 40%)","hsl(43, 100%, 53%)","hsl(48, 100%, 73%)"],softness:.76,intensity:.45,noise:0,shape:"corners",offsetX:0,offsetY:0,scale:1,rotation:0,speed:reducedMotion?0:.23,style:{width:"100%",height:"100%"}}));
     </script>
     <script>
-      const deadline = new Date("2026-10-13T00:00:00+02:00");
+      const deadline = new Date("2026-10-12T23:59:00-07:00");
       const clock = {days:document.getElementById("days"),hours:document.getElementById("hours"),minutes:document.getElementById("minutes"),seconds:document.getElementById("seconds")};
       function updateCountdown(){const remaining=Math.max(0,deadline-Date.now());const parts={days:Math.floor(remaining/86400000),hours:Math.floor((remaining%86400000)/3600000),minutes:Math.floor((remaining%3600000)/60000),seconds:Math.floor((remaining%60000)/1000)};Object.entries(parts).forEach(([key,value])=>clock[key].textContent=String(value).padStart(2,"0"));}
       updateCountdown();setInterval(updateCountdown,1000);
@@ -568,6 +784,135 @@
       resourceItems.forEach(item=>{const trigger=item.querySelector(".resource-trigger");trigger.addEventListener("click",event=>{activateResource(item);if(event.detail===0)item.querySelector(".resource-panel a")?.focus();});trigger.addEventListener("mouseenter",()=>{if(resourceHover.matches)activateResource(item);});});
 
       document.querySelectorAll(".faq-question").forEach(button=>button.addEventListener("click",()=>{const item=button.closest(".faq-item");const opening=!item.classList.contains("open");document.querySelectorAll(".faq-item").forEach(other=>{other.classList.remove("open");other.querySelector(".faq-question").setAttribute("aria-expanded","false");});if(opening){item.classList.add("open");button.setAttribute("aria-expanded","true");}}));
+
+      const checklistStorageKey="superteam-de-buildstation-checklist-v1";
+      const checklistItems=[...document.querySelectorAll(".checklist-item")];
+      const checklistScore=document.getElementById("checklist-score");
+      const checklistStatus=document.getElementById("checklist-status");
+      const checklistProgress=document.getElementById("checklist-progress");
+      const checklistProgressValue=document.getElementById("checklist-progress-value");
+      const checklistProgressDescription=document.getElementById("checklist-progress-description");
+      const checklistCelebration=document.getElementById("checklist-celebration");
+      const checklistConfettiCanvas=document.getElementById("checklist-confetti-canvas");
+      const checklistReducedMotion=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      const validChecklistIds=new Set(checklistItems.map(item=>item.dataset.checklistId));
+      let previousChecklistCount=0;
+      let checklistCelebrationTimer;
+      let checklistConfettiFrame;
+
+      function runChecklistConfetti(){
+        if(checklistReducedMotion||!checklistConfettiCanvas)return;
+        const context=checklistConfettiCanvas.getContext("2d");
+        if(!context)return;
+        cancelAnimationFrame(checklistConfettiFrame);
+        const pixelRatio=Math.min(window.devicePixelRatio||1,2);
+        const width=window.innerWidth;
+        const height=window.innerHeight;
+        checklistConfettiCanvas.width=Math.round(width*pixelRatio);
+        checklistConfettiCanvas.height=Math.round(height*pixelRatio);
+        context.setTransform(pixelRatio,0,0,pixelRatio,0,0);
+        const colors=["#ffcf32","#f3b61f","#f6efe3","#ffffff"];
+        const particles=[];
+        const startedAt=performance.now();
+        let lastBurst=-Infinity;
+        checklistConfettiCanvas.dataset.running="true";
+
+        function addBurst(side,now){
+          for(let index=0;index<10;index+=1){
+            const direction=side==="left"?1:-1;
+            particles.push({
+              born:now,
+              color:colors[Math.floor(Math.random()*colors.length)],
+              gravity:.23+Math.random()*.16,
+              height:3+Math.random()*5,
+              rotation:Math.random()*Math.PI,
+              spin:(Math.random()-.5)*.28,
+              vx:direction*(5+Math.random()*6),
+              vy:-(7+Math.random()*7),
+              width:5+Math.random()*7,
+              x:side==="left"?-12:width+12,
+              y:height*(.48+Math.random()*.08)
+            });
+          }
+        }
+
+        function draw(now){
+          const elapsed=now-startedAt;
+          if(elapsed<3400&&now-lastBurst>200){addBurst("left",now);addBurst("right",now);lastBurst=now;}
+          context.clearRect(0,0,width,height);
+          for(let index=particles.length-1;index>=0;index-=1){
+            const particle=particles[index];
+            const age=now-particle.born;
+            if(age>1650){particles.splice(index,1);continue;}
+            particle.vy+=particle.gravity;
+            particle.vx*=.992;
+            particle.x+=particle.vx;
+            particle.y+=particle.vy;
+            particle.rotation+=particle.spin;
+            context.save();
+            context.globalAlpha=Math.max(0,1-age/1650);
+            context.translate(particle.x,particle.y);
+            context.rotate(particle.rotation);
+            context.fillStyle=particle.color;
+            context.fillRect(-particle.width/2,-particle.height/2,particle.width,particle.height);
+            context.restore();
+          }
+          if(elapsed<5100&&particles.length){checklistConfettiFrame=requestAnimationFrame(draw);return;}
+          context.clearRect(0,0,width,height);
+          checklistConfettiCanvas.dataset.running="false";
+        }
+        checklistConfettiFrame=requestAnimationFrame(draw);
+      }
+
+      function setChecklistOpen(item,open){
+        checklistItems.forEach(other=>{
+          const active=other===item&&open;
+          const trigger=other.querySelector(".checklist-trigger");
+          const panel=other.querySelector(".checklist-details");
+          other.classList.toggle("open",active);
+          trigger.setAttribute("aria-expanded",String(active));
+          panel.hidden=!active;
+        });
+      }
+
+      checklistItems.forEach(item=>{
+        const trigger=item.querySelector(".checklist-trigger");
+        trigger.addEventListener("click",()=>setChecklistOpen(item,!item.classList.contains("open")));
+      });
+
+      function completedChecklistIds(){return checklistItems.filter(item=>item.querySelector(".checklist-checkbox").checked).map(item=>item.dataset.checklistId);}
+      function saveChecklistProgress(){try{localStorage.setItem(checklistStorageKey,JSON.stringify(completedChecklistIds()));}catch{}}
+      function celebrateChecklist(){
+        if(checklistReducedMotion)return;
+        runChecklistConfetti();
+        clearTimeout(checklistCelebrationTimer);
+        checklistCelebration.classList.remove("active");
+        void checklistCelebration.offsetWidth;
+        checklistCelebration.classList.add("active");
+        checklistCelebrationTimer=setTimeout(()=>checklistCelebration.classList.remove("active"),5200);
+      }
+      function updateChecklistProgress({celebrate=false}={}){
+        const completedCount=completedChecklistIds().length;
+        checklistItems.forEach(item=>item.classList.toggle("complete",item.querySelector(".checklist-checkbox").checked));
+        checklistScore.textContent=`${completedCount} / ${checklistItems.length}`;
+        checklistStatus.textContent=completedCount===checklistItems.length?"Ready to submit":"Ready";
+        checklistProgress.setAttribute("aria-valuenow",String(completedCount));
+        checklistProgressValue.style.width=`${completedCount/checklistItems.length*100}%`;
+        checklistProgressDescription.textContent=`${completedCount} of ${checklistItems.length} submission checks completed.`;
+        const shouldCelebrate=celebrate&&previousChecklistCount===checklistItems.length-1&&completedCount===checklistItems.length;
+        previousChecklistCount=completedCount;
+        if(shouldCelebrate)celebrateChecklist();
+      }
+      function restoreChecklistProgress(){
+        try{
+          const stored=JSON.parse(localStorage.getItem(checklistStorageKey)||"[]");
+          const checkedIds=new Set(Array.isArray(stored)?stored.filter(id=>validChecklistIds.has(id)):[]);
+          checklistItems.forEach(item=>{item.querySelector(".checklist-checkbox").checked=checkedIds.has(item.dataset.checklistId);});
+        }catch{}
+        updateChecklistProgress();
+      }
+      checklistItems.forEach(item=>item.querySelector(".checklist-checkbox").addEventListener("change",()=>{saveChecklistProgress();updateChecklistProgress({celebrate:true});}));
+      restoreChecklistProgress();
 
       const reduced=window.matchMedia("(prefers-reduced-motion: reduce)").matches;
       const revealItems=document.querySelectorAll(".reveal");
