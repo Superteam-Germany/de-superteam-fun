@@ -390,21 +390,28 @@
         .checklist-celebration { display:none; }
       }
     </style>
+    <link rel="stylesheet" href="/site/community-nav.css" />
   </head>
   <body>
+    <aside class="announcement-bar" aria-label="Breakpoint announcement" data-static-announcement>
+      <div class="announcement-inner">
+        <a class="announcement-link" href="/breakpoint"><span class="announcement-copy"><span>Join Superteam Germany at Breakpoint</span><span class="announcement-date">London · 15–17 November</span></span><span class="announcement-arrow" aria-hidden="true">→</span></a>
+      </div>
+    </aside>
     <header class="hero" id="top">
       <div id="hero-shader" aria-hidden="true"></div>
       <div class="center-protection" aria-hidden="true"></div>
       <div class="hero-fade" aria-hidden="true"></div>
-      <nav class="topnav shell" aria-label="Primary">
+      <nav class="topnav shell campaign-nav" aria-label="Primary">
         <a class="brand" href="/" aria-label="Superteam Germany home"><img src="https://de.superteam.fun/images/stLogoWithIcon.svg" alt="Superteam Germany" /></a>
         <div class="navlinks">
-          <a href="/#what-we-do">What We Do</a>
-          <a href="/#events">Events</a>
-          <a href="/#team">Team</a>
-          <a href="/#faq">FAQ</a>
-          <a class="community-link" href="https://t.me/superteamgermany" target="_blank" rel="noreferrer">Join Us ↗</a>
-          <a class="hackathon" href="https://arena.colosseum.org/?ref=germany" target="_blank" rel="noreferrer">Join the Hackathon ↗</a>
+          <a class="desktop-nav-link" href="/#what-we-do">What We Do</a>
+          <a class="desktop-nav-link" href="/#events">Events</a>
+          <a class="desktop-nav-link" href="/#team">Team</a>
+          <a class="desktop-nav-link" href="/#faq">FAQ</a>
+          <a class="desktop-nav-link" href="/buildstation" aria-current="page">Global Hackathon</a>
+          <a class="desktop-nav-link community-link" href="https://t.me/superteamgermany" target="_blank" rel="noreferrer">Join Us ↗</a>
+          <a class="primary-cta" href="/breakpoint">Breakpoint <span aria-hidden="true">→</span></a>
           <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation"><span class="mobile-menu-icon" aria-hidden="true"></span></button>
         </div>
         <div class="mobile-navigation" id="mobile-navigation" aria-hidden="true" inert>
@@ -412,6 +419,7 @@
           <a href="/#events">Events<span aria-hidden="true">02</span></a>
           <a href="/#team">Team<span aria-hidden="true">03</span></a>
           <a href="/#faq">FAQ<span aria-hidden="true">04</span></a>
+          <a href="/buildstation" aria-current="page">Global Hackathon<span aria-hidden="true">05</span></a>
           <a class="mobile-join" href="https://t.me/superteamgermany" target="_blank" rel="noreferrer">Join Us<span aria-hidden="true">↗</span></a>
         </div>
       </nav>
@@ -746,6 +754,7 @@
       </div>
     </footer>
 
+    <script type="module" src="/site/announcement.js"></script>
     <script type="module">
       import React from "react";
       import { createRoot } from "react-dom/client";
@@ -765,7 +774,7 @@
       mobileMenuToggle.addEventListener("click",()=>setMobileMenuOpen(mobileMenuToggle.getAttribute("aria-expanded")!=="true"));
       mobileNavigation.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>setMobileMenuOpen(false)));
       document.addEventListener("keydown",event=>{if(event.key==="Escape"&&mobileMenuToggle.getAttribute("aria-expanded")==="true"){setMobileMenuOpen(false);mobileMenuToggle.focus();}});
-      window.addEventListener("resize",()=>{if(window.innerWidth>800)setMobileMenuOpen(false);});
+      window.addEventListener("resize",()=>{if(window.innerWidth>1040)setMobileMenuOpen(false);});
 
       const steps=[
         {title:"Join The Community",copy:"Meet mentors, find your team and discuss your ideas. Co-working sessions and community channels help you get moving before the build period begins."},

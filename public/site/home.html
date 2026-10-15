@@ -463,11 +463,13 @@
         .expanded-content h3 { font-size:32px; }
       }
     </style>
+    <link rel="stylesheet" href="/site/community-nav.css" />
   </head>
   <body>
     <div id="root"></div>
     <script type="module">
       import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+      import { mountAnnouncement } from "/site/announcement.js";
       import { createRoot } from "react-dom/client";
       import { GrainGradient } from "https://esm.sh/@paper-design/shaders-react@0.0.80?external=react";
       import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "https://esm.sh/react-tweet@3.3.1/X-ZXJlYWN0LHJlYWN0LWRvbQ/es2022/react-tweet.bundle.mjs";
@@ -605,8 +607,8 @@
       function HeroNav(){
         const [menuOpen,setMenuOpen]=useState(false);
         useEffect(()=>{
-          const closeOnEscape=event=>{ if(event.key==="Escape") setMenuOpen(false); };
-          const closeOnDesktop=()=>{ if(window.innerWidth>800) setMenuOpen(false); };
+          const closeOnEscape=event=>{ if(event.key==="Escape"&&document.querySelector(".mobile-menu-toggle")?.getAttribute("aria-expanded")==="true"){ setMenuOpen(false); document.querySelector(".mobile-menu-toggle")?.focus(); } };
+          const closeOnDesktop=()=>{ if(window.innerWidth>1040) setMenuOpen(false); };
           window.addEventListener("keydown",closeOnEscape);
           window.addEventListener("resize",closeOnDesktop);
           return()=>{
@@ -615,22 +617,24 @@
           };
         },[]);
         const closeMenu=()=>setMenuOpen(false);
-        return e("nav",{className:"hero-nav","aria-label":"Primary"},
+        return e("nav",{className:"hero-nav campaign-nav","aria-label":"Primary"},
           e("a",{className:"brand",href:"#","aria-label":"Superteam Germany home"},e("img",{src:"https://de.superteam.fun/images/stLogoWithIcon.svg",alt:""})),
           e("div",{className:"navlinks"},
             e("a",{className:"desktop-nav-link",href:"#what-we-do"},"What We Do"),
             e("a",{className:"desktop-nav-link",href:"#events"},"Events"),
             e("a",{className:"desktop-nav-link",href:"#team"},"Team"),
             e("a",{className:"desktop-nav-link",href:"#faq"},"FAQ"),
+            e("a",{className:"desktop-nav-link",href:"/buildstation"},"Global Hackathon"),
             e("a",{className:"desktop-nav-link community-link",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer"},"Join Us ↗"),
-            e("a",{className:"primary-cta",href:"/buildstation"},e("span",{className:"cta-global"},"Global"),e("span",{className:"cta-hackathon"},"Hackathon ↗")),
+            e("a",{className:"primary-cta",href:"/breakpoint"},"Breakpoint",e("span",{"aria-hidden":"true"},"→")),
             e("button",{className:"mobile-menu-toggle",type:"button","aria-expanded":menuOpen,"aria-controls":"mobile-navigation","aria-label":menuOpen?"Close navigation":"Open navigation",onClick:()=>setMenuOpen(open=>!open)},e("span",{className:"mobile-menu-icon","aria-hidden":"true"}))
           ),
-          e("div",{className:`mobile-navigation${menuOpen?" is-open":""}`,id:"mobile-navigation","aria-hidden":!menuOpen,inert:!menuOpen},
+          e("div",{className:`mobile-navigation${menuOpen?" is-open":""}`,id:"mobile-navigation","aria-hidden":!menuOpen,inert:!menuOpen?"":undefined},
             e("a",{href:"#what-we-do",onClick:closeMenu},"What We Do",e("span",{"aria-hidden":"true"},"01")),
             e("a",{href:"#events",onClick:closeMenu},"Events",e("span",{"aria-hidden":"true"},"02")),
             e("a",{href:"#team",onClick:closeMenu},"Team",e("span",{"aria-hidden":"true"},"03")),
             e("a",{href:"#faq",onClick:closeMenu},"FAQ",e("span",{"aria-hidden":"true"},"04")),
+            e("a",{href:"/buildstation",onClick:closeMenu},"Global Hackathon",e("span",{"aria-hidden":"true"},"05")),
             e("a",{className:"mobile-join",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer",onClick:closeMenu},"Join Us",e("span",{"aria-hidden":"true"},"↗"))
           )
         );
@@ -1072,9 +1076,23 @@
         );
       }
 
+      function Announcement(){
+        const bar = useRef(null);
+        useEffect(()=>mountAnnouncement(bar.current),[]);
+        return e("aside",{ref:bar,className:"announcement-bar","aria-label":"Breakpoint announcement"},
+          e("div",{className:"announcement-inner"},
+            e("a",{className:"announcement-link",href:"/breakpoint"},
+              e("span",{className:"announcement-copy"},e("span",null,"Join Superteam Germany at Breakpoint"),e("span",{className:"announcement-date"},"London · 15–17 November")),
+              e("span",{className:"announcement-arrow","aria-hidden":"true"},"→")
+            )
+          )
+        );
+      }
+
       function App(){
         useSectionReveals();
         return e(React.Fragment,null,
+          e(Announcement),
           e("main",{className:"hero"},
             e("div",{className:"shader"},e(Shader)),
             e("div",{className:"center-protection"}),
