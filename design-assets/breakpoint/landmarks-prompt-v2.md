@@ -1,0 +1,10 @@
+Use case: illustration-story
+Asset type: transparent landmark illustration for the Berlin-to-London boarding-pass hero on the Superteam Germany Breakpoint page.
+Primary request: a playful, beautifully crafted pair of miniature landmarks: Brandenburg Gate on the left and Big Ben / Elizabeth Tower on the right, with a small pale paper aeroplane between them. This is illustrative travel artwork, not a conference photograph.
+Reference images: first is the current dark, gold and cream Superteam Germany page; second is the official purple London Breakpoint page. Use them only as palette and mood references. Do not reproduce their UI or text.
+Target dimensions: 1536 x 1024, landscape, with the actual artwork occupying the central 90% width and 75% height. It must fit a 470 x 240 CSS pixel slot without clipping.
+Style/medium: refined playful 3D papercraft miniatures with a subtle screen-print grain, bold recognisable architectural silhouettes, tactile folded-paper edges, simplified architectural detail. Warm cream and golden Brandenburg Gate, lilac and deep-purple Big Ben with tiny mint highlights. Both landmarks sit on the same baseline. The Gate is wide and lower, the tower taller; balance their visual weight.
+Scene/backdrop: fully transparent, actual alpha. No scenery, background rectangle, shadows reaching the image edges, or flat colour backdrop. Only the two landmarks, a small paper aeroplane, and compact soft contact shadows beneath each landmark.
+Composition/framing: front three-quarter view, no extreme perspective, generous clear breathing room around the silhouette. The whole Gate including its quadriga and the whole Tower including its spire must be in frame.
+Constraints: no words, lettering, logos, badges, QR codes, barcodes, tickets, UI elements, people, event footage, or watermark. Do not turn either building into a generic skyscraper. No photographic realism; this is clearly an original illustration.
+Built-in image generation, 14 October 2026. Reference screenshots are locally captured from the current preview and https://solana.com/breakpoint.

@@ -31,9 +31,9 @@ const menuItems = [
   },
 ];
 
-const summitCta = {
-  name: "Solana Summit Germany",
-  link: "/solana-summit-germany",
+const breakpointCta = {
+  name: "Breakpoint",
+  link: "/breakpoint",
 };
 
 const Nav = () => {
@@ -114,12 +114,10 @@ const Nav = () => {
                   className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
                 >
                   <Link
-                    href={summitCta.link}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={breakpointCta.link}
                     onClick={() => setIsOpen(false)}
                   >
-                    {summitCta.name}
+                    {breakpointCta.name}
                   </Link>
                 </Button>
               </li>
@@ -159,11 +157,9 @@ const Nav = () => {
               className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
             >
               <Link
-                href={summitCta.link}
-                target="_blank"
-                rel="noopener noreferrer"
+                href={breakpointCta.link}
               >
-                {summitCta.name}
+                {breakpointCta.name}
               </Link>
             </Button>
           </li>

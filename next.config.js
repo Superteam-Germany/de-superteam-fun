@@ -40,6 +40,7 @@ const nextConfig = {
       beforeFiles: [
         { source: "/", destination: "/site/home.html" },
         { source: "/buildstation", destination: "/site/buildstation.html" },
+        { source: "/breakpoint", destination: "/site/breakpoint.html" },
       ],
       afterFiles: [],
       fallback: [],
@@ -66,6 +67,10 @@ const nextConfig = {
       },
       {
         source: "/buildstation",
+        headers: redesignedPageHeaders,
+      },
+      {
+        source: "/breakpoint",
         headers: redesignedPageHeaders,
       },
       {
