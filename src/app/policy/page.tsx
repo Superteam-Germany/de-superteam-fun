@@ -1,4 +1,3 @@
-import Nav from "@/components/nav";
 import React from "react";
 import type { Metadata } from "next";
 import { createSocialMetadata } from "@/lib/social-metadata";
@@ -23,7 +22,6 @@ export const metadata: Metadata = {
 const policy = () => {
   return (
     <>
-      <Nav />
       <section className="container  py-24 px-4 space-y-10">
         <h2>Privacy Policy</h2>
 

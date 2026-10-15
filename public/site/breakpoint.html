@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Breakpoint 2026 with Superteam Germany | London</title>
+    <meta name="description" content="From Germany to Breakpoint. Join Superteam Germany in London, 15–17 November 2026. Meet Solana builders, connect with the community, and get your ticket." />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <link rel="canonical" href="https://de.superteam.fun/breakpoint" />
+    <link rel="icon" href="/superteamgermany-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/superteamgermany-favicon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Superteam Germany" />
+    <meta property="og:locale" content="en_DE" />
+    <meta property="og:title" content="From Germany to Breakpoint | Superteam Germany" />
+    <meta property="og:description" content="Join the community in London for Breakpoint, 15–17 November 2026. New faces welcome." />
+    <meta property="og:url" content="https://de.superteam.fun/breakpoint" />
+    <meta property="og:image" content="https://de.superteam.fun/images/home-social-card-v1.jpg?v=3" />
+    <meta property="og:image:secure_url" content="https://de.superteam.fun/images/home-social-card-v1.jpg?v=3" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:alt" content="Superteam Germany logo above a Brandenburg Gate silhouette" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@SuperteamDE" />
+    <meta name="twitter:title" content="From Germany to Breakpoint | Superteam Germany" />
+    <meta name="twitter:description" content="Join the community in London for Breakpoint, 15–17 November 2026. New faces welcome." />
+    <meta name="twitter:image" content="https://de.superteam.fun/images/home-social-card-v1.jpg?v=3" />
+    <meta name="twitter:image:alt" content="Superteam Germany logo above a Brandenburg Gate silhouette" />
+    <script type="importmap">{"imports":{"react":"https://esm.sh/react@18.3.1","react/jsx-runtime":"https://esm.sh/react@18.3.1/jsx-runtime","react-dom/client":"https://esm.sh/react-dom@18.3.1/client?external=react"}}</script>
+    <link rel="stylesheet" href="/site/breakpoint.css" />
+    <link rel="stylesheet" href="/site/community-nav.css" />
+    <script id="flag-entrance-bootstrap">
+      (() => {
+        const timing = { entranceMs:360, fallbackMs:2500 };
+        const root = document.documentElement;
+        const started = performance.now();
+        const entranceDelay = matchMedia("(prefers-reduced-motion: reduce)").matches ? 0 : timing.entranceMs;
+        let settled = false;
+        let entranceTimer;
+        let fallbackTimer;
+        let fallbackRemaining = timing.fallbackMs;
+        let visibleSince = null;
+        root.classList.add("flags-pending");
+
+        function reveal(mode) {
+          if (settled) return;
+          settled = true;
+          clearTimeout(entranceTimer);
+          clearTimeout(fallbackTimer);
+          document.removeEventListener("breakpoint-flags-ready", ready);
+          document.removeEventListener("visibilitychange", updateFallbackWait);
+          root.classList.add(mode);
+          root.classList.remove("flags-pending");
+          if (mode === "flags-fallback") document.dispatchEvent(new Event("breakpoint-flags-fallback"));
+        }
+
+        function ready() {
+          entranceTimer = setTimeout(() => reveal("flags-live"), Math.max(0, entranceDelay - (performance.now() - started)));
+        }
+
+        function updateFallbackWait() {
+          clearTimeout(fallbackTimer);
+          const now = performance.now();
+          if (visibleSince !== null) fallbackRemaining = Math.max(0, fallbackRemaining - (now - visibleSince));
+          visibleSince = document.hidden ? null : now;
+          if (!document.hidden) fallbackTimer = setTimeout(() => {
+            if (document.hidden) updateFallbackWait();
+            else reveal("flags-fallback");
+          }, fallbackRemaining);
+        }
+
+        document.addEventListener("breakpoint-flags-ready", ready, { once:true });
+        document.addEventListener("visibilitychange", updateFallbackWait);
+        updateFallbackWait();
+      })();
+    </script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Breakpoint 2026 with Superteam Germany","url":"https://de.superteam.fun/breakpoint","description":"Join Superteam Germany in London for Solana Breakpoint, 15–17 November 2026.","inLanguage":"en","isPartOf":{"@type":"WebSite","name":"Superteam Germany","url":"https://de.superteam.fun/"}}</script>
+  </head>
+  <body class="breakpoint-page">
+    <a class="skip-link" href="#content">Skip to content</a>
+    <aside class="announcement-bar" aria-label="Breakpoint announcement" data-static-announcement>
+      <div class="announcement-inner">
+        <a class="announcement-link" href="https://luma.com/breakpoint2026" target="_blank" rel="noopener noreferrer" aria-label="Get your Breakpoint ticket on Luma · London, 15–17 November"><span class="announcement-copy"><span>Join Superteam Germany at Breakpoint</span><span class="announcement-date">London · 15–17 November</span></span><span class="announcement-action"><span class="announcement-action-text">Get your ticket</span><span class="announcement-arrow" aria-hidden="true">↗</span></span></a>
+      </div>
+    </aside>
+    <header class="breakpoint-header" id="top">
+      <nav class="campaign-nav" aria-label="Primary">
+        <a class="brand" href="/" aria-label="Superteam Germany home"><img src="/images/stLogoWithIcon.svg" alt="" width="172" height="42" /></a>
+        <div class="navlinks">
+          <a class="desktop-nav-link" href="/#what-we-do">What We Do</a>
+          <a class="desktop-nav-link" href="/#events">Events</a>
+          <a class="desktop-nav-link" href="/#team">Team</a>
+          <a class="desktop-nav-link" href="/#faq">FAQ</a>
+          <a class="desktop-nav-link" href="/buildstation">Global Hackathon</a>
+          <a class="desktop-nav-link community-link" href="https://t.me/superteamgermany" target="_blank" rel="noopener noreferrer">Join Us ↗</a>
+          <a class="primary-cta" href="https://luma.com/breakpoint2026" target="_blank" rel="noopener noreferrer" aria-label="Breakpoint tickets on Luma">Breakpoint <span aria-hidden="true">↗</span></a>
+          <button class="mobile-menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-navigation" aria-label="Open navigation"><span class="mobile-menu-icon" aria-hidden="true"></span></button>
+        </div>
+        <div class="mobile-navigation" id="mobile-navigation" aria-hidden="true" inert>
+          <a href="/#what-we-do">What We Do<span aria-hidden="true">01</span></a>
+          <a href="/#events">Events<span aria-hidden="true">02</span></a>
+          <a href="/#team">Team<span aria-hidden="true">03</span></a>
+          <a href="/#faq">FAQ<span aria-hidden="true">04</span></a>
+          <a href="/buildstation">Global Hackathon<span aria-hidden="true">05</span></a>
+          <a class="mobile-join" href="https://t.me/superteamgermany" target="_blank" rel="noopener noreferrer">Join Us<span aria-hidden="true">↗</span></a>
+        </div>
+      </nav>
+      <noscript><nav class="fallback-nav shell" aria-label="More navigation"><a href="/#what-we-do">What We Do</a><a href="/#events">Events</a><a href="/#team">Team</a><a href="/#faq">FAQ</a><a href="/buildstation">Global Hackathon</a><a href="https://t.me/superteamgermany">Join Us</a></nav></noscript>
+    </header>
+    <main id="content">
+      <section class="breakpoint-hero" aria-labelledby="breakpoint-title">
+        <div class="hero-atmosphere" aria-hidden="true">
+          <!-- Flag geometry from flag-icons by lipis.
+The MIT License (MIT)
+
+Copyright (c) 2013 Panayiotis Lipiridis
+
+Permission is hereby granted, free of charge, to any person obtaining a copy of
+this software and associated documentation files (the "Software"), to deal in
+the Software without restriction, including without limitation the rights to
+use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies
+of the Software, and to permit persons to whom the Software is furnished to do
+so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+          -->
+          <div class="country-shader germany-shader">
+            <svg class="flag-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" preserveAspectRatio="none" focusable="false">
+              <defs><filter id="flag-grain-germany" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="12" stitchTiles="stitch" result="noise" /><feColorMatrix in="noise" type="saturate" values="0" /><feComponentTransfer result="texture"><feFuncR type="linear" slope=".65" intercept=".05" /><feFuncG type="linear" slope=".65" intercept=".05" /><feFuncB type="linear" slope=".65" intercept=".05" /><feFuncA type="table" tableValues=".72 .72" /></feComponentTransfer><feBlend in="SourceGraphic" in2="texture" mode="multiply" /></filter></defs>
+              <g filter="url(#flag-grain-germany)"><path fill="#fc0" d="M0 320h640v160H0z"/>
+  <path fill="#000001" d="M0 0h640v160H0z"/>
+  <path fill="red" d="M0 160h640v160H0z"/></g>
+            </svg>
+            <div class="flag-live" id="germany-shader"></div>
+          </div>
+          <div class="country-shader uk-shader">
+            <svg class="flag-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 480" preserveAspectRatio="none" focusable="false">
+              <defs><filter id="flag-grain-uk" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB"><feTurbulence type="fractalNoise" baseFrequency=".75" numOctaves="3" seed="12" stitchTiles="stitch" result="noise" /><feColorMatrix in="noise" type="saturate" values="0" /><feComponentTransfer result="texture"><feFuncR type="linear" slope=".65" intercept=".05" /><feFuncG type="linear" slope=".65" intercept=".05" /><feFuncB type="linear" slope=".65" intercept=".05" /><feFuncA type="table" tableValues=".72 .72" /></feComponentTransfer><feBlend in="SourceGraphic" in2="texture" mode="multiply" /></filter></defs>
+              <g filter="url(#flag-grain-uk)"><path fill="#012169" d="M0 0h640v480H0z"/>
+  <path fill="#FFF" d="m75 0 244 181L562 0h78v62L400 241l240 178v61h-80L320 301 81 480H0v-60l239-178L0 64V0z"/>
+  <path fill="#C8102E" d="m424 281 216 159v40L369 281zm-184 20 6 35L54 480H0zM640 0v3L391 191l2-44L590 0zM0 0l239 176h-60L0 42z"/>
+  <path fill="#FFF" d="M241 0v480h160V0zM0 160v160h640V160z"/>
+  <path fill="#C8102E" d="M0 193v96h640v-96zM273 0v480h96V0z"/></g>
+            </svg>
+            <div class="flag-live" id="uk-shader"></div>
+          </div>
+          <div class="reading-shield"></div>
+        </div>
+        <div class="shell hero-grid">
+          <div class="hero-copy">
+            <h1 id="breakpoint-title"><span class="title-line"><span>From Germany</span></span><span class="title-line"><span>to <em>Breakpoint.</em></span></span></h1>
+            <p class="hero-intro">Join Superteam Germany in London for Breakpoint, Solana’s flagship conference. Grow your network, explore opportunities, reconnect with the community, and take your idea or app further.</p>
+            <p class="event-details"><time datetime="2026-11-15">15</time>–<time datetime="2026-11-17">17 November 2026</time><span aria-hidden="true">·</span><span>Olympia, London</span></p>
+            <div class="hero-actions">
+              <a class="button primary" href="https://luma.com/breakpoint2026" target="_blank" rel="noopener noreferrer">Get your ticket <span aria-hidden="true">↗</span></a>
+              <a class="button secondary" href="https://solana.com/breakpoint" target="_blank" rel="noopener noreferrer">Explore Breakpoint <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="hero-pass-reveal">
+            <div class="boarding-group">
+            <span class="destination-stamp" aria-hidden="true"><span>NEXT STOP</span>BP26<span>LONDON</span></span>
+            <div class="boarding-pass" aria-label="Community travel invitation from Germany to London">
+              <div class="pass-heading">Community Boarding Pass</div>
+              <div class="pass-route"><div><span class="route-label">FROM · GERMANY</span><b>DE</b></div><div class="route-connection" aria-hidden="true"><span></span><img src="/images/breakpoint/plane.svg" width="24" height="24" alt="" /></div><div class="route-destination"><span class="route-label">TO · LONDON</span><b>LDN</b></div></div>
+              <img class="landmark-art" src="/images/breakpoint/berlin-london-landmarks-v2.webp" width="1200" height="800" fetchpriority="high" alt="Playful golden Brandenburg Gate and purple Big Ben, connected by a paper plane" />
+              <div class="pass-details"><span>DESTINATION<b>Solana Breakpoint</b></span><span>DATE<b>15–17 NOV 2026</b></span></div>
+              <div class="pass-stub">
+                <div class="hero-countdown" id="breakpoint-countdown" role="timer" aria-live="off" aria-label="Time until 15 November 2026 at 09:30 GMT in London" hidden>
+                  <span class="countdown-label" id="countdown-label">Countdown</span>
+                  <div class="countdown-values" id="countdown-values">
+                    <span class="countdown-part"><b data-time="days"></b><span>days</span></span>
+                    <span class="countdown-part"><b data-time="hours"></b><span>hours</span></span>
+                    <span class="countdown-part"><b data-time="minutes"></b><span>minutes</span></span>
+                  </div>
+                </div>
+                <noscript><p class="pass-nojs">Next stop: London · 15–17 November 2026</p></noscript>
+              </div>
+            </div>
+            </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="reasons-section shell" id="reasons" aria-labelledby="reasons-title">
+        <div class="section-heading" data-reveal>
+          <div><p class="eyebrow">See you in London</p><h2 id="reasons-title">Go further,<br /><em>together.</em></h2></div>
+        </div>
+        <div class="reasons-grid">
+          <article class="reason reason-featured" data-reveal><div class="reason-top"><span class="reason-number" aria-hidden="true">01 / CONNECTIONS</span><span class="reason-sticker" aria-hidden="true"><img class="reason-icon" src="/images/breakpoint/connections.svg" width="40" height="40" alt="" /></span></div><h3>Meet beyond your usual circle.</h3><p>Meet the people building Solana. Grow your network, explore career opportunities, and turn online connections into real conversations.</p></article>
+          <article class="reason" data-reveal><div class="reason-top"><span class="reason-number" aria-hidden="true">02 / BUILDING</span><span class="reason-sticker" aria-hidden="true"><img class="reason-icon" src="/images/breakpoint/ideas.svg" width="40" height="40" alt="" /></span></div><h3>Bring what you’re building.</h3><p>Idea, prototype, or growing app—bring what you’re working on. Get fresh perspectives and meet potential collaborators.</p></article>
+          <article class="reason" data-reveal><div class="reason-top"><span class="reason-number" aria-hidden="true">03 / COMMUNITY</span><span class="reason-sticker" aria-hidden="true"><img class="reason-icon" src="/images/breakpoint/community.svg" width="40" height="40" alt="" /></span></div><h3>Experience it with your community.</h3><p>Catch up with familiar faces, meet new ones from Germany’s Solana community, and enjoy London together.</p></article>
+                <!--
+                ISC License
+                Copyright (c) for portions of Lucide are held by Cole Bemis 2013-2022 as part of Feather (MIT). All other copyright (c) for Lucide are held by Lucide Contributors 2022.
+                Permission to use, copy, modify, and/or distribute this software for any purpose with or without fee is hereby granted, provided that the above copyright notice and this permission notice appear in all copies.
+                THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+                -->
+          <article class="reason" data-reveal><div class="reason-top"><span class="reason-number" aria-hidden="true">04 / MERCH</span><span class="reason-sticker" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" class="reason-icon" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M6 20a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2" /><path d="M8 18V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v14" /><path d="M10 20h4" /><circle cx="16" cy="20" r="2" /><circle cx="8" cy="20" r="2" /></svg></span></div><h3>Leave room in your suitcase.</h3><p>Solana and partner merch to bring home. Pack light—your suitcase might have other plans. Food and drinks on site, too.</p></article>
+          <article class="reason" data-reveal><div class="reason-top"><span class="reason-number" aria-hidden="true">05 / SIDE EVENTS</span><span class="reason-sticker" aria-hidden="true"><svg class="reason-icon" xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M5.8 11.3 2 22l10.7-3.79" /><path d="M4 3h.01" /><path d="M22 8h.01" /><path d="M15 2h.01" /><path d="M22 20h.01" /><path d="m22 2-2.24.75a2.9 2.9 0 0 0-1.96 3.12c.1.86-.57 1.63-1.45 1.63h-.38c-.86 0-1.6.6-1.76 1.44L14 10" /><path d="m22 13-.82-.33c-.86-.34-1.82.2-1.98 1.11c-.11.7-.72 1.22-1.43 1.22H17" /><path d="m11 2 .33.82c.34.86-.2 1.82-1.11 1.98C9.52 4.9 9 5.52 9 6.23V7" /><path d="M11 13c1.93 1.93 2.83 4.17 2 5-.83.83-3.07-.07-5-2-1.93-1.93-2.83-4.17-2-5 .83-.83 3.07.07 5 2Z" /></svg></span></div><h3>London, beyond the talks.</h3><p>Keep the conversations going at community meetups, parties, and more across London.</p><div class="reason-action"><a class="reason-link" href="https://luma.com/BP-SideEvents" target="_blank" rel="noopener noreferrer">Browse side events <span aria-hidden="true">↗</span></a></div></article>
+        </div>
+        <div class="newcomer-note"><p><strong>New to the community? Join us at Breakpoint.</strong> You don’t need to be a Superteam member or have a project. Come meet people, make new connections, and enjoy the Breakpoint experience together.</p><a href="https://t.me/superteamgermany" target="_blank" rel="noopener noreferrer">Say hello <span aria-hidden="true">↗</span></a></div>
+      </section>
+
+      <section class="join-section" id="join" aria-labelledby="join-title">
+        <div class="shell join-layout">
+          <div class="join-intro" data-reveal><p class="eyebrow">Make it happen</p><h2 id="join-title">London’s<br /><span class="calling-word">calling.</span></h2><p>Get your ticket, plan your trip, and meet the community before London.</p></div>
+          <div class="join-steps">
+            <article class="join-step" data-reveal><span class="step-icon" aria-hidden="true"><img src="/images/breakpoint/ticket.svg" alt="" width="24" height="24" /></span><div><span class="step-number" aria-hidden="true">01 / THE TICKET</span><h3>Get your Breakpoint ticket.</h3><p>Book directly with the official organiser. Find ticket options and the full programme on the Breakpoint website.</p><a class="button dark" href="https://luma.com/breakpoint2026" target="_blank" rel="noopener noreferrer">Get your ticket <span aria-hidden="true">↗</span></a></div></article>
+            <article class="join-step" data-reveal><span class="step-icon travel-step-icon" aria-hidden="true"><img src="/images/breakpoint/plane.svg" alt="" width="24" height="24" /></span><div><span class="step-number" aria-hidden="true">02 / THE TRIP</span><h3>Plan your London trip.</h3><p>Find airport options, places to stay, and visa or ETA guidance in the official Breakpoint travel guide.</p><a class="text-link" href="https://solana.com/breakpoint/travel" target="_blank" rel="noopener noreferrer">Explore travel options <span aria-hidden="true">↗</span></a></div></article>
+            <article class="join-step" data-reveal><span class="step-icon community-step-icon" aria-hidden="true"><img src="/images/breakpoint/message.svg" alt="" width="24" height="24" /></span><div><span class="step-number" aria-hidden="true">03 / YOUR PEOPLE</span><h3>Meet the community before London.</h3><p>Say hello in the Superteam Germany Telegram. Connect with the community before the trip—even if it’s your first Breakpoint.</p><a class="text-link" href="https://t.me/superteamgermany" target="_blank" rel="noopener noreferrer">Join our Telegram <span aria-hidden="true">↗</span></a></div></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="faq-section shell" aria-labelledby="faq-title">
+        <div class="faq-intro" data-reveal><p class="eyebrow">Good to know</p><h2 id="faq-title">Before<br />you go.</h2><p>A few answers to help you take the next step.</p></div>
+        <div class="faq-list" data-reveal>
+          <details><summary>What is Breakpoint?</summary><div class="faq-answer"><p>Breakpoint is Solana’s annual conference, bringing together builders, founders, and the wider Solana community. It’s a place to discover what’s being built, exchange ideas, and meet people from across the ecosystem.</p></div></details>
+          <details><summary>Do I need to be a Superteam member?</summary><div class="faq-answer"><p>No. You’re welcome to connect with our community whether you’re an official member, have joined an event before, or are meeting us for the first time.</p></div></details>
+          <details><summary>Is this just for developers?</summary><div class="faq-answer"><p>Founders, developers, designers, creators, operators, and curious newcomers are welcome. If you’re interested in Solana and want to meet the people building it, come say hello.</p></div></details>
+          <details><summary>How do I get a Breakpoint ticket?</summary><div class="faq-answer"><p>Purchase your conference ticket through the <a href="https://luma.com/breakpoint2026" target="_blank" rel="noopener noreferrer">official Breakpoint ticket page</a>. Joining our Telegram connects you with the community; it doesn’t register you for the conference.</p></div></details>
+          <details><summary>Where can I find the programme and event details?</summary><div class="faq-answer"><p>The <a href="https://solana.com/breakpoint" target="_blank" rel="noopener noreferrer">official Breakpoint website</a> has the programme, speakers, ticket options, and venue information. Breakpoint 2026 takes place 15–17 November at Olympia in London.</p></div></details>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer" id="footer" aria-labelledby="footer-heading">
+      <h2 class="site-footer-sr" id="footer-heading">Footer</h2>
+      <div class="site-footer-inner">
+        <div class="site-footer-main">
+          <div class="site-footer-brand"><a href="/" class="site-footer-home" aria-label="Superteam Germany home"><img src="/images/stLogoWithIcon.svg" width="190" height="46" alt="Superteam Germany" loading="lazy" /></a><p class="site-footer-tagline">Accelerating Internet Capital Markets in Germany.</p></div>
+          <nav class="site-footer-group" aria-label="Navigate"><h3>Navigate</h3><ul class="site-footer-links"><li><a class="site-footer-link" href="/#what-we-do">What We Do</a></li><li><a class="site-footer-link" href="/#events">Events</a></li><li><a class="site-footer-link" href="https://de.superteam.fun/solana-summit-germany" target="_blank" rel="noopener noreferrer">Solana Summit Germany <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li><li><a class="site-footer-link" href="/#team">Team</a></li><li><a class="site-footer-link" href="/#partners">Partners</a></li><li><a class="site-footer-link" href="/#faq">FAQ</a></li></ul></nav>
+          <nav class="site-footer-group" aria-label="Resources"><h3>Resources</h3><ul class="site-footer-links"><li><a class="site-footer-link" href="/buildstation">Global Hackathon</a></li><li><a class="site-footer-link" href="https://superteamde.gitbook.io/superteamde" target="_blank" rel="noopener noreferrer">Resources &amp; Docs <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li><li><a class="site-footer-link" href="https://superteam.fun" target="_blank" rel="noopener noreferrer">Superteam Global <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li></ul></nav>
+          <nav class="site-footer-group" aria-label="Connect"><h3>Connect</h3><ul class="site-footer-links"><li><a class="site-footer-link" href="https://x.com/SuperteamDE" target="_blank" rel="noopener noreferrer">X <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li><li><a class="site-footer-link" href="https://discord.gg/CVwJhHgFfF" target="_blank" rel="noopener noreferrer">Discord <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li><li><a class="site-footer-link" href="https://t.me/superteamgermany" target="_blank" rel="noopener noreferrer">Telegram <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li><li><a class="site-footer-link" href="https://www.youtube.com/@SuperteamDE" target="_blank" rel="noopener noreferrer">YouTube <span class="site-footer-arrow" aria-hidden="true">↗</span></a></li></ul></nav>
+        </div>
+        <div class="site-footer-legal"><p>© 2026 Superteam Germany. All rights reserved.</p></div>
+      </div>
+    </footer>
+    <script type="module" src="/site/announcement.js"></script>
+    <script type="module" src="/site/breakpoint.js"></script>
+    <script type="module" src="/site/breakpoint-shader.js"></script>
+  </body>
+</html>

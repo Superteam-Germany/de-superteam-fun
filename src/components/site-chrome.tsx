@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { usePathname } from "next/navigation";
 import Nav from "@/components/nav";
 import FooterGroup from "@/sections/buildstation/footer-group";
+import { CampaignAnnouncement } from "@/components/campaign-announcement";
 
 export function SiteChrome({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
@@ -14,6 +15,7 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   if (isSummitRoute) {
     return (
       <>
+        <CampaignAnnouncement />
         {children}
         <Analytics />
       </>
@@ -21,11 +23,14 @@ export function SiteChrome({ children }: { children: React.ReactNode }) {
   }
 
   return (
-    <main>
-      <Nav />
-      {children}
-      <Analytics />
-      <FooterGroup />
-    </main>
+    <>
+      <CampaignAnnouncement />
+      <main>
+        <Nav />
+        {children}
+        <Analytics />
+        <FooterGroup />
+      </main>
+    </>
   );
 }
