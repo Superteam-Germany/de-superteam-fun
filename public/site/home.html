@@ -469,7 +469,7 @@
     <div id="root"></div>
     <script type="module">
       import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-      import { mountAnnouncement } from "/site/announcement.js";
+      import { mountAnnouncement, mountDiscountCodes } from "/site/announcement.js";
       import { createRoot } from "react-dom/client";
       import { GrainGradient } from "https://esm.sh/@paper-design/shaders-react@0.0.80?external=react";
       import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "https://esm.sh/react-tweet@3.3.1/X-ZXJlYWN0LHJlYWN0LWRvbQ/es2022/react-tweet.bundle.mjs";
@@ -1081,9 +1081,34 @@
         useEffect(()=>mountAnnouncement(bar.current),[]);
         return e("aside",{ref:bar,className:"announcement-bar","aria-label":"Breakpoint announcement"},
           e("div",{className:"announcement-inner"},
-            e("a",{className:"announcement-link",href:"/breakpoint"},
-              e("span",{className:"announcement-copy"},e("span",null,"Join Superteam Germany at Breakpoint"),e("span",{className:"announcement-date"},"London · 15–17 November")),
+            e("a",{className:"announcement-link",href:"/breakpoint#ticket-offer"},
+              e("span",{className:"announcement-copy"},e("span",null,"Breakpoint · London, 15–17 November"),e("span",{className:"announcement-date"},"25% off with ",e("strong",{className:"announcement-code"},"SUPERTEAM-6NQP-BP26"))),
               e("span",{className:"announcement-arrow","aria-hidden":"true"},"→")
+            )
+          )
+        );
+      }
+
+      function BreakpointOffer(){
+        const offer = useRef(null);
+        useEffect(()=>mountDiscountCodes(offer.current),[]);
+        return e("section",{ref:offer,className:"breakpoint-offer",id:"breakpoint-offer","aria-labelledby":"ticket-promo-title"},
+          e("div",{className:"ticket-promo"},
+            e("div",null,
+              e("p",{className:"ticket-promo-eyebrow"},"Superteam Germany · Breakpoint 2026"),
+              e("h2",{id:"ticket-promo-title"},"Breakpoint, ",e("em",null,"with 25% off.")),
+              e("p",{className:"ticket-promo-copy"},"Join us in London, 15–17 November. Get 25% off your conference ticket with our community ticket link.")
+            ),
+            e("div",{"data-discount-copy":""},
+              e("div",{className:"ticket-code-row"},
+                e("code",{className:"ticket-code-value","data-discount-value":""},"SUPERTEAM-6NQP-BP26"),
+                e("button",{className:"ticket-code-copy",type:"button","data-copy-code":"","aria-label":"Copy 25% discount code"},e("span",{"data-copy-label":""},"Copy code"),e("span",{"aria-hidden":"true"},"⧉"))
+              ),
+              e("div",{className:"ticket-code-feedback",role:"status","data-copy-status":""},"Discount included in the ticket link."),
+              e("div",{className:"ticket-promo-actions"},
+                e("a",{className:"ticket-promo-action",href:"https://luma.com/breakpoint2026?coupon=SUPERTEAM-6NQP-BP26",target:"_blank",rel:"noopener noreferrer"},"Get your ticket ",e("span",{"aria-hidden":"true"},"↗")),
+                e("a",{className:"ticket-promo-more",href:"/breakpoint"},"Explore Breakpoint ",e("span",{"aria-hidden":"true"},"→"))
+              )
             )
           )
         );
@@ -1117,7 +1142,7 @@
               )
             )
           ),
-          e(ImpactStrip),e(WhatWeDo),e(Events),e(Team),e(Partners),e(WallOfLove),e(SummitRecap),e(FAQ),e(NewsletterCTA),e(Footer)
+          e(BreakpointOffer),e(ImpactStrip),e(WhatWeDo),e(Events),e(Team),e(Partners),e(WallOfLove),e(SummitRecap),e(FAQ),e(NewsletterCTA),e(Footer)
         );
       }
       createRoot(document.getElementById("root")).render(e(App));

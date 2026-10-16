@@ -1,4 +1,8 @@
 import { getBreakpointCountdown } from "./breakpoint-countdown.mjs";
+import { mountDiscountCodes } from "./announcement.js";
+import { animateRewardCount } from "./breakpoint-reward.mjs";
+
+mountDiscountCodes(document);
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
 
@@ -146,3 +150,66 @@ function mountScrollReveals() {
 }
 
 mountScrollReveals();
+
+function mountRewardCounter() {
+  const value = document.querySelector("[data-reward-count]");
+  if (!value) return;
+  const sparkles = value.parentElement?.querySelector(".boost-sparkles");
+  let observer;
+  let stopAnimation;
+  let started = false;
+  let finished = false;
+
+  function finish() {
+    if (finished) return;
+    finished = true;
+    stopAnimation?.();
+    observer?.disconnect();
+    value.textContent = "400";
+    sparkles?.classList.add("is-ready");
+    reducedMotion.removeEventListener("change", onMotionChange);
+    document.removeEventListener("visibilitychange", onVisibilityChange);
+  }
+
+  function isVisible() {
+    const bounds = value.getBoundingClientRect();
+    return bounds.top < window.innerHeight && bounds.bottom > 0;
+  }
+
+  function start() {
+    if (started || finished || document.hidden) return;
+    started = true;
+    observer?.disconnect();
+    stopAnimation = animateRewardCount(number => {
+      value.textContent = String(number);
+      if (number === 400) finish();
+    });
+  }
+
+  function onMotionChange() {
+    if (isMotionPaused()) finish();
+  }
+
+  function onVisibilityChange() {
+    if (document.hidden && started) finish();
+    else if (!document.hidden && isVisible()) start();
+  }
+
+  // Preserve already-visible or restored content instead of flashing 400 → 0.
+  if (isMotionPaused() || !("IntersectionObserver" in window) || isVisible()) {
+    finish();
+    return finish;
+  }
+
+  value.textContent = "0";
+  observer = new IntersectionObserver(entries => {
+    if (entries.some(entry => entry.isIntersecting)) start();
+  }, { threshold:.35, rootMargin:"0px 0px -8% 0px" });
+  observer.observe(value);
+  reducedMotion.addEventListener("change", onMotionChange);
+  document.addEventListener("visibilitychange", onVisibilityChange);
+  return finish;
+}
+
+const finishRewardCounter = mountRewardCounter();
+window.addEventListener("pagehide", () => finishRewardCounter?.(), { once:true });

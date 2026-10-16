@@ -272,3 +272,104 @@ The 320px reload also shows no plain country background, fully visible filtered 
 Browser samples on desktop and at 375px show both whole flags at opacity zero while their live composites become ready, followed by equal opacity values throughout their shared entrance. The desktop pass entrance begins alongside the flags on a warm reload; slower shader loading waits for readiness. Both phone flags remain 240×180px at their approved final opacity of .52, with a 375px document width. A scoped review identified background time consuming the fallback timeout; the corrected visible-time budget passes initially hidden and partially hidden timing cases, and the follow-up review found no remaining substantive issues.
 
 Fresh 29/29 regressions, module and inline-script/JSON parsing, both CSS parsers and diff checks pass. Browser warnings/errors are clear. The final change adds no assets or dependencies and changes only existing public-page files and documentation; the running production server serves it without a rebuild.
+
+## Travel Boost bounty local preview
+
+- [x] Read the supplied public Earn listing: content bounty, Germany regional eligibility, 15 selected winners, 400 USDG each. Keep detailed submission requirements on Earn.
+- [x] Add a concise hero anchor and a matching reward card beneath the Make it happen intro, retaining the existing reasons, travel guidance, steps and animations.
+- [x] Replace all five direct ticket destinations with the supplied `https://luma.com/breakpoint2026?utm_source=SuperteamGermany` URL: announcement, navbar, hero, ticket step and FAQ. Preserve the ticket labels and existing page-routing behavior on other pages.
+- [x] Check desktop, tablet and phone layout, hero anchor clearance, keyboard focus and the external listing action; run CSS/HTML checks and the existing regressions, save a preview and retain localhost.
+
+At 1280px the 420px reward card sits beneath the introduction beside all three next steps. At 768px the layout stacks without overflow; at 375px the card is 335px wide, its action is 48px high, and the document remains 375px wide. The hero shortcut places the phone card at y60 below the 36px strip; extra anchor spacing accounts for the parent's 20px entrance. Keyboard focus has a visible gold 2px outline, and Enter opens the correct Earn listing. The ticket action opens Luma with `utm_source=SuperteamGermany` preserved. All five rendered ticket links match the supplied URL. The existing 29 tests, inline-script/metadata and CSS parsing, unique-anchor/link checks, new text-contrast calculations and diff checks pass. Saved v25 desktop/phone previews. No new dependencies, artwork or JavaScript behavior were added; changes remain local for review.
+
+## Dedicated Travel Boosts section and hero beam
+
+- [x] Move the bounty into a section immediately after the hero, with shared section typography, a large reward visual and the original Earn action. Remove its earlier placement under Make it happen.
+- [x] Replace the hero preface/link with a border-beam pill; preserve visible focus, the section anchor, verified USDG reward facts and all tracked ticket destinations. Respect reduced motion and hidden tabs.
+- [x] Check desktop/tablet/phone geometry, hero action and anchor, focus and reduced-motion CSS; run parsing, content/link checks and existing regressions, and save the local preview.
+
+Browser checks confirm section order is hero → Travel Boosts → reasons → next steps → FAQ. All four section headings compute to 48.64px at 1280px and 39px at 375px. The 50px hero pill has a visible gold 2px keyboard outline, its beam transform changes over time, and Enter scrolls to the dedicated section with 24px clearance below the fixed strip. The application action opens the correct Earn listing. The panel keeps two columns at 768px and stacks below 720px; at 640px the reward content fits without the narrow two-column layout. Document widths at 640px, 375px and 320px remain exact, with no reward-content overflow. The narrower 320px heading wraps naturally to three lines. Reduced-motion and hidden-tab beam rules pass source checks, new text contrasts range from 4.97:1 to 12.29:1, all 29 regressions and CSS/inline-script/metadata/content/link checks pass, and browser warnings/errors and broken loaded-image checks are clear. Independent scoped review found no substantive issues. Saved v26 section and phone previews. No dependencies or JavaScript behavior changed; this remains local for review.
+
+## Travel Boost visual refinement
+
+- [x] Group ticket and Travel Boost in one hero action row; convert Explore Breakpoint to an underlined text link and keep the original destinations and motion controls.
+- [x] Replace the bounty heading and panel finish, and use an inline money illustration with an accessible HTML reward caption instead of the ticket-style card.
+- [x] Verify desktop/tablet/phone and narrow intermediate layouts, keyboard focus/order, internal anchor clearance, glass treatment and SVG rendering. Run parsing, existing regressions and diff checks; save final local previews.
+
+Checked 1280, 1024, 768, 640, 375 and 320px: document width stays exact and reward contents fit. Hero actions share one row, with 48px targets on desktop and matching 59.6px targets at 375/320px after shortening the boost label. Tab proceeds ticket → boost → Explore Breakpoint, with visible gold 2px focus outlines; Explore is underlined with a 44px target. The phone section anchor settles at y60 beneath the announcement. The panel computes to a 24px backdrop blur and the inline money artwork renders at each size. Cream copy was brightened to retain at least 4.80:1 contrast against a conservative maximum of the layered translucent backgrounds. All SVG identifiers and local filter references are unique and valid, all five tracked ticket links are unchanged, 29 regressions pass, CSS/content/link checks and diff checks pass, and browser warnings/errors are clear. Independent scoped review found no substantive issues. Saved v27 desktop/phone previews; changes remain local.
+
+## Refined reward and 25% community code — 16 October
+
+- [x] Replace cartoon banknotes/coins with a restrained typographic reward treatment inside the existing glass panel.
+- [x] Add SUPERTEAM-6NQP-BP26 and the confirmed 25% offer to the shared announcement variants, homepage promo, Breakpoint hero, ticket step and FAQ. Keep direct ticket tracking and manual checkout instructions.
+- [x] Write failing clipboard behavior tests, then implement shared copy controls with success, failure, in-flight and cleanup handling.
+- [x] Run full regressions and parsing, review the change, build with Node 22 because inherited announcement markup changed, and restart localhost.
+- [x] Verify desktop/tablet/phone, real clipboard copying, code and destination consistency, anchor clearance and console output. Save final previews and leave localhost open.
+
+## London speedboat campaign
+
+- [x] Read the official X announcement and confirm the booking deadline, Germany selection, screenshot DM, 24 total spots and 15 November ride date.
+- [x] Generate a realistic speedboat concept with the built-in image tool; preserve alpha and optimise the selected asset into public/images/breakpoint/london-speedboat-v1.webp.
+- [x] Add a dedicated section after Travel Boosts with the three steps, verified actions, date/capacity and concept illustration. Keep the hero action count unchanged.
+- [x] Check desktop/phone rendering and image response, anchors, links, typography, regressions and scoped review. Save the final campaign preview.
+
+Source validation: all 32 tests pass, including clipboard success only after promise resolution, duplicate in-flight prevention, denial/manual fallback and retry, and cleanup before resolution. Inline/module JavaScript, JSON metadata, inline/external CSS, unique IDs, section order and campaign terms pass. All six Breakpoint ticket links and the homepage promo ticket link retain the supplied tracking URL. The alpha WebP is 1200×800 and 191,200 bytes. Independent scoped review reports no substantive source-level findings. The Node 22 production build completed in 95.14 seconds with existing unrelated image/CLI/data warnings, and localhost restarted successfully on port 3000.
+
+The initial browser verification was blocked while the preview tab held a connection-error page. Automatic browser safety review rejected reloading its unsupported internal protocol, so the user was asked to reopen localhost. The user subsequently reopened a valid HTTP page, allowing normal browser checks to resume without a workaround or alternate surface. The completed results are recorded below.
+
+## Speedboat priority, motion and reward count-up
+
+- [x] Move speedboat above Travel Boosts, remove the requested boat captions/rules and reward labels/rules.
+- [x] Add an inner boat float and independent image hover, with hidden-tab and reduced-motion handling.
+- [x] Fix reward glyph clipping and reserve its final width; add a one-time count-up with static accessible text and cancellable frame handling, following failing timing tests.
+- [x] Complete responsive/animation/discount browser checks, full regressions, scoped review and final screenshots. Update the earlier pending visual verification with the completed results.
+
+Final verification: actual section order is hero → speedboat → Travel Boosts → reasons → next steps → FAQ. The boat's float and image hover compute to separate transforms (sampled at about -10px and -4px); the visible captions and horizontal image/reward rules are absent. In the actual count-up, a locator captured 119 before the final 400. The currency's x position remained exactly 1068.671875px through the animation. Full text ranges fit inside the padded gradient span at 1280/768/375/320px, and prize/document widths show no horizontal overflow. The phone reward column is 230px at 320px and the full amount/currency fit. Counter behavior tests cover monotonic bounded completion, cancellation, and cancellation from the render callback; all 35 tests pass. CSS/module/inline-script/JSON parsing, ID/link checks and diff checks pass. Independent scoped review found no substantive issues. Reduced-motion and hidden-tab handling remain explicit in CSS and the counter lifecycle.
+
+The homepage promo and Breakpoint hero copy buttons display the successful Clipboard API feedback; unit tests verify the exact displayed code reaches writeText. The browser bridge did not expose the page clipboard contents, so clipboard readback is not claimed. The homepage fits at 1280/375px with a 44px copy control; both Breakpoint code rows also fit at 320px. The inherited /policy page has exactly one updated announcement, and clicking it reaches /breakpoint#ticket-offer. Keyboard focus reaches the copy button with a visible gold 2px outline and 44px target. Desktop/phone anchors settle below the fixed strip (about y56/y60). The speedboat image loads, browser warnings/errors are clear, and v29 desktop/phone previews are saved. The new public counter module required only a quick production-server restart and returns HTTP 200; the compiled Next.js source is unchanged since the successful production build. Changes remain local on codex/breakpoint-community.
+
+## Softer wake and a calmer hero
+
+- [x] Feather the rear edge of the speedboat wake with a static alpha mask while retaining the existing motion.
+- [x] Move the discount below the two main actions and compact its label/code/copy row. Group the checkout hint and subtle official-page link below it; preserve the discount anchor and shared copy behavior.
+- [x] Check 1280/768/375/320px layouts, clipboard feedback and keyboard focus. Confirm the copy label has a stable 92px button width and 44px target; at 375px the offer stays 90px high before and after copying, and at 320px its code row fits inside the 280px column. Save v30 desktop/phone previews and run the existing regressions and parsing checks.
+
+The CSS mask blends the image's hard left cut into the background without changing the asset or adding animation. The default and successful copy states retain their geometry. All 35 regression tests pass; CSS/HTML parsing, unique IDs, action order and all six tracked ticket destinations pass. Public HTML/CSS changes require no additional compiled build. These refinements remain local.
+
+## Coupon ticket links and fewer hero actions
+
+- [x] Replace all six direct Breakpoint ticket links and the homepage ticket button with the user-supplied coupon URL. Align the ticket step, FAQ and homepage copy with automatic voucher application while retaining the selectable code and copy control.
+- [x] Remove the hero checkout hint and Explore Breakpoint link; keep empty live feedback with a short copy confirmation. Add the official website link to What is Breakpoint and remove unused hero meta-row CSS.
+- [x] Verify the Luma destination, homepage promotion, opened FAQ and copy feedback in the browser. Check 1280/768/375/320px widths, keyboard focus, 44px targets, parsing, IDs, all seven coupon destinations and the existing 35 regressions. Save v31 desktop/phone previews and leave localhost running.
+
+Luma's event page explicitly confirms that SUPERTEAM-6NQP-BP26 will be applied at checkout. The hero has exactly two action links, with the code/copy row retained beneath them. Its initial status is empty and copying shows only Code copied. The 375px offer remains 71px high before and after copying, and the code stays inside the hero column at all checked widths. The official site appears in the opened What is Breakpoint answer. All 35 tests and source parsing/link checks pass; changes remain local.
+
+### Extra spacing and one visible copy confirmation
+
+- [x] Increase the hero discount gap from 14px to 28px. Visually clip the live success status so only the button displays Copied, without changing row geometry; clear that state before retries to keep failure feedback visible.
+- [x] Verify the 28px gap at 1280/375/320px, unchanged 71px desktop offer height after copying, clipped success status and 44px controls. Both CSS files/module parsing, all seven coupon destinations, diff checks and all 35 regression tests pass. Save v32 desktop/phone previews; changes remain local.
+
+### Winner detail in supporting copy and clearer navbar CTA
+
+- [x] Put 15 selected winners in the Travel Boost introduction and remove the duplicated winner-count row and unused styles from the reward visual.
+- [x] Rename only the Breakpoint page's navbar CTA to Get your ticket, keeping its class, coupon URL, arrow and effects.
+- [x] Check the Travel Boost layout at 932/375px and the navbar at 1280/375/320px. The winner count appears only in the intro, reward contents fit, document widths remain exact, the navbar retains cta-shimmer and its coupon link, and phone targets remain 44px high. All 35 regressions plus focused copy/link/CSS and diff checks pass. Save v33 previews and retain localhost.
+
+### Copy lifecycle flash and repeated captions
+
+- [x] Reproduce both copy issues with a deferred clipboard promise: pending progress was not visually hidden, and a repeat click reset Copied to Copy code. The focused suite failed both relevant assertions before the fix.
+- [x] Keep pending/success feedback silent and preserve the current button label while pending. Restore the original label and visible manual-copy guidance on denial, including denial after a previous success. Keep duplicate-click and cleanup safeguards.
+- [x] Remove the static ticket-link hint from London's Calling and the speedboat date/capacity row; retain date and capacity in the main boat description.
+- [x] Verify first/repeated copies at 1280/375px: button and offer geometry remain fixed, live feedback stays clipped, and London hint starts empty. All 36 tests pass, including delayed-copy and error-recovery cases. CSS/module parsing, removed-label/retained-fact checks, coupon destinations and diff checks pass.
+
+Browser reload confirms both copy controls start with empty status lines. Repeated copies in both the hero and London's Calling keep Copied in the button with clipped feedback; the hero stays 71px high. The phone boat preview contains the date/capacity in its paragraph and no metadata row above the image. Browser warnings/errors are clear. Save v34 London and desktop/phone boat previews; localhost remains available.
+
+### Clearer Travel Boost heading
+
+- [x] Replace the heading with the approved Create content. / Win a Travel Boost. wording, keeping its line break, gold italic emphasis, supporting copy and 400 USDG visual. The rendered heading matches at 1280/375px with no horizontal overflow. Save the v35 preview; this is a local copy-only edit.
+
+### Reward sparkles and clearer speedboat requirements
+
+- [x] Add decorative champagne/gold SVG glints around 400, starting only after the counter finishes. Following visual feedback, increase from three to six, lengthen each visible twinkle and stagger the positions; keep USDG static and retain hidden-tab/reduced-motion guards.
+- [x] Use Join our London / speedboat ride. as the heading. Explicitly state that all three steps are needed: book a Breakpoint ticket before midnight on 23 October, select Germany at checkout, and DM the booking screenshot to @SuperteamDE. Retain the 24 total spots and 15 November ride date.
+- [x] Confirm a cold viewport entry counts through 168 before settling at 400, then enables the glints. Browser style samples confirm changing sparkle opacity while USDG stays fixed. The desktop reward and speedboat content render correctly; the phone heading fits two lines and the amount/currency remain inside the panel. All 36 regressions, CSS parsing, motion-guard/campaign-term/coupon checks and diff checks pass. Save v37 previews; changes remain local.
