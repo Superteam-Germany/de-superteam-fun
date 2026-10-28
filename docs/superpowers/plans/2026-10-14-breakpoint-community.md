@@ -373,3 +373,9 @@ Browser reload confirms both copy controls start with empty status lines. Repeat
 - [x] Add decorative champagne/gold SVG glints around 400, starting only after the counter finishes. Following visual feedback, increase from three to six, lengthen each visible twinkle and stagger the positions; keep USDG static and retain hidden-tab/reduced-motion guards.
 - [x] Use Join our London / speedboat ride. as the heading. Explicitly state that all three steps are needed: book a Breakpoint ticket before midnight on 23 October, select Germany at checkout, and DM the booking screenshot to @SuperteamDE. Retain the 24 total spots and 15 November ride date.
 - [x] Confirm a cold viewport entry counts through 168 before settling at 400, then enables the glints. Browser style samples confirm changing sparkle opacity while USDG stays fixed. The desktop reward and speedboat content render correctly; the phone heading fits two lines and the amount/currency remain inside the panel. All 36 regressions, CSS parsing, motion-guard/campaign-term/coupon checks and diff checks pass. Save v37 previews; changes remain local.
+
+### Announcement destination and expired deadline — 28 October
+
+- [x] Point the homepage, BuildStation and inherited-page announcement links to `/breakpoint#top`, replacing the discount-row anchor. Clicking the homepage strip in the browser opens the Breakpoint hero, with the header at y32 and the boat below the viewport.
+- [x] Remove the expired 23 October deadline from the boat eyebrow and first booking step. Keep the three participation steps and the 15 November ride date.
+- [x] All 36 regression tests, focused destination/copy checks and whitespace checks pass. Localhost is running on port 3000; these updates remain local.
