@@ -10,7 +10,7 @@ export function CampaignAnnouncement() {
   return (
     <aside ref={bar} className="announcement-bar" aria-label="Breakpoint announcement">
       <div className="announcement-inner">
-        <a className="announcement-link" href="/breakpoint#ticket-offer">
+        <a className="announcement-link" href="/breakpoint#top">
           <span className="announcement-copy">
             <span>Breakpoint · London, 15–17 November</span>
             <span className="announcement-date">25% off with <strong className="announcement-code">SUPERTEAM-6NQP-BP26</strong></span>
