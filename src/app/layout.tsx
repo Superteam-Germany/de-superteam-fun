@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Archivo, Unbounded } from "next/font/google";
 import Script from "next/script";
+import { Analytics } from "@vercel/analytics/next";
 import { SiteChrome } from "@/components/site-chrome";
 import {
   SITE_SOCIAL_IMAGE,
@@ -161,6 +162,7 @@ export default function RootLayout({
         </noscript>
         {/* End Google Tag Manager (noscript) */}
         <SiteChrome>{children}</SiteChrome>
+        <Analytics />
       </body>
     </html>
   );
