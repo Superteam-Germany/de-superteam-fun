@@ -20,20 +20,15 @@ const menuItems = [
     external: true,
   },
   {
-    name: "Global Hackathon",
-    link: "/buildstation",
-    type: "link",
-  },
-  {
     name: "Insights",
     link: "/insights",
     type: "link",
   },
 ];
 
-const breakpointCta = {
-  name: "Breakpoint",
-  link: "/breakpoint",
+const hackathonCta = {
+  name: "Global Hackathon",
+  link: "/buildstation",
 };
 
 const Nav = () => {
@@ -114,10 +109,10 @@ const Nav = () => {
                   className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
                 >
                   <Link
-                    href={breakpointCta.link}
+                    href={hackathonCta.link}
                     onClick={() => setIsOpen(false)}
                   >
-                    {breakpointCta.name}
+                    {hackathonCta.name}
                   </Link>
                 </Button>
               </li>
@@ -157,9 +152,9 @@ const Nav = () => {
               className="whitespace-nowrap font-secondary text-base font-normal tracking-wide no-underline hover:opacity-100"
             >
               <Link
-                href={breakpointCta.link}
+                href={hackathonCta.link}
               >
-                {breakpointCta.name}
+                {hackathonCta.name}
               </Link>
             </Button>
           </li>

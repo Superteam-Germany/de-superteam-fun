@@ -475,7 +475,6 @@
     <div id="root"></div>
     <script type="module">
       import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-      import { mountAnnouncement, mountDiscountCodes } from "/site/announcement.js";
       import { createRoot } from "react-dom/client";
       import { GrainGradient } from "https://esm.sh/@paper-design/shaders-react@0.0.80?external=react";
       import { EmbeddedTweet, TweetNotFound, TweetSkeleton } from "https://esm.sh/react-tweet@3.3.1/X-ZXJlYWN0LHJlYWN0LWRvbQ/es2022/react-tweet.bundle.mjs";
@@ -630,9 +629,8 @@
             e("a",{className:"desktop-nav-link",href:"#events"},"Events"),
             e("a",{className:"desktop-nav-link",href:"#team"},"Team"),
             e("a",{className:"desktop-nav-link",href:"#faq"},"FAQ"),
-            e("a",{className:"desktop-nav-link",href:"/buildstation"},"Global Hackathon"),
             e("a",{className:"desktop-nav-link community-link",href:"https://t.me/superteamgermany",target:"_blank",rel:"noreferrer"},"Join Us ↗"),
-            e("a",{className:"primary-cta",href:"/breakpoint"},"Breakpoint",e("span",{"aria-hidden":"true"},"→")),
+            e("a",{className:"primary-cta",href:"/buildstation"},"Global Hackathon",e("span",{"aria-hidden":"true"},"→")),
             e("button",{className:"mobile-menu-toggle",type:"button","aria-expanded":menuOpen,"aria-controls":"mobile-navigation","aria-label":menuOpen?"Close navigation":"Open navigation",onClick:()=>setMenuOpen(open=>!open)},e("span",{className:"mobile-menu-icon","aria-hidden":"true"}))
           ),
           e("div",{className:`mobile-navigation${menuOpen?" is-open":""}`,id:"mobile-navigation","aria-hidden":!menuOpen,inert:!menuOpen?"":undefined},
@@ -1082,48 +1080,9 @@
         );
       }
 
-      function Announcement(){
-        const bar = useRef(null);
-        useEffect(()=>mountAnnouncement(bar.current),[]);
-        return e("aside",{ref:bar,className:"announcement-bar","aria-label":"Breakpoint announcement"},
-          e("div",{className:"announcement-inner"},
-            e("a",{className:"announcement-link",href:"/breakpoint#top"},
-              e("span",{className:"announcement-copy"},e("span",null,"Breakpoint · London, 15–17 November"),e("span",{className:"announcement-date"},"25% off with ",e("strong",{className:"announcement-code"},"SUPERTEAM-6NQP-BP26"))),
-              e("span",{className:"announcement-arrow","aria-hidden":"true"},"→")
-            )
-          )
-        );
-      }
-
-      function BreakpointOffer(){
-        const offer = useRef(null);
-        useEffect(()=>mountDiscountCodes(offer.current),[]);
-        return e("section",{ref:offer,className:"breakpoint-offer",id:"breakpoint-offer","aria-labelledby":"ticket-promo-title"},
-          e("div",{className:"ticket-promo"},
-            e("div",null,
-              e("p",{className:"ticket-promo-eyebrow"},"Superteam Germany · Breakpoint 2026"),
-              e("h2",{id:"ticket-promo-title"},"Breakpoint, ",e("em",null,"with 25% off.")),
-              e("p",{className:"ticket-promo-copy"},"Join us in London, 15–17 November. Get 25% off your conference ticket with our community ticket link.")
-            ),
-            e("div",{"data-discount-copy":""},
-              e("div",{className:"ticket-code-row"},
-                e("code",{className:"ticket-code-value","data-discount-value":""},"SUPERTEAM-6NQP-BP26"),
-                e("button",{className:"ticket-code-copy",type:"button","data-copy-code":"","aria-label":"Copy 25% discount code"},e("span",{"data-copy-label":""},"Copy code"),e("span",{"aria-hidden":"true"},"⧉"))
-              ),
-              e("div",{className:"ticket-code-feedback",role:"status","data-copy-status":""},"Discount included in the ticket link."),
-              e("div",{className:"ticket-promo-actions"},
-                e("a",{className:"ticket-promo-action",href:"https://luma.com/breakpoint2026?coupon=SUPERTEAM-6NQP-BP26",target:"_blank",rel:"noopener noreferrer"},"Get your ticket ",e("span",{"aria-hidden":"true"},"↗")),
-                e("a",{className:"ticket-promo-more",href:"/breakpoint"},"Explore Breakpoint ",e("span",{"aria-hidden":"true"},"→"))
-              )
-            )
-          )
-        );
-      }
-
       function App(){
         useSectionReveals();
         return e(React.Fragment,null,
-          e(Announcement),
           e("main",{className:"hero"},
             e("div",{className:"shader"},e(Shader)),
             e("div",{className:"center-protection"}),
@@ -1148,7 +1107,7 @@
               )
             )
           ),
-          e(BreakpointOffer),e(ImpactStrip),e(WhatWeDo),e(Events),e(Team),e(Partners),e(WallOfLove),e(SummitRecap),e(FAQ),e(NewsletterCTA),e(Footer)
+          e(ImpactStrip),e(WhatWeDo),e(Events),e(Team),e(Partners),e(WallOfLove),e(SummitRecap),e(FAQ),e(NewsletterCTA),e(Footer)
         );
       }
       createRoot(document.getElementById("root")).render(e(App));
