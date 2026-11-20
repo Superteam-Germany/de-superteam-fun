@@ -60,7 +60,7 @@ html { scroll-padding-top:16px; }
   .campaign-nav .mobile-navigation a:focus-visible { outline-offset:-2px; }
   .campaign-nav .mobile-navigation .mobile-join { color:#ffcf32; }
 }
-@media(max-width:380px) {
+@media(max-width:400px) {
   .campaign-nav { gap:8px; }
   .campaign-nav .brand img { width:112px; }
   .campaign-nav .navlinks { gap:6px; }
