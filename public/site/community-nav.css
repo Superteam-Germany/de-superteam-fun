@@ -1,17 +1,5 @@
-/* Campaign chrome follows the approved Superteam Germany homepage palette. */
-:root { --announcement-height:32px; }
-html { scroll-padding-top:calc(var(--announcement-height) + 16px); }
-.announcement-bar { height:var(--announcement-height); margin:0; color:#111; font:600 12px/1.35 Inter,ui-sans-serif,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; }
-.announcement-inner { position:fixed; z-index:100; top:0; right:0; left:0; background:#ffcf32; }
-.announcement-link { box-sizing:border-box; display:flex; min-width:0; min-height:32px; align-items:center; justify-content:center; gap:10px; padding:5px 16px; color:inherit; text-align:center; text-decoration:none; opacity:1; }
-.announcement-link:hover { background:#ffdb67; }
-.announcement-link:focus-visible { outline:2px solid #111; outline-offset:-5px; }
-.announcement-copy { display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:4px 12px; }
-.announcement-date { font-weight:450; white-space:nowrap; }
-.announcement-code { font-weight:750; }
-.announcement-arrow { flex:0 0 auto; font-size:17px; line-height:1; }
-.announcement-action { display:inline-flex; flex:0 0 auto; align-items:center; gap:6px; white-space:nowrap; }
-.announcement-action-text { text-decoration:underline; text-underline-offset:2px; }
+/* Community navigation follows the Superteam Germany homepage palette. */
+html { scroll-padding-top:16px; }
 /* Shared community offer: visible code first, clipboard enhancement on click. */
 .ticket-offer { margin-top:20px; scroll-margin-top:12px; }
 .ticket-offer-title { margin:0 0 7px; color:#f6efe3; font:500 12px/1.5 Inter,ui-sans-serif,sans-serif; }
@@ -25,29 +13,13 @@ html { scroll-padding-top:calc(var(--announcement-height) + 16px); }
 .ticket-code-feedback { min-height:19px; margin:6px 0 0; color:#b5afa6; font:400 11px/1.6 Inter,ui-sans-serif,sans-serif; }
 /* Keep progress and confirmation accessible without flashing text below the button. */
 .ticket-code-feedback.ticket-code-silent { clip-path:inset(50%); }
-.breakpoint-offer { padding:36px 24px 0; background:#050505; color:#f6efe3; }
-.ticket-promo { display:grid; width:min(1180px,100%); grid-template-columns:1fr auto; align-items:center; gap:40px; margin:0 auto; padding:32px 36px; border:1px solid rgba(255,207,50,.24); border-radius:20px; background:linear-gradient(115deg,rgba(255,207,50,.065),rgba(246,239,227,.025) 56%,rgba(188,159,237,.065)); }
-.ticket-promo-eyebrow { margin:0 0 12px; color:#ffcf32; font:700 10px/1.4 Inter,ui-sans-serif,sans-serif; letter-spacing:.12em; text-transform:uppercase; }
-.ticket-promo h2 { margin:0; color:#f6efe3; font:530 clamp(28px,3.3vw,44px)/1.08 Inter,ui-sans-serif,sans-serif; letter-spacing:-.05em; }
-.ticket-promo h2 em { color:#ffcf32; font:inherit; font-style:italic; }
-.ticket-promo-copy { max-width:480px; margin:14px 0 0; color:#b5afa6; font:400 13px/1.65 Inter,ui-sans-serif,sans-serif; }
-.ticket-promo-actions { display:flex; flex-wrap:wrap; align-items:center; gap:10px 18px; margin-top:14px; }
-.ticket-promo-action { display:inline-flex; min-height:44px; align-items:center; justify-content:center; gap:8px; padding:10px 18px; border-radius:999px; background:#ffcf32; color:#111; font:750 12px/1.4 Inter,ui-sans-serif,sans-serif; text-decoration:none; }
-.ticket-promo-action:hover { background:#ffdd70; }
-.ticket-promo-more { display:inline-flex; min-height:44px; align-items:center; gap:6px; color:#f6efe3; font:550 12px/1.4 Inter,ui-sans-serif,sans-serif; text-underline-offset:4px; }
-.ticket-promo a:focus-visible { outline:2px solid #ffcf32; outline-offset:4px; }
 .ticket-offer-light .ticket-code-row { border-color:rgba(17,17,17,.2); background:rgba(17,17,17,.035); }
 .ticket-offer-light .ticket-code-value { color:#111; }
 .ticket-offer-light .ticket-code-copy { border-left-color:rgba(17,17,17,.16); color:#111; }
 .ticket-offer-light .ticket-code-copy:hover { background:rgba(17,17,17,.07); }
 .ticket-offer-light .ticket-code-copy:focus-visible { outline-color:#111; }
 .ticket-offer-light .ticket-code-feedback { color:#5f5b55; }
-@media(max-width:800px) {
-  .ticket-promo { grid-template-columns:1fr; gap:24px; padding:28px; }
-}
 @media(max-width:560px) {
-  .breakpoint-offer { padding:28px 20px 0; }
-  .ticket-promo { padding:24px 20px; }
   .ticket-code-row { gap:0; }
   .ticket-code-value { padding-inline:10px; font-size:11px; letter-spacing:0; }
   .ticket-code-copy { min-width:78px; padding-inline:10px; }
@@ -88,17 +60,15 @@ html { scroll-padding-top:calc(var(--announcement-height) + 16px); }
   .campaign-nav .mobile-navigation a:focus-visible { outline-offset:-2px; }
   .campaign-nav .mobile-navigation .mobile-join { color:#ffcf32; }
 }
-@media(max-width:560px) {
-  :root { --announcement-height:36px; }
-  .announcement-copy { flex-direction:column; gap:0; }
-  .announcement-link { min-height:36px; gap:9px; padding:4px 12px; font-size:10.5px; }
-  .announcement-action-text { display:none; }
-}
-@media(max-width:360px) {
+@media(max-width:380px) {
   .campaign-nav { gap:8px; }
   .campaign-nav .brand img { width:112px; }
   .campaign-nav .navlinks { gap:6px; }
   .campaign-nav .navlinks .primary-cta { padding-inline:10px; font-size:11px; }
+}
+@media(max-width:340px) {
+  .campaign-nav .brand img { width:104px; }
+  .campaign-nav .primary-cta > span { display:none; }
 }
 @media(prefers-reduced-motion:reduce) {
   .campaign-nav .mobile-navigation,.campaign-nav .mobile-menu-icon:before,.campaign-nav .mobile-menu-icon:after,.campaign-nav .primary-cta { transition:none; }
